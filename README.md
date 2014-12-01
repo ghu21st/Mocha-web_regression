@@ -1,2 +1,0 @@
-Mocha-web_regression
-====================
