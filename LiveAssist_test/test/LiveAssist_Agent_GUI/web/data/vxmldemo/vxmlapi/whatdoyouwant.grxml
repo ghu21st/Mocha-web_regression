@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<grammar xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="whatdoyouwant" version="1.0" mode="voice">
+    <rule id="whatdoyouwant" scope="public">
+        <one-of>
+            <item>speak to an agent</item>
+            <item>change my tariff</item>
+            <item>technical support</item>
+            <item>operator</item>
+        </one-of> 
+    </rule> 
+</grammar>
+

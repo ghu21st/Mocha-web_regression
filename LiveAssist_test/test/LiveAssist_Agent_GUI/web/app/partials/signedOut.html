@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row text-right" ng-show="sso">
+        <a class="btn btn-default" href="/liveassist/app/sso_logout">Logout</a>
+    </div>
+    <div class="row text-center">
+        <h1>Live Assist</h1>
+        <p>Provide a better experience for your users while teaching your intelligent self-service application.</p>
+    </div>
+
+    <form>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-10 col-md-offset-2">
+                    <h3>Please sign in</h3>
+                    <div ng-hide="sso">
+	                    <input id="username" type="text" size="30" placeholder="Username" ng-model="username">
+	                    <span></span>
+	                    <br>
+	                    <input id="password" type="password" size="30" placeholder="Password" ng-model="password">
+	                    <!--
+	                    <span></span>
+	                    <br>
+	                    <div class="checkbox">
+	                        <label>
+	                            <input id="rememberMeCheckBox" type="checkbox" ng-model="rememberMe"> Remember Me
+	                        </label>
+	                    </div>
+	                    -->
+                    </div>
+                    <alert ng-repeat="error in errors" type="danger">{{error}}</alert>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            &nbsp;
+        </div>
+
+        <div class="row">
+            <!-- No agent mode yet so comment out that button
+            <div class="col-md-4">
+                <h3>Agent Training</h3>
+                <p>I'd like to use the agent interface in training mode. I won't be taking live calls, but will instead take simulated calls.</p>
+                <br/>
+                <button id="trainingSignInButton" type="submit" class="btn btn-primary" ng-click="signIn('training')">Sign in for Agent Training</button>
+            </div>
+            -->
+            <div class="col-md-6">
+                <h3>Live Assist Agent</h3>
+                <p>I'm ready to assist live callers in our self-service application.</p>
+                <br/>
+                <button id="agentSignInButton" type="submit" class="btn btn-primary" ng-click="signIn('live')">Sign in as Live Agent</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Administrator</h3>
+                <p>I'd like to see information about the agents and the state of the overall system.</p>
+                <br/>
+                <button id="adminSignInButton" type="submit" class="btn btn-primary" ng-click="signIn('admin')">Sign in as Administrator</button>
+            </div>
+        </div>
+    </form>
+
+    <hr />
+
+    &copy; Nuance Communications 2014
+</div>

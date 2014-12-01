@@ -1,0 +1,40 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1021.log
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:4e1df1f4-187e-4049-be4a-1d28fa5523c7
+State: agentPending
+completionCause: null
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:4e1df1f4-187e-4049-be4a-1d28fa5523c7
+
+info: 
+wait 1 second for server
+
+info: 
+Test passed! Output string:
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:4e1df1f4-187e-4049-be4a-1d28fa5523c7
+State: agentPending
+completionCause: null
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"sessionID":"session:NINASMSTEST:12341234-1234-1234-1234-123412341234"}
+Response: 404
+Body: Can't find session with sessionID 'session:NINASMSTEST:12341234-1234-1234-1234-123412341234'
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:4e1df1f4-187e-4049-be4a-1d28fa5523c7"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:4e1df1f4-187e-4049-be4a-1d28fa5523c7
+

@@ -1,0 +1,12 @@
+info: Test started and logging atc:\LiveAssist_test\test\WEB_SIMU\Log\2998.log
+info: 
+ Check[{"id":"session:Travel:2e293954-c66a-45f2-b600-331edbbf7eea","varName":null,"varVersion":null,"ani":null,"dnis":null,"externalSessionID":null,"canStreamAudio":false,"currentInteractionId":null,"pickList":null,"recognitionResult":null,"utterance":null,"audioStream":null,"shouldEscalate":false,"escalated":false,"outcome":null,"sessionStats":{"stepTimes":{"CREATE":{"date":1390328627354}}},"viewName":null,"variableNames":null,"outcomeValues":null,"newInteractionIndex":0,"currentInteraction":null}]
+info: 
+Web simulator operation passed! Output string:
+
+
+Debug: send get session request on /sessions done
+
+
+Response: 200
+Body: [{"id":"session:Travel:2e293954-c66a-45f2-b600-331edbbf7eea","varName":null,"varVersion":null,"ani":null,"dnis":null,"externalSessionID":null,"canStreamAudio":false,"currentInteractionId":null,"pickList":null,"recognitionResult":null,"utterance":null,"audioStream":null,"shouldEscalate":false,"escalated":false,"outcome":null,"sessionStats":{"stepTimes":{"CREATE":{"date":1390328627354}}},"viewName":null,"variableNames":null,"outcomeValues":null,"newInteractionIndex":0,"currentInteraction":null}]

@@ -1,0 +1,18 @@
+<div>
+    <label for="{{concept.id}}">{{concept.name}}</label>
+    <div class="input-group">
+    <span class="input-group-addon">
+        <input id="{{concept.id}}ConfirmCheckBox" type="checkbox"
+               ng-model="concept.confirmedByAgent" ng-disabled="!concept.confirmedByAgent">
+    </span>
+    <input id="{{concept.id}}" type="text" class="form-control" datepicker-popup="{{filterExpr}}"
+           ng-model="date" is-open="opened" datepicker-options="{{options}}" show-button-bar="false"
+           ng-focus="concept.confirmedByAgent = true" nina-autoselect="conceptIndex == 0"
+           ng-required="concept.confirmedByAgent == true" close-text="Close" show-button-bar="true" placeholder="{{filterExpr}}" ng-keypress="filterKeyPresses(concept, $event)"/>
+    <span class="input-group-btn">
+        <button id="{{concept.id}}Button" type="button" class="btn btn-default"
+                ng-click="open($event)" ng-focus="concept.confirmedByAgent = true">
+            <i class="glyphicon glyphicon-calendar"></i></button>
+    </span>
+    </div>
+</div>

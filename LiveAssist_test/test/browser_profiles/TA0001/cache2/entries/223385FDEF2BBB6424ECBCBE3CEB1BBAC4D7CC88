@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<searchresults total_results="2">
+                    <addon id="9449">
+  <name>Microsoft .NET Framework Assistant</name>
+  <type id="1">Extension</type>
+  <guid>{20a82645-c095-46ed-80e3-08825760534b}</guid>
+  <slug>microsoft-net-framework-assist</slug>
+  <version>1.3.1</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="3048315">
+      <name>Microsoft Corporation</name>
+      <link>https://addons.mozilla.org/en-US/firefox/user/microsoft-corporation/?src=api</link>
+    </author>      </authors>
+  <summary>Adds ClickOnce support and the ability to report installed .NET versions to the web server.</summary>
+  <description>This extension requires version 3.5 SP1 (or greater) of the .NET Framework to be installed and is the only official extension published by Microsoft to support ClickOnce.</description><license>
+    <name>Custom License</name>
+    <url>https://addons.mozilla.org/en-US/firefox/addon/microsoft-net-framework-assist/license/1.3.1</url>
+  </license>  <icon size="64"></icon>
+  <icon size="32"></icon>
+  <compatible_applications><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>3.0</min_version>
+      <max_version>26.*</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>WINNT</os></all_compatible_os>
+  <eula>Microsoft Public License (Ms-PL)
+
+This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
+
+1. Definitions
+
+The terms “reproduce,” “reproduction,” “derivative works,” and “distribution” have the same meaning here as under U.S. copyright law.
+
+A “contribution” is the original software, or any additions or changes to the software.
+
+A “contributor” is any person that distributes its contribution under this license.
+
+ “Licensed patents” are a contributor’s patent claims that read directly on its contribution.
+
+2. Grant of Rights
+
+(A) Copyright Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+
+(B) Patent Grant- Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works of the contribution in the software.
+
+3. Conditions and Limitations
+
+(A) No Trademark License- This license does not grant you rights to use any contributors’ name, logo, or trademarks.
+
+(B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, your patent license from such contributor to the software ends automatically.
+
+(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution notices that are present in the software.
+
+(D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.
+
+(E) The software is licensed “as-is.” You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.</eula><previews><preview position="0">
+      <full type="image/png">
+        https://addons.cdn.mozilla.net/user-media/previews/full/33/33820.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/33/33820.png?src=api&amp;modified=1331247702
+      </thumbnail><caption>The extension&#39;s listing in the Add-ons window and the available options.</caption></preview></previews><rating>2</rating>
+  <learnmore>https://addons.mozilla.org/en-US/firefox/addon/microsoft-net-framework-assist/?src=api</learnmore><install hash="sha256:7817dc6511b13a5a951e1afeda2de9601894bc96a579dca17190524f0b70f649"
+    os="WINNT"
+    size="20480">https://addons.mozilla.org/firefox/downloads/file/127966/microsoft_net_framework_assistant-1.3.1-fx-windows.xpi?src=api</install>
+  <developer_comments></developer_comments>
+    <reviews num="117">
+      https://addons.mozilla.org/en-US/firefox/addon/microsoft-net-framework-assist/reviews/?src=api
+    </reviews>
+    <total_downloads>1938541</total_downloads>
+    <weekly_downloads>14100</weekly_downloads>
+    <daily_users>1938541</daily_users>
+    <created epoch="1225499999">
+      2008-11-01T00:39:59Z
+    </created>
+    <last_updated epoch="1313020080">
+      2011-08-10T23:48:00Z
+    </last_updated>
+    <homepage>http://www.microsoft.com</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+
+                  <addon id="1843">
+  <name>Firebug</name>
+  <type id="1">Extension</type>
+  <guid>firebug@software.joehewitt.com</guid>
+  <slug>firebug</slug>
+  <version>2.0.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="9265">
+      <name>Joe Hewitt</name>
+      <link>https://addons.mozilla.org/en-US/firefox/user/joe-hewitt/?src=api</link>
+    </author><author id="857086">
+      <name>Jan Odvarko</name>
+      <link>https://addons.mozilla.org/en-US/firefox/user/jan-odvarko/?src=api</link>
+    </author><author id="95117">
+      <name>robcee</name>
+      <link>https://addons.mozilla.org/en-US/firefox/user/robcee/?src=api</link>
+    </author><author id="4957771">
+      <name>FirebugWorkingGroup</name>
+      <link>https://addons.mozilla.org/en-US/firefox/user/firebugworkinggroup/?src=api</link>
+    </author>      </authors>
+  <summary>Firebug integrates with Firefox to put a wealth of development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page...</summary>
+  <description>&lt;a rel=&#34;nofollow&#34; href=&#34;http://outgoing.mozilla.org/v1/fc4997ab3399c96f4fddde69c127a1a7ac4d471f70a11827f5965b04dd3d60a0/https%3A//twitter.com/%23%21/firebugnews&#34;&gt;Follow Firebug news on Twitter&lt;/a&gt;
+
+Compatibility table:
+
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Firefox 3.6&lt;/strong&gt; with &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/?page=1#version-1.7.3&#34;&gt;Firebug 1.7.3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 4.0&lt;/strong&gt; with &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/?page=1#version-1.7.3&#34;&gt;Firebug 1.7.3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 5.0&lt;/strong&gt; with &lt;strong&gt;Firebug 1.8.2&lt;/strong&gt; (and also &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/?page=1#version-1.7.3&#34;&gt;Firebug 1.7.3&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 6.0&lt;/strong&gt; with &lt;strong&gt;Firebug 1.8.2&lt;/strong&gt; (and also &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 7.0&lt;/strong&gt; with &lt;strong&gt;Firebug 1.8.2&lt;/strong&gt; (and also &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 8.0&lt;/strong&gt; with &lt;strong&gt;Firebug 1.8.3&lt;/strong&gt; (and also &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 9.0&lt;/strong&gt; with &lt;strong&gt;Firebug 1.8.4&lt;/strong&gt; (and also &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 10.0&lt;/strong&gt; with &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 11.0&lt;/strong&gt; with &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 12.0&lt;/strong&gt; with &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 13.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.10&lt;/b&gt; (and also &lt;a rel=&#34;nofollow&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/firebug/versions/&#34;&gt;Firebug 1.9&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 14.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.10&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 15.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.10&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 16.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.10&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 17.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.11&lt;/b&gt; (and also Firebug 1.10)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 18.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.11&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 19.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.11&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 20.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.11&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 21.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.11&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 22.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.11&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 23.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt; (and also Firebug 1.11)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 24.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 25.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 26.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 27.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 28.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 29.0&lt;/strong&gt; with &lt;b&gt;Firebug 1.12&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 30.0&lt;/strong&gt; with &lt;b&gt;Firebug 2.0&lt;/b&gt; (and also Firebug 1.12)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 31.0&lt;/strong&gt; with &lt;b&gt;Firebug 2.0&lt;/b&gt; (and also Firebug 1.12)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Firefox 32.0&lt;/strong&gt; with &lt;b&gt;Firebug 2.0&lt;/b&gt; (and also Firebug 1.12)&lt;/li&gt;&lt;/ul&gt;
+Firebug integrates with Firefox to put a wealth of development tools at your fingertips while you browse. You can edit, debug, and monitor CSS, HTML, and JavaScript live in any web page.
+
+Visit the Firebug website for documentation and screen shots: &lt;a rel=&#34;nofollow&#34; href=&#34;http://outgoing.mozilla.org/v1/835dbec6bd77fa1341bf5841171bc90e8a5d4069419f083a25b7f81f9fb254cb/http%3A//getfirebug.com&#34;&gt;http://getfirebug.com&lt;/a&gt;
+Ask questions on Firebug newsgroup: &lt;a rel=&#34;nofollow&#34; href=&#34;http://outgoing.mozilla.org/v1/2398490bb3575c96d4cf9054e4f11236717aa6b9f353f5ada85dd8c74ed0dbbe/https%3A//groups.google.com/forum/%23%21forum/firebug&#34;&gt;https://groups.google.com/forum/#!forum/firebug&lt;/a&gt;
+Report an issue: &lt;a rel=&#34;nofollow&#34; href=&#34;http://outgoing.mozilla.org/v1/82ba7e7d7600d78965967de98579334986246b827dcc5c8a0bcf0ba036ef62dd/http%3A//code.google.com/p/fbug/issues/list&#34;&gt;http://code.google.com/p/fbug/issues/list&lt;/a&gt;
+
+&lt;i&gt;Please note that bug reports or feature requests in comments on this page won&#39;t be tracked. Use the issue tracker or Firebug newsgroup instead thanks!&lt;/i&gt;</description><license>
+    <name>BSD License</name>
+    <url>http://www.opensource.org/licenses/bsd-license.php</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/user-media/addon_icons/1/1843-64.png?modified=1402414382</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/user-media/addon_icons/1/1843-32.png?modified=1402414382</icon>
+  <compatible_applications><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>30.0a1</min_version>
+      <max_version>35.0</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52710.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52710.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>Command line and its auto-completion.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52711.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52711.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>Console panel with an example error logs.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52712.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52712.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>CSS panel with inline editor.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52713.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52713.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>DOM panel displays structure of the current page.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52714.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52714.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>HTML panel shows markup of the current page.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52715.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52715.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>Layout panel reveals layout of selected elements.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52716.png?src=api&amp;modified=1295279900
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52716.png?src=api&amp;modified=1295279900
+      </thumbnail><caption>Net panel monitors HTTP communication.</caption></preview><preview position="1">
+      <full type="" width="700" height="330">
+        https://addons.cdn.mozilla.net/user-media/previews/full/52/52717.png?src=api&amp;modified=1295279901
+      </full>
+      <thumbnail type="" width="200" height="94">
+        https://addons.cdn.mozilla.net/user-media/previews/thumbs/52/52717.png?src=api&amp;modified=1295279901
+      </thumbnail><caption>Script panel allows to explore and debug JavaScript on the current page.</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/firefox/addon/firebug/?src=api</learnmore><install hash="sha256:3961e49808379922cff417d58b4181c345294f2d7b2b7ea7dc7c7c3e4a5c731d"
+    os="ALL"
+    size="4222513">https://addons.mozilla.org/firefox/downloads/file/274666/firebug-2.0.4-fx.xpi?src=api</install>
+  <install hash="sha256:49b946b749c0697af768a6bc2086c65886208e527471ae16598001022bea8d08" os=""
+             size="4222516"
+             status="Beta">
+      https://addons.mozilla.org/firefox/downloads/file/277584/firebug-2.0.4b1-fx.xpi?src=api
+    </install>
+    <contribution_data>
+      <link>https://addons.mozilla.org/en-US/firefox/addon/firebug/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="10.00">
+            $10.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/firefox/addon/firebug/developers?src=api
+      </meet_developers>
+    </contribution_data><developer_comments>If you have any problems, please read the Firebug FAQ.
+
+&lt;a href=&#34;http://outgoing.mozilla.org/v1/5ea1894b182489b660d05bbd802d85c912b93d9981fa121194866ff48c71d5d8/https%3A//getfirebug.com/faq&#34; rel=&#34;nofollow&#34;&gt;https://getfirebug.com/faq&lt;/a&gt;</developer_comments>
+    <reviews num="1672">
+      https://addons.mozilla.org/en-US/firefox/addon/firebug/reviews/?src=api
+    </reviews>
+    <total_downloads>70359932</total_downloads>
+    <weekly_downloads>174616</weekly_downloads>
+    <daily_users>2723510</daily_users>
+    <created epoch="1137054450">
+      2006-01-12T08:27:30Z
+    </created>
+    <last_updated epoch="1409953241">
+      2014-09-05T21:40:41Z
+    </last_updated>
+    <homepage>http://getfirebug.com/</homepage>
+    <support>http://getfirebug.com</support>
+    <featured>0</featured>
+        <performance>
+            <application name="fx" version="8.0.1">
+                <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="548.47" average="541.42"
+                  above_threshold="false" />
+        </platform>        <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="479.26" average="471.95"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6 (rev4)">
+          <result type="ts" baseline="637.58" average="633.89"
+                  above_threshold="false" />
+        </platform></application>      <application name="fx" version="6.0.2">
+                <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="519.79" average="969.42"
+                  above_threshold="true" />
+        </platform>        <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="476.21" average="976.21"
+                  above_threshold="true" />
+        </platform>        <platform name="MacOSX" version="10.6.2">
+          <result type="ts" baseline="654.42" average="1160.53"
+                  above_threshold="true" />
+        </platform></application>      <application name="fx" version="7.0.1">
+                <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="479.68" average="964.11"
+                  above_threshold="true" />
+        </platform>        <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="547.16" average="1015.05"
+                  above_threshold="true" />
+        </platform>        <platform name="MacOSX" version="10.6.2 (rev3)">
+          <result type="ts" baseline="667.37" average="1176.47"
+                  above_threshold="true" />
+        </platform>        <platform name="MacOSX" version="10.6.2">
+          <result type="ts" baseline="671.16" average="1177.95"
+                  above_threshold="true" />
+        </platform></application>      <application name="fx" version="8.0">
+                <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="541.58" average="538.47"
+                  above_threshold="false" />
+        </platform>        <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="477.95" average="481.26"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6 (rev4)">
+          <result type="ts" baseline="624.84" average="640.79"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6.2 (rev3)">
+          <result type="ts" baseline="657.21" average="654.21"
+                  above_threshold="false" />
+        </platform></application></performance>
+    </addon>
+
+          <addon_compatibility
+    hosted="true"
+    id="1843">
+    <guid>firebug@software.joehewitt.com</guid>
+    <name>Firebug</name>
+    <version_ranges>
+              <version_range type="incompatible">
+          <min_version>0</min_version>
+          <max_version>1.7.3</max_version>
+          <compatible_applications>
+                          <application>
+                <name>Firefox</name>
+                <application_id>1</application_id>
+                <min_version>6.0a1</min_version>
+                <max_version>*</max_version>
+                <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+              </application>
+                      </compatible_applications>
+        </version_range>
+          </version_ranges>
+</addon_compatibility>
+</searchresults>��L�,              :W[E      :https://services.addons.mozilla.org/en-US/firefox/api/1.5/search/guid:fiddlerhook%40fiddler2.com,%7B20a82645-c095-46ed-80e3-08825760534b%7D,firebug%40software.joehewitt.com,%7B972ce4c6-7e08-4474-a285-3208198ce6fd%7D?src=firefox&appOS=WINNT&appVersion=32.0.3 security-info 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 request-method GET request-User-Agent Mozilla/5.0 (Windows NT 5.2; rv:32.0) Gecko/20100101 Firefox/32.0 response-head HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 30 Sep 2014 22:14:08 GMT
+Content-Type: text/xml; charset=utf-8
+Vary: X-Mobile, User-Agent
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=31536000
+X-Backend-Server: web4
+ uncompressed-len 0   W�

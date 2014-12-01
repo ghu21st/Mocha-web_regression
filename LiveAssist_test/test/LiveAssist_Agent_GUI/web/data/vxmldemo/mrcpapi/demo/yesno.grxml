@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<grammar xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="Root" version="1.0" mode="voice">
+    <rule id="Root" scope="public">
+        <one-of>
+            <item><ruleref uri="#yes"/><tag>yes</tag></item>
+            <item><ruleref uri="#no"/><tag>no</tag></item>
+        </one-of>
+    </rule>
+
+    <rule id="yes">
+        <one-of>
+            <item>yes</item>
+            <item>yeah</item>
+            <item>yep</item>
+            <item>sure</item>
+        </one-of>
+    </rule>
+
+    <rule id="no">
+        <one-of>
+            <item>no</item>
+            <item>nope</item>
+        </one-of>
+    </rule>
+
+</grammar>
+
+

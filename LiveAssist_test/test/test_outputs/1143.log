@@ -1,0 +1,155 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1143.log
+info: 
+wait 1 second for server
+
+info: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+info: 
+Test web page title: Nuance Live Assist
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Set user login name variable
+info: 
+Set password variable
+info: 
+Sign in button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /startSession is: session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4
+
+info: 
+wait 1 second for server
+
+info: interactionID from /startRecognition  is: session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4-0
+sendAudio from /startRecognition is: true
+
+info: 
+wait 1 second for server
+
+info: 
+completionCause return from /sendRecognitionResult   is: success
+state return from /sendRecognitionResult  is: useLiveAssistResult
+
+info: 
+wait 1 second for server
+
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Current intent selection: Waive fee
+info: 
+Selected variable id: BILLING_MONTH
+Selected variable name: Billing month
+info: 
+Selected variable id: LATE_PAYMENT_REASON
+Selected variable name: Reason for late payment
+info: 
+Tested button clicked
+info: 
+SessionID from /endSession is: session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4
+
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Selected intent group name: WAIVE_FEE_REQUEST
+info: 
+Selected intent id: BILLING_MONTH
+Selected intent variable value: 2014-01
+info: 
+Tested button clicked
+info: 
+wait 1 second for server
+
+info: for testing
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+wait 1 second for server
+
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"MrcpApiCallSteering","ani":"sip:4641@QA_test_server","dnis":"sip:4628@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"]}
+Response: [object Object]
+Body: [object Object]interactionID from /startRecognition  is: session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send post request '/sendRecognitionResult  ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4","completionCause":"success","utterance":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResult":"PD94bWwgdmVyc2lvbj0nMS4wJz8+IDxlbW1hOmVtbWEgdmVyc2lvbj0iMS4wIiB4bWxuczplbW1hPSJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDA3L0NSLWVtbWEtMjAwNzEyMTEiIHhtbG5zOm51YW5jZT0iaHR0cDovL25yMTAubnVhbmNlLmNvbS9lbW1hIj4gPGVtbWE6Z3JhbW1hciBpZD0iZ3JhbW1hcl8xIiByZWY9InNlc3Npb246aHR0cDovL210bC1kYTU1LXZtNjo4MDgwL2xpdmVhc3Npc3QvZGF0YS92eG1sZGVtby90cmF2ZWwvbWFpbm1lbnUuZ3J4bWwgLTEgLTEgMTAwMDAiLz4gPGVtbWE6aW50ZXJwcmV0YXRpb24gaWQ9ImludGVycF8xIiBlbW1hOmNvbmZpZGVuY2U9IjAuNzgiIGVtbWE6Z3JhbW1hci1yZWY9ImdyYW1tYXJfMSIgZW1tYTp0b2tlbnM9Imkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0IiBlbW1hOmR1cmF0aW9uPSIzMjQwIiBlbW1hOm1vZGU9InZvaWNlIiBudWFuY2U6ZW9zLXNpbGVuY2U9Ijg1MCI+IDxpbnRlbnQgY29uZj0iMC43OCI+Ym9vay1mbGlnaHQ8L2ludGVudD4gPFNXSV9saXRlcmFsPmkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0PC9TV0lfbGl0ZXJhbD4gPFNXSV9tZWFuaW5nPntpbnRlbnQ6Ym9vay1mbGlnaHR9PC9TV0lfbWVhbmluZz4gPC9lbW1hOmludGVycHJldGF0aW9uPiA8L2VtbWE6ZW1tYT4="}
+Response: [object Object]
+Body: [object Object]
+completionCause return from /sendRecognitionResult   is: success
+state return from /sendRecognitionResult  is: useLiveAssistResult
+
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Current intent selection: Waive fee
+Selected variable id: BILLING_MONTH
+Selected variable name: Billing month
+Selected variable id: LATE_PAYMENT_REASON
+Selected variable name: Reason for late payment
+Tested button clicked
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-MrcpApiCallSteering:0805df1a-1641-40e6-818a-fd536d6cc3c4
+
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Selected intent group name: WAIVE_FEE_REQUEST
+Selected intent id: BILLING_MONTH
+Selected intent variable value: 2014-01
+Tested button clicked
+info: 
+Make sure agent logout before exit!
+https://10.3.41.56:8446/liveassist/app/logout
+
+

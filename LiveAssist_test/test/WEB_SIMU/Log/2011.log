@@ -1,0 +1,28 @@
+info: Test started and logging atc:\LiveAssist_test\test\WEB_SIMU\Log\2011.log
+info: 
+Web simulator operation passed! Output string:
+
+
+Debug: send get session request on /sessions/ids done
+
+
+Response: 200
+Body: ["session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d"]
+sessionID: session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d
+web page title: Agent login
+Agent login with user name: Gang
+Submit simulated Agent outcome result selection
+QA Web test Driver ---- 
+Debug: Test base URL http://10.3.41.59:8080/liveassist/rest/vxmlapp
+Found the outcome selection agent web page with specific session id
+Select1 - Option - clicked!
+Select2 - Option - clicked!
+Select3 - Option - clicked!
+Select3 - Option - clicked!
+Submit simulated Agent outcome result selection
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d","varName":"Travel","varVersion":"1.0","ani":"sip:10.3.41.73-50001@10.3.41.73","dnis":"sip:4642@10.3.41.105:5060","externalSessionID":"0a032969_00007a39_52deb6b7_0043_0001","canStreamAudio":true,"currentInteractionId":"session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d-0","pickList":null,"recognitionResult":"<?xml version='1.0'?><emma:emma version=\"1.0\" xmlns:emma=\"http://www.w3.org/TR/2007/CR-emma-20071211\" xmlns:nuance=\"http://nr10.nuance.com/emma\"><emma:interpretation id=\"interp_1\" emma:uninterpreted=\"true\" emma:duration=\"1140\" nuance:eos-silence=\"1540\"/></emma:emma>","utterance":"http://mtl-bl1-12-vm02:90/Nuance/callLogs/QA_TEST2/2014/01January/21/13/NUAN-04-39-mtl-bl1-12-vm02-0a032969_00007a39_52deb6b7_0043_0001-utt001-SAVEWAVEFORM.wav","audioStream":"http://mt-ray-vm06:8081/recording/session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d-0","shouldEscalate":false,"escalated":false,"outcome":null,"sessionStats":{"stepTimes":{"CREATE":{"date":1390327811578},"START_SESSION":{"date":1390327811578},"START_INTERACTION":{"date":1390327811757},"SEND_INTERACTION_RESULT":{"date":1390327825950},"ESCALATE":{"date":1390327811757},"GET_LIVE_ASSIST_RESULT_OUTCOME":{"date":1390327851466},"SESSION_SET_OUTCOME":{"date":1390327850650}}},"viewName":"travelview.jsp","variableNames":["originCity","destinationCity","departureDay"],"outcomeValues":["Boston","Montreal","Tuesday"],"newInteractionIndex":1,"currentInteraction":{"sessionId":"session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d","id":"session:Travel:02f9f725-8da7-45d6-8acd-42f94662ff6d-0","utteranceUri":"http://mtl-bl1-12-vm02:90/Nuance/callLogs/QA_TEST2/2014/01January/21/13/NUAN-04-39-mtl-bl1-12-vm02-0a032969_00007a39_52deb6b7_0043_0001-utt001-SAVEWAVEFORM.wav","outcome":null,"topInterpretation":{"confidence":null,"tokens":null},"topHypothesis":{"topInterpretation":{"confidence":null,"tokens":null}}}}

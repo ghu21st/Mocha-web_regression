@@ -1,0 +1,29 @@
+info: Test started and logging atc:\LiveAssist_test\test\WEB_SIMU\Log\2006.log
+info: 
+Web simulator failed! Error:
+TypeError: Cannot read property 'statusCode' of undefined
+
+Output string
+
+
+Debug: send get session request on /sessions/ids done
+
+
+Response: 200
+Body: ["session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf"]
+sessionID: session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf
+web page title: Agent login
+Agent login with user name: Gang
+Submit simulated Agent outcome result selection
+QA Web test Driver ---- 
+Debug: Test base URL http://10.3.41.59:8080/liveassist/agent/sessionScreen?sessionId=session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf
+Found the outcome selection agent web page with specific session id
+Customize (case by case) click/select one of agent outcome selections
+Found the correct agent web page selection element
+Submit simulated Agent outcome result selection
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf","varName":"CallSteering","varVersion":"1.0","ani":"sip:10.3.41.73-50001@10.3.41.73","dnis":"sip:4640@10.3.41.105:5060","externalSessionID":"0a032969_00007a39_52deb4c8_003e_0001","canStreamAudio":true,"currentInteractionId":"session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf-0","pickList":["request-agent","change-tariff","request-support","request-operator"],"recognitionResult":"<?xml version='1.0'?><emma:emma version=\"1.0\" xmlns:emma=\"http://www.w3.org/TR/2007/CR-emma-20071211\" xmlns:nuance=\"http://nr10.nuance.com/emma\"><emma:grammar id=\"grammar_1\" ref=\"session:http://10.3.41.59:8080/liveassist/data/vxmldemo/callsteering/callsteering.grxml -1 -1 10000\"/><emma:one-of id=\"nbest\" emma:disjunction-type=\"recognition\" emma:duration=\"1040\" emma:mode=\"voice\" nuance:eos-silence=\"1260\"><emma:interpretation id=\"interp_1\" emma:uninterpreted=\"true\" emma:confidence=\"0.30\" emma:grammar-ref=\"grammar_1\" emma:tokens=\"operator\"/><emma:interpretation id=\"interp_2\" emma:uninterpreted=\"true\" emma:confidence=\"0.08\" emma:grammar-ref=\"grammar_1\" emma:tokens=\"help\"/></emma:one-of></emma:emma>","utterance":"http://mtl-bl1-12-vm02:90/Nuance/callLogs/QA_TEST0/2014/01January/21/12/NUAN-56-24-mtl-bl1-12-vm02-0a032969_00007a39_52deb4c8_003e_0001-utt001-SAVEWAVEFORM.wav","audioStream":"http://mt-ray-vm06:8081/recording/session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf-0","shouldEscalate":false,"escalated":false,"outcome":"change-tariff","sessionStats":{"stepTimes":{"CREATE":{"date":1390327317089},"START_SESSION":{"date":1390327317089},"START_INTERACTION":{"date":1390327317274},"SEND_INTERACTION_RESULT":{"date":1390327329863},"ESCALATE":{"date":1390327317275},"GET_LIVE_ASSIST_RESULT_OUTCOME":{"date":1390327353124},"SESSION_SET_OUTCOME":{"date":1390327352651}}},"viewName":null,"variableNames":null,"outcomeValues":null,"newInteractionIndex":1,"currentInteraction":{"sessionId":"session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf","id":"session:CallSteering:63bdb9a8-109f-40f7-974e-a80228c53fdf-0","utteranceUri":"http://mtl-bl1-12-vm02:90/Nuance/callLogs/QA_TEST0/2014/01January/21/12/NUAN-56-24-mtl-bl1-12-vm02-0a032969_00007a39_52deb4c8_003e_0001-utt001-SAVEWAVEFORM.wav","outcome":null,"topInterpretation":null,"topHypothesis":null}}

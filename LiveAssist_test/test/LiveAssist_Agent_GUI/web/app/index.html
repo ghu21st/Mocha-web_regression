@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="liveAssist">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuance Live Assist</title>
+
+    <!-- TODO: Switch to minified CSS and scripts -->
+    <link rel="stylesheet" href="lib/bootstrap-3.2.0/css/bootstrap.css"></script>
+    <link rel="stylesheet" href="css/ng-grid.min.css">
+    <link rel="stylesheet" href="css/select2.css">
+    <!-- <link rel="stylesheet" href="css/select2-bootstrap.css"> -->
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- TODO: Switch to using requirejs to avoid having to rely on so many script tags? It also would make -->
+    <!-- it easy to switch between minified and non-minified versions -->
+    <script src="lib/jquery/jquery-2.1.0.min.js"></script>
+    <!-- select 2 lib -->
+    <script src="lib/select2/select2.min.js"></script>
+
+    <script src="lib/bootstrap-3.2.0/js/bootstrap.js"></script>
+
+    <script src="lib/angular-1.2.9/angular.js"></script>
+    <script src="lib/angular-1.2.9/angular-resource.js"></script>
+    <script src="lib/angular-1.2.9/angular-route.js"></script>
+    <script src="lib/angular-1.2.9/angular-sanitize.js"></script>
+
+    <script src="lib/angular-ui-router/angular-ui-router.js"></script>
+    <script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="lib/angular-ui-utils/ui-utils.js"></script>
+
+    <script src="lib/ng-grid/ng-grid-2.0.11.min.js"></script>
+    <script src="lib/angular-file-upload/angular-file-upload-1.6.0.min.js"></script>
+    <!-- <script src="lib/angular-bootstrap-show-errors/showErrors.min.js"></script> -->
+    <!-- <script src="lib/natural-sort-0.7.js"></script> -->
+
+    <!-- ui-select2 library dependencies -->
+    <script src="lib/angular-ui-select2/select2.js"></script>
+
+    <script src="js/lib.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/directives/autofocus.js"></script>
+    <script src="js/directives/autoselect.js"></script>
+    <script src="js/directives/conceptInput.js"></script>
+    <script src="js/directives/focusNext.js"></script>
+    <script src="js/directives/shortcutKey.js"></script>
+    <script src="js/directives/streaming.js"></script>
+    <script src="js/directives/validateHourMinute.js"></script>
+    <script src="js/controllers/signedOut.js"></script>
+    <script src="js/controllers/signedIn.js"></script>
+    <script src="js/controllers/live/live.js"></script>
+    <script src="js/controllers/live/idle.js"></script>
+    <script src="js/controllers/live/busy.js"></script>
+    <script src="js/controllers/live/busy/userInput.js"></script>
+    <script src="js/controllers/live/busy/conversationContext.js"></script>
+    <script src="js/controllers/live/busy/agentInput.js"></script>
+    <script src="js/controllers/live/busy/inputClassification.js"></script>
+    <!-- <script src="js/controllers/live/busy/doneButton.js"></script> -->
+    <script src="js/controllers/admin/admin.js"></script>
+    <script src="js/controllers/admin/users/users.js"></script>
+    <script src="js/controllers/admin/users/agents.js"></script>
+    <script src="js/controllers/admin/users/agent.js"></script>
+    <script src="js/controllers/admin/users/sessions.js"></script>
+    <script src="js/controllers/admin/users/agentsession.js"></script>
+    <script src="js/controllers/admin/users/selectedSession.js"></script>
+    <script src="js/controllers/admin/users/assignSkills.js"></script>
+    <script src="js/controllers/admin/appconfig/appconfig.js"></script>
+    <script src="js/controllers/admin/appconfig/applicationConfigurations.js"></script>
+    <script src="js/controllers/admin/appconfig/applicationConfiguration.js"></script>
+    <script src="js/controllers/admin/appconfig/applicationContexts.js"></script>
+    <script src="js/controllers/admin/appconfig/applicationContext.js"></script>
+    <script src="js/controllers/admin/training/training.js"></script>
+    <script src="js/controllers/admin/modal.js"></script>
+    <script src="js/controllers/welcome.js"></script>
+    <script src="js/services/adminagent.js"></script>
+    <script src="js/services/adminsession.js"></script>
+    <script src="js/services/adminApplicationConfiguration.js"></script>
+    <script src="js/services/adminApplicationConfigurationContext.js"></script>
+    <script src="js/services/adminutilities.js"></script>
+    <script src="js/services/laconfig.js"></script>
+    <script src="js/services/trainingService.js"></script>
+    <script src="js/services/restError.js"></script>
+    <!--  Polling version with no WebSocket <script src="js/services/agent.js"></script> -->
+    <script src="js/services/agentws.js"></script>
+    <script src="js/services/inputClassification.js"></script>
+    <script src="js/services/intent.js"></script>
+    <script src="js/services/shortcutKey.js"></script>
+    <script src="js/services/sse.js"></script>
+    <script src="js/filters/capitalize.js"></script>
+    <script src="js/filters/arrayComma.js"></script>
+    <script src="js/filters/propertiesColon.js"></script>
+    <script src="js/filters/skillsFilter.js"></script>
+    <script src="js/filters/rolesFilter.js"></script>
+    <!-- <script src="js/nggridplugins/dblclick.js"></script> -->
+</head>
+<body>
+    <div ui-view></div>
+</body>
+</html>

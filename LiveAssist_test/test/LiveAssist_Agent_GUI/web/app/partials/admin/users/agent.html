@@ -1,0 +1,46 @@
+<div class="modal-header" id="AddEditUserDialog">
+    <h3>{{header}}</h3>
+</div>
+<div class="modal-body">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="usernameTextInput">Username</label>
+
+            <div class="col-lg-10">
+                <input id="usernameTextInput" type="text" ng-model="agent.username" class="form-control"
+                       ng-disabled="nameDisabled">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="passwordTextInput">Password</label>
+
+            <div class="col-lg-10">
+                <input id="passwordTextInput" type="password" ng-model="agent.password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="rolesCheckbox">Roles</label>
+
+            <div class="col-lg-10">
+                <div class="btn-group" id="rolesCheckbox">
+                    <label id="{{allRoles[0]}}CheckBox" type="button" class="btn btn-primary"
+                           ng-model="agent[allRoles[0]]" btn-checkbox>{{allRoles[0] | capitalize}}</label>
+                    <label id="{{allRoles[1]}}CheckBox" type="button" class="btn btn-primary"
+                           ng-model="agent[allRoles[1]]" btn-checkbox>{{allRoles[1] | capitalize}}</label>
+                    <label id="{{allRoles[2]}}CheckBox" type="button" class="btn btn-primary"
+                           ng-model="agent[allRoles[2]]" btn-checkbox>{{allRoles[2] | capitalize}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="skillsSelect">Skills</label>
+            <div class="col-lg-10">
+                <input id="skillsSelect" type="hidden" ui-select2="select2Options" ng-model="agent.skills"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button id="OKButton" class="btn btn-primary" ng-click="ok()">OK</button>
+    <button id="CancelButton" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

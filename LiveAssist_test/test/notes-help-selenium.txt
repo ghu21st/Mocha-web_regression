@@ -1,0 +1,203 @@
+C:\Documents and Settings\root>java -jar c:\LiveAssist_test\test\QA_TEST\seleniu
+m-server-standalone-2.40.0.jar -help
+
+----------------------------------
+To use as a standalone server
+----------------------------------
+:
+Usage: java -jar selenium-server.jar [-interactive] [options]
+
+  -port <nnnn>: the port number the selenium server should use
+    (default 4444)
+  -timeout <nnnn>: an integer number of seconds we should allow a
+    client to be idle
+  -browserTimeout <nnnn>: an integer number of seconds a browser is
+    allowed to hang
+  -interactive: puts you into interactive mode.  See the tutorial for
+    more details
+  -singleWindow: puts you into a mode where the test web site
+    executes in a frame. This mode should only be selected if the
+    application under test does not use frames.
+  -profilesLocation: Specifies the directory that holds the profiles
+    that java clients can use to start up selenium.  Currently
+    supported for Firefox only.
+  -forcedBrowserMode <browser>: sets the browser mode to a single
+    argument (e.g. "*iexplore") for all sessions, no matter what is
+    passed to getNewBrowserSession
+  -forcedBrowserModeRestOfLine <browser>: sets the browser mode to
+    all the remaining tokens on the line (e.g. "*custom
+    /some/random/place/iexplore.exe") for all sessions, no matter what
+    is passed to getNewBrowserSession
+  -userExtensions <file>: indicates a JavaScript file that will be
+    loaded into selenium
+  -browserSessionReuse: stops re-initialization and spawning of the
+    browser between tests
+  -avoidProxy: By default, we proxy every browser request; set this
+    flag to make the browser use our proxy only for URLs containing
+    '/selenium-server'
+  -firefoxProfileTemplate <dir>: normally, we generate a fresh empty
+    Firefox profile every time we launch.  You can specify a directory
+    to make us copy your profile directory instead.
+  -debug: puts you into debug mode, with more trace information and
+    diagnostics on the console
+  -browserSideLog: enables logging on the browser side; logging
+    messages will be transmitted to the server.  This can affect
+    performance.
+  -ensureCleanSession: If the browser does not have user profiles,
+    make sure every new session has no artifacts from previous
+    sessions.  For example, enabling this option will cause all user
+    cookies to be archived before launching IE, and restored after IE
+    is closed.
+  -trustAllSSLCertificates: Forces the Selenium proxy to trust all
+    SSL certificates.  This doesn't work in browsers that don't use the
+    Selenium proxy.
+  -log <logFileName>: writes lots of debug information out to a log
+    file
+  -htmlSuite <browser> <startURL> <suiteFile> <resultFile>: Run a
+    single HTML Selenese (Selenium Core) suite and then exit
+    immediately, using the specified browser (e.g. "*firefox") on the
+    specified URL (e.g. "http://www.google.com").  You need to specify
+    the absolute path to the HTML test suite as well as the path to the
+    HTML results file we'll generate.
+  -proxyInjectionMode: puts you into proxy injection mode, a mode
+    where the selenium server acts as a proxy server for all content
+    going to the test application.  Under this mode, multiple domains
+    can be visited, and the following additional flags are supported:
+
+    -dontInjectRegex <regex>: an optional regular expression that
+      proxy injection mode can use to know when to bypss injection
+    -userJsInjection <file>: specifies a JavaScript file which will
+      then be injected into all pages
+    -userContentTransformation <regex> <replacement>: a regular
+      expression which is matched against all test HTML content; the
+      second is a string which will replace matches.  These flags can
+      be used any number of times.  A simple example of how this could
+      be useful: if you add "-userContentTransformation https http"
+      then all "https" strings in the HTML of the test application will
+      be changed to be "http".
+
+----------------------------------
+To use in a grid environment :
+----------------------------------
+
+Usage :
+  -hubConfig:
+    (hub) a JSON file following grid2 format that defines the hub
+      properties.
+
+  -nodeTimeout:
+    (node) <XXXX>  the timeout in seconds before the hub
+      automatically ends a test that hasn't had any activity in the
+      last X seconds. The browser will be released for another test to
+      use. This typically takes care of the client crashes.
+
+  -throwOnCapabilityNotPresent:
+    (hub) <true | false> default to true. If true, the hub will
+      reject test requests right away if no proxy is currently
+      registered that can host that capability.Set it to false to have
+      the request queued until a node supporting the capability is
+      added to the grid.
+
+  -maxSession:
+    (node) max number of tests that can run at the same time on the
+      node, independently of the browser used.
+
+  -hub:
+    (node) <http://localhost:4444/grid/register> : the url that will
+      be used to post the registration request. This option takes
+      precedence over -hubHost and -hubPort options.
+
+  -hubPort:
+    (node) <xxxx> : the port listened by a hub the registration
+      request should be sent to. Default to 4444. Option -hub takes
+      precedence over this option.
+
+  -registerCycle:
+    (node) how often in ms the node will try to register itself
+      again.Allow to restart the hub without having to restart the
+      nodes.
+
+  -capabilityMatcher:
+    (hub) a class implementing the CapabilityMatcher interface.
+      Defaults to
+      org.openqa.grid.internal.utils.DefaultCapabilityMatcher. Specify
+      the logic the hub will follow to define if a request can be
+      assigned to a node.Change this class if you want to have the
+      matching process use regular expression instead of exact match
+      for the version of the browser for instance. All the nodes of a
+      grid instance will use the same matcher, defined by the registry.
+
+  -nodeStatusCheckTimeout:
+    (node) in ms. Connection and socket timeout which is used for
+      node alive check.
+
+  -port:
+    (hub & node) <xxxx> : the port the remote/hub will listen on.
+      Default to 4444.
+
+  -hubHost:
+    (node) <IP | hostname> : the host address of a hub the
+      registration request should be sent to. Default to localhost.
+      Option -hub takes precedence over this option.
+
+  -newSessionWaitTimeout:
+    (hub) <XXXX>. Default to no timeout ( -1 ) the time in ms after
+      which a new test waiting for a node to become available will time
+      out.When that happens, the test will throw an exception before
+      starting a browser.
+
+  -nodePolling:
+    (node) in ms. Interval between alive checks of node how often the
+      hub checks if the node is still alive.
+
+  -host:
+    (hub & node)  <IP | hostname> : usually not needed and determined
+      automatically. For exotic network configuration, network with
+      VPN, specifying the host might be necessary.
+
+  -downPollingLimit:
+    (node) node is marked as down after downPollingLimit alive
+      checks.
+
+  -unregisterIfStillDownAfter:
+    (node) in ms. If the node remains down for more than
+      unregisterIfStillDownAfter millisec, it will disappear from the
+      hub.Default is 1min.
+
+  -cleanupCycle:
+    (node) <XXXX> in ms. How often a proxy will check for timed out
+      thread.
+
+  -nodeConfig:
+    (node) a JSON file following grid2 format that defines the node
+      properties.
+
+  -prioritizer:
+    (hub) a class implementing the Prioritizer interface. Default to
+      null ( no priority = FIFO ).Specify a custom prioritizer if you
+      need the grid to process the tests from the CI, or the IE tests
+      first for instance.
+
+  -servlets:
+    (hub & node) <com.mycompany.MyServlet,com.mycompany.MyServlet2>
+      to register a new servlet on the hub/node. The servlet will
+      accessible under the path  /grid/admin/MyServlet
+      /grid/admin/MyServlet2
+
+  -proxy:
+    (node) the class that will be used to represent the node. By
+      default org.openqa.grid.selenium.proxy.DefaultRemoteProxy.
+
+  -browserTimeout:
+    (hub/node) The timeout in seconds a browser can hang
+
+  -grid1Yml:
+    (hub) a YML file following grid1 format.
+
+  -role:
+    <hub|node> (default is no grid, just run an RC/webdriver server).
+      When launching a node, the parameters will be forwarded to the
+      server on the node, so you can use something like -role node
+      -trustAllSSLCertificates.  In that case, the SeleniumServer will
+      be launch with the trustallSSLCertificates option.
+

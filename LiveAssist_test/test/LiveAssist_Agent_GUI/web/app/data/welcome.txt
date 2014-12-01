@@ -1,0 +1,72 @@
+What's next:
+- [Jacques] Add support for sending responses (outcomes) back to server
+- [Jacques] Add support for retrieving pick-lists/intents from server
+- [Pavlin] Add support for server-sent-events/websockets for communication from server to client (and perhaps vice-versa)
+- Make idle screen be the same as busy screen but grayed out
+
+Recent changes:
+
+2014/02/18:
+- Improved and reorganized MVC code structure, setting the stage for training and admin modes
+- As a result, there is no longer a navbar on the sign-in page, just like the mock-ups
+- On busy screen, fixed a bug where tab stop handling wasn't working properly in the data input section
+- On idle screen, summary of last agent response now only shows variables that were confirmed by the agent
+
+2014/02/11:
+- Cleaned up picklist, intent, and variable handling to conform to the latest spec and doc
+- The above includes support for lists of values, either specified as an array or as a URL to a file with one value per line
+- The demo was updated to include to different city lists, one for departure city and one for arrival city, using both mechanisms
+- On busy screen, when a textbox with a value if autofocused, the value is automatically highlighted for replacement
+- On busy screen, added checkboxes for distinguishing between default values of certain fields and values changed or
+  confirmed by agents.
+- On busy screen, ensure that checkboxes are not tab stops so that tabbing still jumps between the variable input fields (this was not easy!)
+
+2014/02/10:
+- Added support for retrieving escalated interactions from the server. This happens when the "Make me busy" button is clicked.
+  If no interaction is available, the original demo interaction data is used.
+
+2014/02/03:
+- On busy screen, added input classification section (with checkboxes). However, support needs to be improved/revamped to fix some issues when resizing the browser window
+
+2014/01/31:
+- On signed out screen, fixed button styling
+- On busy screen, fixed intent picklist bug
+- On busy screen, fixed "sign out requested" bug
+- On busy screen, added numbers to intent selection section to indicate which intents would be selected by shortcut keys
+- Improved look of idle screen
+- On idle screen, added summary report of last agent response
+- On busy screen, read data input field types and default field values from intents.json file
+- On busy screen, switched audio file to a more suitable one (thanks Jacques!)
+- Added button tooltips that need improvement
+
+2014/01/30:
+- Fixed bugs causing data (intents/interaction/audio) to only ever be loaded when run from local machine
+- Added sample audio and audio playback controls
+- Created "Sign In" screen according to initial mockup
+- On busy screen, ensure that when a sign out is requested the agent is actually signed out once their done
+- Placed this welcome message into a modal pop-up
+
+2014/01/28:
+- Added sample user input and conversation context data (without sample audio)
+
+2014/01/26:
+- Added selected mode to navbar in all modes
+
+2014/01/25:
+- Autofocus the first field in the "Data Input Section" when multiple fields appear
+- Added Nina icon to brand section in navbar
+
+2014/01/24:
+- Added shortcut key handling infrastructure and support for the following shortcut keys (any of them can be changed):
+____ When idle: Ctrl+` or Ctrl+~ to sign out (as with NCC)
+____ When busy: Ctrl+Enter to indicate we are done with the message
+____ When busy: Ctrl+<digit> to select an intent out of the list of intents. Moves down levels as intents are selected.
+____ When busy: Ctrl+Backspace to back out of an intent selection (back up to the parent level)
+- Added DONE button and caller-perceived latency progress bar in the bottom-right corner, just like in mock-ups
+____ Currently the progress bar is set to reach its max after 30 seconds
+____ Attempted to add it in the navigation bar but couldn't get it to look nice
+- Added this welcome message
+- Fixed some minor CSS alignment issues
+
+2014/01/23:
+- Initial version

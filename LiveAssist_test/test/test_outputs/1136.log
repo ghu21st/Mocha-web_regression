@@ -1,0 +1,16 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1136.log
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+wait 1 second for server
+
+Log in error message: Error 401 Authentication Failed: Bad credentials

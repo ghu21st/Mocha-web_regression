@@ -1,0 +1,35 @@
+<!-- <button id="signOutButton" type="button" class="btn btn-default navbar-btn navbar-right"
+        nina-shortcut-key="Control+End"  tooltip="Control+End" tooltip-placement="right"
+        ng-click="requestSignOut()" ng-disabled="signOutRequested">
+    {{signOutRequested? 'Sign out requested' : 'Sign out when done'}}
+</button>
+-->
+<form class="navbar-form navbar-right">
+    <div class="nav navbar-text progress navbar-progressbar">
+    	<progressbar max="maxLatencyInSeconds" value="latencyInSeconds"
+			ng-attr-type="{{latencyInSeconds < (maxLatencyInSeconds / 3) ? 'success' : latencyInSeconds < (2 * maxLatencyInSeconds / 3) ? 'warning' : 'danger'}}">
+		    {{latencyInSeconds > 0 ? latencyInSeconds + '' : ''}}
+		</progressbar>
+    </div>
+	<div class="checkbox navbar-btn">
+        <label class="navbar-link" for="signOutButton">                                                              
+	        <input id="signOutButton" type="checkbox"
+	        	   nina-shortcut-key="Control+End" tooltip="Control+End" tooltip-placement="bottom"
+	        	   ng-model="signOutRequested" ng-click="requestSignOut()">
+	       	</input>
+        	Sign out when done
+        </label>
+    </div>
+    <button id="doneButton" type="button" class="btn btn-primary"
+    		nina-shortcut-key="Control+Enter" tooltip="Control+Enter" tooltip-placement="bottom"
+    		ng-click="sendResponse()"
+            ng-disabled="!response.intent">
+    	DONE
+	</button>
+</form>
+
+<ul class="nav navbar-nav navbar-right">
+	<li class="active"><p class="navbar-text">{{mode | capitalize}} Mode</p></li>
+    <li class="divider">&nbsp;</li>
+    <li class="divider">&nbsp;</li>
+</ul>

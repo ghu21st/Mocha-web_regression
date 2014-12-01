@@ -1,0 +1,27 @@
+info: Test started and logging atc:\LiveAssist_test\test\WEB_SIMU\Log\2004.log
+info: 
+Web simulator operation passed! Output string:
+
+
+Debug: send get session request on /sessions/ids done
+
+
+Response: 200
+Body: ["session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10"]
+sessionID: session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10
+web page title: Agent login
+Agent login with user name: Gang
+Submit simulated Agent outcome result selection
+QA Web test Driver ---- 
+Debug: Test base URL http://10.3.41.59:8080/liveassist/agent/sessionScreen?sessionId=session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10
+Found the outcome selection agent web page with specific session id
+Customize (case by case) click/select one of agent outcome selections
+QA customized outcome result selection
+Found the correct agent web page selection element
+Submit simulated Agent outcome result selection
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10","varName":"Mycroft","varVersion":"1.0","ani":"sip:10.3.41.73-50001@10.3.41.73","dnis":"sip:4643@10.3.41.105","externalSessionID":"0a032969_00007a39_52deb406_003c_0001","canStreamAudio":true,"currentInteractionId":"session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10-0","pickList":["speak to an agent","change my tariff","technical support","operator"],"recognitionResult":null,"utterance":null,"audioStream":"http://mt-ray-vm06:8081/recording/session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10-0","shouldEscalate":false,"escalated":false,"outcome":"QA customized outcome result selection","sessionStats":{"stepTimes":{"CREATE":{"date":1390327122831},"START_SESSION":{"date":1390327122831},"START_INTERACTION":{"date":1390327123012},"ESCALATE":{"date":1390327123012},"SESSION_SET_OUTCOME":{"date":1390327161854}}},"viewName":null,"variableNames":null,"outcomeValues":null,"newInteractionIndex":1,"currentInteraction":{"sessionId":"session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10","id":"session:Mycroft:fce858ee-e7ad-41ba-8342-f5804f360e10-0","utteranceUri":null,"outcome":null,"topInterpretation":null,"topHypothesis":null}}

@@ -1,0 +1,116 @@
+<form id="manageTrainingSets" name="trainingSetForm" novalidate>
+<div class="modal-header">
+  <h4 class="modal-title" ng-hide="editedTrainingSet || confirmDeleteTrainingSet || upload">Manage training sets</h4>
+  <h4 class="modal-title" ng-show="editedTrainingSet &amp;&amp; !editedTrainingSetIsNew">{{readOnlyTrainingSet ? 'View' : 'Edit'}} training set</h4>
+  <h4 class="modal-title" ng-show="upload || editedTrainingSet &amp;&amp; editedTrainingSetIsNew">New training set</h4>
+  <h4 class="modal-title" ng-show="confirmDeleteTrainingSet">Confirm</h3>
+</div>
+
+<div class="modal-body">
+
+  <div class="form-group form-inline" ng-hide="upload != null">
+   <div style="text-align:center;"><div style="margin:auto;">
+    <h4 style="display:inline-block;">
+      <span ng-class="readOnlyTrainingSet ? 'label label-info' : 'label label-default'">{{trainingSets[selectedTrainingSetIdx].numUtts}}</span>
+    </h4>
+
+    <select ui-select2 ng-model="$parent.selectedTrainingSetIdx"
+            data-placeholder="Select training set..." ng-disabled="editedTrainingSet || confirmDeleteTrainingSet"
+            style="display:inline-block;min-width:175px;text-align:left">
+      <option value=""></option>
+      <option ng-repeat="trainingSet in trainingSets" value="{{$index}}">{{trainingSet.name}}</option>
+    </select>
+   </div></div>
+  </div>
+
+  <div class="form-group form-inline" ng-hide="editedTrainingSet || confirmDeleteTrainingSet || upload">
+   <div style="text-align:center;"><div style="margin:auto;">
+    <button id="manageTrainingSets_edit" class="btn btn-default"
+            tooltip="{{(readOnlyTrainingSet ? 'View' : 'Edit') + ' selected training set'}}" tooltip-placement="bottom"
+            ng-click="editTrainingSet()" ng-disabled="selectedTrainingSetIdx === null">
+      <span ng-class="readOnlyTrainingSet ? 'glyphicon glyphicon-info-sign' : 'glyphicon glyphicon-pencil'"></span>
+    </button>
+
+    <button id="manageTrainingSets_delete" class="btn btn-default"
+            tooltip="Delete selected training set" tooltip-placement="bottom"
+            ng-click="confirmDelete()" ng-disabled="selectedTrainingSetIdx === null || readOnlyTrainingSet">
+      <span class="glyphicon glyphicon-trash"></span>
+    </button>
+
+    <div id="manageTrainingSet_new" class="btn btn-default" 
+         tooltip="Create new training set" tooltip-placement="top"
+         ng-file-select="newTrainingSet($files[0])" onclick="this.value = null" onmouseover="this.value = null">
+      <span class="glyphicon glyphicon-folder-open"></span>
+    </div>
+   </div></div>
+  </div>
+
+  <div class="form-group" ng-show="editedTrainingSet"
+       ng-class="trainingSetForm.name.$dirty &amp;&amp; trainingSetForm.name.$invalid &amp;&amp; 'has-error'">
+    <label>Training set name</label>
+    <input id="editTrainingSet_name" name="name" class="form-control" type="text" ng-disabled="readOnlyTrainingSet"
+           ng-model="editedTrainingSet.name" maxlength="50" required
+           placeholder="unique name required"
+           ui-validate="{duplicate:'editedTrainingSet == null || readOnlyTrainingSet || !trainingSetNameExists(trainingSetForm.name.$viewValue)'}">
+    <span class="help-block" ng-show="trainingSetForm.name.$error.duplicate">Duplicate name</span>
+  </div>
+
+  <div class="form-group" ng-show="editedTrainingSet">
+    <label>Organization ID</label>
+    <select ui-select2 ng-model="editedTrainingSet.organizationId"
+            data-placeholder="Select..." ng-disabled="readOnlyTrainingSet"
+            style="width:270px;text-align:left" required>
+      <option value=""></option>
+      <option ng-repeat="orgId in organizationIds" value="{{orgId}}">{{orgId}}</option>
+    </select>
+  </div>
+
+  <div class="form-group" ng-show="editedTrainingSet">
+    <label>Application ID</label>
+    <select ui-select2 ng-model="editedTrainingSet.applicationId"
+            data-placeholder="Select..." ng-disabled="editedTrainingSet.organizationId == null || readOnlyTrainingSet"
+            style="width:270px;text-align:left" required>
+      <option value=""></option>
+      <option ng-repeat="appId in applicationIds" value="{{appId}}">{{appId}}</option>
+    </select>
+  </div>
+
+  <div class="form-group" ng-show="editedTrainingSet">
+    <label>Context</label>
+    <select ui-select2 ng-model="editedTrainingSet.context"
+            data-placeholder="Select..." ng-disabled="editedTrainingSet.applicationId == null || readOnlyTrainingSet"
+            style="width:270px;text-align:left" required>
+      <option value=""></option>
+      <option ng-repeat="context in contexts" value="{{context}}">{{context}}</option>
+    </select>
+  </div>
+
+  <div class="form-group" ng-show="confirmDeleteTrainingSet">
+      <p>Are you sure you want to delete training set &quot;{{trainingSets[selectedTrainingSetIdx].name}}&quot;?</p>
+      <p ng-show="selectedTrainingSetRefcount > 0">{{selectedTrainingSetRefcount}} referencing training
+        run{{selectedTrainingSetRefcount > 1 ? 's' : ''}} will also be deleted.</p>
+  </div>
+
+  <div class="form-group" ng-show="upload != null">
+      <h5>Uploading {{upload.filename}}:</h5>
+      <progressbar class="progress-striped active" value="upload.percent" max="100">{{upload.percent}}%</progressbar>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button id="manageTrainingSets_save" class="btn btn-primary" ng-disabled="trainingSetForm.$invalid"
+          ng-click="saveEdits()" ng-show="editedTrainingSet && !readOnlyTrainingSet">Save
+  </button>
+
+  <button id="manageTrainingSets_deleteOk" class="btn btn-primary"i
+          ng-click="deleteTrainingSet()" ng-show="confirmDeleteTrainingSet">OK
+  </button>
+
+  <button id="manageTrainingSets_cancel" class="btn btn-warning"
+          ng-click="trainingSetForm.$setPristine();cancel()" ng-show="editedTrainingSet || confirmDeleteTrainingSet">{{readOnlyTrainingSet ? 'Ok' : 'Cancel'}}
+  </button>
+
+  <button id="manageTrainingSets_dismiss" class="btn btn-primary"
+          ng-click="dismiss()" ng-hide="editedTrainingSet || confirmDeleteTrainingSet">Done</button>
+</div>
+</form>

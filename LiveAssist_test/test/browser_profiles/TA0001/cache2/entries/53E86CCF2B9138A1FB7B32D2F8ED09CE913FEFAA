@@ -1,0 +1,181 @@
+'use strict';
+
+angular.module('controllers').controller('AdminApplicationConfigurationsController', ['$scope', '$interval', '$modal',
+    'AdminApplicationConfigurationService',
+    function($scope, $interval, $modal, adminApplicationConfigurationService) {
+
+        $scope.applicationConfigurations = [];
+        $scope.applicationConfigurationsData = [];
+        $scope.applicationConfigurationSelection = [];
+
+        var reportErrorAndSignout = function(error) {
+            var errorMsg;
+            if ('message' in error) {
+                errorMsg = error.message;
+            } else {
+                errorMsg = JSON.stringify(error, null, 2);
+            }
+            alert('An error occurred contacting the Live Assist server, error: "' + errorMsg + '".\nPlease report this error to your administrator.');
+            $scope.signOut();
+        };
+
+        var updateApplicationConfigurations = function () {
+            $scope.applicationConfigurations = adminApplicationConfigurationService.all({}, function (value, responseHeaders) {
+                if (responseHeaders()["content-type"] === "application/json") {
+                    $scope.setApplicationConfigurations();
+                } else {
+                    reportErrorAndSignout("session ended");
+                }
+            });
+            $scope.applicationConfigurations.$promise.then(null, function(error) {
+                reportErrorAndSignout(error);
+            });
+        };
+
+        $scope.setApplicationConfigurations = function() {
+            $scope.applicationConfigurationsData = $scope.applicationConfigurations;
+        };
+
+        updateApplicationConfigurations();
+
+        $scope.refresh = function() {
+            updateApplicationConfigurations();
+        }
+
+        $scope.addApplicationConfiguration = function() {
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/admin/appconfig/applicationConfiguration.html',
+                controller: 'AdminApplicationConfigurationController',
+                resolve : {
+                    applicationConfiguration : function() {
+                        return new adminApplicationConfigurationService(
+                                    {name:"", dnisList:[], organizationIDApplicationIDList:[], contextList:[]});
+                    },
+                    edit : function() {
+                        return false;
+                    }
+                }
+            });
+            modalInstance.result.then(function (applicationConfiguration) {
+                applicationConfiguration.$save({},
+                    function() {
+                        $scope.applicationConfigurations.push(applicationConfiguration);
+                        $scope.setApplicationConfigurations();
+                    },
+                    function(error) {
+                        reportErrorAndSignout(error);
+                    });
+            });
+        };
+
+        $scope.editApplicationConfiguration = function() {
+            if ( $scope.applicationConfigurationSelection.length > 0  && $scope.applicationConfigurationSelection[0] ) {
+                var applicationConfiguration = $scope.applicationConfigurationSelection[0];
+                var modalInstance = $modal.open({
+                templateUrl: 'partials/admin/appconfig/applicationConfiguration.html',
+                controller: 'AdminApplicationConfigurationController',
+                resolve : {
+                    applicationConfiguration : function() {
+                        return applicationConfiguration;
+                    },
+                    edit : function() {
+                        return true;
+                    }
+                }
+                });
+                modalInstance.result.then(function (applicationConfiguration) {
+                    applicationConfiguration.$save({},
+                        function() {
+                            $scope.setApplicationConfigurations();
+                        },
+                        function(error) {
+                            reportErrorAndSignout(error);
+                        });
+                });
+            }
+        };
+
+        $scope.deleteApplicationConfiguration = function() {
+            if ( $scope.applicationConfigurationSelection.length > 0  && $scope.applicationConfigurationSelection[0] ) {
+
+                var name = $scope.applicationConfigurationSelection[0].name;
+                var id = $scope.applicationConfigurationSelection[0].id;
+                var modalInstance = $modal.open({
+                    templateUrl: 'partials/admin/modal.html',
+                    controller: 'AdminModalController',
+                    resolve : {
+                        header : function() {
+                            return "Delete application configuration"
+                        },
+                        body : function() {
+                            return "Do you want to delete application configuration with name \"" + name + "\"?";
+                        }
+                    }
+                });
+                modalInstance.result.then ( function() {
+                    adminApplicationConfigurationService.delete({id:id});
+                    angular.forEach($scope.applicationConfigurations, function(data, index){
+                        if(data.id === $scope.applicationConfigurationSelection[0].id){
+                            $scope.applicationConfigurations.splice(index, 1);
+                            if ( index > 0 ) {
+                                $scope.applicationConfigurationsGridOptions.selectItem(index-1, true);
+                            }
+                        }
+                    });
+                });
+            }
+        };
+
+        $scope.$on('ngGridEventData', function() {
+                var applicationConfigurationSelected = false;
+                if ( $scope.applicationConfigurationSelection.length > 0 ) {
+                    angular.forEach($scope.applicationConfigurations, function(data, index){
+                        if(data.id === $scope.applicationConfigurationSelection[0].id){
+                            $scope.applicationConfigurationsGridOptions.selectItem(index, true);
+                            applicationConfigurationSelected = true;
+                        }
+                    });
+                }
+                if ( !applicationConfigurationSelected && $scope.applicationConfigurations.length > 0 ) {
+                    $scope.applicationConfigurationsGridOptions.selectItem(0, true);
+                }
+            }
+        );
+
+        var columnDefs = [
+            { field: "name", displayName: "Name", resizable: true },
+            { field: "organizationIDApplicationIDList", displayName: "Applications", resizable: true, cellFilter:"propertiesColon:[\"organizationID\", \"applicationID\"]|arrayComma"},
+            { field: "dnisList", displayName: "DNIS", resizable: true, cellFilter: "arrayComma"}
+
+        ];
+
+        $scope.applicationConfigurationsGridOptions = {
+            data: 'applicationConfigurationsData',
+            multiSelect: false,
+            enablePaging: true,
+            pagingOptions: {
+                pageSizes: [5, 10],
+                pageSize: 5,
+                currentPage: 1
+            },
+            showFilter:true,
+            columnDefs: columnDefs,
+            enableColumnResize: true,
+            selectedItems: $scope.applicationConfigurationSelection,
+            afterSelectionChange: function(rowItem, event) {
+                if ( $scope.applicationConfigurationSelection.length > 0  && $scope.applicationConfigurationSelection[0] &&
+                    $scope.selection.applicationConfiguration.id !== $scope.applicationConfigurationSelection[0].id ) {
+                        $scope.selection.applicationConfiguration = $scope.applicationConfigurationSelection[0];
+                }
+            },
+            plugins: [ngGridDoubleClick],
+            dblClickFn: $scope.editApplicationConfiguration
+        };
+    }
+]);
+-:•‚÷              :WßT+Vó   c:https://10.3.41.56:8443/liveassist/app/js/controllers/admin/appconfig/applicationConfigurations.js security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojKOpF0qJaNXyu+n+CAAQAAgAAAAAAAAAAAAAAACw4N6+LhUposNgK7YiYWzI/H82DxalM0aJQdnbKfH40ZgoyJpFcT/u7IImFpjLfBYkdIAm5ukoNvr5rOjDjMZEAAAACAAADlTCCA5EwggJ5oAMCAQICBEOoiQYwDQYJKoZIhvcNAQELBQAweTELMAkGA1UEBhMCQ0ExDzANBgNVBAgTBlF1ZWJlYzERMA8GA1UEBxMITW9udHJlYWwxDzANBgNVBAoTBk51YW5jZTETMBEGA1UECxMKRW50ZXJwcmlzZTEgMB4GA1UEAxMXbXRsLWRhNTUtdm02Lm51YW5jZS5jb20wHhcNMTQwNTA1MTc0MDI2WhcNMTQwODAzMTc0MDI2WjB5MQswCQYDVQQGEwJDQTEPMA0GA1UECBMGUXVlYmVjMREwDwYDVQQHEwhNb250cmVhbDEPMA0GA1UEChMGTnVhbmNlMRMwEQYDVQQLEwpFbnRlcnByaXNlMSAwHgYDVQQDExdtdGwtZGE1NS12bTYubnVhbmNlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKU28grNBeGqm5O8TLxtJ9hC0KxW353sgtEfpgtHfwLmQfHivL03532iGtLyBpxXn0RYeffnqcDuIDbmmDL2hNxHyuXU3atC227RV65T4UPsw12sEYlGagoITnEJp1lLDfsb4Wzk6AC3r+gcti7wVadTJc37L2VQXIoKnmyV9f1j9dQRBbLi24054DucIVqCsaNJyHJSoVN6zIV6VDZSo8gE0SGoWfX6XJ49B32/bxcIVcY9kXPdvOjs2srcs2MP0uNIvGFMk8ViMNxpjExZ6CN5ClAeBTn3QJayqbzzSlhI1gt+6i3/Z+yM+9qTO/2C4zWuXcBGjji5ewQ9K3U2jpMCAwEAAaMhMB8wHQYDVR0OBBYEFPwPrJmDLh5GVy8uqXQFVrsg6eZKMA0GCSqGSIb3DQEBCwUAA4IBAQCXQWmjA1De8WQ3mds4C9gqx2ZejCY9B+zulyG0TtcwR2WvY87SGtzw5xMMVAni8KIGzjwTwp4NXUUWPtXXCGljBZbWEsfV64bxx1kT9i6ufo7mUMLzjmYS9OxElZDXpFCGBBRyym7PDlQSPsChjaQvSz3ww1ZdrCNb2LmcH9X9uR9XA5IkOsCQ8xwtsRpSnCqrIeBSSH19XBwcALXI3nzQdZRXQGxSQKgThpt07W7klQSyvUbowL1kwLnXUdCpgLl/ydXQfLbWwik09NBAZLdPeDtAsMzZRaq6tFjwcn101v+/ZfS84UB+4dcBxv2hL1x40kSiBon+Ey2NqBSdosqqAAAAgAAAAIAAAAAgVExTX0RIRV9SU0FfV0lUSF9BRVNfMTI4X0NCQ19TSEEBAQEBAQ== request-method GET response-head HTTP/1.1 200 OK
+Content-Type: application/javascript
+Last-Modified: Tue, 30 Sep 2014 10:07:05 GMT
+Accept-Ranges: bytes
+Content-Length: 8012
+ uncompressed-len 0   L

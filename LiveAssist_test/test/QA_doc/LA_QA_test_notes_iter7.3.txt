@@ -1,0 +1,451 @@
+- Unique button IDs from AngularJS gui:
+1. closeButton
+2. agentSignInButton
+3. signOutButton
+4. doneButton
+
+- IVR api call example:
+ani=sip:5145551234@10.3.53.192:5064&dnis=sip:4640@mtl-da53&externalSessionID=0a0325e7_000011c2_5307b580_00d4_0001&sessionID=session:Nuance-IvrApiCallSteering:2bdf3fb6-9815-4fd5-bc6e-d3e44d9b7020&configurationName=mainmenu&completionCause=no-match
+
+- REST Admin gui api:
+http://10.3.41.59:8080/liveassist/rest/admin/agents/loggedIn
+http://10.3.41.59:8080/liveassist/rest/admin/agents/x/logout
+
+ http://<liveassist_server>:8080/liveassist/status/isAlive
+
+- Restart Management Station to have it load the service and message catalog files
+/etc/init.d/initScriptmserver.sh restart
+
+
+- NSS properties for IVR call steering app and MRCP call steering app:
+
+4641, MRCP app:
+
+	server.liveassist.address 	http://10.3.41.59:8080/liveassist/rest/mrcpapp
+	server.liveassist.audioserver.address 	localhost:8081 
+
+4640, IVR call steering app:
+
+	server.liveassist.address 		<empty>
+	server.liveassist.audioserver.address 	<empty>
+
+
+------------------------------------------------------------
+Installation:
+
+- Live Assist server :
+
+java default location: 
+	/usr/local/jdk1.7.0_25-i586
+
+install build: 
+	rpm -U --replacefiles --replacepkgs liveassist-1.0.0*.rpm
+
+drop db: 
+	mysql -u root -e "DROP DATABASE liveassist;"
+	mysql -u root -e "DROP USER 'liveassist'@'localhost';"
+
+
+create db:
+	mysql < /usr/local/Nuance/liveassist/liveassist-server/bin/create_db.sql
+
+	- Option 1: Just for local DB use
+
+	mysql -u root -e "CREATE USER 'liveassist'@'localhost' IDENTIFIED BY 'liveassist';"
+        mysql -u root -e "GRANT ALL PRIVILEGES ON liveassist.* TO 'liveassist'@'localhost' IDENTIFIED BY 'liveassist';"
+        mysql -u root -e "FLUSH PRIVILEGES;"
+
+	- Option 2: enable other machine to change Live Assist server DB for testing
+	mysql -u root -e "CREATE USER 'liveassist'@'localhost' IDENTIFIED BY 'liveassist';"
+	mysql -u root -e "GRANT ALL PRIVILEGES ON liveassist.* TO 'liveassist'@'%' IDENTIFIED BY 'liveassist';"
+	mysql -u root -e "FLUSH PRIVILEGES;"
+
+
+------------
+Other ref.:
+	check db:
+		mysql -ss -e "select version from general;" liveassist
+
+	update db in case installer script could not update DB successfully [note: igore the error return still works!] :
+		 mysql < /usr/local/Nuance/liveassist/liveassist-server/bin/db/upgrade_db_1.0.3.sql
+		
+
+
+For Testing on another cloned DB 'liveassist_bak' after drop origninal DB 'liveassist':
+
+	 mysql -u root -e "CREATE USER 'liveassist'@'localhost' IDENTIFIED BY 'liveassist';"
+	 mysql -u root -e "GRANT ALL PRIVILEGES ON liveassist_bak.* TO 'liveassist'@'%' IDENTIFIED BY 'liveassist';"
+	 mysql -u root -e "FLUSH PRIVILEGES;"
+
+
+
+2. If your Live Assist uses SSO, you need to do the following:
+
+	Stop Live Assist
+
+	Delete the old certificate:
+$LIVEASSIST_JAVA_HOME/bin/keytool -delete -keystore $LIVEASSIST_JAVA_HOME/jre/lib/security/cacerts -alias ncpNuance -storepass changeit
+
+	Add the new one (assuming the new NuanceCA.cer is in $LIVEASSIST_HOME/liveassist-server/config):
+$LIVEASSIST_JAVA_HOME/bin/keytool -import -keystore $LIVEASSIST_JAVA_HOME/jre/lib/security/cacerts -file $LIVEASSIST_HOME/liveassist-server/config/NuanceCA.cer -alias ncpNuance -storepass changeit
+
+
+-----------------------
+- NSS patch
+
+1) Download NSS patch to /tmp
+	cd /tmp
+	wget http://mtl-repo:8081/artifactory/simple/libs-snapshot-local/com/nuance/liveassist/2.0.0/NSS_server-2.0.0-201409181701.tgz
+
+	wget http://mtl-repo:8081/artifactory/simple/libs-snapshot-local/com/nuance/liveassist/2.1.0/...
+
+2) Optionally backup NSS
+	cd /usr/local/Nuance/Speech_Server
+	cp -rf server server-preLiveAssist
+ 
+3) Stop NSS
+ 
+4) Install NSS patch
+	cd /usr/local/Nuance/Speech_Server
+	tar -xzvf /tmp/NSS_server-2.0.0-xxxxx.tgz
+ 
+5) Set Live Assist related properties in NSS configuration
+	The example below assumes that Live Assist Server is running on host: mtl-da55-vm6 and that Live Assist Audio Server is 	running on the same host as NSS (thus localhost in the parameter).
+	
+	vim $NSSSVRSDK/config/NSSserver.cfg
+	...
+	server.liveassist.address              VXIString  http://10.3.41.59:8083/liveassist/rest/mrcpapp
+	server.liveassist.audioserver.address  VXIString  localhost:8081
+
+--------------------
+
+NVP user custom role file locatiOn: /var/local/Nuance/system/customRoles
+ 
+For MRCP sip call test (NSS parameter): 
+	server.liveassist.address  http://10.3.41.59:8083/liveassist/rest/mrcpapp
+
+For IVR call steering app test (NSS parameter): 
+	server.liveassist.address  http://10.3.41.59:8083/liveassist/rest/app 
+
+
+--------------------------
+- Message catalog on NVP manage station
+
+To Management Station server:
+/usr/local/Nuance/Voice_Platform/mstation/mserver/webapps/mserver/config/services
+
+•	Copy Live Assist service and Live Assist Audio Relay service message catalog files to the Management Station host
+
+From Live Assist server:
+$LIVEASSIST_HOME/liveassist-server/config/mstation/com.nuance.liveassist.server.xml
+$LIVEASSIST_HOME/liveassist-audioserver/config/mstation/com.nuance.liveassist.audioserver.xml
+To Management Station server:
+/usr/local/Nuance/Voice_Platform/mstation/mserver/webapps/mserver/data/message-catalogs/1.0
+
+•	Copy the NSS message catalog files to the Management Station host
+
+From NVP server with NSS patch:
+$NSSSVRSDK/config/NSS.xml
+
+To Management Station server:
+/usr/local/Nuance/Voice_Platform/mstation/mserver/webapps/mserver/data/message-catalogs/1.0
+
+--------------------------------
+Restart NVP for license change/update:
+
+service nuance-licmgr restart
+service nuance-wd stop
+service nuance-wd start
+
+or just simply reboot the NVP server.
+
+-------------------------------------------------------------
+
+- Manually starting Live Assist
+su -s /bin/bash nuance --session-command liveassist
+
+- Manually starting Live Assist Audio Relay
+su -s /bin/bash nuance --session-command liveassistaudio
+
+- Run backgroud:
+Screen (quit: CTRL+A, then D)
+
+	or
+
+nohup <cmd> > /dev/null 2>&1 &
+-----------------------------
+-Verify the database has the updated application
+
+mysql liveassist
+show tables;
+
+mysql -u liveassist -pliveassist liveassist -e 'select * from application';
+mysql -u liveassist -pliveassist liveassist -e 'select * from applicationContext';
+mysql -u liveassist -pliveassist liveassist -e 'select * from dnis';
+
+
+--------------------------------------
+
+classifier:
+	AlwaysEscalatingEscalationClassifier
+	DynamicEscalationClassifier
+	NeverEscalatingEscalationClassifier  
+	ConfidenceBasedEscalationClassifier
+
+- List all escalation classifier instances:
+	GET http://localhost:8080/liveassist/rest/escalationClassifiers  
+
+- Get details about particular escalationClassifier
+	GET http://localhost:8080/liveassist/rest/escalationClassifiers/NeverEscalatingEscalationClassifier  
+
+----------------------------
+the call logs can exposed via an Apache httpd virtual host by installing the $LIVEASSIST_HOME/liveassist-server/config/httpd-liveassist.conf file and starting the httpd service:
+
+#yum install httpd 
+
+# cp $LIVEASSIST_HOME/liveassist-server/config/httpd-liveassist.conf /etc/httpd/conf.d/liveassist.conf
+# service httpd restart
+
+------------------------------
+- generate new cert file for new live assist host
+$LIVEASSIST_JAVA_HOME/bin/keytool -keystore ssl.ks -alias jetty -genkey -keyalg RSA
+
+$LIVEASSIST_JAVA_HOME/bin/keytool -import -keystore $LIVEASSIST_JAVA_HOME/jre/lib/security/cacerts -file $LIVEASSIST_HOME/liveassist-server/config/NuanceCA.cer -alias ncpNuance -storepass changeit
+
+- NCP server: 
+https://mtl-mrcp16-vm04.nuance.com:8443/np/welcome/index.jsp
+admin login: laadmin or laadmin2
+
+- Live Assist server (sip call test):
+https://10.3.41.59:8446/liveassist/app
+
+For live assist server:
+ncp.username=laadmin
+#ncp.password=8fb15b1d71c43e248dd585cee8711273
+ncp.password=de2f57074bb96067b1d4e32a1422e691
+
+
+- Valid QA test user:
+TA0000, changeit4	
+TA0001, changeit4
+TA0002, changeit4 
+TA0003, changeit4 
+TA0004, changeit4
+
+----------------------------------
+Builds:
+
+LiveAssist-1.0.0-201406191808
+LiveAssist-1.0.0-201407291547
+------------------------
+# beginning in-database (tested with mysql) user storage collection
+authentication.userstore=jdbcUserDetailsService
+authentication.passwordencoder=bcrypt
+ds.url=jdbc:mysql://localhost:3306/liveassist
+ds.username=liveassist
+ds.password=liveassist
+# end in-database user storage collection
+----------------
+
+Q: from mrcp api vbs log, no emma:duration, so no utterance response data... (issue?)
+20,0a032969_000036d8_53a1dd1d_0003_0001,LOG,WARN,66453504,2014/06/18 14:40:40.314,mtl-bl1-12-vm02,Voice Browser 16,add3d07f-0a03-2969-00cf-710e95d17c21,103,TRACING,PlayAndRecognizeManager:handleRecognitionComplete,31,Invalid value for emma:duration
+
+-------
+emma from ivr app:
+
+- low conf, escalated
+Example 1: 
+<?xml version='1.0'?><emma:emma version="1.0" xmlns:emma="http://www.w3.org/TR/2007/CR-emma-20071211" xmlns:nuance="http://nr10.nuance.com/emma"><emma:grammar id="grammar_1" ref="session:http://10.3.41.59:8080/liveassist/data/vxmldemo/ivrapi/callsteering/mainmenu.grxml -1 -1 10000"/><emma:interpretation id="interp_1" emma:uninterpreted="true" emma:confidence="0.18" emma:grammar-ref="grammar_1" emma:tokens="book" emma:duration="1340" nuance:eos-silence="1260"/></emma:emma>
+
+Example 2:
+<?xml version='1.0'?><emma:emma version="1.0" xmlns:emma="http://www.w3.org/TR/2007/CR-emma-20071211" xmlns:nuance="http://nr10.nuance.com/emma"><emma:grammar id="grammar_1" ref="session:http://10.3.41.59:8080/liveassist/data/vxmldemo/ivrapi/callsteering/mainmenu.grxml -1 -1 10000"/><emma:interpretation id="interp_1" emma:confidence="0.3" emma:grammar-ref="grammar_1" emma:tokens="WAIVE FEE REQUEST" emma:duration="1220" emma:mode="voice" nuance:eos-silence="1340"><INTENT 
+conf="0.3">WAIVE_FEE_REQUEST</INTENT><SWI_literal>WAIVE FEE REQUEST</SWI_literal><SWI_meaning>{INTENT:WAIVE_FEE_REQUEST}</SWI_meaning></emma:interpretation></emma:emma>&utterance=http://mtl-bl1-12-vm02:90/Nuance/callLogs/IvrApiCallSteering/2014/06June/18/15/NUAN-09-13-mtl-bl1-12-vm02-0a032969_00002680_53a1e3d9_0007_0001-utt001-SAVEWAVEFORM.wav";
+
+Example 3: 
+<?xml version='1.0'?><emma:emma version="1.0" xmlns:emma="http://www.w3.org/TR/2007/CR-emma-20071211" xmlns:nuance="http://nr10.nuance.com/emma"><emma:grammar id="grammar_1" ref="session:http://10.3.41.59:8080/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"/><emma:one-of id="nbest" emma:disjunction-type="recognition" emma:duration="2060" emma:mode="voice" nuance:eos-silence="860"><emma:interpretation id="interp_1" emma:uninterpreted="true" emma:confidence="0.4" emma:grammar-ref="grammar_1" emma:tokens="book from heathrow"/><emma:interpretation id="interp_2" emma:uninterpreted="true" emma:confidence="0.07" emma:grammar-ref="grammar_1" emma:tokens="wave fee"/></emma:one-of></emma:emma>
+(completionCause=no-match, confidence=0.4, agent_pending_completion_cause=SUCCESS, agent_pending_recognition_result=AGENT_PENDING)
+
+- high conf, no escalation
+Example:
+completionCause=success&recognitionResult=
+
+<?xml version='1.0'?><emma:emma version="1.0" xmlns:emma="http://www.w3.org/TR/2007/CR-emma-20071211" xmlns:nuance="http://nr10.nuance.com/emma"><emma:grammar id="grammar_1" ref="session:http://10.3.41.59:8080/liveassist/data/vxmldemo/ivrapi/callsteering/mainmenu.grxml -1 -1 10000"/><emma:interpretation id="interp_1" emma:confidence="0.9" emma:grammar-ref="grammar_1" emma:tokens="OPERATOR" emma:duration="1220" emma:mode="voice" nuance:eos-silence="1340"><INTENT 
+conf="0.9">OPERATOR</INTENT><SWI_literal>OPERATOR</SWI_literal><SWI_meaning>{INTENT:OPERATOR}</SWI_meaning></emma:interpretation></emma:emma>
+
+
+&utterance=http://mtl-bl1-12-vm02:90/Nuance/callLogs/IvrApiCallSteering/2014/06June/18/15/NUAN-09-13-mtl-bl1-12-vm02-0a032969_00002680_53a1e3d9_0007_0001-utt001-SAVEWAVEFORM.wav
+
+- No match
+Example:
+completionCause=no-match&recognitionResult=
+<?xml version='1.0'?><emma:emma version="1.0" xmlns:emma="http://www.w3.org/TR/2007/CR-emma-20071211" xmlns:nuance="http://nr10.nuance.com/emma"><emma:grammar id="grammar_1" ref="session:http://mt-jdebroin:8080/liveassist/data/vxmldemo/ivrapi/callsteering/mainmenu.grxml -1 -1 10000"/><emma:interpretation id="interp_1" emma:uninterpreted="true" emma:confidence="0.3" emma:grammar-ref="grammar_1" emma:tokens="technical support" emma:duration="7100" nuance:eos-silence="1140"/></emma:emma>&utterance=http://mtl-da53:90/Nuance/callLogs/Test1/2014/02February/21/15/NUAN-22-24-mtl-da53-0a0325e7_000011c2_5307b580_00d4_0001-utt001-SAVEWAVEFORM.wav
+
+--------------
+The intents from Live Assist server (sample app):
+
+BOOK_FLIGHT
+CHECK_BALANCE
+EXPLAIN_BALANCE
+EXPLAIN_FEE_REQUEST
+OPERATOR
+UPDATE_CONTACT_INFORMATION
+WAIVE_FEE_REQUEST
+
+valid for MRCP api call steering app grammars:
+
+Operator.grxml - DTMF - '0'
+
+mainmenu.grxml:
+                    <item> wave a fee </item>
+                    <item> fee explanation </item>
+                    <item> check my balance </item>
+                    <item> balance explanation </item>
+                    <item> book a flight </item>
+
+--------------------------
+api+gui Load test:
+
+a) Load test with protractor/selenium (3 + 1 machines setup):
+
+	- Test folders:
+QA_LOAD3 ivr: one emma, gui: one intent
+QA_LOAD4 ivr: multiple emma (high conf, low conf, no match), gui: multiple intents (LA conf. threshold default = 0.5)
+QA_LOAD5 ivr: multiple emma (hig conf, low conf, no match), gui: multiple intents (LA conf. threshold customized to 0.8)
+
+	- script to parse test result (run from QA load test machine, win2k3):
+	perl parseAPITestLog.pl <result_log_folder> <iter#> > <api_result_report_file>
+	perl parseGUITestLog.pl <result_log_folder> <iter#> > <gui_result_report_file>
+
+	- script to parse call log (run from LA server, CentOS6, setup 90 port to support remote check, refer to DEV doc):
+	calllog-stats.py -r -p -i  http://<LA_server>/Nuance/callLogs
+		ex.: calllog-stats.py -r -p -i  http://10.3.41.54:90/Nuance/callLogs
+	
+	- zip call logs:
+		zip -r callLogs_xxxxx callLogs/ 
+
+
+b) add LA users to 100 for high agent channel density load testing 
+	mysql liveassist
+	mysql> source /usr/local/Nuance/add_user_to_100.sql
+
+-------------------------
+Linux: 
+
+- customize root start/stop under 
+# vi /root/.bash_profile
+
+--------------------------
+60481 Enterprise R&D Over
+--------------------------
+
+For MRCP api demo app: 
+
+Accetable conditional input (grammar):
+
+'Waive fee'
+'fee explanation'
+'check my balance'
+'balance explanation'
+'book a flight'
+
+
+
+conditional test dynamic escalation classifier setup:
+
+# applicationContextId, name, value
+'1020', 'immediate_percentage', '0'
+'1020', 'no_input_percentage', '100'
+'1020', 'low_confidence_percentage', '100'
+'1020', 'minimum_confidence_threshold', '0.3'
+'1020', 'middle_confidence_percentage', '100'
+'1020', 'maximum_confidence_threshold', '0.6'
+'1020', 'high_confidence_percentage', '0'
+'1020', 'agent_pending_completion_cause', 'success'
+'1020', 'agent_pending_recognition_result', 'AGENT_PENDING'
+
+
+Always escalation dynamic escalation classifier setup:
+
+# applicationContextId, name, value
+'1010', 'middle_confidence_percentage', '0'
+'1010', 'agent_pending_completion_cause', 'success'
+'1010', 'agent_pending_recognition_result', 'AGENT_PENDING'
+'1010', 'high_confidence_percentage', '0'
+'1010', 'immediate_percentage', '100'
+'1010', 'low_confidence_percentage', '0'
+'1010', 'maximum_confidence_threshold', '0.6'
+'1010', 'minimum_confidence_threshold', '0.3'
+'1010', 'no_input_percentage', '0'
+-----------------------------------------
+Picklist:
+
+default in DB application context for mrcp call steering app:
+	nuance/mrcpapicallsteering/intents.json
+
+default in DB application context for ivr call steering app:
+	nuance/ivrapicallsteering/intents.json
+
+QA customized and put as URL:
+	http://10.3.41.59/intents/mrcp_callsteering_qa/intents.json
+
+DEV customized and put as URL:
+	http://mtl-mrcp16-vm02:8090/Sprint/en-US/picklist/intents.json
+
+-----------------------
+
+
+LiveAssist-2.0.0-201409032117
+LiveAssist-2.0.0-201409092255
+
+LiveAssist-2.1.0-201411062349
+LiveAssist-2.1.0-201411082001
+
+LiveAssist-2.1.0-201411101746
+
+LiveAssist-2.1.0-201411241100
+
+LiveAssist-2.1.0-201411251943
+
+LiveAssist-2.1.0-201411261100
+
+LiveAssist-2.1.0-201411270107
+
+
+mysql> select * from applicationContext;
++------+----------------------------+-----------------+-------------------------------------------------------------+--------------------------------------+
+| id   | applicationConfigurationId | name            | pickListId                                                  | escalationClassifierId               |
++------+----------------------------+-----------------+-------------------------------------------------------------+--------------------------------------+
+|    1 |                          2 | mainmenu        | nuance/mrcpapicallsteering/intents.json                     | DynamicEscalationClassifier          |
+|    2 |                          3 | mainmenu        | http://10.3.41.59/intents/mrcp_callsteering_qa/intents.json | DynamicEscalationClassifier          |
+|    3 |                          4 | mainmenu        | nuance/ivrapicallsteering/intents.json                      | ConfidenceBasedEscalationClassifier  |
+|    4 |                          5 | mainmenu        | nuance/webapicallsteering/intents.json                      | AlwaysEscalatingEscalationClassifier |
+|    5 |                          4 | othermenu       | nuance/ivrapicallsteering/intents.json                      | ConfidenceBasedEscalationClassifier  |
+| 1010 |                       1000 | mainmenu        | http://10.3.41.59/intents/mrcp_callsteering_qa/intents.json | DynamicEscalationClassifier          |
+| 1020 |                       1000 | conditionalmenu | http://10.3.41.59/intents/mrcp_callsteering_qa/intents.json | DynamicEscalationClassifier          |
+
+--------------
+mysql liveassist;
+
+mysql> show tables;
++--------------------------+
+| Tables_in_liveassist     |
++--------------------------+
+| agentSkills              |
+| application              |
+| applicationConfiguration |:
+| applicationContext       |
+| applicationContextParams |
+| applicationContextSkills |
+| assistGrammar            |
+| authorities         
+| commandGrammar           |
+| dnis                     |
+| general                  |
+| skills                   |
+| testsetConfigurations    |
+| testsetUtts              |
+| testsetUttsCompleted     |
+| trainingRuns             |
+| users                    |
++--------------------------+
+

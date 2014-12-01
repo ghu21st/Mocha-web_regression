@@ -1,0 +1,52 @@
+<form name="assignTrainingForm" novalidate>
+
+  <div class="modal-header"><h4 class="modal-title">Assign training set</h4></div>
+
+  <div class="modal-body">
+
+    <div class="control-group form-inline">
+      <div style="display:inline-block;font-size:130%;"><span class="label label-default">{{trainingSets[selectedTrainingSetIdx].numUtts}}</span></div>
+
+      <select style="display:inline-block;min-width:175px;" ui-select2 ng-model="$parent.selectedTrainingSetIdx"
+              data-placeholder="Select training set...">
+        <option value=""></option>
+        <option ng-repeat="trainingSet in trainingSets" value="{{$index}}">{{trainingSet.name}}</option>
+      </select>
+
+      <div style="display:inline-block;font-size:150%;vertical-align:-10%" ng-show="selectedTrainingSetIdx &amp;&amp; trainingRun.target">&#10145;</div>
+
+      <select style="display:inline-block;min-width:120px;" ui-select2 ng-model="$parent.trainingRun.target"
+              data-placeholder="Send utterances to...">
+        <option value=""></option>
+        <option value="*">Any available agent</option>
+        <option ng-repeat="username in usernames" value="{{username}}">{{username}}</option>
+      </select>
+    </div>
+
+    <div class="row rowgap12"/>
+
+    <div class="control-group">
+      <textarea id="startTrainingRun_comment" name="comment" rows="5" class="form-control input-md"
+                ng-model="trainingRun.comment" ng-maxlength="250" ng-trim="true"
+                placeholder="Notes about this training run...">
+      </textarea>
+      <span class="help-block" ng-show="assignTrainingForm.comment.$valid">{{250 - trainingRun.comment.length}} characters remaining</span>
+      <span class="help-block" ng-show="assignTrainingForm.comment.$maxlength">250 character limit exceeded</span>
+      </div>
+
+    <div class="control-group">
+      <label id="startTrainingRun_shuffleLabel" class="checkbox-inline"
+             ng-click="trainingRun.shuffle = !trainingRun.shuffle">
+        <input id="startTrainingRun_shuffle" ng-checked="trainingRun.shuffle" type="checkbox">
+        Shuffle
+      </label>
+    </div>
+  
+  </div>
+
+  <div class="modal-footer">
+    <button id="startTrainingRun_ok" class="btn btn-primary" ng-disabled="!(selectedTrainingSetIdx &amp;&amp; trainingRun.target)" ng-click="ok()">OK</button>
+    <button id="startTrainingRun_cancel" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+
+</form>

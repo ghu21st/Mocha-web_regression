@@ -1,0 +1,29 @@
+info: Test started and logging atc:\LiveAssist_test\test\WEB_SIMU\Log\2001.log
+info: 
+Web simulator failed! Error:
+TypeError: Cannot read property 'statusCode' of undefined
+
+Output string
+
+
+Debug: send get session request on /sessions/ids done
+
+
+Response: 200
+Body: ["session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7"]
+sessionID: session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7
+web page title: Agent login
+Agent login with user name: Gang
+Submit simulated Agent outcome result selection
+QA Web test Driver ---- 
+Debug: Test base URL http://10.3.41.59:8080/liveassist/agent/sessionScreen?sessionId=session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7
+Found the outcome selection agent web page with specific session id
+Customize (case by case) click/select one of agent outcome selections
+Found the correct agent web page selection element
+Submit simulated Agent outcome result selection
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7","varName":"Mycroft","varVersion":"1.0","ani":"sip:10.3.41.73-50001@10.3.41.73","dnis":"sip:4643@10.3.41.105","externalSessionID":"0a032969_00007a39_52deb2d6_0039_0001","canStreamAudio":true,"currentInteractionId":"session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7-0","pickList":["speak to an agent","change my tariff","technical support","operator"],"recognitionResult":null,"utterance":null,"audioStream":"http://mt-ray-vm06:8081/recording/session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7-0","shouldEscalate":false,"escalated":false,"outcome":"change my tariff","sessionStats":{"stepTimes":{"CREATE":{"date":1390326818762},"START_SESSION":{"date":1390326818762},"START_INTERACTION":{"date":1390326818944},"ESCALATE":{"date":1390326818944},"SESSION_SET_OUTCOME":{"date":1390326858631}}},"viewName":null,"variableNames":null,"outcomeValues":null,"newInteractionIndex":1,"currentInteraction":{"sessionId":"session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7","id":"session:Mycroft:663fdd14-89e8-4c7b-8144-a7925aae1ed7-0","utteranceUri":null,"outcome":null,"topInterpretation":null,"topHypothesis":null}}

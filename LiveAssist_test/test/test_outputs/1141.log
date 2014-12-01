@@ -1,0 +1,116 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1141.log
+info: 
+wait 1 second for server
+
+info: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+info: 
+Test web page title: Nuance Live Assist
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Set user login name variable
+info: 
+Set password variable
+info: 
+Sign in button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:9af67cd6-5f41-4e9c-9dc2-cde1711ac3b4
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Current intent selection: Waive fee
+info: 
+Selected variable id: BILLING_MONTH
+Selected variable name: Billing month
+info: 
+Selected variable id: LATE_PAYMENT_REASON
+Selected variable name: Reason for late payment
+info: 
+Tested button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Selected intent group name: WAIVE_FEE_REQUEST
+info: 
+Selected intent id: BILLING_MONTH
+Selected intent variable value: 2014-01
+info: 
+Tested button clicked
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:9af67cd6-5f41-4e9c-9dc2-cde1711ac3b4
+
+info: 
+wait 1 second for server
+
+info: for testing
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+wait 1 second for server
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:9af67cd6-5f41-4e9c-9dc2-cde1711ac3b4
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Current intent selection: Waive fee
+Selected variable id: BILLING_MONTH
+Selected variable name: Billing month
+Selected variable id: LATE_PAYMENT_REASON
+Selected variable name: Reason for late payment
+Tested button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Selected intent group name: WAIVE_FEE_REQUEST
+Selected intent id: BILLING_MONTH
+Selected intent variable value: 2014-01
+Tested button clicked
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:9af67cd6-5f41-4e9c-9dc2-cde1711ac3b4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:9af67cd6-5f41-4e9c-9dc2-cde1711ac3b4
+
+info: 
+Make sure agent logout before exit!
+https://10.3.41.56:8446/liveassist/app/logout
+
+

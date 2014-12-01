@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<grammar xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="Root" version="1.0" mode="voice">
+    <rule id="Root" scope="public">
+        <one-of>
+            <item>
+                <one-of>
+                    <item> i would like to wave a fee </item>
+                    <item> please wave a fee </item>
+                    <item> wave a fee </item>
+                    <item> wave fee request </item>
+                    <item> wave fee </item>
+                </one-of>
+                <tag>INTENT="WAIVE_FEE_REQUEST"</tag>
+            </item>
+            <item>
+                <one-of>
+                    <item> i would like a fee explanation </item>
+                    <item> fee explanation </item>
+                </one-of>
+                <tag>INTENT="EXPLAIN_FEE_REQUEST"</tag>
+            </item>
+            <item>
+                <one-of>
+                    <item> i would like to check my balance </item>
+                    <item> check my balance </item>
+                    <item> balance check </item>
+                </one-of>
+                <tag>INTENT="CHECK_BALANCE"</tag>
+            </item>
+            <item>
+                <one-of>
+                    <item> i would like a balance explanation </item>
+                    <item> balance explanation </item>
+                </one-of>
+                <tag>INTENT="EXPLAIN_BALANCE"</tag>
+            </item>
+            <item>
+                <one-of>
+                    <item> i would like to book a flight </item>
+                    <item> please book a flight </item>
+                    <item> book a flight </item>
+                    <item> book </item>
+                </one-of>
+                <tag>INTENT="BOOK_FLIGHT"</tag>
+            </item>
+        </one-of> 
+    </rule> 
+</grammar>
+

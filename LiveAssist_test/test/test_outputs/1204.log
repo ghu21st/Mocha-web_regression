@@ -1,0 +1,96 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1204.log
+info: 
+wait 1 second for server
+
+info: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+info: 
+Test web page title: Nuance Live Assist
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Make sure agent logout before exit!
+https://10.3.41.56:8446/liveassist/app/logout
+
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+info: 
+wait 1 second for test
+
+info: 
+check Session return from /inputInteracationStep is:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><sessionID>session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81</sessionID><state>agentPending</state></inputInteractionStepResult>
+
+info: 
+wait 4 seconds for test
+
+info: 
+check Session return from /inputInteracationStep is:
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><sessionID>session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81</sessionID><state>useASRResult</state></inputInteractionStepResult>
+
+info: 
+SessionID from /endSession is: session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+
+info: 
+wait 1 second for server
+
+info: for testing
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: ani=sip%3A5145551234%4010.3.53.192%3A5064&dnis=sip%3A4627%40mtl-da53&externalSessionID=0a0325e7_000011c2_5307b580_00d4_0001&sessionID=&configurationName=mainmenu&completionCause=no-match&recognitionResult=%3C%3Fxml+version%3D%271.0%27%3F%3E%3Cemma%3Aemma+version%3D%221.0%22+xmlns%3Aemma%3D%22http%3A%2F%2Fwww.w3.org%2FTR%2F2007%2FCR-emma-20071211%22+xmlns%3Anuance%3D%22http%3A%2F%2Fnr10.nuance.com%2Femma%22%3E%3Cemma%3Agrammar+id%3D%22grammar_1%22+ref%3D%22session%3Ahttp%3A%2F%2Fmt-jdebroin%3A8080%2Fliveassist%2Fdata%2Fvxmldemo%2Fivrapi%2Fcallsteering%2Fmainmenu.grxml+-1+-1+10000%22%2F%3E%3Cemma%3Ainterpretation+id%3D%22interp_1%22+emma%3Auninterpreted%3D%22true%22+emma%3Aconfidence%3D%220.3%22+emma%3Agrammar-ref%3D%22grammar_1%22+emma%3Atokens%3D%22technical+support%22+emma%3Aduration%3D%227100%22+nuance%3Aeos-silence%3D%221140%22%2F%3E%3C%2Femma%3Aemma%3E&utterance=http%3A%2F%2Fmtl-da53%3A90%2FNuance%2FcallLogs%2FTest1%2F2014%2F02February%2F21%2F15%2FNUAN-22-24-mtl-da53-0a0325e7_000011c2_5307b580_00d4_0001-utt001-SAVEWAVEFORM.wav
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><sessionID>session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81</sessionID><state>agentPending</state></inputInteractionStepResult>
+SessionID from /inputInteractionStep is: session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+wait 1 second for test
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: sessionID=session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><sessionID>session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81</sessionID><state>agentPending</state></inputInteractionStepResult>
+wait 4 seconds for test
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: sessionID=session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><sessionID>session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81</sessionID><state>useASRResult</state></inputInteractionStepResult>
+
+Debug: send post request '/endSession' done
+
+
+post test body param: sessionID=session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><endSessionResult><ok>true</ok></endSessionResult>
+SessionID from /endSession is: session:Nuance-IvrApiCallSteering:02a3584a-2ee3-4734-9bb9-3b5261fb8c81
+
+info: 
+Make sure agent logout before exit!
+https://10.3.41.56:8446/liveassist/app/logout
+
+

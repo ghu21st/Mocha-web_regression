@@ -1,0 +1,414 @@
+<!DOCTYPE vxml PUBLIC "-//Nuance/DTD VoiceXML 2.0//EN" "http://voicexml.nuance.com/dtd/nuancevoicexml-2-0.dtd">
+<vxml version="2.0">
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <var name="ani" expr="session.connection.remote.uri"/>
+    <var name="dnis" expr="session.connection.local.uri"/>
+    <var name="externalSessionID" expr="session.connection.sessionid"/>
+    <script>
+        <![CDATA[
+        var months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+        function getMonthText(month) {
+            var monthText = "";
+            var tokens = month.split('-');
+            var y = tokens[0];
+            if (y) {
+                var m = tokens[1];
+                if (m && m > 0 && m <= months.length) {
+                    monthText += months[m - 1] + " ";
+                }
+                monthText += y;
+            }
+            if (monthText == "") {
+                monthText = month;
+            }
+            return monthText;
+        }
+        function getDateText(date) {
+            var dateText = "";
+            var tokens = date.split('-');
+            var y = tokens[0];
+            if (y) {
+                var m = tokens[1];
+                if (m && m >= 1 && m <= months.length) {
+                    dateText += months[m - 1];
+                    dateText += " ";
+                    var d = tokens[2];
+                    if (d && d >= 1 && d <= 31) {
+                        dateText += d;
+                        dateText += " ";
+                    }
+                }
+                dateText += y;
+            }
+            if (dateText == "") {
+                dateText = date;
+            }
+            return dateText;
+        }
+        function getTimeText(v) {
+            var timeText = "";
+            var tokens = v.split(':');
+            var h = tokens[0];
+            var amorpm = "am";
+            if (h) {
+                if (h == 0) {
+                    timeText += 12;
+                    amorpm = "am";
+                } else if (h < 12) {
+                    timeText += h;
+                    amorpm = "am";
+                } else if (h == 12) {
+                    timeText += h;
+                    amorpm = "pm";
+                } else {
+                    timeText += (h - 12);
+                    amorpm = "pm";
+                }
+                timeText += " ";
+                var m = tokens[1];
+                if (m && m != "00") {
+                    var c = m.charAt(0);
+                    if (c == '0') {
+                        timeText += "o";
+                        timeText += " ";
+                        timeText += m.charAt(1);
+                    } else {
+                        timeText += m;
+                        timeText += " ";
+                    }
+                }
+                timeText += amorpm;
+            }
+            if (timeText == "") {
+                timeText = v;
+            }
+            return timeText;
+        }
+        function getPhoneText(v) {
+            var timeText = '<say-as interpret-as="spell" format="alphanumeric">' + v + '</say-as>';
+            return timeText;
+        }
+        function isAgentPending(result) {
+	    return (result && result.interpretation && result.interpretation.AGENT_PENDING);
+        }
+        function isRepromptRequested(result) {
+	    return (result && result.interpretation && (result.interpretation.REPROMPT_REQUIRED || result.interpretation.AGENT_TIMEOUT));
+        }
+        function getOutcomeText(interpretation) {
+            var outcomeText = "";
+            var intent = interpretation.INTENT;
+            if (intent == "WAIVE_FEE_REQUEST") {
+                outcomeText += "You want to wave a fee.";
+                var v = interpretation.BILLING_MONTH;
+                if (v) {
+                    outcomeText += "For " + getMonthText(v) + ".";
+                }
+                v = interpretation.LATE_PAYMENT_REASON;
+                if (v) {
+                    outcomeText += "Because " + v + ".";
+                }
+            } else if (intent == "EXPLAIN_FEE_REQUEST") {
+                outcomeText += "You want a fee explanation.";
+            } else if (intent == "CHECK_BALANCE") {
+                outcomeText += "You want to check your balance.";
+            } else if (intent == "EXPLAIN_BALANCE") {
+                outcomeText += "You want a balance explanation.";
+            } else if (intent == "UPDATE_CONTACT_INFORMATION") {
+                outcomeText += "You want to update your contact information.";
+                var v = interpretation.FIRST_NAME;
+                if (v) {
+                    outcomeText += "First name " + v + ". ";
+                }
+                v = interpretation.LAST_NAME;
+                if (v) {
+                    outcomeText += "Last name " + v + ". ";
+                }
+                v = interpretation.NEW_ADDRESS;
+                if (v) {
+                    outcomeText += "New address " + v + ". ";
+                }
+                v = interpretation.NEW_PHONE_NUMBER;
+                if (v) {
+                    outcomeText += "New phone number " + getPhoneText(v) + ". ";
+                }
+                v = interpretation.NEW_EMAIL;
+                if (v) {
+                    outcomeText += "New email " + v + ". ";
+                }
+            } else if (intent == "BOOK_FLIGHT") {
+                outcomeText += "You want to book a flight.";
+                var v = interpretation.DEPARTURE_CITY;
+                if (v) {
+                    outcomeText += "From " + v + ".";
+                }
+                v = interpretation.ARRIVAL_CITY;
+                if (v) {
+                    outcomeText += "To " + v + ".";
+                }
+                v = interpretation.DEPARTURE_DAY;
+                if (v) {
+                    outcomeText += "On " + getDateText(v) + ".";
+                }
+                v = interpretation.DEPARTURE_TIME;
+                if (v) {
+                    outcomeText += "At " + getTimeText(v) + ".";
+                }
+            } else if (intent == "OPERATOR") {
+                outcomeText += "You asked for the operator.";
+            }
+            var g = interpretation.ENGLISH;
+            if (g) {
+                outcomeText += " Caller speaks English.";
+            }
+            g = interpretation.SPANISH;
+            if (g) {
+                outcomeText += " Caller speaks spanish.";
+            }
+            g = interpretation.MALE;
+            if (g) {
+                outcomeText += " Caller is male.";
+            }
+            g = interpretation.FEMALE;
+            if (g) {
+                outcomeText += " Caller is female.";
+            }
+            g = interpretation.TOO_NOISY;
+            if (g) {
+                outcomeText += " Call was too noisy.";
+            }
+            g = interpretation.UNINTENDED_INPUT;
+            if (g) {
+                outcomeText += " Unintented input.";
+            }
+            g = interpretation.NO_MATCHING_INTENT;
+            if (g) {
+                outcomeText += " No matching intent.";
+            }
+            g = interpretation.NO_INPUT_FROM_USER;
+            if (g) {
+                outcomeText += " No input from user.";
+            }
+            g = interpretation.REPROMPT_REQUIRED;
+            if (g) {
+                outcomeText += " A reprompt is required.";
+            }
+            g = interpretation.ESCALATE_TO_AGENT;
+            if (g) {
+                outcomeText += " Escalate to agent.";
+            }
+            return outcomeText;
+        }
+        ]]>
+    </script>
+    <catch event="connection.disconnect">
+        <exit/>
+    </catch>
+    <catch event="nuance.sessionended">
+    </catch>
+
+    <form id="main_form">
+        <field name="main_field">
+            <grammar src="yesno.grxml"/>
+            <prompt>
+                Hello, welcome to the Nuance Live Assist demo.
+                Do you want to unconditionally involve Live Assist?
+            </prompt>
+            <filled>
+                <if cond="main_field == 'yes'">
+                   <goto next="#unconditional_form"/>
+                <else/>
+                   <goto next="#conditional_form"/>
+                </if>
+            </filled>
+            <nomatch>
+                <goto next="#unconditional_form"/>
+            </nomatch>
+        </field>
+    </form>
+
+    <form id="unconditional_form">
+        <var name="laState" expr="'start'"/>
+        <property name="recordutterance" value="true"/>
+        <link event="dtmf">
+            <grammar src="operator.grxml"/>
+        </link>
+        <catch event="dtmf">
+            <prompt>
+                Transferring you to the operator.
+            </prompt>
+            <exit/>
+        </catch>
+        <field name="unconditional_field">
+            <grammar src="mainmenu.grxml"/>
+            <prompt cond="laState == 'start'">
+                Always escalate.
+                If you briefly tell me why you are calling I'll try to help you immediately.
+            </prompt>
+            <filled>
+                <if cond="isAgentPending(lastresult$)">
+                    <prompt timeout="2s">
+                        <audio src="ticktickticklow.wav"/>
+                    </prompt>
+		    <assign name="laState" expr="'agentPending'"/>
+                    <clear namelist="unconditional_field"/>
+                <elseif cond="isRepromptRequested(lastresult$)"/>
+                    <prompt>
+                        I had trouble with that.
+                    </prompt>
+                    <prompt>
+                        Maybe a little differently, like i would like to wave a fee, 
+                        or i would like to check my balance. 
+                        So tell me, what's the reason for your call?.
+                    </prompt>
+                    <clear namelist="unconditional_field"/>
+                <else/>
+                    <var name="recognitionResult" expr="'' + lastresult$.emmatext"/>
+                    <var name="utterance" expr="'' + lastresult$.recording"/>
+                    <var name="outcomeText" expr="getOutcomeText(lastresult$.interpretation)"/>
+                    <prompt>
+                        Ok got it.
+                        <value treatasmarkup="true" expr="outcomeText"/>
+                    </prompt>
+                    <goto next="#continue_or_not_form"/>
+                </if>
+            </filled>
+            <noinput>
+	        <prompt>
+	            I didn't hear anything
+                </prompt>
+            </noinput>
+            <nomatch>
+                <if cond="isAgentPending(lastresult$)">
+                    <prompt timeout="2s">
+                        <audio src="ticktickticklow.wav"/>
+                    </prompt>
+		    <assign name="laState" expr="'agentPending'"/>
+                <else/>
+                    <var name="recognitionResult" expr="'' + lastresult$.emmatext"/>
+                    <var name="utterance" expr="'' + lastresult$.recording"/>
+                    <prompt>
+                        I had trouble with that.
+                    </prompt>
+                    <prompt>
+                        Maybe a little differently, like i would like to wave a fee, 
+                        or i would like to check my balance. 
+                        So tell me, what's the reason for your call?.
+                    </prompt>
+                </if>
+            </nomatch>
+        </field>
+    </form>
+
+    <form id="conditional_form">
+        <var name="laState" expr="'start'"/>
+        <property name="recordutterance" value="true"/>
+        <link event="dtmf">
+            <grammar src="operator.grxml"/>
+        </link>
+        <catch event="dtmf">
+            <prompt>
+                Transferring you to the operator.
+            </prompt>
+            <exit/>
+        </catch>
+        <field name="conditional_field">
+            <grammar src="conditional.grxml"/>
+            <prompt cond="laState == 'start'">
+                Escalate on low confidence.
+                If you briefly tell me why you are calling I'll try to help you immediately.
+            </prompt>
+            <filled>
+                <if cond="isAgentPending(lastresult$)">
+                    <prompt timeout="2s">
+                        <audio src="ticktickticklow.wav"/>
+                    </prompt>
+		    <assign name="laState" expr="'agentPending'"/>
+                    <clear namelist="conditional_field"/>
+                <elseif cond="isRepromptRequested(lastresult$)"/>
+                    <prompt>
+                        I had trouble with that.
+                    </prompt>
+                    <prompt>
+                        Maybe a little differently, like i would like to wave a fee, 
+                        or i would like to check my balance. 
+                        So tell me, what's the reason for your call?.
+                    </prompt>
+                    <clear namelist="conditional_field"/>
+                <else/>
+                    <var name="recognitionResult" expr="'' + lastresult$.emmatext"/>
+                    <var name="utterance" expr="'' + lastresult$.recording"/>
+                    <var name="outcomeText" expr="getOutcomeText(lastresult$.interpretation)"/>
+                    <prompt>
+                        Ok got it.
+                        <value treatasmarkup="true" expr="outcomeText"/>
+                    </prompt>
+                    <goto next="#continue_or_not_form"/>
+                </if>
+            </filled>
+            <noinput>
+	        <prompt>
+	            I didn't hear anything
+                </prompt>
+            </noinput>
+            <nomatch>
+                <if cond="isAgentPending(lastresult$)">
+                    <prompt timeout="2s">
+                        <audio src="ticktickticklow.wav"/>
+                    </prompt>
+		    <assign name="laState" expr="'agentPending'"/>
+                <else/>
+                    <var name="recognitionResult" expr="'' + lastresult$.emmatext"/>
+                    <var name="utterance" expr="'' + lastresult$.recording"/>
+                    <prompt>
+                        I had trouble with that.
+                    </prompt>
+                    <prompt>
+                        Maybe a little differently, like i would like to wave a fee, 
+                        or i would like to check my balance. 
+                        So tell me, what's the reason for your call?.
+                    </prompt>
+                </if>
+            </nomatch>
+        </field>
+    </form>
+
+    <form id="continue_or_not_form">
+        <field name="continue_or_not_field">
+            <grammar src="yesno.grxml"/>
+            <prompt>
+                <audio src="pause:1500"/>
+                Do you want to try the demo once more?
+            </prompt>
+            <filled>
+                <if cond="continue_or_not_field == 'yes'">
+                    <assign name="continue_or_not_field" expr="true"/>
+                </if>
+                <if cond="continue_or_not_field == 'true'">
+                    <assign name="continue_or_not_field" expr="true"/>
+                </if>
+                <if cond="continue_or_not_field == true">
+                    <goto next="#main_form"/>
+                <else/>
+                    <prompt>
+                        Goodbye
+                    </prompt>
+                    <exit/>
+                </if>
+            </filled>
+        </field>
+    </form>
+
+</vxml>

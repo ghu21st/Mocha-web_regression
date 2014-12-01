@@ -1,0 +1,72 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1166.log
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:694c5527-6fa9-4680-879e-ed3b8180cbd5
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+Alert text: You are only allowed 30 seconds to send your choices.
+info: 
+wait 1 second for server
+
+info: 
+Alert dismissed!
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:694c5527-6fa9-4680-879e-ed3b8180cbd5
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in by ENTER key on +Sign in as Live Agent+ button
+wait 1 second for server
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:694c5527-6fa9-4680-879e-ed3b8180cbd5
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Alert text: You are only allowed 30 seconds to send your choices.
+Alert dismissed!
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Sign out by CTRL + END
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:694c5527-6fa9-4680-879e-ed3b8180cbd5"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:694c5527-6fa9-4680-879e-ed3b8180cbd5
+

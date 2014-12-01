@@ -1,0 +1,62 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1008.log
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:2e881f15-dafa-4720-bcaa-d7cde3b2c2d4
+State: agentPending
+completionCause: null
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530
+State: agentPending
+completionCause: null
+info: 
+ret_result: {"id":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530","varName":"Nuance-WebApiCallSteering","varVersion":"1.0","ani":null,"dnis":null,"aai":null,"externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","audioRelayServerUrl":null,"applicationConfiguration":{"id":"5","name":"Nuance-WebApiCallSteering","organizationIDApplicationIDList":[],"dnisList":[],"contextList":[{"id":"4","name":"mainmenu","assistGrammarList":[],"escalationClassifierId":"AlwaysEscalatingEscalationClassifier","pickListId":"nuance/webapicallsteering/intents.json","commandGrammarList":[],"parameterList":[],"skillList":[]}]},"recognitionContext":{"grammars":null,"activeGrammar":null,"applicationContextConfiguration":{"id":"4","name":"mainmenu","assistGrammarList":[],"escalationClassifierId":"AlwaysEscalatingEscalationClassifier","pickListId":"nuance/webapicallsteering/intents.json","commandGrammarList":[],"parameterList":[],"skillList":[]},"escalationClassifierId":"AlwaysEscalatingEscalationClassifier","pickListId":"nuance/webapicallsteering/intents.json","name":"mainmenu"},"canStreamAudio":false,"currentInteractionId":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530-0","interactions":[{"sessionId":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530","id":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530-0","skillList":[],"playAudioStream":false,"userInputText":"This is session #2 test","utteranceUrl":null,"recognitionResultProvided":true,"completionCause":"no-match","agentUsername":null,"outcome":null,"timeout":3,"timedOut":false,"topInterpretation":null}],"escalationDecision":null,"escalated":true,"sessionStats":{"stepTimes":{"CREATE":{"date":1417389917858},"START_SESSION":{"date":1417389917858},"START_INTERACTION":{"date":1417389917859},"SEND_INTERACTION_RESULT":{"date":1417389917859},"ESCALATE":{"date":1417389917859}}},"viewName":null,"variableNames":null,"shouldEscalateNow":false,"currentInteraction":{"sessionId":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530","id":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530-0","skillList":[],"playAudioStream":false,"userInputText":"This is session #2 test","utteranceUrl":null,"recognitionResultProvided":true,"completionCause":"no-match","agentUsername":null,"outcome":null,"timeout":3,"timedOut":false,"topInterpretation":null},"outcome":null,"shouldEscalate":false}
+info: 
+recorded sessions: 
+session:Nuance-WebApiCallSteering:2e881f15-dafa-4720-bcaa-d7cde3b2c2d4
+session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530
+info: 
+Test passed! Output string:
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+
+Debug: send get session request on /sessions done
+
+
+Response: [object Object]
+Body: []
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"This is session #1 test"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:2e881f15-dafa-4720-bcaa-d7cde3b2c2d4
+State: agentPending
+completionCause: null
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"This is session #2 test"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530
+State: agentPending
+completionCause: null
+
+Debug: send get session request on /sessions done
+
+
+Response: [object Object]
+Body: 
+
+Debug: send get session request on /sessions done
+
+
+Response: [object Object]
+Body: [{"id":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530","varName":"Nuance-WebApiCallSteering","varVersion":"1.0","ani":null,"dnis":null,"aai":null,"externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","audioRelayServerUrl":null,"applicationConfiguration":{"id":"5","name":"Nuance-WebApiCallSteering","organizationIDApplicationIDList":[],"dnisList":[],"contextList":[{"id":"4","name":"mainmenu","assistGrammarList":[],"escalationClassifierId":"AlwaysEscalatingEscalationClassifier","pickListId":"nuance/webapicallsteering/intents.json","commandGrammarList":[],"parameterList":[],"skillList":[]}]},"recognitionContext":{"grammars":null,"activeGrammar":null,"applicationContextConfiguration":{"id":"4","name":"mainmenu","assistGrammarList":[],"escalationClassifierId":"AlwaysEscalatingEscalationClassifier","pickListId":"nuance/webapicallsteering/intents.json","commandGrammarList":[],"parameterList":[],"skillList":[]},"escalationClassifierId":"AlwaysEscalatingEscalationClassifier","pickListId":"nuance/webapicallsteering/intents.json","name":"mainmenu"},"canStreamAudio":false,"currentInteractionId":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530-0","interactions":[{"sessionId":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530","id":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530-0","skillList":[],"playAudioStream":false,"userInputText":"This is session #2 test","utteranceUrl":null,"recognitionResultProvided":true,"completionCause":"no-match","agentUsername":null,"outcome":null,"timeout":3,"timedOut":false,"topInterpretation":null}],"escalationDecision":null,"escalated":true,"sessionStats":{"stepTimes":{"CREATE":{"date":1417389917858},"START_SESSION":{"date":1417389917858},"START_INTERACTION":{"date":1417389917859},"SEND_INTERACTION_RESULT":{"date":1417389917859},"ESCALATE":{"date":1417389917859}}},"viewName":null,"variableNames":null,"shouldEscalateNow":false,"currentInteraction":{"sessionId":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530","id":"session:Nuance-WebApiCallSteering:5226387a-a7a6-4619-8ebc-0ec0534da530-0","skillList":[],"playAudioStream":false,"userInputText":"This is session #2 test","utteranceUrl":null,"recognitionResultProvided":true,"completionCause":"no-match","agentUsername":null,"outcome":null,"timeout":3,"timedOut":false,"topInterpretation":null},"outcome":null,"shouldEscalate":false}]

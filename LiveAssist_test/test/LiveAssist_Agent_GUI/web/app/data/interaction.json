@@ -1,0 +1,16 @@
+{
+    "interaction" : {
+        "text": "I would like to book a flight from Boston to Boston on Sunday afternoon",
+        "audio": "data/book_flight_from_austin_to_boston.wav"
+    },
+    "history": [
+        {
+            "speaker": "gui",
+            "text": "ERROR: Unable to obtain interaction information from the server. This information is coming from the 'data/interaction.json' file."
+        },
+        {
+            "speaker": "nina",
+            "text": "Welcome to the travel airline service. How may I help you?"
+        }
+    ]
+}

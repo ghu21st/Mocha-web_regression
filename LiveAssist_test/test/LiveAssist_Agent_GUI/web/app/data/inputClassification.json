@@ -1,0 +1,38 @@
+[
+    {
+        "id": "ENGLISH"
+    },
+    {
+        "id": "MALE"
+    },
+    {
+        "id": "TOO_NOISY",
+        "display": "Too noisy"
+    },
+    {
+        "id": "NO_MATCHING_INTENT",
+        "display": "No matching intent"
+    },
+    {
+        "id": "REPROMPT_REQUIRED",
+        "display": "Reprompt required"
+    },
+    {
+        "id": "SPANISH"
+    },
+    {
+        "id": "FEMALE"
+    },
+    {
+        "id": "UNINTENDED_INPUT",
+        "display": "Unintended input"
+    },
+    {
+        "id": "NO_INPUT_FROM_USER",
+        "display": "No input from user"
+    },
+    {
+        "id": "ESCALATE_TO_AGENT",
+        "display": "Escalate to agent"
+    }
+]

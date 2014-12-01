@@ -1,0 +1,3 @@
+REM start "Selenium + Chrome driver" /min cmd /k java -jar c:\LiveAssist_test\test\QA_TEST\selenium-server-standalone-2.39.0.jar -Dwebdriver.chrome.driver=c:\LiveAssist_test\test\QA_TEST\chromedriver.exe
+
+start "Selenium + Chrome driver" /min cmd /k java -jar c:\LiveAssist_test\test\QA_TEST\selenium-server-standalone-2.43.1.jar -Dwebdriver.chrome.driver=c:\LiveAssist_test\test\QA_TEST\chromedriver.exe

@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Conversation Context</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li ng-repeat="historyEntry in history" class="list-group-item">
+                <span class="conversationContextSpeaker">{{historyEntry.speaker | capitalize}} :</span>
+                <a ng-href="{{historyEntry.audio}}">{{historyEntry.text}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

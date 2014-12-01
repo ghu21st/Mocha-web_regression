@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<grammar xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="Root" version="1.0" mode="voice">
+    <rule id="Root" scope="public">
+        <one-of>
+            <item>
+                <item repeat="0-1">
+                    <one-of>
+                        <item> i would like </item>
+                        <item> we would like </item>
+                    </one-of>
+                </item>
+                <item repeat="0-1">
+                    <one-of>
+                        <item> to fly </item>
+                        <item> a flight </item>
+                    </one-of>
+                </item>
+                <item>from</item>
+                <item>
+                    <ruleref uri="location.grxml"/>
+                    <tag>originCity=Location.X.CITY</tag>
+                </item>
+                <item>to</item>
+                <item>
+                    <ruleref uri="location.grxml"/>
+                    <tag>destinationCity=Location.X.CITY</tag>
+                </item>
+                <item>on</item>
+                <item>
+                    <ruleref uri="#Day"/>
+                    <tag>departureDay=Day.X</tag>
+                </item>
+            </item>
+        </one-of>
+    </rule>
+    <rule id="Day">
+        <one-of>
+            <item>monday<tag>X='monday'</tag></item>
+            <item>tuesday<tag>X='tuesday'</tag></item>
+            <item>wednesday<tag>X='wednesday'</tag></item>
+            <item>thursday<tag>X='thursday'</tag></item>
+            <item>friday<tag>X='friday'</tag></item>
+            <item>saturday<tag>X='saturday'</tag></item>
+            <item>sunday<tag>X='sunday'</tag></item>
+        </one-of>
+    </rule>
+</grammar>
+

@@ -1,0 +1,16 @@
+info: Test started and logging atc:\LiveAssist_test\test\WEB_SIMU\Log\2999.log
+info: 
+Web simulator operation passed! Output string:
+
+
+Debug: send delete session request done
+
+
+Response: 204
+Body: 
+
+Debug: send get session request on /sessions done
+
+
+Response: 200
+Body: [][]

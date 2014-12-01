@@ -1,0 +1,296 @@
+'use strict';
+
+angular.module('controllers').controller('AdminAgentsController', ['$scope', '$filter', '$modal', '$interval', 'AdminAgentService', 'AdminUtilitiesService',
+    function($scope, $filter, $modal, $interval, adminAgentService, adminUtilitiesService) {
+
+        $scope.agentsData = [];
+        $scope.agentSelection = [];
+        $scope.editAllowed = false;
+        $scope.logoutAllowed = false;
+        $scope.skills = {};
+
+        var reportErrorAndSignout = function() {
+            $interval.cancel($scope.updateAgentsInterval);
+            alert('An error occurred contacting the Live Assist server.');
+            $scope.signOut();
+        };
+
+        var updateSkills = function() {
+            var skills = adminAgentService.skills();
+            skills.$promise.then(function() {
+                $scope.skills = skills;
+            })
+        };
+
+        var updateAgents = function () {
+            if (!$scope.sso) {
+                var agents = adminAgentService.all({}, function (value, responseHeaders) {
+                        if (responseHeaders()["content-type"] === "application/json") {
+                            $scope.loggedInAgents = adminAgentService.loggedIn({}, function () {
+                                $scope.setAgentsData(agents);
+                            }, function () {
+                                reportErrorAndSignout();
+                            });
+                        } else {
+                            reportErrorAndSignout();
+                        }
+                    },
+                    function () {
+                        reportErrorAndSignout();
+                    }
+                );
+                agents.$promise.then(null, function(error) {
+                    reportErrorAndSignout();
+                });
+            } else {
+                var loggedInAgents = adminAgentService.loggedIn({}, function (value, responseHeaders) {
+                        if (responseHeaders()["content-type"] === "application/json") {
+                            $scope.loggedInAgents = loggedInAgents;
+                            $scope.setAgentsData(loggedInAgents);
+                        } else {
+                            reportErrorAndSignout();
+                        }
+                    },
+                    function () {
+                        reportErrorAndSignout();
+                    }
+                );
+                loggedInAgents.$promise.then(null, function(error) {
+                    reportErrorAndSignout();
+                });
+            }
+        };
+
+        $scope.setAgentsData = function (agents) {
+            $scope.agentsData = $filter('filter')(agents, function (agent) {
+                return !adminUtilitiesService.isAnonymous(agent.roles);
+            });
+            $scope.pagingOptions.totalServerItems = $scope.agentsData.length;
+            $scope.updateAllowedForSelection();
+        };
+
+        $scope.updateAllowedForSelection = function() {
+            $scope.editAllowed = false;
+            $scope.logoutAllowed = false;
+            if ( $scope.agentSelection.length > 0  && $scope.agentSelection[0] ) {
+                $scope.editAllowed = true;
+                var selectedName = $scope.agentSelection[0].username;
+                if ( selectedName !== $scope.loginUsername ) {
+                    for ( var i = 0; i < $scope.loggedInAgents.length; i++ ) {
+                        if ( $scope.loggedInAgents[i].username === selectedName ) {
+                            $scope.logoutAllowed = true;
+                        }
+                    }
+                }
+            }
+        };
+
+        $scope.getRoleNames = function(roles) {
+            if ( roles != null ) {
+                return adminUtilitiesService.authoritiesToRoleNames(roles).join(', ');
+            }
+            return "";
+        };
+
+        $scope.deleteAgent = function() {
+            if (!$scope.sso) {
+                var agent = $scope.selectedAgent.username;
+                var modalInstance = $modal.open({
+                    templateUrl: 'partials/admin/modal.html',
+                    controller: 'AdminModalController',
+                    resolve : {
+                        header : function() {
+                            return "Delete user"
+                        },
+                        body : function() {
+                            return "Do you want to delete user " + agent + "?";
+                        }
+                    }
+                });
+                modalInstance.result.then ( function() {
+                    adminAgentService.delete({agentName:agent});
+                    updateAgents();
+                });
+            }
+        };
+
+        $scope.logoutAgent = function() {
+            var agentName = $scope.selectedAgent.username;
+            var modalInstance = $modal.open({
+                templateUrl: 'partials/admin/modal.html',
+                controller: 'AdminModalController',
+                resolve : {
+                    header : function() {
+                        return "Logout user"
+                    },
+                    body : function() {
+                        return "Do you want to logout user " + agentName + "?";
+                    }
+                }
+            });
+            modalInstance.result.then ( function() {
+                adminAgentService.logout({agentName:agentName})
+                    .$promise.then(function() {
+                        updateAgents();
+                    });
+            } );
+        };
+
+        $scope.addAgent = function() {
+            if (!$scope.sso) {
+                var skills = adminAgentService.skills();
+                skills.$promise.then(function() {
+                    $scope.skills = skills;
+                    var modalInstance = $modal.open({
+                        templateUrl: 'partials/admin/users/agent.html',
+                        controller: 'AdminAgentController',
+                        resolve : {
+                            agent : function() {
+                                return new adminAgentService({username:"", password:"", roles:[]});
+                            },
+                            edit : function() {
+                                return false;
+                            },
+                            skills : function() {
+                                return skills;
+                            }
+                        }
+                    });
+                    modalInstance.result.then(function (agent) {
+                        adminAgentService.add(agent)
+                            .$promise.then(function() {
+                                updateSkills();
+                                updateAgents();
+                            });
+                    });
+                });
+            }
+        };
+
+        $scope.editAgent = function() {
+            if (!$scope.sso) {
+                if ( $scope.agentSelection.length > 0 ) {
+                    var agent = $scope.agentSelection[0];
+                    var skills = adminAgentService.skills();
+                    skills.$promise.then(function() {
+                        $scope.skills = skills;
+                        var modalInstance = $modal.open({
+                            templateUrl: 'partials/admin/users/agent.html',
+                            controller: 'AdminAgentController',
+                            resolve : {
+                                agent : function() {
+                                    return agent;
+                                },
+                                edit : function() {
+                                    return true;
+                                },
+                                skills : function() {
+                                    return skills;
+                                }
+                            }
+                        });
+                        modalInstance.result.then(function (agent) {
+                            adminAgentService.save(agent)
+                                .$promise.then(function() {
+                                    updateSkills();
+                                    updateAgents();
+                                });
+                        });
+                    });
+                }
+            }
+        };
+
+        $scope.assignSkills = function() {
+            if ($scope.sso) {
+                var skills = adminAgentService.skills();
+                skills.$promise.then(function() {
+                    $scope.skills = skills;
+                    var modalInstance = $modal.open({
+                        templateUrl: 'partials/admin/users/assignSkills.html',
+                        controller: 'AdminAssignSkillsController',
+                        resolve : {
+                            skills : function() {
+                                return skills;
+                            }
+                        }
+                    });
+                    modalInstance.result.then(function (agent) {
+                        updateSkills();
+                        adminAgentService.setAgentSkills({agentName:agent.username}, agent.skills)
+                            .$promise.then(function() {
+                                angular.forEach($scope.agentsData, function(data,index){
+                                    if ( data.username === agent.username ) {
+                                        data.skills = agent.skills;
+                                    }
+                                });
+                            });
+                    });
+                });
+            }
+        };
+
+        updateSkills();
+        updateAgents();
+        $scope.updateAgentsInterval = $interval(function() {
+            updateAgents();
+        }, $scope.agentsRefreshTimeout);
+
+        $scope.$on("$destroy", function(){
+            $interval.cancel($scope.updateAgentsInterval);
+        });
+
+        $scope.$on('ngGridEventData', function() {
+                var agentSelected = false;
+                if ( $scope.agentSelection.length > 0 ) {
+                    angular.forEach($scope.agentsData, function(data, index){
+                        if(data.username === $scope.agentSelection[0].username){
+                            $scope.agentsGridOptions.selectItem(index, true);
+                            agentSelected = true;
+                        }
+                    });
+                }
+                if ( !agentSelected ) {
+                    $scope.agentsGridOptions.selectItem(0, true);
+                }
+            }
+        );
+
+        $scope.pagingOptions = {
+            pageSizes: [5, 10],
+            pageSize: 5,
+            currentPage: 1,
+            totalServerItems: 0
+        };
+
+        var columnDefs = [
+                { field: "username", displayName: "Username" },
+                { field: "roles", displayName: "Roles", cellFilter: "rolesFilter | arrayComma"},
+                { field: "skills", displayName: "Skills", cellFilter: "skillsFilter:skills | arrayComma"}
+        ];
+        $scope.agentsGridOptions = {
+            data: 'agentsData',
+            multiSelect: false,
+            enablePaging: true,
+            pagingOptions: $scope.pagingOptions,
+            showFilter:true,
+            columnDefs: columnDefs,
+            enableColumnResize: true,
+            selectedItems: $scope.agentSelection,
+            afterSelectionChange: function(rowItem, event) {
+                if ( $scope.agentSelection.length > 0  && $scope.agentSelection[0] &&
+                    $scope.selectedAgent.username !== $scope.agentSelection[0].username )
+                        $scope.selectedAgent.username = $scope.agentSelection[0].username;
+                $scope.updateAllowedForSelection();
+            },
+            plugins: [ngGridDoubleClick],
+            dblClickFn: $scope.editAgent
+        };
+    }
+]);
+¨šÅšü              :W§T+V—   L:https://10.3.41.56:8443/liveassist/app/js/controllers/admin/users/agents.js security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojKOpF0qJaNXyu+n+CAAQAAgAAAAAAAAAAAAAAACw4N6+LhUposNgK7YiYWzI/H82DxalM0aJQdnbKfH40ZgoyJpFcT/u7IImFpjLfBYkdIAm5ukoNvr5rOjDjMZEAAAACAAADlTCCA5EwggJ5oAMCAQICBEOoiQYwDQYJKoZIhvcNAQELBQAweTELMAkGA1UEBhMCQ0ExDzANBgNVBAgTBlF1ZWJlYzERMA8GA1UEBxMITW9udHJlYWwxDzANBgNVBAoTBk51YW5jZTETMBEGA1UECxMKRW50ZXJwcmlzZTEgMB4GA1UEAxMXbXRsLWRhNTUtdm02Lm51YW5jZS5jb20wHhcNMTQwNTA1MTc0MDI2WhcNMTQwODAzMTc0MDI2WjB5MQswCQYDVQQGEwJDQTEPMA0GA1UECBMGUXVlYmVjMREwDwYDVQQHEwhNb250cmVhbDEPMA0GA1UEChMGTnVhbmNlMRMwEQYDVQQLEwpFbnRlcnByaXNlMSAwHgYDVQQDExdtdGwtZGE1NS12bTYubnVhbmNlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKU28grNBeGqm5O8TLxtJ9hC0KxW353sgtEfpgtHfwLmQfHivL03532iGtLyBpxXn0RYeffnqcDuIDbmmDL2hNxHyuXU3atC227RV65T4UPsw12sEYlGagoITnEJp1lLDfsb4Wzk6AC3r+gcti7wVadTJc37L2VQXIoKnmyV9f1j9dQRBbLi24054DucIVqCsaNJyHJSoVN6zIV6VDZSo8gE0SGoWfX6XJ49B32/bxcIVcY9kXPdvOjs2srcs2MP0uNIvGFMk8ViMNxpjExZ6CN5ClAeBTn3QJayqbzzSlhI1gt+6i3/Z+yM+9qTO/2C4zWuXcBGjji5ewQ9K3U2jpMCAwEAAaMhMB8wHQYDVR0OBBYEFPwPrJmDLh5GVy8uqXQFVrsg6eZKMA0GCSqGSIb3DQEBCwUAA4IBAQCXQWmjA1De8WQ3mds4C9gqx2ZejCY9B+zulyG0TtcwR2WvY87SGtzw5xMMVAni8KIGzjwTwp4NXUUWPtXXCGljBZbWEsfV64bxx1kT9i6ufo7mUMLzjmYS9OxElZDXpFCGBBRyym7PDlQSPsChjaQvSz3ww1ZdrCNb2LmcH9X9uR9XA5IkOsCQ8xwtsRpSnCqrIeBSSH19XBwcALXI3nzQdZRXQGxSQKgThpt07W7klQSyvUbowL1kwLnXUdCpgLl/ydXQfLbWwik09NBAZLdPeDtAsMzZRaq6tFjwcn101v+/ZfS84UB+4dcBxv2hL1x40kSiBon+Ey2NqBSdosqqAAAAgAAAAIAAAAAgVExTX0RIRV9SU0FfV0lUSF9BRVNfMTI4X0NCQ19TSEEBAQEBAQ== request-method GET response-head HTTP/1.1 200 OK
+Content-Type: application/javascript
+Last-Modified: Tue, 30 Sep 2014 10:07:05 GMT
+Accept-Ranges: bytes
+Content-Length: 11863
+ uncompressed-len 0   .W

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<grammar root="Location" version="1.0" xml:lang="en-us" tag-format="swi-semantics/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2001/06/grammar">
+<rule id="Location" scope="public">
+  <ruleref uri="custom549location.grxml#Location"/> <tag>X=Location.X</tag>
+</rule>
+</grammar>

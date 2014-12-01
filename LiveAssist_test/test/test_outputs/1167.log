@@ -1,0 +1,109 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1167.log
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:47bff6a3-e0bf-4d60-b843-0eda2eb1ff19
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+Alert text: You are only allowed 30 seconds to send your choices.
+info: 
+wait 1 second for server
+
+info: 
+Alert dismissed!
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Selected intents by CTRL+num
+
+info: 
+wait 1 second for server
+
+info: 
+Tested ctrl+enter pressed
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in by ENTER key on +Sign in as Live Agent+ button
+wait 1 second for server
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:47bff6a3-e0bf-4d60-b843-0eda2eb1ff19
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Alert text: You are only allowed 30 seconds to send your choices.
+Alert dismissed!
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Selected intents by CTRL+num
+
+Tested ctrl+enter pressed
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2"}
+Response: [object Object]
+Body: {"sessionID":"session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2","completionCause":"success","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"state":"useLiveAssistResult"}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:e4c8e585-c2a6-4a30-9815-76f8976150c2
+

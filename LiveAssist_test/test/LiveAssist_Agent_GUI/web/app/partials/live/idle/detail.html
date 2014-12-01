@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 well">
+        You are logged in as {{loginUsername}} and you are idle.
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+        <alert ng-repeat="statusMessage in statusMessages track by $index" type="danger">{{statusMessage}}</alert>
+    </div>
+</div>
+<!--
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 text-center">
+        <button type="button" class="btn btn-primary btn-lg" ng-click="makeMeBusy()">Make me busy{{globalState.lastSelectedIntent? ' again' : ''}}</button>
+    </div>
+</div>
+-->
+<br>
+<div class="row" ng-show="lastResponse.intent">
+    <div class="col-md-6 col-md-offset-3 panel panel-default">
+        <div class="panel-heading">
+            Summary of the last response sent back by the agent
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>{{lastResponse.intent.id}}</dt>
+                <dd>{{lastResponse.intent.value}}</dd>
+                <dt>Variables</dt>
+                <dd>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="variable in lastResponse.variables">
+                            {{variable.id}} = {{variable.value}}
+                        </li>
+                    </ul>
+                </dd>
+                <dt>Globals</dt>
+                <dd>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="global in lastResponse.globals">
+                            {{global}}
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>

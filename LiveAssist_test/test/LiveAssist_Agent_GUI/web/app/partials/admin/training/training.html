@@ -1,0 +1,25 @@
+<!-- history grid -->
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <div class="btn-grp btn-grp-small pull-right">
+
+        <button id="training_assign_user" class="btn btn-default btn-sm"
+                tooltip="Assign training to user" tooltip-placement="bottom"
+                ng-click="assignTraining()"
+                ng-disabled="trainingSets.length == 0 || usernames.length == 0">
+            <span class="glyphicon glyphicon-user"></span>
+        </button>
+
+        <button id="training_manage_sets" class="btn btn-default btn-sm"
+                tooltip="Manage training sets" tooltip-placement="bottom"
+                ng-click="manageTrainingSets()">
+            <span class="glyphicon glyphicon-wrench"></span>
+        </button>
+
+      </div>
+      <h3 class="panel-title" style="padding-top:5px;">Activity</h3>
+    </div>
+    <div class="gridStyle" ng-grid="activityGrid" style="height:575px;"></div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+{
+    "intents": [
+        {
+            "name": "Billing",
+            "members": [
+                {
+                    "name": "Late fee",
+                    "members": [
+                        {
+                            "id": "WAIVE_FEE_REQUEST",
+                            "name": "Waive fee",
+                            "variables": [
+                                {
+                                    "id": "BILLING_MONTH",
+                                    "name": "Billing month",
+                                    "type": "month",
+                                    "default": "2014-01"
+                                },
+                                {
+                                    "id": "LATE_PAYMENT_REASON",
+                                    "name": "Reason for late payment"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "EXPLAIN_FEE_REQUEST",
+                            "name": "Explain fee"
+                        }
+                    ]
+                },
+                {
+                    "name": "Balance",
+                    "members": [
+                        {
+                            "id": "CHECK_BALANCE",
+                            "name": "Check balance"
+                        },
+                        {
+                            "id": "EXPLAIN_BALANCE",
+                            "name": "Explain balance"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Flight",
+            "members": [
+                {
+                    "id": "BOOK_FLIGHT",
+                    "name": "Booking",
+                    "variables": [
+                        {
+                            "id": "DEPARTURE_CITY",
+                            "name": "Departure City",
+                            "type": "list",
+                            "values": "data/cities.txt",
+                            "default": "Boston"
+                        },
+                        {
+                            "id": "ARRIVAL_CITY",
+                            "name": "Arrival City",
+                            "type": "list",
+                            "values": ["Austin", "Boston", "New York", "Los Angeles", "Seattle", "Washington"],
+                            "default": "Boston"
+                        },
+                        {
+                            "id": "DEPARTURE_DAY",
+                            "name": "Departure Day",
+                            "type": "date"
+                        },
+                        {
+                            "id": "DEPARTURE_TIME",
+                            "name": "Departure Time",
+                            "type": "time"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Intent3",
+            "members": []
+        }
+    ]
+}

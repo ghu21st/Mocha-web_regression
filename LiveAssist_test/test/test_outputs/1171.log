@@ -1,0 +1,58 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1171.log
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: ani=sip%3A5145551234%4010.3.53.192%3A5064&dnis=sip%3A4627%40mtl-da53&externalSessionID=0a0325e7_00004175_528d983c_1171_0001&sessionID=&configurationName=othermenu&completionCause=success&recognitionResult=%3C%3Fxml%20version%3D%271.0%27%3F%3E%3Cemma%3Aemma%20version%3D%221.0%22%20xmlns%3Aemma%3D%22http%3A%2F%2Fwww.w3.org%2FTR%2F2007%2FCR-emma-20071211%22%20xmlns%3Anuance%3D%22http%3A%2F%2Fnr10.nuance.com%2Femma%22%3E%3Cemma%3Agrammar%20id%3D%22grammar_1%22%20ref%3D%22session%3Ahttp%3A%2F%2F10.3.41.59%3A8080%2Fliveassist%2Fdata%2Fvxmldemo%2Fivrapi%2Fcallsteering%2Fmainmenu.grxml%20-1%20-1%2010000%22%2F%3E%3Cemma%3Ainterpretation%20id%3D%22interp_1%22%20emma%3Aconfidence%3D%220.3%22%20emma%3Agrammar-ref%3D%22grammar_1%22%20emma%3Atokens%3D%22OPERATOR%22%20emma%3Aduration%3D%221220%22%20emma%3Amode%3D%22voice%22%20nuance%3Aeos-silence%3D%221340%22%3E%3CINTENT%20%0Aconf%3D%220.3%22%3EOPERATOR%3C%2FINTENT%3E%3CSWI_literal%3EOPERATOR%3C%2FSWI_literal%3E%3CSWI_meaning%3E%7BINTENT%3AOPERATOR%7D%3C%2FSWI_meaning%3E%3C%2Femma%3Ainterpretation%3E%3C%2Femma%3Aemma%3E&utterance=http%3A%2F%2Fmtl-bl1-12-vm02%3A90%2FNuance%2FcallLogs%2FIvrApiCallSteering%2F2014%2F06June%2F18%2F15%2FNUAN-09-13-mtl-bl1-12-vm02-0a032969_00002680_53a1e3d9_0007_0001-utt001-SAVEWAVEFORM.wav
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><sessionID>session:Nuance-IvrApiCallSteering:07d988da-f3c2-4206-9f87-5b5bfa51ceba</sessionID><state>agentPending</state></inputInteractionStepResult>
+SessionID from /inputInteractionStep is: session:Nuance-IvrApiCallSteering:07d988da-f3c2-4206-9f87-5b5bfa51ceba
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Found binding interaction.text:
+from: 5145551234
+to: 4627
+Nuance-IvrApiCallSteering
+othermenu
+
+Current intent selection: Waive fee
+Tested button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Tested button clicked
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: sessionID=session:Nuance-IvrApiCallSteering:07d988da-f3c2-4206-9f87-5b5bfa51ceba
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><inputInteractionStepResult><completionCause>success</completionCause><outcome><intent><id>INTENT</id><value>WAIVE_FEE_REQUEST</value></intent><variables><id>BILLING_MONTH</id><value>2014-01</value></variables></outcome><sessionID>session:Nuance-IvrApiCallSteering:07d988da-f3c2-4206-9f87-5b5bfa51ceba</sessionID><state>useLiveAssistResult</state></inputInteractionStepResult>
+
+Debug: send post request '/endSession' done
+
+
+post test body param: sessionID=session:Nuance-IvrApiCallSteering:07d988da-f3c2-4206-9f87-5b5bfa51ceba
+Response: [object Object]
+Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><endSessionResult><ok>true</ok></endSessionResult>
+SessionID from /endSession is: session:Nuance-IvrApiCallSteering:07d988da-f3c2-4206-9f87-5b5bfa51ceba
+

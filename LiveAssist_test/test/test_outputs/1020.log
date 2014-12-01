@@ -1,0 +1,53 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1020.log
+info: 
+Test passed! Output string:
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"MrcpApiCallSteering","ani":"sip:4641@QA_test_server","dnis":"sip:4628@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-MrcpApiCallSteering:058ab56f-efde-491e-93d8-c22e50caa38e
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:058ab56f-efde-491e-93d8-c22e50caa38e","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"]}
+Response: [object Object]
+Body: [object Object]interactionID from /startRecognition  is: session:Nuance-MrcpApiCallSteering:058ab56f-efde-491e-93d8-c22e50caa38e-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send post request '/sendRecognitionResult  ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:058ab56f-efde-491e-93d8-c22e50caa38e","completionCause":"success","utterance":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResult":"PD94bWwgdmVyc2lvbj0nMS4wJz8+IDxlbW1hOmVtbWEgdmVyc2lvbj0iMS4wIiB4bWxuczplbW1hPSJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDA3L0NSLWVtbWEtMjAwNzEyMTEiIHhtbG5zOm51YW5jZT0iaHR0cDovL25yMTAubnVhbmNlLmNvbS9lbW1hIj4gPGVtbWE6Z3JhbW1hciBpZD0iZ3JhbW1hcl8xIiByZWY9InNlc3Npb246aHR0cDovL210bC1kYTU1LXZtNjo4MDgwL2xpdmVhc3Npc3QvZGF0YS92eG1sZGVtby90cmF2ZWwvbWFpbm1lbnUuZ3J4bWwgLTEgLTEgMTAwMDAiLz4gPGVtbWE6aW50ZXJwcmV0YXRpb24gaWQ9ImludGVycF8xIiBlbW1hOmNvbmZpZGVuY2U9IjAuNzgiIGVtbWE6Z3JhbW1hci1yZWY9ImdyYW1tYXJfMSIgZW1tYTp0b2tlbnM9Imkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0IiBlbW1hOmR1cmF0aW9uPSIzMjQwIiBlbW1hOm1vZGU9InZvaWNlIiBudWFuY2U6ZW9zLXNpbGVuY2U9Ijg1MCI+IDxpbnRlbnQgY29uZj0iMC43OCI+Ym9vay1mbGlnaHQ8L2ludGVudD4gPFNXSV9saXRlcmFsPmkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0PC9TV0lfbGl0ZXJhbD4gPFNXSV9tZWFuaW5nPntpbnRlbnQ6Ym9vay1mbGlnaHR9PC9TV0lfbWVhbmluZz4gPC9lbW1hOmludGVycHJldGF0aW9uPiA8L2VtbWE6ZW1tYT4="}
+Response: [object Object]
+Body: [object Object]
+completionCause return from /sendRecognitionResult   is: success
+state return from /sendRecognitionResult  is: useLiveAssistResult
+
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:058ab56f-efde-491e-93d8-c22e50caa38e"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-MrcpApiCallSteering:058ab56f-efde-491e-93d8-c22e50caa38e
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 

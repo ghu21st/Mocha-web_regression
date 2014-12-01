@@ -1,0 +1,13 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1010.log
+info: 
+Test passed! Output string:
+
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"Test2","ani":"sip:4627@QA_test_server","dnis":"sip:8665551234@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"localhost:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-Test2:631a3e11-cddd-4812-90c1-4a2f8533887a
+

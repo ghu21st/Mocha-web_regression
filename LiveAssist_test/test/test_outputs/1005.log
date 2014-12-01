@@ -1,0 +1,50 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1005.log
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:33f5695a-2f6c-47a2-ac34-85823f6a45f3
+State: agentPending
+completionCause: null
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:65b6a08f-ae31-41ff-b7cc-eb84ab459274
+State: agentPending
+completionCause: null
+info: 
+Test passed! Output string:
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+
+Debug: send get session request on /sessions done
+
+
+Response: [object Object]
+Body: []
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:33f5695a-2f6c-47a2-ac34-85823f6a45f3
+State: agentPending
+completionCause: null
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:65b6a08f-ae31-41ff-b7cc-eb84ab459274
+State: agentPending
+completionCause: null
+
+Debug: send get session request on /sessions done
+
+
+Response: [object Object]
+Body: ["session:Nuance-WebApiCallSteering:33f5695a-2f6c-47a2-ac34-85823f6a45f3","session:Nuance-WebApiCallSteering:65b6a08f-ae31-41ff-b7cc-eb84ab459274"]

@@ -1,0 +1,8 @@
+--require expect
+--require chai
+--reporter spec
+--ui bdd
+--recursive
+--timeout 9000s
+--slow 200000
+

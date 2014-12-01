@@ -1,0 +1,12 @@
+<div>
+    <label for="{{concept.id}}">{{concept.name}}</label>
+    <div class="input-group">
+    <span class="input-group-addon">
+        <input id="{{concept.id}}ConfirmCheckBox" type="checkbox" ng-model="concept.confirmedByAgent" ng-disabled="!concept.confirmedByAgent">
+    </span>
+        <input id="{{concept.id}}" class="form-control" type="{{concept.type}}"
+               ng-model="concept.value" ng-focus="concept.confirmedByAgent = true"
+               nina-autofocus="conceptIndex == 0" nina-autoselect="conceptIndex == 0"
+               typeahead="value for value in getValues($viewValue)" typeahead-min-length="concept.typeAheadMinLength" typeahead-wait-ms="concept.typeaheadWaitMs">
+    </div>
+</div>

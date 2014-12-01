@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<grammar xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="Root" version="1.0" mode="voice">
+    <rule id="Root" scope="public">
+        <one-of>
+            <item>
+        		<one-of>
+                    <item> i would like to speak to an agent </item>
+                    <item> please get me an agent </item>
+                    <item> speak to an agent </item>
+                    <item> agent </item>
+                </one-of>
+                <tag>intent="request-agent"</tag>
+            </item>
+            <item>
+        		<one-of>
+                    <item> i would like to change my tariff </item>
+                    <item> please change my tariff </item>
+                    <item> change my tariff </item>
+            	</one-of>
+                <tag>intent="change-tariff"</tag>
+            </item>
+            <item>
+        		<one-of>
+                    <item> i need help </item>
+                    <item> please help </item>
+                    <item> help </item>
+		            <item> technical support </item>
+		        </one-of>
+                <tag>intent="request-support"</tag>
+            </item>
+            <item>
+        		<one-of>
+            		<item>please transfer me to the operator</item>
+            		<item>transfer me to the operator</item>
+            		<item>operator</item>
+		        </one-of>
+                <tag>intent="request-operator"</tag>
+            </item>
+        </one-of> 
+    </rule> 
+</grammar>
+

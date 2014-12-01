@@ -1,0 +1,890 @@
+<?xml version="1.0"?>
+<grammar root="Location" version="1.0" xml:lang="en-us" tag-format="swi-semantics/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/2001/06/grammar">
+<!-- Copyright 2006. Nuance Communications Inc. All Rights Reserved.
+Use of the this software is subject to certain restrictions and
+limitations set forth in a license agreement entered into between
+Nuance Communications, Inc. and Licensee. Refer to the Nuance
+License Agreement for license use rights and restrictions.-->
+<rule id="Location" >
+ <one-of>
+   <item weight='0.011388'> p o p  <tag><![CDATA[X={'AIRPORT':'POP','CITY':'puerto plata','COUNTRY':'DO','AIRPORT_NAME':"la union"}]]></tag></item>
+   <item weight='0.048126'> b_o_i  <tag><![CDATA[X={'AIRPORT':'BOI','CITY':'boise','STATE':'ID','COUNTRY':'US','AIRPORT_NAME':"gowen"}]]></tag></item>
+   <item weight='0.023568'> k i x  <tag><![CDATA[X={'AIRPORT':'KIX','CITY':'osaka','COUNTRY':'JP','AIRPORT_NAME':"kansai"}]]></tag></item>
+   <item weight='0.025994'> m_g_a  <tag><![CDATA[X={'AIRPORT':'MGA','CITY':'managua','COUNTRY':'NI','AIRPORT_NAME':"augusto c sandino"}]]></tag></item>
+   <item weight='0.076001'> s a l  <tag><![CDATA[X={'AIRPORT':'SAL','CITY':'san salvador','COUNTRY':'SV','AIRPORT_NAME':"ilopango"}]]></tag></item>
+   <item weight='0.015448'> s_n_n  <tag><![CDATA[X={'AIRPORT':'SNN','CITY':'shannon','COUNTRY':'IE','AIRPORT_NAME':"shannon"}]]></tag></item>
+   <item weight='0.044214'> y_h_z  <tag><![CDATA[X={'AIRPORT':'YHZ','CITY':'halifax','STATE':'NS','COUNTRY':'CA','AIRPORT_NAME':"stan"}]]></tag></item>
+   <item weight='0.281081'> b o s  <tag><![CDATA[X={'AIRPORT':'BOS','CITY':'boston','STATE':'MA','COUNTRY':'US','AIRPORT_NAME':"Boston Logan International"}]]></tag></item>
+   <item weight='0.008764'> r a p  <tag><![CDATA[X={'AIRPORT':'RAP','CITY':'rapid city','STATE':'SD','COUNTRY':'US','AIRPORT_NAME':"rapid city"}]]></tag></item>
+   <item weight='0.315591'> b w i  <tag><![CDATA[X={'AIRPORT':'BWI','CITY':'baltimore','STATE':'MD','COUNTRY':'US','AIRPORT_NAME':"Baltimore Washington International"}]]></tag></item>
+   <item weight='0.002575'> c x i  <tag><![CDATA[X={'AIRPORT':'CXI','CITY':'christmas island','COUNTRY':'KI','AIRPORT_NAME':"christmas island"}]]></tag></item>
+   <item weight='0.017478'> j_n_u  <tag><![CDATA[X={'AIRPORT':'JNU','CITY':'juneau','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"juneau"}]]></tag></item>
+   <item weight='0.015695'> l e x  <tag><![CDATA[X={'AIRPORT':'LEX','CITY':'lexington','STATE':'KY','COUNTRY':'US','AIRPORT_NAME':"blue grass"}]]></tag></item>
+   <item weight='0.514284'> m_s_p  <tag><![CDATA[X={'AIRPORT':'MSP','CITY':'minneapolis','STATE':'MN','COUNTRY':'US','AIRPORT_NAME':"Minneapolis Saint Paul International"}]]></tag></item>
+   <item weight='0.013764'> b d a  <tag><![CDATA[X={'AIRPORT':'BDA','CITY':'bermuda','COUNTRY':'BM','AIRPORT_NAME':"l f wade"}]]></tag></item>
+   <item weight='0.003466'> g u m  <tag><![CDATA[X={'AIRPORT':'GUM','CITY':'hagatna','COUNTRY':'GU','AIRPORT_NAME':"agana"}]]></tag></item>
+   <item weight='0.004258'> d l h  <tag><![CDATA[X={'AIRPORT':'DLH','CITY':'duluth','STATE':'MN','COUNTRY':'US','AIRPORT_NAME':"duluth"}]]></tag></item>
+   <item weight='0.005397'> y_c_b  <tag><![CDATA[X={'AIRPORT':'YCB','CITY':'cambridge bay','COUNTRY':'CA','AIRPORT_NAME':"cambridge bay"}]]></tag></item>
+   <item weight='0.612170'> l_h_r  <tag><![CDATA[X={'AIRPORT':'LHR','CITY':'london','COUNTRY':'UK','AIRPORT_NAME':"Heathrow"}]]></tag></item>
+   <item weight='0.020201'> f a t  <tag><![CDATA[X={'AIRPORT':'FAT','CITY':'fresno','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"fresno"}]]></tag></item>
+   <item weight='0.012774'> e g e  <tag><![CDATA[X={'AIRPORT':'EGE','CITY':'eagle vail','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"eagle"}]]></tag></item>
+   <item weight='0.007724'> g r b  <tag><![CDATA[X={'AIRPORT':'GRB','CITY':'green bay','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"austin straubel"}]]></tag></item>
+   <item weight='0.014408'> b_z_n  <tag><![CDATA[X={'AIRPORT':'BZN','CITY':'bozeman','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"gallatin"}]]></tag></item>
+   <item weight='0.049710'> k o a  <tag><![CDATA[X={'AIRPORT':'KOA','CITY':'kona','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"keahole"}]]></tag></item>
+   <item weight='0.032183'> a_m_m  <tag><![CDATA[X={'AIRPORT':'AMM','CITY':'amman','COUNTRY':'JO','AIRPORT_NAME':"queen alia"}]]></tag></item>
+   <item weight='0.008714'> p_d_l  <tag><![CDATA[X={'AIRPORT':'PDL','CITY':'ponta del gada','COUNTRY':'PT','AIRPORT_NAME':"nordela"}]]></tag></item>
+   <item weight='0.013715'> a m a  <tag><![CDATA[X={'AIRPORT':'AMA','CITY':'amarillo','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"amarillo"}]]></tag></item>
+   <item weight='0.034263'> p_i_e  <tag><![CDATA[X={'AIRPORT':'PIE','CITY':'saint petersburg','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"st petersburg-clearwater international"}]]></tag></item>
+   <item weight='0.003466'> i s b  <tag><![CDATA[X={'AIRPORT':'ISB','CITY':'islamabad','COUNTRY':'PK','AIRPORT_NAME':"benazir bhutto"}]]></tag></item>
+   <item weight='0.066148'> l g w  <tag><![CDATA[X={'AIRPORT':'LGW','CITY':'london','COUNTRY':'UK','AIRPORT_NAME':"gatwick"}]]></tag></item>
+   <item weight='0.138040'> m e x  <tag><![CDATA[X={'AIRPORT':'MEX','CITY':'mexico city','COUNTRY':'MX','AIRPORT_NAME':"benito juarez"}]]></tag></item>
+   <item weight='0.015448'> i s p  <tag><![CDATA[X={'AIRPORT':'ISP','CITY':'islip','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"long island macarthur"}]]></tag></item>
+   <item weight='0.025994'> m g a  <tag><![CDATA[X={'AIRPORT':'MGA','CITY':'managua','COUNTRY':'NI','AIRPORT_NAME':"augusto c sandino"}]]></tag></item>
+   <item weight='0.011685'> a_v_l  <tag><![CDATA[X={'AIRPORT':'AVL','CITY':'fletcher','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"asheville"}]]></tag></item>
+   <item weight='0.514284'> m s p  <tag><![CDATA[X={'AIRPORT':'MSP','CITY':'minneapolis','STATE':'MN','COUNTRY':'US','AIRPORT_NAME':"Minneapolis Saint Paul International"}]]></tag></item>
+   <item weight='0.021785'> b_c_n  <tag><![CDATA[X={'AIRPORT':'BCN','CITY':'barcelona','COUNTRY':'ES','AIRPORT_NAME':"barcelona"}]]></tag></item>
+   <item weight='0.003466'> k h i  <tag><![CDATA[X={'AIRPORT':'KHI','CITY':'karachi','COUNTRY':'PK','AIRPORT_NAME':"jinnah"}]]></tag></item>
+   <item weight='0.013071'> m z t  <tag><![CDATA[X={'AIRPORT':'MZT','CITY':'mazatlan','COUNTRY':'MX','AIRPORT_NAME':"general rafael buelna"}]]></tag></item>
+   <item weight='0.004555'> d a b  <tag><![CDATA[X={'AIRPORT':'DAB','CITY':'daytona beach','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"daytona beach"}]]></tag></item>
+   <item weight='0.015695'> l_e_x  <tag><![CDATA[X={'AIRPORT':'LEX','CITY':'lexington','STATE':'KY','COUNTRY':'US','AIRPORT_NAME':"blue grass"}]]></tag></item>
+   <item weight='0.120216'> s_a_t  <tag><![CDATA[X={'AIRPORT':'SAT','CITY':'san antonio','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"san antonio"}]]></tag></item>
+   <item weight='0.071199'> d a l  <tag><![CDATA[X={'AIRPORT':'DAL','CITY':'dallas','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"love"}]]></tag></item>
+   <item weight='0.017527'> p w m  <tag><![CDATA[X={'AIRPORT':'PWM','CITY':'portland','STATE':'ME','COUNTRY':'US','AIRPORT_NAME':"portland"}]]></tag></item>
+   <item weight='0.003763'> o t z  <tag><![CDATA[X={'AIRPORT':'OTZ','CITY':'kotzebue','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"kotzebue"}]]></tag></item>
+   <item weight='0.004555'> d_a_b  <tag><![CDATA[X={'AIRPORT':'DAB','CITY':'daytona beach','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"daytona beach"}]]></tag></item>
+   <item weight='0.044611'> g_e_g  <tag><![CDATA[X={'AIRPORT':'GEG','CITY':'spokane','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"spokane"}]]></tag></item>
+   <item weight='0.004852'> o_m_e  <tag><![CDATA[X={'AIRPORT':'OME','CITY':'nome','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"nome"}]]></tag></item>
+   <item weight='0.006635'> b j x  <tag><![CDATA[X={'AIRPORT':'BJX','CITY':'guanajuato leon','COUNTRY':'MX','AIRPORT_NAME':"del bajio"}]]></tag></item>
+   <item weight='0.008813'> l a n  <tag><![CDATA[X={'AIRPORT':'LAN','CITY':'lansing','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"capital city"}]]></tag></item>
+   <item weight='0.724613'> l_a_x  <tag><![CDATA[X={'AIRPORT':'LAX','CITY':'los angeles','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"Los Angeles International"}]]></tag></item>
+   <item weight='0.013071'> m_z_t  <tag><![CDATA[X={'AIRPORT':'MZT','CITY':'mazatlan','COUNTRY':'MX','AIRPORT_NAME':"general rafael buelna"}]]></tag></item>
+   <item weight='0.009407'> n g o  <tag><![CDATA[X={'AIRPORT':'NGO','CITY':'nagoya','COUNTRY':'JP','AIRPORT_NAME':"chubu centrair"}]]></tag></item>
+   <item weight='0.020993'> c o s  <tag><![CDATA[X={'AIRPORT':'COS','CITY':'colorado springs','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"colorado springs"}]]></tag></item>
+   <item weight='0.010645'> a b e  <tag><![CDATA[X={'AIRPORT':'ABE','CITY':'allentown','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"lehigh valley"}]]></tag></item>
+   <item weight='0.024261'> s_c_l  <tag><![CDATA[X={'AIRPORT':'SCL','CITY':'santiago','COUNTRY':'CL','AIRPORT_NAME':"arturo m benitez"}]]></tag></item>
+   <item weight='0.048175'> p_v_d  <tag><![CDATA[X={'AIRPORT':'PVD','CITY':'providence','STATE':'RI','COUNTRY':'US','AIRPORT_NAME':"t f green"}]]></tag></item>
+   <item weight='0.003862'> m_l_b  <tag><![CDATA[X={'AIRPORT':'MLB','CITY':'melbourne','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"cape kennedy"}]]></tag></item>
+   <item weight='0.004753'> h_o_g  <tag><![CDATA[X={'AIRPORT':'HOG','CITY':'holguin','COUNTRY':'CU','AIRPORT_NAME':"frank pais"}]]></tag></item>
+   <item weight='0.108382'> c_m_h  <tag><![CDATA[X={'AIRPORT':'CMH','CITY':'columbus','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"columbus"}]]></tag></item>
+   <item weight='0.043769'> d u s  <tag><![CDATA[X={'AIRPORT':'DUS','CITY':'duesseldorf','COUNTRY':'DE','AIRPORT_NAME':"dusseldorf"}]]></tag></item>
+   <item weight='0.006833'> g p t  <tag><![CDATA[X={'AIRPORT':'GPT','CITY':'gulfport','STATE':'MS','COUNTRY':'US','AIRPORT_NAME':"gulfport"}]]></tag></item>
+   <item weight='0.003416'> y_x_n  <tag><![CDATA[X={'AIRPORT':'YXN','CITY':'whale cove','STATE':'NU','COUNTRY':'CA','AIRPORT_NAME':"whale cove"}]]></tag></item>
+   <item weight='0.005496'> f p o  <tag><![CDATA[X={'AIRPORT':'FPO','CITY':'freeport','COUNTRY':'BS','AIRPORT_NAME':"grand bahama"}]]></tag></item>
+   <item weight='0.724613'> l a x  <tag><![CDATA[X={'AIRPORT':'LAX','CITY':'los angeles','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"Los Angeles International"}]]></tag></item>
+   <item weight='0.286924'> j f k  <tag><![CDATA[X={'AIRPORT':'JFK','CITY':'new york','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"New York John F Kennedy International"}]]></tag></item>
+   <item weight='0.058226'> s f b  <tag><![CDATA[X={'AIRPORT':'SFB','CITY':'sanford','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"sanford"}]]></tag></item>
+   <item weight='0.007922'> i t o  <tag><![CDATA[X={'AIRPORT':'ITO','CITY':'hilo','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"hilo"}]]></tag></item>
+   <item weight='0.003466'> e_l_m  <tag><![CDATA[X={'AIRPORT':'ELM','CITY':'elmira','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"corning"}]]></tag></item>
+   <item weight='0.004506'> c h o  <tag><![CDATA[X={'AIRPORT':'CHO','CITY':'charlottesville','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"albemarle"}]]></tag></item>
+   <item weight='0.012477'> u_i_o  <tag><![CDATA[X={'AIRPORT':'UIO','CITY':'quito','COUNTRY':'EC','AIRPORT_NAME':"mariscal sucre"}]]></tag></item>
+   <item weight='0.139130'> h_o_u  <tag><![CDATA[X={'AIRPORT':'HOU','CITY':'houston','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"william p hobby"}]]></tag></item>
+   <item weight='0.003169'> u n k  <tag><![CDATA[X={'AIRPORT':'UNK','CITY':'unalakleet','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"unalakleet"}]]></tag></item>
+   <item weight='0.005100'> r_d_m  <tag><![CDATA[X={'AIRPORT':'RDM','CITY':'redmond','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"roberts"}]]></tag></item>
+   <item weight='0.098282'> y e g  <tag><![CDATA[X={'AIRPORT':'YEG','CITY':'edmonton','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"edmonton"}]]></tag></item>
+   <item weight='0.003367'> y s j  <tag><![CDATA[X={'AIRPORT':'YSJ','CITY':'saint john','STATE':'NB','COUNTRY':'CA','AIRPORT_NAME':"saint john"}]]></tag></item>
+   <item weight='0.551419'> c_l_t  <tag><![CDATA[X={'AIRPORT':'CLT','CITY':'charlotte','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"Charlotte Douglas International"}]]></tag></item>
+   <item weight='0.050503'> f c o  <tag><![CDATA[X={'AIRPORT':'FCO','CITY':'rome','COUNTRY':'IT','AIRPORT_NAME':"fiumicino"}]]></tag></item>
+   <item weight='0.430212'> d t w  <tag><![CDATA[X={'AIRPORT':'DTW','CITY':'detroit','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"Detroit Metropolitan Wayne County"}]]></tag></item>
+   <item weight='0.014408'> b z n  <tag><![CDATA[X={'AIRPORT':'BZN','CITY':'bozeman','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"gallatin"}]]></tag></item>
+   <item weight='0.410407'> p h l  <tag><![CDATA[X={'AIRPORT':'PHL','CITY':'philadelphia','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"Philadelphia International"}]]></tag></item>
+   <item weight='0.414071'> s_e_a  <tag><![CDATA[X={'AIRPORT':'SEA','CITY':'seattle','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"Seattle Tacoma International"}]]></tag></item>
+   <item weight='0.002971'> p s e  <tag><![CDATA[X={'AIRPORT':'PSE','CITY':'ponce','COUNTRY':'PR','AIRPORT_NAME':"mercedita"}]]></tag></item>
+   <item weight='0.004951'> y_x_x  <tag><![CDATA[X={'AIRPORT':'YXX','CITY':'abbotsford','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"abbotsford"}]]></tag></item>
+   <item weight='0.008813'> b i s  <tag><![CDATA[X={'AIRPORT':'BIS','CITY':'bismarck','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"bismarck"}]]></tag></item>
+   <item weight='0.002575'> c_x_i  <tag><![CDATA[X={'AIRPORT':'CXI','CITY':'christmas island','COUNTRY':'KI','AIRPORT_NAME':"christmas island"}]]></tag></item>
+   <item weight='0.025746'> p p t  <tag><![CDATA[X={'AIRPORT':'PPT','CITY':'papeete','COUNTRY':'PF','AIRPORT_NAME':"faa'a"}]]></tag></item>
+   <item weight='0.056840'> o_n_t  <tag><![CDATA[X={'AIRPORT':'ONT','CITY':'ontario','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"ontario"}]]></tag></item>
+   <item weight='0.007427'> b g r  <tag><![CDATA[X={'AIRPORT':'BGR','CITY':'bangor','STATE':'ME','COUNTRY':'US','AIRPORT_NAME':"bangor"}]]></tag></item>
+   <item weight='0.001980'> r e c  <tag><![CDATA[X={'AIRPORT':'REC','CITY':'recife','COUNTRY':'BR','AIRPORT_NAME':"guararapes"}]]></tag></item>
+   <item weight='0.284745'> l_g_a  <tag><![CDATA[X={'AIRPORT':'LGA','CITY':'new york','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"New York La Guardia"}]]></tag></item>
+   <item weight='0.007328'> b m i  <tag><![CDATA[X={'AIRPORT':'BMI','CITY':'bloomington','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"bloomington"}]]></tag></item>
+   <item weight='0.039511'> t u s  <tag><![CDATA[X={'AIRPORT':'TUS','CITY':'tucson','STATE':'AZ','COUNTRY':'US','AIRPORT_NAME':"tucson"}]]></tag></item>
+   <item weight='0.116255'> s_j_c  <tag><![CDATA[X={'AIRPORT':'SJC','CITY':'san jose','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"norman y mineta"}]]></tag></item>
+   <item weight='0.006635'> r t b  <tag><![CDATA[X={'AIRPORT':'RTB','CITY':'roatan','COUNTRY':'HN','AIRPORT_NAME':"juan manuel galvez"}]]></tag></item>
+   <item weight='0.008318'> t r i  <tag><![CDATA[X={'AIRPORT':'TRI','CITY':'tri-cities','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"tri city"}]]></tag></item>
+   <item weight='0.005347'> m o b  <tag><![CDATA[X={'AIRPORT':'MOB','CITY':'mobile','STATE':'AL','COUNTRY':'US','AIRPORT_NAME':"mobile"}]]></tag></item>
+   <item weight='0.005644'> b_q_n  <tag><![CDATA[X={'AIRPORT':'BQN','CITY':'aguadilla','COUNTRY':'PR','AIRPORT_NAME':"borinquen"}]]></tag></item>
+   <item weight='0.007922'> b o m  <tag><![CDATA[X={'AIRPORT':'BOM','CITY':'mumbai','COUNTRY':'IN','AIRPORT_NAME':"chatrapati shivaji"}]]></tag></item>
+   <item weight='0.007625'> y y r  <tag><![CDATA[X={'AIRPORT':'YYR','CITY':'goose bay','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"goose bay"}]]></tag></item>
+   <item weight='0.005545'> f_a_y  <tag><![CDATA[X={'AIRPORT':'FAY','CITY':'fayetteville','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"fayetteville"}]]></tag></item>
+   <item weight='0.323216'> y y z  <tag><![CDATA[X={'AIRPORT':'YYZ','CITY':'toronto','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"Toronto Pearson International"}]]></tag></item>
+   <item weight='0.022281'> c c s  <tag><![CDATA[X={'AIRPORT':'CCS','CITY':'caracas','COUNTRY':'VE','AIRPORT_NAME':"simon bolivar"}]]></tag></item>
+   <item weight='0.014854'> b_g_i  <tag><![CDATA[X={'AIRPORT':'BGI','CITY':'barbados','COUNTRY':'BB','AIRPORT_NAME':"grantley adams"}]]></tag></item>
+   <item weight='0.003367'> y k a  <tag><![CDATA[X={'AIRPORT':'YKA','CITY':'kamloops','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"kamloops"}]]></tag></item>
+   <item weight='0.097638'> m k e  <tag><![CDATA[X={'AIRPORT':'MKE','CITY':'milwaukee','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"general mitchell"}]]></tag></item>
+   <item weight='0.283706'> f r a  <tag><![CDATA[X={'AIRPORT':'FRA','CITY':'frankfurt','COUNTRY':'DE','AIRPORT_NAME':"Frankfurt"}]]></tag></item>
+   <item weight='0.003367'> s c k  <tag><![CDATA[X={'AIRPORT':'SCK','CITY':'stockton','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"stockton"}]]></tag></item>
+   <item weight='0.005100'> j_a_c  <tag><![CDATA[X={'AIRPORT':'JAC','CITY':'jackson hole','STATE':'WY','COUNTRY':'US','AIRPORT_NAME':"jackson hole"}]]></tag></item>
+   <item weight='0.005446'> c_t_g  <tag><![CDATA[X={'AIRPORT':'CTG','CITY':'cartagena','COUNTRY':'CO','AIRPORT_NAME':"rafael nunez"}]]></tag></item>
+   <item weight='0.140763'> y_u_l  <tag><![CDATA[X={'AIRPORT':'YUL','CITY':'montreal','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"dorval"}]]></tag></item>
+   <item weight='0.003020'> y_t_s  <tag><![CDATA[X={'AIRPORT':'YTS','CITY':'timmins','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"timmins"}]]></tag></item>
+   <item weight='0.069268'> j_a_x  <tag><![CDATA[X={'AIRPORT':'JAX','CITY':'jacksonville','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"jacks"}]]></tag></item>
+   <item weight='0.061593'> p b i  <tag><![CDATA[X={'AIRPORT':'PBI','CITY':'west palm beach','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"palm beach"}]]></tag></item>
+   <item weight='0.161410'> c_l_e  <tag><![CDATA[X={'AIRPORT':'CLE','CITY':'cleveland','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"hopkins"}]]></tag></item>
+   <item weight='0.019854'> j_a_n  <tag><![CDATA[X={'AIRPORT':'JAN','CITY':'jackson','STATE':'MS','COUNTRY':'US','AIRPORT_NAME':"allen c thompson"}]]></tag></item>
+   <item weight='0.006882'> t_l_h  <tag><![CDATA[X={'AIRPORT':'TLH','CITY':'tallahassee','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"tallahassee"}]]></tag></item>
+   <item weight='0.001980'> h_m_o  <tag><![CDATA[X={'AIRPORT':'HMO','CITY':'hermosillo','COUNTRY':'MX','AIRPORT_NAME':"pesqueira garcia"}]]></tag></item>
+   <item weight='0.006536'> h_d_n  <tag><![CDATA[X={'AIRPORT':'HDN','CITY':'steamboat springs','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"yampa valley"}]]></tag></item>
+   <item weight='0.023865'> v r a  <tag><![CDATA[X={'AIRPORT':'VRA','CITY':'varadero','COUNTRY':'CU','AIRPORT_NAME':"juan gualberto gomez"}]]></tag></item>
+   <item weight='0.005743'> h e l  <tag><![CDATA[X={'AIRPORT':'HEL','CITY':'helsinki','COUNTRY':'FI','AIRPORT_NAME':"vantaa"}]]></tag></item>
+   <item weight='0.005050'> g_j_t  <tag><![CDATA[X={'AIRPORT':'GJT','CITY':'grand junction','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"walker"}]]></tag></item>
+   <item weight='0.018468'> m d t  <tag><![CDATA[X={'AIRPORT':'MDT','CITY':'harrisburg','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"olmsted"}]]></tag></item>
+   <item weight='0.005743'> h_e_l  <tag><![CDATA[X={'AIRPORT':'HEL','CITY':'helsinki','COUNTRY':'FI','AIRPORT_NAME':"vantaa"}]]></tag></item>
+   <item weight='0.021686'> k_t_n  <tag><![CDATA[X={'AIRPORT':'KTN','CITY':'ketchikan','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"ketchikan"}]]></tag></item>
+   <item weight='0.945735'> o r d  <tag><![CDATA[X={'AIRPORT':'ORD','CITY':'chicago','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"O'Hare International"}]]></tag></item>
+   <item weight='0.009308'> y e v  <tag><![CDATA[X={'AIRPORT':'YEV','CITY':'inuvik','STATE':'NT','COUNTRY':'CA','AIRPORT_NAME':"inuvik"}]]></tag></item>
+   <item weight='0.024756'> s a p  <tag><![CDATA[X={'AIRPORT':'SAP','CITY':'san pedro sula','COUNTRY':'HN','AIRPORT_NAME':"la mesa"}]]></tag></item>
+   <item weight='0.089964'> b_d_l  <tag><![CDATA[X={'AIRPORT':'BDL','CITY':'windsor locks','STATE':'CT','COUNTRY':'US','AIRPORT_NAME':"bradley"}]]></tag></item>
+   <item weight='0.004951'> l_r_m  <tag><![CDATA[X={'AIRPORT':'LRM','CITY':'laromana','COUNTRY':'DO','AIRPORT_NAME':"la romana"}]]></tag></item>
+   <item weight='0.019211'> t y s  <tag><![CDATA[X={'AIRPORT':'TYS','CITY':'knoxville','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"mc ghee tyson"}]]></tag></item>
+   <item weight='0.007922'> y_v_p  <tag><![CDATA[X={'AIRPORT':'YVP','CITY':'kuujjuaq','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"kuujjuaq"}]]></tag></item>
+   <item weight='0.001980'> p_p_g  <tag><![CDATA[X={'AIRPORT':'PPG','CITY':'pagopago','COUNTRY':'AS','AIRPORT_NAME':"pago pago international"}]]></tag></item>
+   <item weight='0.003565'> y_d_f  <tag><![CDATA[X={'AIRPORT':'YDF','CITY':'deer lake','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"deer lake"}]]></tag></item>
+   <item weight='0.017131'> f a r  <tag><![CDATA[X={'AIRPORT':'FAR','CITY':'fargo','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"hector"}]]></tag></item>
+   <item weight='0.035649'> a_u_h  <tag><![CDATA[X={'AIRPORT':'AUH','CITY':'abu dhabi','COUNTRY':'AE','AIRPORT_NAME':"abu dhabi"}]]></tag></item>
+   <item weight='0.031589'> n a n  <tag><![CDATA[X={'AIRPORT':'NAN','CITY':'nadi','COUNTRY':'FJ','AIRPORT_NAME':"nadi"}]]></tag></item>
+   <item weight='0.012081'> h_r_l  <tag><![CDATA[X={'AIRPORT':'HRL','CITY':'harlingen','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"valley"}]]></tag></item>
+   <item weight='0.005941'> h_t_s  <tag><![CDATA[X={'AIRPORT':'HTS','CITY':'huntington','STATE':'WV','COUNTRY':'US','AIRPORT_NAME':"milton"}]]></tag></item>
+   <item weight='0.003268'> y y g  <tag><![CDATA[X={'AIRPORT':'YYG','CITY':'charlottetown','STATE':'PE','COUNTRY':'CA','AIRPORT_NAME':"charlottetown"}]]></tag></item>
+   <item weight='0.011586'> s t i  <tag><![CDATA[X={'AIRPORT':'STI','CITY':'santiago','COUNTRY':'DO','AIRPORT_NAME':"santiago"}]]></tag></item>
+   <item weight='0.028123'> b u r  <tag><![CDATA[X={'AIRPORT':'BUR','CITY':'burbank','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"bob hope"}]]></tag></item>
+   <item weight='0.014557'> y_r_t  <tag><![CDATA[X={'AIRPORT':'YRT','CITY':'rankin inlet','COUNTRY':'CA','AIRPORT_NAME':"rankin inlet"}]]></tag></item>
+   <item weight='0.070704'> b u f  <tag><![CDATA[X={'AIRPORT':'BUF','CITY':'buffalo','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"buffalo"}]]></tag></item>
+   <item weight='0.001980'> p p g  <tag><![CDATA[X={'AIRPORT':'PPG','CITY':'pagopago','COUNTRY':'AS','AIRPORT_NAME':"pago pago international"}]]></tag></item>
+   <item weight='0.013863'> s_g_f  <tag><![CDATA[X={'AIRPORT':'SGF','CITY':'springfield','STATE':'MO','COUNTRY':'US','AIRPORT_NAME':"branson"}]]></tag></item>
+   <item weight='0.024855'> f s d  <tag><![CDATA[X={'AIRPORT':'FSD','CITY':'sioux falls','STATE':'SD','COUNTRY':'US','AIRPORT_NAME':"joe foss"}]]></tag></item>
+   <item weight='0.058226'> s_f_b  <tag><![CDATA[X={'AIRPORT':'SFB','CITY':'sanford','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"sanford"}]]></tag></item>
+   <item weight='0.011586'> s_t_i  <tag><![CDATA[X={'AIRPORT':'STI','CITY':'santiago','COUNTRY':'DO','AIRPORT_NAME':"santiago"}]]></tag></item>
+   <item weight='0.003961'> s i t  <tag><![CDATA[X={'AIRPORT':'SIT','CITY':'sitka','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"sitka"}]]></tag></item>
+   <item weight='0.087538'> s y d  <tag><![CDATA[X={'AIRPORT':'SYD','CITY':'sydney','STATE':'NSW','COUNTRY':'AU','AIRPORT_NAME':"kingsford smith"}]]></tag></item>
+   <item weight='0.019211'> m t y  <tag><![CDATA[X={'AIRPORT':'MTY','CITY':'monterrey','COUNTRY':'MX','AIRPORT_NAME':"mariano escobedo"}]]></tag></item>
+   <item weight='0.010497'> p i a  <tag><![CDATA[X={'AIRPORT':'PIA','CITY':'peoria','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"peoria"}]]></tag></item>
+   <item weight='0.005892'> a v p  <tag><![CDATA[X={'AIRPORT':'AVP','CITY':'scranton wilkes-barre','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"scranton"}]]></tag></item>
+   <item weight='0.004010'> y_e_k  <tag><![CDATA[X={'AIRPORT':'YEK','CITY':'arviat','STATE':'NU','COUNTRY':'CA','AIRPORT_NAME':"arviat"}]]></tag></item>
+   <item weight='0.001980'> x i y  <tag><![CDATA[X={'AIRPORT':'XIY','CITY':'xianyang','COUNTRY':'CN','AIRPORT_NAME':"xianyang"}]]></tag></item>
+   <item weight='0.009407'> n_g_o  <tag><![CDATA[X={'AIRPORT':'NGO','CITY':'nagoya','COUNTRY':'JP','AIRPORT_NAME':"chubu centrair"}]]></tag></item>
+   <item weight='0.026737'> d m e  <tag><![CDATA[X={'AIRPORT':'DME','CITY':'moscow','COUNTRY':'RU','AIRPORT_NAME':"domodedovo"}]]></tag></item>
+   <item weight='0.025746'> p_p_t  <tag><![CDATA[X={'AIRPORT':'PPT','CITY':'papeete','COUNTRY':'PF','AIRPORT_NAME':"faa'a"}]]></tag></item>
+   <item weight='0.003961'> c g a  <tag><![CDATA[X={'AIRPORT':'CGA','CITY':'craig','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"craig"}]]></tag></item>
+   <item weight='0.009902'> k e f  <tag><![CDATA[X={'AIRPORT':'KEF','CITY':'reykjavik','COUNTRY':'IS','AIRPORT_NAME':"keflavik"}]]></tag></item>
+   <item weight='0.008863'> m_s_o  <tag><![CDATA[X={'AIRPORT':'MSO','CITY':'missoula','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"johnson-bell"}]]></tag></item>
+   <item weight='0.016933'> s_a_v  <tag><![CDATA[X={'AIRPORT':'SAV','CITY':'savannah','STATE':'GA','COUNTRY':'US','AIRPORT_NAME':"savannah"}]]></tag></item>
+   <item weight='0.011239'> a_c_y  <tag><![CDATA[X={'AIRPORT':'ACY','CITY':'atlantic city','STATE':'NJ','COUNTRY':'US','AIRPORT_NAME':"atlantic city"}]]></tag></item>
+   <item weight='0.050800'> m a n  <tag><![CDATA[X={'AIRPORT':'MAN','CITY':'manchester','COUNTRY':'UK','AIRPORT_NAME':"manchester"}]]></tag></item>
+   <item weight='0.019508'> b_i_l  <tag><![CDATA[X={'AIRPORT':'BIL','CITY':'billings','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"logan"}]]></tag></item>
+   <item weight='0.003515'> b e t  <tag><![CDATA[X={'AIRPORT':'BET','CITY':'bethel','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"bethel"}]]></tag></item>
+   <item weight='0.014111'> y_q_b  <tag><![CDATA[X={'AIRPORT':'YQB','CITY':'quebec','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"jean lesage"}]]></tag></item>
+   <item weight='0.006635'> b_j_x  <tag><![CDATA[X={'AIRPORT':'BJX','CITY':'guanajuato leon','COUNTRY':'MX','AIRPORT_NAME':"del bajio"}]]></tag></item>
+   <item weight='0.024261'> s c l  <tag><![CDATA[X={'AIRPORT':'SCL','CITY':'santiago','COUNTRY':'CL','AIRPORT_NAME':"arturo m benitez"}]]></tag></item>
+   <item weight='0.307372'> i a d  <tag><![CDATA[X={'AIRPORT':'IAD','CITY':'washington','STATE':'DC','COUNTRY':'US','AIRPORT_NAME':"Washington Dulles International"}]]></tag></item>
+   <item weight='0.315591'> b_w_i  <tag><![CDATA[X={'AIRPORT':'BWI','CITY':'baltimore','STATE':'MD','COUNTRY':'US','AIRPORT_NAME':"Baltimore Washington International"}]]></tag></item>
+   <item weight='0.021290'> i_c_t  <tag><![CDATA[X={'AIRPORT':'ICT','CITY':'wichita','STATE':'KS','COUNTRY':'US','AIRPORT_NAME':"mid-continent"}]]></tag></item>
+   <item weight='0.003466'> l_n_k  <tag><![CDATA[X={'AIRPORT':'LNK','CITY':'lincoln','STATE':'NE','COUNTRY':'US','AIRPORT_NAME':"lincoln"}]]></tag></item>
+   <item weight='0.056840'> o n t  <tag><![CDATA[X={'AIRPORT':'ONT','CITY':'ontario','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"ontario"}]]></tag></item>
+   <item weight='0.095361'> p v g  <tag><![CDATA[X={'AIRPORT':'PVG','CITY':'shanghai','COUNTRY':'CN','AIRPORT_NAME':"pudong"}]]></tag></item>
+   <item weight='0.007130'> m d e  <tag><![CDATA[X={'AIRPORT':'MDE','CITY':'medellin','COUNTRY':'CO','AIRPORT_NAME':"medellin"}]]></tag></item>
+   <item weight='0.003961'> h_a_m  <tag><![CDATA[X={'AIRPORT':'HAM','CITY':'hamburg','COUNTRY':'DE','AIRPORT_NAME':"fuhlsbuettel"}]]></tag></item>
+   <item weight='0.001980'> x_i_y  <tag><![CDATA[X={'AIRPORT':'XIY','CITY':'xianyang','COUNTRY':'CN','AIRPORT_NAME':"xianyang"}]]></tag></item>
+   <item weight='0.325939'> e_w_r  <tag><![CDATA[X={'AIRPORT':'EWR','CITY':'newark','STATE':'NJ','COUNTRY':'US','AIRPORT_NAME':"Newark Liberty International"}]]></tag></item>
+   <item weight='0.044214'> y h z  <tag><![CDATA[X={'AIRPORT':'YHZ','CITY':'halifax','STATE':'NS','COUNTRY':'CA','AIRPORT_NAME':"stan"}]]></tag></item>
+   <item weight='0.006833'> g t f  <tag><![CDATA[X={'AIRPORT':'GTF','CITY':'great falls','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"great falls"}]]></tag></item>
+   <item weight='0.195425'> m d w  <tag><![CDATA[X={'AIRPORT':'MDW','CITY':'chicago','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"midway"}]]></tag></item>
+   <item weight='0.011239'> a c y  <tag><![CDATA[X={'AIRPORT':'ACY','CITY':'atlantic city','STATE':'NJ','COUNTRY':'US','AIRPORT_NAME':"atlantic city"}]]></tag></item>
+   <item weight='0.116651'> p e k  <tag><![CDATA[X={'AIRPORT':'PEK','CITY':'beijing','COUNTRY':'CN','AIRPORT_NAME':"beijing"}]]></tag></item>
+   <item weight='0.022281'> s v o  <tag><![CDATA[X={'AIRPORT':'SVO','CITY':'moscow','COUNTRY':'RU','AIRPORT_NAME':"sheremetyevo"}]]></tag></item>
+   <item weight='0.007625'> y_y_r  <tag><![CDATA[X={'AIRPORT':'YYR','CITY':'goose bay','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"goose bay"}]]></tag></item>
+   <item weight='0.071100'> o_m_a  <tag><![CDATA[X={'AIRPORT':'OMA','CITY':'omaha','STATE':'NE','COUNTRY':'US','AIRPORT_NAME':"eppley"}]]></tag></item>
+   <item weight='0.029113'> e z e  <tag><![CDATA[X={'AIRPORT':'EZE','CITY':'buenos aires','COUNTRY':'AR','AIRPORT_NAME':"ministro pistarini"}]]></tag></item>
+   <item weight='0.089964'> b d l  <tag><![CDATA[X={'AIRPORT':'BDL','CITY':'windsor locks','STATE':'CT','COUNTRY':'US','AIRPORT_NAME':"bradley"}]]></tag></item>
+   <item weight='0.011784'> i l m  <tag><![CDATA[X={'AIRPORT':'ILM','CITY':'wilmington','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"new hanover"}]]></tag></item>
+   <item weight='0.049017'> e l p  <tag><![CDATA[X={'AIRPORT':'ELP','CITY':'el paso','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"el paso"}]]></tag></item>
+   <item weight='0.007971'> f_n_t  <tag><![CDATA[X={'AIRPORT':'FNT','CITY':'flint','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"bishop"}]]></tag></item>
+   <item weight='0.006734'> g_n_d  <tag><![CDATA[X={'AIRPORT':'GND','CITY':'saint georges','COUNTRY':'GD','AIRPORT_NAME':"maurice bishop"}]]></tag></item>
+   <item weight='0.021785'> v i e  <tag><![CDATA[X={'AIRPORT':'VIE','CITY':'vienna','COUNTRY':'AT','AIRPORT_NAME':"vienna"}]]></tag></item>
+   <item weight='0.035451'> l_i_h  <tag><![CDATA[X={'AIRPORT':'LIH','CITY':'kauai island','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"lihue"}]]></tag></item>
+   <item weight='0.004258'> e w n  <tag><![CDATA[X={'AIRPORT':'EWN','CITY':'newbern','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"craven"}]]></tag></item>
+   <item weight='0.019211'> m_t_y  <tag><![CDATA[X={'AIRPORT':'MTY','CITY':'monterrey','COUNTRY':'MX','AIRPORT_NAME':"mariano escobedo"}]]></tag></item>
+   <item weight='0.006338'> b o n  <tag><![CDATA[X={'AIRPORT':'BON','CITY':'bonaire','COUNTRY':'AN','AIRPORT_NAME':"flamingo"}]]></tag></item>
+   <item weight='0.021934'> y_l_w  <tag><![CDATA[X={'AIRPORT':'YLW','CITY':'kelowna','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"kelowna"}]]></tag></item>
+   <item weight='0.005941'> c n f  <tag><![CDATA[X={'AIRPORT':'CNF','CITY':'belohorizonte','COUNTRY':'BR','AIRPORT_NAME':"confins"}]]></tag></item>
+   <item weight='0.003763'> y g l  <tag><![CDATA[X={'AIRPORT':'YGL','CITY':'lagrande','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"la grande"}]]></tag></item>
+   <item weight='0.016785'> y y j  <tag><![CDATA[X={'AIRPORT':'YYJ','CITY':'victoria','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"victoria"}]]></tag></item>
+   <item weight='0.006041'> y_q_u  <tag><![CDATA[X={'AIRPORT':'YQU','CITY':'grande prairie','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"grande prairie"}]]></tag></item>
+   <item weight='0.002476'> h a v  <tag><![CDATA[X={'AIRPORT':'HAV','CITY':'havana','COUNTRY':'CU','AIRPORT_NAME':"jose marti"}]]></tag></item>
+   <item weight='0.003169'> s b y  <tag><![CDATA[X={'AIRPORT':'SBY','CITY':'salisbury','STATE':'MD','COUNTRY':'US','AIRPORT_NAME':"ocean city"}]]></tag></item>
+   <item weight='0.001980'> s_s_a  <tag><![CDATA[X={'AIRPORT':'SSA','CITY':'salvador','COUNTRY':'BR','AIRPORT_NAME':"dois de julho"}]]></tag></item>
+   <item weight='0.007625'> a_t_w  <tag><![CDATA[X={'AIRPORT':'ATW','CITY':'appleton','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"outagamie"}]]></tag></item>
+   <item weight='0.003169'> s_b_y  <tag><![CDATA[X={'AIRPORT':'SBY','CITY':'salisbury','STATE':'MD','COUNTRY':'US','AIRPORT_NAME':"ocean city"}]]></tag></item>
+   <item weight='0.005248'> c r p  <tag><![CDATA[X={'AIRPORT':'CRP','CITY':'corpus christi','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"corpus christi"}]]></tag></item>
+   <item weight='0.031787'> g c m  <tag><![CDATA[X={'AIRPORT':'GCM','CITY':'grand cayman island','COUNTRY':'KY','AIRPORT_NAME':"owen roberts"}]]></tag></item>
+   <item weight='0.124375'> m_a_d  <tag><![CDATA[X={'AIRPORT':'MAD','CITY':'madrid','COUNTRY':'ES','AIRPORT_NAME':"barajas"}]]></tag></item>
+   <item weight='0.003763'> g n v  <tag><![CDATA[X={'AIRPORT':'GNV','CITY':'gainesville','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"j r alison"}]]></tag></item>
+   <item weight='0.006833'> y_q_q  <tag><![CDATA[X={'AIRPORT':'YQQ','CITY':'comox','COUNTRY':'CA','AIRPORT_NAME':"comox"}]]></tag></item>
+   <item weight='0.004258'> d_l_h  <tag><![CDATA[X={'AIRPORT':'DLH','CITY':'duluth','STATE':'MN','COUNTRY':'US','AIRPORT_NAME':"duluth"}]]></tag></item>
+   <item weight='0.171164'> h n l  <tag><![CDATA[X={'AIRPORT':'HNL','CITY':'honolulu','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"honolulu"}]]></tag></item>
+   <item weight='0.003268'> g r i  <tag><![CDATA[X={'AIRPORT':'GRI','CITY':'grand island','STATE':'NE','COUNTRY':'US','AIRPORT_NAME':"grand island"}]]></tag></item>
+   <item weight='0.027430'> s t t  <tag><![CDATA[X={'AIRPORT':'STT','CITY':'saintthomas','COUNTRY':'VI','AIRPORT_NAME':"cyril e king"}]]></tag></item>
+   <item weight='0.190721'> y v r  <tag><![CDATA[X={'AIRPORT':'YVR','CITY':'vancouver','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"vancouver"}]]></tag></item>
+   <item weight='0.050998'> s_d_f  <tag><![CDATA[X={'AIRPORT':'SDF','CITY':'louisville','STATE':'KY','COUNTRY':'US','AIRPORT_NAME':"standiford"}]]></tag></item>
+   <item weight='0.003416'> y x n  <tag><![CDATA[X={'AIRPORT':'YXN','CITY':'whale cove','STATE':'NU','COUNTRY':'CA','AIRPORT_NAME':"whale cove"}]]></tag></item>
+   <item weight='0.005644'> m a o  <tag><![CDATA[X={'AIRPORT':'MAO','CITY':'manaus','COUNTRY':'BR','AIRPORT_NAME':"eduardo gomes"}]]></tag></item>
+   <item weight='0.009704'> g l a  <tag><![CDATA[X={'AIRPORT':'GLA','CITY':'glasgow','COUNTRY':'UK','AIRPORT_NAME':"glasgow"}]]></tag></item>
+   <item weight='0.013170'> k i n  <tag><![CDATA[X={'AIRPORT':'KIN','CITY':'kingston','COUNTRY':'JM','AIRPORT_NAME':"norman manley"}]]></tag></item>
+   <item weight='0.018320'> j_e_d  <tag><![CDATA[X={'AIRPORT':'JED','CITY':'jeddah','COUNTRY':'SA','AIRPORT_NAME':"king abdulaziz"}]]></tag></item>
+   <item weight='0.042779'> d u b  <tag><![CDATA[X={'AIRPORT':'DUB','CITY':'dublin','COUNTRY':'IE','AIRPORT_NAME':"dublin"}]]></tag></item>
+   <item weight='0.001980'> c_t_s  <tag><![CDATA[X={'AIRPORT':'CTS','CITY':'sapporo','COUNTRY':'JP','AIRPORT_NAME':"chitose"}]]></tag></item>
+   <item weight='0.161410'> c l e  <tag><![CDATA[X={'AIRPORT':'CLE','CITY':'cleveland','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"hopkins"}]]></tag></item>
+   <item weight='0.001980'> l c y  <tag><![CDATA[X={'AIRPORT':'LCY','CITY':'london','COUNTRY':'UK','AIRPORT_NAME':"london"}]]></tag></item>
+   <item weight='0.042878'> h_n_d  <tag><![CDATA[X={'AIRPORT':'HND','CITY':'tokyo','COUNTRY':'JP','AIRPORT_NAME':"haneda"}]]></tag></item>
+   <item weight='0.048175'> p v d  <tag><![CDATA[X={'AIRPORT':'PVD','CITY':'providence','STATE':'RI','COUNTRY':'US','AIRPORT_NAME':"t f green"}]]></tag></item>
+   <item weight='0.024558'> s d q  <tag><![CDATA[X={'AIRPORT':'SDQ','CITY':'santo domingo','COUNTRY':'DO','AIRPORT_NAME':"las americas"}]]></tag></item>
+   <item weight='0.003416'> y h k  <tag><![CDATA[X={'AIRPORT':'YHK','CITY':'gjoahaven','COUNTRY':'CA','AIRPORT_NAME':"gjoa haven"}]]></tag></item>
+   <item weight='0.004951'> l r m  <tag><![CDATA[X={'AIRPORT':'LRM','CITY':'laromana','COUNTRY':'DO','AIRPORT_NAME':"la romana"}]]></tag></item>
+   <item weight='0.009110'> e_y_w  <tag><![CDATA[X={'AIRPORT':'EYW','CITY':'key west','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"key west"}]]></tag></item>
+   <item weight='0.019508'> b i l  <tag><![CDATA[X={'AIRPORT':'BIL','CITY':'billings','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"logan"}]]></tag></item>
+   <item weight='0.016933'> s a v  <tag><![CDATA[X={'AIRPORT':'SAV','CITY':'savannah','STATE':'GA','COUNTRY':'US','AIRPORT_NAME':"savannah"}]]></tag></item>
+   <item weight='0.541417'> s f o  <tag><![CDATA[X={'AIRPORT':'SFO','CITY':'san francisco','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"San Francisco International"}]]></tag></item>
+   <item weight='0.004357'> s_h_v  <tag><![CDATA[X={'AIRPORT':'SHV','CITY':'shreveport','STATE':'LA','COUNTRY':'US','AIRPORT_NAME':"shreveport"}]]></tag></item>
+   <item weight='0.027430'> s_t_t  <tag><![CDATA[X={'AIRPORT':'STT','CITY':'saintthomas','COUNTRY':'VI','AIRPORT_NAME':"cyril e king"}]]></tag></item>
+   <item weight='0.006536'> r_f_d  <tag><![CDATA[X={'AIRPORT':'RFD','CITY':'rockford','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"rockford"}]]></tag></item>
+   <item weight='0.019013'> m_l_i  <tag><![CDATA[X={'AIRPORT':'MLI','CITY':'moline','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"quad city"}]]></tag></item>
+   <item weight='0.048720'> o r f  <tag><![CDATA[X={'AIRPORT':'ORF','CITY':'norfolk','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"norfolk"}]]></tag></item>
+   <item weight='0.420359'> m c o  <tag><![CDATA[X={'AIRPORT':'MCO','CITY':'orlando','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"Orlando International"}]]></tag></item>
+   <item weight='0.005001'> y_x_u  <tag><![CDATA[X={'AIRPORT':'YXU','CITY':'london','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"london"}]]></tag></item>
+   <item weight='0.423528'> d f w  <tag><![CDATA[X={'AIRPORT':'DFW','CITY':'dallas','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"Dallas Fort Worth International"}]]></tag></item>
+   <item weight='0.086548'> p v r  <tag><![CDATA[X={'AIRPORT':'PVR','CITY':'puerto vallarta','COUNTRY':'MX','AIRPORT_NAME':"ordaz"}]]></tag></item>
+   <item weight='0.031985'> g u a  <tag><![CDATA[X={'AIRPORT':'GUA','CITY':'guatemala city','COUNTRY':'GT','AIRPORT_NAME':"la aurora"}]]></tag></item>
+   <item weight='0.140763'> p e t  <tag><![CDATA[X={'AIRPORT':'YUL','CITY':'montreal','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"dorval"}]]></tag></item>
+   <item weight='0.007922'> d k r  <tag><![CDATA[X={'AIRPORT':'DKR','CITY':'dakar','COUNTRY':'SN','AIRPORT_NAME':"yoff"}]]></tag></item>
+   <item weight='0.048126'> b o i  <tag><![CDATA[X={'AIRPORT':'BOI','CITY':'boise','STATE':'ID','COUNTRY':'US','AIRPORT_NAME':"gowen"}]]></tag></item>
+   <item weight='0.171907'> a m s  <tag><![CDATA[X={'AIRPORT':'AMS','CITY':'amsterdam','COUNTRY':'NL','AIRPORT_NAME':"schiphol"}]]></tag></item>
+   <item weight='0.003466'> l n k  <tag><![CDATA[X={'AIRPORT':'LNK','CITY':'lincoln','STATE':'NE','COUNTRY':'US','AIRPORT_NAME':"lincoln"}]]></tag></item>
+   <item weight='0.006140'> y q m  <tag><![CDATA[X={'AIRPORT':'YQM','CITY':'moncton','STATE':'NB','COUNTRY':'CA','AIRPORT_NAME':"moncton"}]]></tag></item>
+   <item weight='0.008120'> f w a  <tag><![CDATA[X={'AIRPORT':'FWA','CITY':'fort wayne','STATE':'IN','COUNTRY':'US','AIRPORT_NAME':"ft wayne"}]]></tag></item>
+   <item weight='0.002080'> m_i_d  <tag><![CDATA[X={'AIRPORT':'MID','CITY':'merida','COUNTRY':'MX','AIRPORT_NAME':"m c rejon"}]]></tag></item>
+   <item weight='0.028222'> m s n  <tag><![CDATA[X={'AIRPORT':'MSN','CITY':'madison','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"dane"}]]></tag></item>
+   <item weight='0.012626'> y t z  <tag><![CDATA[X={'AIRPORT':'YTZ','CITY':'toronto','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"toronto"}]]></tag></item>
+   <item weight='0.007724'> o s l  <tag><![CDATA[X={'AIRPORT':'OSL','CITY':'oslo','COUNTRY':'NO','AIRPORT_NAME':"gardermoen"}]]></tag></item>
+   <item weight='0.032183'> a m m  <tag><![CDATA[X={'AIRPORT':'AMM','CITY':'amman','COUNTRY':'JO','AIRPORT_NAME':"queen alia"}]]></tag></item>
+   <item weight='0.041689'> i s t  <tag><![CDATA[X={'AIRPORT':'IST','CITY':'istanbul','COUNTRY':'TR','AIRPORT_NAME':"ataturk"}]]></tag></item>
+   <item weight='0.034263'> l_i_t  <tag><![CDATA[X={'AIRPORT':'LIT','CITY':'little rock','STATE':'AR','COUNTRY':'US','AIRPORT_NAME':"adams"}]]></tag></item>
+   <item weight='0.003169'> u_n_k  <tag><![CDATA[X={'AIRPORT':'UNK','CITY':'unalakleet','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"unalakleet"}]]></tag></item>
+   <item weight='0.051988'> d x b  <tag><![CDATA[X={'AIRPORT':'DXB','CITY':'dubai','COUNTRY':'AE','AIRPORT_NAME':"dubai"}]]></tag></item>
+   <item weight='0.009704'> m_t_j  <tag><![CDATA[X={'AIRPORT':'MTJ','CITY':'montrose','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"montrose"}]]></tag></item>
+   <item weight='0.025400'> d_a_y  <tag><![CDATA[X={'AIRPORT':'DAY','CITY':'dayton','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"james cox"}]]></tag></item>
+   <item weight='0.286924'> j_f_k  <tag><![CDATA[X={'AIRPORT':'JFK','CITY':'new york','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"New York John F Kennedy International"}]]></tag></item>
+   <item weight='0.017824'> y_q_r  <tag><![CDATA[X={'AIRPORT':'YQR','CITY':'regina','STATE':'SK','COUNTRY':'CA','AIRPORT_NAME':"regina"}]]></tag></item>
+   <item weight='0.009209'> c_u_r  <tag><![CDATA[X={'AIRPORT':'CUR','CITY':'curacao','COUNTRY':'AN','AIRPORT_NAME':"hato"}]]></tag></item>
+   <item weight='0.006833'> y q q  <tag><![CDATA[X={'AIRPORT':'YQQ','CITY':'comox','COUNTRY':'CA','AIRPORT_NAME':"comox"}]]></tag></item>
+   <item weight='0.003713'> s t s  <tag><![CDATA[X={'AIRPORT':'STS','CITY':'santarosa','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"sonoma county"}]]></tag></item>
+   <item weight='0.062237'> p_u_j  <tag><![CDATA[X={'AIRPORT':'PUJ','CITY':'puntacana','COUNTRY':'DO','AIRPORT_NAME':"punta cana"}]]></tag></item>
+   <item weight='0.007823'> i d a  <tag><![CDATA[X={'AIRPORT':'IDA','CITY':'idaho falls','STATE':'ID','COUNTRY':'US','AIRPORT_NAME':"fanning"}]]></tag></item>
+   <item weight='0.010497'> y v q  <tag><![CDATA[X={'AIRPORT':'YVQ','CITY':'norman wells','COUNTRY':'CA','AIRPORT_NAME':"norman wells"}]]></tag></item>
+   <item weight='0.009209'> c u r  <tag><![CDATA[X={'AIRPORT':'CUR','CITY':'curacao','COUNTRY':'AN','AIRPORT_NAME':"hato"}]]></tag></item>
+   <item weight='0.003268'> c d v  <tag><![CDATA[X={'AIRPORT':'CDV','CITY':'cordova','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"mudhole smith"}]]></tag></item>
+   <item weight='0.034263'> l i t  <tag><![CDATA[X={'AIRPORT':'LIT','CITY':'little rock','STATE':'AR','COUNTRY':'US','AIRPORT_NAME':"adams"}]]></tag></item>
+   <item weight='0.003961'> c_g_a  <tag><![CDATA[X={'AIRPORT':'CGA','CITY':'craig','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"craig"}]]></tag></item>
+   <item weight='0.031787'> g_c_m  <tag><![CDATA[X={'AIRPORT':'GCM','CITY':'grand cayman island','COUNTRY':'KY','AIRPORT_NAME':"owen roberts"}]]></tag></item>
+   <item weight='0.138040'> m_e_x  <tag><![CDATA[X={'AIRPORT':'MEX','CITY':'mexico city','COUNTRY':'MX','AIRPORT_NAME':"benito juarez"}]]></tag></item>
+   <item weight='0.087538'> s_y_d  <tag><![CDATA[X={'AIRPORT':'SYD','CITY':'sydney','STATE':'NSW','COUNTRY':'AU','AIRPORT_NAME':"kingsford smith"}]]></tag></item>
+   <item weight='0.019013'> m l i  <tag><![CDATA[X={'AIRPORT':'MLI','CITY':'moline','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"quad city"}]]></tag></item>
+   <item weight='0.191613'> m i a  <tag><![CDATA[X={'AIRPORT':'MIA','CITY':'miami','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"miami"}]]></tag></item>
+   <item weight='0.003763'> b_f_l  <tag><![CDATA[X={'AIRPORT':'BFL','CITY':'bakersfield','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"meadows"}]]></tag></item>
+   <item weight='0.013170'> s_b_n  <tag><![CDATA[X={'AIRPORT':'SBN','CITY':'south bend','STATE':'IN','COUNTRY':'US','AIRPORT_NAME':"saint joseph"}]]></tag></item>
+   <item weight='0.020201'> f_a_t  <tag><![CDATA[X={'AIRPORT':'FAT','CITY':'fresno','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"fresno"}]]></tag></item>
+   <item weight='0.002872'> a_l_g  <tag><![CDATA[X={'AIRPORT':'ALG','CITY':'algiers','COUNTRY':'DZ','AIRPORT_NAME':"houari boumediene"}]]></tag></item>
+   <item weight='0.002525'> g g t  <tag><![CDATA[X={'AIRPORT':'GGT','CITY':'georgetown','COUNTRY':'BS','AIRPORT_NAME':"exuma"}]]></tag></item>
+   <item weight='0.199138'> c_u_n  <tag><![CDATA[X={'AIRPORT':'CUN','CITY':'cancun','COUNTRY':'MX','AIRPORT_NAME':"cancun"}]]></tag></item>
+   <item weight='0.005248'> c_r_p  <tag><![CDATA[X={'AIRPORT':'CRP','CITY':'corpus christi','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"corpus christi"}]]></tag></item>
+   <item weight='0.002971'> b a q  <tag><![CDATA[X={'AIRPORT':'BAQ','CITY':'barranquilla','COUNTRY':'CO','AIRPORT_NAME':"e cortissoz"}]]></tag></item>
+   <item weight='0.009011'> l b b  <tag><![CDATA[X={'AIRPORT':'LBB','CITY':'lubbock','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"preston smith"}]]></tag></item>
+   <item weight='0.089766'> o g g  <tag><![CDATA[X={'AIRPORT':'OGG','CITY':'maui','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"kahului"}]]></tag></item>
+   <item weight='0.013170'> p_n_s  <tag><![CDATA[X={'AIRPORT':'PNS','CITY':'pensacola','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"pensacola"}]]></tag></item>
+   <item weight='0.103580'> m_u_c  <tag><![CDATA[X={'AIRPORT':'MUC','CITY':'munich','COUNTRY':'DE','AIRPORT_NAME':"franz josef strauss"}]]></tag></item>
+   <item weight='0.007427'> s_n_u  <tag><![CDATA[X={'AIRPORT':'SNU','CITY':'santa clara','COUNTRY':'CU','AIRPORT_NAME':"abel santamaria"}]]></tag></item>
+   <item weight='0.013467'> a_r_n  <tag><![CDATA[X={'AIRPORT':'ARN','CITY':'stockholm','COUNTRY':'SE','AIRPORT_NAME':"arlanda"}]]></tag></item>
+   <item weight='0.021934'> y l w  <tag><![CDATA[X={'AIRPORT':'YLW','CITY':'kelowna','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"kelowna"}]]></tag></item>
+   <item weight='0.003614'> y w k  <tag><![CDATA[X={'AIRPORT':'YWK','CITY':'wabush','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"wabush"}]]></tag></item>
+   <item weight='0.612170'> l h r  <tag><![CDATA[X={'AIRPORT':'LHR','CITY':'london','COUNTRY':'UK','AIRPORT_NAME':"Heathrow"}]]></tag></item>
+   <item weight='0.005644'> y z v  <tag><![CDATA[X={'AIRPORT':'YZV','CITY':'sept-iles','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"sept-iles"}]]></tag></item>
+   <item weight='0.003367'> y_k_a  <tag><![CDATA[X={'AIRPORT':'YKA','CITY':'kamloops','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"kamloops"}]]></tag></item>
+   <item weight='0.013022'> m f r  <tag><![CDATA[X={'AIRPORT':'MFR','CITY':'medford','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"jackson"}]]></tag></item>
+   <item weight='0.108927'> h k g  <tag><![CDATA[X={'AIRPORT':'HKG','CITY':'hongkong','COUNTRY':'HK','AIRPORT_NAME':"hong kong"}]]></tag></item>
+   <item weight='0.004456'> a d d  <tag><![CDATA[X={'AIRPORT':'ADD','CITY':'addis ababa','COUNTRY':'ET','AIRPORT_NAME':"bole"}]]></tag></item>
+   <item weight='0.414071'> s e a  <tag><![CDATA[X={'AIRPORT':'SEA','CITY':'seattle','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"Seattle Tacoma International"}]]></tag></item>
+   <item weight='0.003961'> y m n  <tag><![CDATA[X={'AIRPORT':'YMN','CITY':'makkovik','COUNTRY':'CA','AIRPORT_NAME':"makkovik"}]]></tag></item>
+   <item weight='0.006338'> s k b  <tag><![CDATA[X={'AIRPORT':'SKB','CITY':'basseterre saintkitts','COUNTRY':'KN','AIRPORT_NAME':"golden rock"}]]></tag></item>
+   <item weight='0.003268'> g_r_i  <tag><![CDATA[X={'AIRPORT':'GRI','CITY':'grand island','STATE':'NE','COUNTRY':'US','AIRPORT_NAME':"grand island"}]]></tag></item>
+   <item weight='0.006833'> g_t_f  <tag><![CDATA[X={'AIRPORT':'GTF','CITY':'great falls','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"great falls"}]]></tag></item>
+   <item weight='0.055553'> y_o_w  <tag><![CDATA[X={'AIRPORT':'YOW','CITY':'ottawa','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"macdonald-cartier"}]]></tag></item>
+   <item weight='0.023865'> y_y_t  <tag><![CDATA[X={'AIRPORT':'YYT','CITY':'saint johns','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"saint johns"}]]></tag></item>
+   <item weight='0.007724'> g_r_b  <tag><![CDATA[X={'AIRPORT':'GRB','CITY':'green bay','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"austin straubel"}]]></tag></item>
+   <item weight='0.003961'> c m n  <tag><![CDATA[X={'AIRPORT':'CMN','CITY':'casablanca','COUNTRY':'MA','AIRPORT_NAME':"mohammed v"}]]></tag></item>
+   <item weight='0.003763'> o_t_z  <tag><![CDATA[X={'AIRPORT':'OTZ','CITY':'kotzebue','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"kotzebue"}]]></tag></item>
+   <item weight='0.005496'> f_p_o  <tag><![CDATA[X={'AIRPORT':'FPO','CITY':'freeport','COUNTRY':'BS','AIRPORT_NAME':"grand bahama"}]]></tag></item>
+   <item weight='0.003911'> y_c_o  <tag><![CDATA[X={'AIRPORT':'YCO','CITY':'coppermine/kugluktuk','COUNTRY':'CA','AIRPORT_NAME':"kugluktuk"}]]></tag></item>
+   <item weight='0.003268'> s_w_f  <tag><![CDATA[X={'AIRPORT':'SWF','CITY':'newburgh','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"stewart"}]]></tag></item>
+   <item weight='0.034857'> d_s_m  <tag><![CDATA[X={'AIRPORT':'DSM','CITY':'des moines','STATE':'IA','COUNTRY':'US','AIRPORT_NAME':"des moines"}]]></tag></item>
+   <item weight='0.002278'> m_h_h  <tag><![CDATA[X={'AIRPORT':'MHH','CITY':'marsh harbour','COUNTRY':'BS','AIRPORT_NAME':"marsh harbour"}]]></tag></item>
+   <item weight='0.004753'> a_z_s  <tag><![CDATA[X={'AIRPORT':'AZS','CITY':'samana','COUNTRY':'DO','AIRPORT_NAME':"samana"}]]></tag></item>
+   <item weight='0.410407'> p_h_l  <tag><![CDATA[X={'AIRPORT':'PHL','CITY':'philadelphia','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"Philadelphia International"}]]></tag></item>
+   <item weight='0.005050'> g j t  <tag><![CDATA[X={'AIRPORT':'GJT','CITY':'grand junction','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"walker"}]]></tag></item>
+   <item weight='0.140763'> p_e_t  <tag><![CDATA[X={'AIRPORT':'YUL','CITY':'montreal','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"dorval"}]]></tag></item>
+   <item weight='0.012774'> e_g_e  <tag><![CDATA[X={'AIRPORT':'EGE','CITY':'eagle vail','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"eagle"}]]></tag></item>
+   <item weight='0.008863'> m s o  <tag><![CDATA[X={'AIRPORT':'MSO','CITY':'missoula','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"johnson-bell"}]]></tag></item>
+   <item weight='0.009011'> m_o_t  <tag><![CDATA[X={'AIRPORT':'MOT','CITY':'minot','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"minot"}]]></tag></item>
+   <item weight='0.284399'> s l c  <tag><![CDATA[X={'AIRPORT':'SLC','CITY':'salt lake city','STATE':'UT','COUNTRY':'US','AIRPORT_NAME':"Salt Lake City International"}]]></tag></item>
+   <item weight='0.072981'> z r h  <tag><![CDATA[X={'AIRPORT':'ZRH','CITY':'zurich','COUNTRY':'CH','AIRPORT_NAME':"kloten"}]]></tag></item>
+   <item weight='0.003317'> h_l_n  <tag><![CDATA[X={'AIRPORT':'HLN','CITY':'helena','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"helena"}]]></tag></item>
+   <item weight='0.012725'> b_t_v  <tag><![CDATA[X={'AIRPORT':'BTV','CITY':'burlington','STATE':'VT','COUNTRY':'US','AIRPORT_NAME':"burlington"}]]></tag></item>
+   <item weight='0.039214'> s_j_o  <tag><![CDATA[X={'AIRPORT':'SJO','CITY':'sanjose','COUNTRY':'CR','AIRPORT_NAME':"juan santamaria"}]]></tag></item>
+   <item weight='0.011190'> b_z_e  <tag><![CDATA[X={'AIRPORT':'BZE','CITY':'belize city','COUNTRY':'BZ','AIRPORT_NAME':"belize"}]]></tag></item>
+   <item weight='0.291826'> i c n  <tag><![CDATA[X={'AIRPORT':'ICN','CITY':'seoul','COUNTRY':'KR','AIRPORT_NAME':"Seoul Incheon International"}]]></tag></item>
+   <item weight='0.017478'> b_l_i  <tag><![CDATA[X={'AIRPORT':'BLI','CITY':'bellingham','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"bellingham"}]]></tag></item>
+   <item weight='0.013863'> s g f  <tag><![CDATA[X={'AIRPORT':'SGF','CITY':'springfield','STATE':'MO','COUNTRY':'US','AIRPORT_NAME':"branson"}]]></tag></item>
+   <item weight='0.014408'> m_a_f  <tag><![CDATA[X={'AIRPORT':'MAF','CITY':'odessa','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"midland"}]]></tag></item>
+   <item weight='0.007130'> v p s  <tag><![CDATA[X={'AIRPORT':'VPS','CITY':'fort walton beach','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"ft walton beach"}]]></tag></item>
+   <item weight='0.025400'> d a y  <tag><![CDATA[X={'AIRPORT':'DAY','CITY':'dayton','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"james cox"}]]></tag></item>
+   <item weight='0.009506'> y_m_m  <tag><![CDATA[X={'AIRPORT':'YMM','CITY':'fort mcmurray','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"ft mcmurray"}]]></tag></item>
+   <item weight='0.080309'> g r u  <tag><![CDATA[X={'AIRPORT':'GRU','CITY':'sao paulo','COUNTRY':'BR','AIRPORT_NAME':"cumbica"}]]></tag></item>
+   <item weight='0.008813'> b_i_s  <tag><![CDATA[X={'AIRPORT':'BIS','CITY':'bismarck','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"bismarck"}]]></tag></item>
+   <item weight='0.003961'> f u k  <tag><![CDATA[X={'AIRPORT':'FUK','CITY':'fukuoka','COUNTRY':'JP','AIRPORT_NAME':"fukuoka"}]]></tag></item>
+   <item weight='0.002971'> p_s_e  <tag><![CDATA[X={'AIRPORT':'PSE','CITY':'ponce','COUNTRY':'PR','AIRPORT_NAME':"mercedita"}]]></tag></item>
+   <item weight='0.017824'> y q r  <tag><![CDATA[X={'AIRPORT':'YQR','CITY':'regina','STATE':'SK','COUNTRY':'CA','AIRPORT_NAME':"regina"}]]></tag></item>
+   <item weight='0.004010'> y x l  <tag><![CDATA[X={'AIRPORT':'YXL','CITY':'sioux lookout','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"sioux lookout"}]]></tag></item>
+   <item weight='0.009902'> s t r  <tag><![CDATA[X={'AIRPORT':'STR','CITY':'stuttgart','COUNTRY':'DE','AIRPORT_NAME':"echterdingen"}]]></tag></item>
+   <item weight='0.359459'> c d g  <tag><![CDATA[X={'AIRPORT':'CDG','CITY':'paris','COUNTRY':'FR','AIRPORT_NAME':"Paris Charles de Gaulle"}]]></tag></item>
+   <item weight='0.007922'> y v p  <tag><![CDATA[X={'AIRPORT':'YVP','CITY':'kuujjuaq','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"kuujjuaq"}]]></tag></item>
+   <item weight='0.005644'> i a g  <tag><![CDATA[X={'AIRPORT':'IAG','CITY':'niagara falls','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"niagara falls"}]]></tag></item>
+   <item weight='0.015448'> i_s_p  <tag><![CDATA[X={'AIRPORT':'ISP','CITY':'islip','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"long island macarthur"}]]></tag></item>
+   <item weight='0.049908'> b_h_m  <tag><![CDATA[X={'AIRPORT':'BHM','CITY':'birmingham','STATE':'AL','COUNTRY':'US','AIRPORT_NAME':"shuttlesworth"}]]></tag></item>
+   <item weight='0.002971'> b_a_q  <tag><![CDATA[X={'AIRPORT':'BAQ','CITY':'barranquilla','COUNTRY':'CO','AIRPORT_NAME':"e cortissoz"}]]></tag></item>
+   <item weight='0.039214'> s j o  <tag><![CDATA[X={'AIRPORT':'SJO','CITY':'sanjose','COUNTRY':'CR','AIRPORT_NAME':"juan santamaria"}]]></tag></item>
+   <item weight='0.012180'> y_f_b  <tag><![CDATA[X={'AIRPORT':'YFB','CITY':'iqaluit','STATE':'NU','COUNTRY':'CA','AIRPORT_NAME':"frobisher"}]]></tag></item>
+   <item weight='0.001980'> c t s  <tag><![CDATA[X={'AIRPORT':'CTS','CITY':'sapporo','COUNTRY':'JP','AIRPORT_NAME':"chitose"}]]></tag></item>
+   <item weight='0.006338'> s_k_b  <tag><![CDATA[X={'AIRPORT':'SKB','CITY':'basseterre saintkitts','COUNTRY':'KN','AIRPORT_NAME':"golden rock"}]]></tag></item>
+   <item weight='0.001980'> a_s_u  <tag><![CDATA[X={'AIRPORT':'ASU','CITY':'asuncion','COUNTRY':'PY','AIRPORT_NAME':"silvio pettirossi international"}]]></tag></item>
+   <item weight='0.013863'> w a w  <tag><![CDATA[X={'AIRPORT':'WAW','CITY':'warsaw','COUNTRY':'PL','AIRPORT_NAME':"okecie"}]]></tag></item>
+   <item weight='0.008120'> f_w_a  <tag><![CDATA[X={'AIRPORT':'FWA','CITY':'fort wayne','STATE':'IN','COUNTRY':'US','AIRPORT_NAME':"ft wayne"}]]></tag></item>
+   <item weight='0.012378'> j n b  <tag><![CDATA[X={'AIRPORT':'JNB','CITY':'johannesburg','COUNTRY':'ZA','AIRPORT_NAME':"o r tambo"}]]></tag></item>
+   <item weight='0.004654'> c l o  <tag><![CDATA[X={'AIRPORT':'CLO','CITY':'cali','COUNTRY':'CO','AIRPORT_NAME':"alfonso b aragon"}]]></tag></item>
+   <item weight='0.003565'> y d f  <tag><![CDATA[X={'AIRPORT':'YDF','CITY':'deer lake','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"deer lake"}]]></tag></item>
+   <item weight='0.005991'> p_b_g  <tag><![CDATA[X={'AIRPORT':'PBG','CITY':'plattsburgh','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"plattsburgh"}]]></tag></item>
+   <item weight='0.004357'> s h v  <tag><![CDATA[X={'AIRPORT':'SHV','CITY':'shreveport','STATE':'LA','COUNTRY':'US','AIRPORT_NAME':"shreveport"}]]></tag></item>
+   <item weight='0.004951'> t l c  <tag><![CDATA[X={'AIRPORT':'TLC','CITY':'toluca','COUNTRY':'MX','AIRPORT_NAME':"adolfo lopez mateos"}]]></tag></item>
+   <item weight='0.023568'> s_x_m  <tag><![CDATA[X={'AIRPORT':'SXM','CITY':'saint maarten','COUNTRY':'AN','AIRPORT_NAME':"princess juliana"}]]></tag></item>
+   <item weight='0.116651'> p_e_k  <tag><![CDATA[X={'AIRPORT':'PEK','CITY':'beijing','COUNTRY':'CN','AIRPORT_NAME':"beijing"}]]></tag></item>
+   <item weight='0.121008'> r_s_w  <tag><![CDATA[X={'AIRPORT':'RSW','CITY':'fort myers','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"southwest florida"}]]></tag></item>
+   <item weight='0.005941'> o_r_y  <tag><![CDATA[X={'AIRPORT':'ORY','CITY':'paris','COUNTRY':'FR','AIRPORT_NAME':"orly"}]]></tag></item>
+   <item weight='0.048819'> p_t_y  <tag><![CDATA[X={'AIRPORT':'PTY','CITY':'panama city','COUNTRY':'PA','AIRPORT_NAME':"tocumen"}]]></tag></item>
+   <item weight='0.072981'> z_r_h  <tag><![CDATA[X={'AIRPORT':'ZRH','CITY':'zurich','COUNTRY':'CH','AIRPORT_NAME':"kloten"}]]></tag></item>
+   <item weight='0.049017'> e_l_p  <tag><![CDATA[X={'AIRPORT':'ELP','CITY':'el paso','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"el paso"}]]></tag></item>
+   <item weight='0.138783'> y_y_c  <tag><![CDATA[X={'AIRPORT':'YYC','CITY':'calgary','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"calgary"}]]></tag></item>
+   <item weight='0.044611'> g e g  <tag><![CDATA[X={'AIRPORT':'GEG','CITY':'spokane','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"spokane"}]]></tag></item>
+   <item weight='0.004010'> y_x_l  <tag><![CDATA[X={'AIRPORT':'YXL','CITY':'sioux lookout','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"sioux lookout"}]]></tag></item>
+   <item weight='0.003367'> y_s_j  <tag><![CDATA[X={'AIRPORT':'YSJ','CITY':'saint john','STATE':'NB','COUNTRY':'CA','AIRPORT_NAME':"saint john"}]]></tag></item>
+   <item weight='0.029113'> e_z_e  <tag><![CDATA[X={'AIRPORT':'EZE','CITY':'buenos aires','COUNTRY':'AR','AIRPORT_NAME':"ministro pistarini"}]]></tag></item>
+   <item weight='0.004654'> c_l_o  <tag><![CDATA[X={'AIRPORT':'CLO','CITY':'cali','COUNTRY':'CO','AIRPORT_NAME':"alfonso b aragon"}]]></tag></item>
+   <item weight='0.001980'> r_i_x  <tag><![CDATA[X={'AIRPORT':'RIX','CITY':'riga','COUNTRY':'LV','AIRPORT_NAME':"riga"}]]></tag></item>
+   <item weight='0.003961'> y s o  <tag><![CDATA[X={'AIRPORT':'YSO','CITY':'postville','COUNTRY':'CA','AIRPORT_NAME':"postville"}]]></tag></item>
+   <item weight='0.001980'> a s u  <tag><![CDATA[X={'AIRPORT':'ASU','CITY':'asuncion','COUNTRY':'PY','AIRPORT_NAME':"silvio pettirossi international"}]]></tag></item>
+   <item weight='0.004209'> a d q  <tag><![CDATA[X={'AIRPORT':'ADQ','CITY':'kodiak','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"kodiak"}]]></tag></item>
+   <item weight='0.007625'> a t w  <tag><![CDATA[X={'AIRPORT':'ATW','CITY':'appleton','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"outagamie"}]]></tag></item>
+   <item weight='0.027529'> m e l  <tag><![CDATA[X={'AIRPORT':'MEL','CITY':'melbourne','STATE':'VIC','COUNTRY':'AU','AIRPORT_NAME':"tullamarine"}]]></tag></item>
+   <item weight='0.069268'> j a x  <tag><![CDATA[X={'AIRPORT':'JAX','CITY':'jacksonville','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"jacks"}]]></tag></item>
+   <item weight='0.004852'> z l o  <tag><![CDATA[X={'AIRPORT':'ZLO','CITY':'manzanillo','COUNTRY':'MX','AIRPORT_NAME':"playa de oro"}]]></tag></item>
+   <item weight='0.005694'> m_r_y  <tag><![CDATA[X={'AIRPORT':'MRY','CITY':'monterey','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"monterey"}]]></tag></item>
+   <item weight='0.005892'> a_v_p  <tag><![CDATA[X={'AIRPORT':'AVP','CITY':'scranton wilkes-barre','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"scranton"}]]></tag></item>
+   <item weight='0.005149'> g f k  <tag><![CDATA[X={'AIRPORT':'GFK','CITY':'grand forks','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"grand forks"}]]></tag></item>
+   <item weight='0.014854'> b g i  <tag><![CDATA[X={'AIRPORT':'BGI','CITY':'barbados','COUNTRY':'BB','AIRPORT_NAME':"grantley adams"}]]></tag></item>
+   <item weight='0.430212'> d_t_w  <tag><![CDATA[X={'AIRPORT':'DTW','CITY':'detroit','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"Detroit Metropolitan Wayne County"}]]></tag></item>
+   <item weight='0.061593'> p_b_i  <tag><![CDATA[X={'AIRPORT':'PBI','CITY':'west palm beach','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"palm beach"}]]></tag></item>
+   <item weight='0.041689'> i_s_t  <tag><![CDATA[X={'AIRPORT':'IST','CITY':'istanbul','COUNTRY':'TR','AIRPORT_NAME':"ataturk"}]]></tag></item>
+   <item weight='0.017131'> c i d  <tag><![CDATA[X={'AIRPORT':'CID','CITY':'cedar rapids','STATE':'IA','COUNTRY':'US','AIRPORT_NAME':"?the eastern iowa"}]]></tag></item>
+   <item weight='0.016042'> e_c_p  <tag><![CDATA[X={'AIRPORT':'ECP','CITY':'panama city','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"northwest florida beaches"}]]></tag></item>
+   <item weight='0.071298'> t p e  <tag><![CDATA[X={'AIRPORT':'TPE','CITY':'taipei','COUNTRY':'TW','AIRPORT_NAME':"taoyuan"}]]></tag></item>
+   <item weight='0.028222'> m_s_n  <tag><![CDATA[X={'AIRPORT':'MSN','CITY':'madison','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"dane"}]]></tag></item>
+   <item weight='0.004951'> y x x  <tag><![CDATA[X={'AIRPORT':'YXX','CITY':'abbotsford','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"abbotsford"}]]></tag></item>
+   <item weight='0.014309'> c_a_e  <tag><![CDATA[X={'AIRPORT':'CAE','CITY':'columbia','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"columbia"}]]></tag></item>
+   <item weight='0.003466'> m_l_m  <tag><![CDATA[X={'AIRPORT':'MLM','CITY':'morelia','COUNTRY':'MX','AIRPORT_NAME':"general francisco j mujica"}]]></tag></item>
+   <item weight='0.034263'> p i e  <tag><![CDATA[X={'AIRPORT':'PIE','CITY':'saint petersburg','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"st petersburg-clearwater international"}]]></tag></item>
+   <item weight='0.006536'> t_g_u  <tag><![CDATA[X={'AIRPORT':'TGU','CITY':'tegucigalpa','COUNTRY':'HN','AIRPORT_NAME':"toncontin"}]]></tag></item>
+   <item weight='0.004258'> c c c  <tag><![CDATA[X={'AIRPORT':'CCC','CITY':'cayococo','COUNTRY':'CU','AIRPORT_NAME':"jardines del rey"}]]></tag></item>
+   <item weight='0.009506'> y_q_t  <tag><![CDATA[X={'AIRPORT':'YQT','CITY':'thunder bay','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"thunder bay"}]]></tag></item>
+   <item weight='0.013071'> h_s_v  <tag><![CDATA[X={'AIRPORT':'HSV','CITY':'huntsville','STATE':'AL','COUNTRY':'US','AIRPORT_NAME':"madison"}]]></tag></item>
+   <item weight='0.098282'> y_e_g  <tag><![CDATA[X={'AIRPORT':'YEG','CITY':'edmonton','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"edmonton"}]]></tag></item>
+   <item weight='0.055850'> g d l  <tag><![CDATA[X={'AIRPORT':'GDL','CITY':'guadalajara','COUNTRY':'MX','AIRPORT_NAME':"don miguel hidalgo"}]]></tag></item>
+   <item weight='0.121998'> s_m_f  <tag><![CDATA[X={'AIRPORT':'SMF','CITY':'sacramento','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"sacramento"}]]></tag></item>
+   <item weight='0.013071'> h s v  <tag><![CDATA[X={'AIRPORT':'HSV','CITY':'huntsville','STATE':'AL','COUNTRY':'US','AIRPORT_NAME':"madison"}]]></tag></item>
+   <item weight='0.003268'> t o l  <tag><![CDATA[X={'AIRPORT':'TOL','CITY':'toledo','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"express"}]]></tag></item>
+   <item weight='0.030599'> t l v  <tag><![CDATA[X={'AIRPORT':'TLV','CITY':'tel aviv','COUNTRY':'IL','AIRPORT_NAME':"ben gurion"}]]></tag></item>
+   <item weight='0.505719'> i a h  <tag><![CDATA[X={'AIRPORT':'IAH','CITY':'houston','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"Houston Bush Intercontinental"}]]></tag></item>
+   <item weight='0.551419'> c l t  <tag><![CDATA[X={'AIRPORT':'CLT','CITY':'charlotte','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"Charlotte Douglas International"}]]></tag></item>
+   <item weight='0.014557'> y r t  <tag><![CDATA[X={'AIRPORT':'YRT','CITY':'rankin inlet','COUNTRY':'CA','AIRPORT_NAME':"rankin inlet"}]]></tag></item>
+   <item weight='0.108927'> h_k_g  <tag><![CDATA[X={'AIRPORT':'HKG','CITY':'hongkong','COUNTRY':'HK','AIRPORT_NAME':"hong kong"}]]></tag></item>
+   <item weight='0.945735'> o_r_d  <tag><![CDATA[X={'AIRPORT':'ORD','CITY':'chicago','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"O'Hare International"}]]></tag></item>
+   <item weight='0.003466'> e l m  <tag><![CDATA[X={'AIRPORT':'ELM','CITY':'elmira','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"corning"}]]></tag></item>
+   <item weight='0.016339'> c z m  <tag><![CDATA[X={'AIRPORT':'CZM','CITY':'cozumel','COUNTRY':'MX','AIRPORT_NAME':"cozumel"}]]></tag></item>
+   <item weight='0.024657'> p_o_s  <tag><![CDATA[X={'AIRPORT':'POS','CITY':'port of spain','COUNTRY':'TT','AIRPORT_NAME':"piarco"}]]></tag></item>
+   <item weight='0.055602'> t_u_l  <tag><![CDATA[X={'AIRPORT':'TUL','CITY':'tulsa','STATE':'OK','COUNTRY':'US','AIRPORT_NAME':"tulsa"}]]></tag></item>
+   <item weight='0.010645'> a_b_e  <tag><![CDATA[X={'AIRPORT':'ABE','CITY':'allentown','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"lehigh valley"}]]></tag></item>
+   <item weight='0.017131'> f_a_r  <tag><![CDATA[X={'AIRPORT':'FAR','CITY':'fargo','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"hector"}]]></tag></item>
+   <item weight='0.011388'> k_w_i  <tag><![CDATA[X={'AIRPORT':'KWI','CITY':'kuwait city','COUNTRY':'KW','AIRPORT_NAME':"kuwait"}]]></tag></item>
+   <item weight='0.020003'> p a p  <tag><![CDATA[X={'AIRPORT':'PAP','CITY':'port au prince','COUNTRY':'HT','AIRPORT_NAME':"mais gate"}]]></tag></item>
+   <item weight='0.001980'> a_c_c  <tag><![CDATA[X={'AIRPORT':'ACC','CITY':'accra','COUNTRY':'GH','AIRPORT_NAME':"kotoka"}]]></tag></item>
+   <item weight='0.012725'> b t v  <tag><![CDATA[X={'AIRPORT':'BTV','CITY':'burlington','STATE':'VT','COUNTRY':'US','AIRPORT_NAME':"burlington"}]]></tag></item>
+   <item weight='0.041590'> c h s  <tag><![CDATA[X={'AIRPORT':'CHS','CITY':'charleston','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"charlie south"}]]></tag></item>
+   <item weight='0.124375'> m a d  <tag><![CDATA[X={'AIRPORT':'MAD','CITY':'madrid','COUNTRY':'ES','AIRPORT_NAME':"barajas"}]]></tag></item>
+   <item weight='0.026786'> y z f  <tag><![CDATA[X={'AIRPORT':'YZF','CITY':'yellowknife','STATE':'NT','COUNTRY':'CA','AIRPORT_NAME':"yellowknife"}]]></tag></item>
+   <item weight='0.002278'> m h h  <tag><![CDATA[X={'AIRPORT':'MHH','CITY':'marsh harbour','COUNTRY':'BS','AIRPORT_NAME':"marsh harbour"}]]></tag></item>
+   <item weight='0.001980'> r a i  <tag><![CDATA[X={'AIRPORT':'RAI','CITY':'praia','COUNTRY':'CV','AIRPORT_NAME':"francisco mendes"}]]></tag></item>
+   <item weight='0.004209'> a_d_q  <tag><![CDATA[X={'AIRPORT':'ADQ','CITY':'kodiak','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"kodiak"}]]></tag></item>
+   <item weight='0.004258'> e_w_n  <tag><![CDATA[X={'AIRPORT':'EWN','CITY':'newbern','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"craven"}]]></tag></item>
+   <item weight='0.004951'> c r w  <tag><![CDATA[X={'AIRPORT':'CRW','CITY':'charleston','STATE':'WV','COUNTRY':'US','AIRPORT_NAME':"yeager"}]]></tag></item>
+   <item weight='0.013269'> m n l  <tag><![CDATA[X={'AIRPORT':'MNL','CITY':'manila','COUNTRY':'PH','AIRPORT_NAME':"ninoy aquino"}]]></tag></item>
+   <item weight='0.006338'> b_o_n  <tag><![CDATA[X={'AIRPORT':'BON','CITY':'bonaire','COUNTRY':'AN','AIRPORT_NAME':"flamingo"}]]></tag></item>
+   <item weight='0.005149'> a_g_s  <tag><![CDATA[X={'AIRPORT':'AGS','CITY':'augusta','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"bush"}]]></tag></item>
+   <item weight='0.359459'> c_d_g  <tag><![CDATA[X={'AIRPORT':'CDG','CITY':'paris','COUNTRY':'FR','AIRPORT_NAME':"Paris Charles de Gaulle"}]]></tag></item>
+   <item weight='0.003961'> s_i_t  <tag><![CDATA[X={'AIRPORT':'SIT','CITY':'sitka','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"sitka"}]]></tag></item>
+   <item weight='0.103580'> m u c  <tag><![CDATA[X={'AIRPORT':'MUC','CITY':'munich','COUNTRY':'DE','AIRPORT_NAME':"franz josef strauss"}]]></tag></item>
+   <item weight='0.009803'> c h a  <tag><![CDATA[X={'AIRPORT':'CHA','CITY':'chattanooga','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"lovell"}]]></tag></item>
+   <item weight='0.026786'> y_z_f  <tag><![CDATA[X={'AIRPORT':'YZF','CITY':'yellowknife','STATE':'NT','COUNTRY':'CA','AIRPORT_NAME':"yellowknife"}]]></tag></item>
+   <item weight='0.046344'> y w g  <tag><![CDATA[X={'AIRPORT':'YWG','CITY':'winnipeg','STATE':'MB','COUNTRY':'CA','AIRPORT_NAME':"j a richardson"}]]></tag></item>
+   <item weight='0.082091'> m e m  <tag><![CDATA[X={'AIRPORT':'MEM','CITY':'memphis','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"memphis"}]]></tag></item>
+   <item weight='0.025845'> g_s_o  <tag><![CDATA[X={'AIRPORT':'GSO','CITY':'greensboro','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"piedmont triad"}]]></tag></item>
+   <item weight='0.006882'> t l h  <tag><![CDATA[X={'AIRPORT':'TLH','CITY':'tallahassee','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"tallahassee"}]]></tag></item>
+   <item weight='0.009506'> y m m  <tag><![CDATA[X={'AIRPORT':'YMM','CITY':'fort mcmurray','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"ft mcmurray"}]]></tag></item>
+   <item weight='0.014111'> y q b  <tag><![CDATA[X={'AIRPORT':'YQB','CITY':'quebec','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"jean lesage"}]]></tag></item>
+   <item weight='0.003961'> h a m  <tag><![CDATA[X={'AIRPORT':'HAM','CITY':'hamburg','COUNTRY':'DE','AIRPORT_NAME':"fuhlsbuettel"}]]></tag></item>
+   <item weight='0.003466'> a_s_e  <tag><![CDATA[X={'AIRPORT':'ASE','CITY':'aspen','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"aspen"}]]></tag></item>
+   <item weight='0.015448'> s n n  <tag><![CDATA[X={'AIRPORT':'SNN','CITY':'shannon','COUNTRY':'IE','AIRPORT_NAME':"shannon"}]]></tag></item>
+   <item weight='0.046542'> a k l  <tag><![CDATA[X={'AIRPORT':'AKL','CITY':'auckland','COUNTRY':'NZ','AIRPORT_NAME':"auckland"}]]></tag></item>
+   <item weight='0.070704'> b_u_f  <tag><![CDATA[X={'AIRPORT':'BUF','CITY':'buffalo','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"buffalo"}]]></tag></item>
+   <item weight='0.012378'> d_e_l  <tag><![CDATA[X={'AIRPORT':'DEL','CITY':'delhi','COUNTRY':'IN','AIRPORT_NAME':"indira gandhi"}]]></tag></item>
+   <item weight='0.003961'> y_s_o  <tag><![CDATA[X={'AIRPORT':'YSO','CITY':'postville','COUNTRY':'CA','AIRPORT_NAME':"postville"}]]></tag></item>
+   <item weight='0.004902'> d r o  <tag><![CDATA[X={'AIRPORT':'DRO','CITY':'durango','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"la plata"}]]></tag></item>
+   <item weight='0.136555'> m_s_y  <tag><![CDATA[X={'AIRPORT':'MSY','CITY':'new orleans','STATE':'LA','COUNTRY':'US','AIRPORT_NAME':"messy"}]]></tag></item>
+   <item weight='0.018617'> p l s  <tag><![CDATA[X={'AIRPORT':'PLS','CITY':'providenciales','COUNTRY':'TC','AIRPORT_NAME':"providenciales"}]]></tag></item>
+   <item weight='0.071100'> o m a  <tag><![CDATA[X={'AIRPORT':'OMA','CITY':'omaha','STATE':'NE','COUNTRY':'US','AIRPORT_NAME':"eppley"}]]></tag></item>
+   <item weight='0.006734'> g n d  <tag><![CDATA[X={'AIRPORT':'GND','CITY':'saint georges','COUNTRY':'GD','AIRPORT_NAME':"maurice bishop"}]]></tag></item>
+   <item weight='0.012378'> d e l  <tag><![CDATA[X={'AIRPORT':'DEL','CITY':'delhi','COUNTRY':'IN','AIRPORT_NAME':"indira gandhi"}]]></tag></item>
+   <item weight='0.048819'> p t y  <tag><![CDATA[X={'AIRPORT':'PTY','CITY':'panama city','COUNTRY':'PA','AIRPORT_NAME':"tocumen"}]]></tag></item>
+   <item weight='0.011487'> f a i  <tag><![CDATA[X={'AIRPORT':'FAI','CITY':'fairbanks','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"fairbanks"}]]></tag></item>
+   <item weight='0.022281'> d_o_h  <tag><![CDATA[X={'AIRPORT':'DOH','CITY':'doha','COUNTRY':'QA','AIRPORT_NAME':"doha"}]]></tag></item>
+   <item weight='0.033767'> m_h_t  <tag><![CDATA[X={'AIRPORT':'MHT','CITY':'manchester','STATE':'NH','COUNTRY':'US','AIRPORT_NAME':"manchester"}]]></tag></item>
+   <item weight='0.046344'> y_w_g  <tag><![CDATA[X={'AIRPORT':'YWG','CITY':'winnipeg','STATE':'MB','COUNTRY':'CA','AIRPORT_NAME':"j a richardson"}]]></tag></item>
+   <item weight='0.003961'> h y l  <tag><![CDATA[X={'AIRPORT':'HYL','CITY':'hollis','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"sea plane base"}]]></tag></item>
+   <item weight='0.007922'> b_o_m  <tag><![CDATA[X={'AIRPORT':'BOM','CITY':'mumbai','COUNTRY':'IN','AIRPORT_NAME':"chatrapati shivaji"}]]></tag></item>
+   <item weight='0.009506'> y q t  <tag><![CDATA[X={'AIRPORT':'YQT','CITY':'thunder bay','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"thunder bay"}]]></tag></item>
+   <item weight='0.020201'> y_x_e  <tag><![CDATA[X={'AIRPORT':'YXE','CITY':'saskatoon','STATE':'SK','COUNTRY':'CA','AIRPORT_NAME':"diefenbaker"}]]></tag></item>
+   <item weight='0.105956'> i n d  <tag><![CDATA[X={'AIRPORT':'IND','CITY':'indianapolis','STATE':'IN','COUNTRY':'US','AIRPORT_NAME':"indianapolis"}]]></tag></item>
+   <item weight='0.283706'> f_r_a  <tag><![CDATA[X={'AIRPORT':'FRA','CITY':'frankfurt','COUNTRY':'DE','AIRPORT_NAME':"Frankfurt"}]]></tag></item>
+   <item weight='0.011091'> m f e  <tag><![CDATA[X={'AIRPORT':'MFE','CITY':'mcallen','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"miller"}]]></tag></item>
+   <item weight='0.003367'> s_c_k  <tag><![CDATA[X={'AIRPORT':'SCK','CITY':'stockton','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"stockton"}]]></tag></item>
+   <item weight='0.001980'> r i x  <tag><![CDATA[X={'AIRPORT':'RIX','CITY':'riga','COUNTRY':'LV','AIRPORT_NAME':"riga"}]]></tag></item>
+   <item weight='0.009902'> p_s_c  <tag><![CDATA[X={'AIRPORT':'PSC','CITY':'pasco','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"tri-cities"}]]></tag></item>
+   <item weight='0.149824'> m_c_i  <tag><![CDATA[X={'AIRPORT':'MCI','CITY':'kansas city','STATE':'MO','COUNTRY':'US','AIRPORT_NAME':"kansas city"}]]></tag></item>
+   <item weight='0.050503'> f_c_o  <tag><![CDATA[X={'AIRPORT':'FCO','CITY':'rome','COUNTRY':'IT','AIRPORT_NAME':"fiumicino"}]]></tag></item>
+   <item weight='0.082091'> m_e_m  <tag><![CDATA[X={'AIRPORT':'MEM','CITY':'memphis','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"memphis"}]]></tag></item>
+   <item weight='0.109422'> c_v_g  <tag><![CDATA[X={'AIRPORT':'CVG','CITY':'covington','STATE':'KY','COUNTRY':'US','AIRPORT_NAME':"cincy"}]]></tag></item>
+   <item weight='0.023568'> k_i_x  <tag><![CDATA[X={'AIRPORT':'KIX','CITY':'osaka','COUNTRY':'JP','AIRPORT_NAME':"kansai"}]]></tag></item>
+   <item weight='0.016339'> c_z_m  <tag><![CDATA[X={'AIRPORT':'CZM','CITY':'cozumel','COUNTRY':'MX','AIRPORT_NAME':"cozumel"}]]></tag></item>
+   <item weight='0.017527'> p_w_m  <tag><![CDATA[X={'AIRPORT':'PWM','CITY':'portland','STATE':'ME','COUNTRY':'US','AIRPORT_NAME':"portland"}]]></tag></item>
+   <item weight='0.041590'> b o g  <tag><![CDATA[X={'AIRPORT':'BOG','CITY':'bogota','COUNTRY':'CO','AIRPORT_NAME':"el dorado"}]]></tag></item>
+   <item weight='0.005842'> o_a_j  <tag><![CDATA[X={'AIRPORT':'OAJ','CITY':'jacksonville','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"albert j ellis"}]]></tag></item>
+   <item weight='0.003911'> y c o  <tag><![CDATA[X={'AIRPORT':'YCO','CITY':'coppermine/kugluktuk','COUNTRY':'CA','AIRPORT_NAME':"kugluktuk"}]]></tag></item>
+   <item weight='0.050404'> l i m  <tag><![CDATA[X={'AIRPORT':'LIM','CITY':'lima','COUNTRY':'PE','AIRPORT_NAME':"jorge chavez"}]]></tag></item>
+   <item weight='0.007427'> s n u  <tag><![CDATA[X={'AIRPORT':'SNU','CITY':'santa clara','COUNTRY':'CU','AIRPORT_NAME':"abel santamaria"}]]></tag></item>
+   <item weight='0.129178'> r d u  <tag><![CDATA[X={'AIRPORT':'RDU','CITY':'durham raleigh','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"raleigh-durham"}]]></tag></item>
+   <item weight='0.503986'> l a s  <tag><![CDATA[X={'AIRPORT':'LAS','CITY':'las vegas','STATE':'NV','COUNTRY':'US','AIRPORT_NAME':"Las Vegas McCarran International"}]]></tag></item>
+   <item weight='0.011091'> m_f_e  <tag><![CDATA[X={'AIRPORT':'MFE','CITY':'mcallen','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"miller"}]]></tag></item>
+   <item weight='0.007823'> i_d_a  <tag><![CDATA[X={'AIRPORT':'IDA','CITY':'idaho falls','STATE':'ID','COUNTRY':'US','AIRPORT_NAME':"fanning"}]]></tag></item>
+   <item weight='0.001980'> m_v_d  <tag><![CDATA[X={'AIRPORT':'MVD','CITY':'montevideo','COUNTRY':'UY','AIRPORT_NAME':"carrasco"}]]></tag></item>
+   <item weight='0.015844'> s_i_n  <tag><![CDATA[X={'AIRPORT':'SIN','CITY':'singapore','COUNTRY':'SG','AIRPORT_NAME':"changi"}]]></tag></item>
+   <item weight='0.001980'> k b p  <tag><![CDATA[X={'AIRPORT':'KBP','CITY':'kiev','COUNTRY':'UA','AIRPORT_NAME':"borispol"}]]></tag></item>
+   <item weight='0.281081'> b_o_s  <tag><![CDATA[X={'AIRPORT':'BOS','CITY':'boston','STATE':'MA','COUNTRY':'US','AIRPORT_NAME':"Boston Logan International"}]]></tag></item>
+   <item weight='0.003961'> v c e  <tag><![CDATA[X={'AIRPORT':'VCE','CITY':'venice','COUNTRY':'IT','AIRPORT_NAME':"marco polo"}]]></tag></item>
+   <item weight='0.120216'> s a t  <tag><![CDATA[X={'AIRPORT':'SAT','CITY':'san antonio','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"san antonio"}]]></tag></item>
+   <item weight='0.001980'> z_c_l  <tag><![CDATA[X={'AIRPORT':'ZCL','CITY':'zacatecas','COUNTRY':'MX','AIRPORT_NAME':"zacatecas"}]]></tag></item>
+   <item weight='0.003268'> t_o_l  <tag><![CDATA[X={'AIRPORT':'TOL','CITY':'toledo','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"express"}]]></tag></item>
+   <item weight='0.011190'> r o a  <tag><![CDATA[X={'AIRPORT':'ROA','CITY':'roanoke','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"woodrum"}]]></tag></item>
+   <item weight='0.003664'> s_m_x  <tag><![CDATA[X={'AIRPORT':'SMX','CITY':'santa maria','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"santa maria"}]]></tag></item>
+   <item weight='0.043769'> d_u_s  <tag><![CDATA[X={'AIRPORT':'DUS','CITY':'duesseldorf','COUNTRY':'DE','AIRPORT_NAME':"dusseldorf"}]]></tag></item>
+   <item weight='0.004258'> c_c_c  <tag><![CDATA[X={'AIRPORT':'CCC','CITY':'cayococo','COUNTRY':'CU','AIRPORT_NAME':"jardines del rey"}]]></tag></item>
+   <item weight='0.003961'> b h x  <tag><![CDATA[X={'AIRPORT':'BHX','CITY':'birmingham','COUNTRY':'UK','AIRPORT_NAME':"birmingham"}]]></tag></item>
+   <item weight='0.016042'> e c p  <tag><![CDATA[X={'AIRPORT':'ECP','CITY':'panama city','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"northwest florida beaches"}]]></tag></item>
+   <item weight='0.008714'> p d l  <tag><![CDATA[X={'AIRPORT':'PDL','CITY':'ponta del gada','COUNTRY':'PT','AIRPORT_NAME':"nordela"}]]></tag></item>
+   <item weight='0.020993'> c_o_s  <tag><![CDATA[X={'AIRPORT':'COS','CITY':'colorado springs','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"colorado springs"}]]></tag></item>
+   <item weight='0.003317'> h l n  <tag><![CDATA[X={'AIRPORT':'HLN','CITY':'helena','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"helena"}]]></tag></item>
+   <item weight='0.003713'> s_t_s  <tag><![CDATA[X={'AIRPORT':'STS','CITY':'santarosa','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"sonoma county"}]]></tag></item>
+   <item weight='0.012180'> y f b  <tag><![CDATA[X={'AIRPORT':'YFB','CITY':'iqaluit','STATE':'NU','COUNTRY':'CA','AIRPORT_NAME':"frobisher"}]]></tag></item>
+   <item weight='0.293608'> f_l_l  <tag><![CDATA[X={'AIRPORT':'FLL','CITY':'fort lauderdale','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"Fort Lauderdale Hollywood International"}]]></tag></item>
+   <item weight='0.073625'> a_n_c  <tag><![CDATA[X={'AIRPORT':'ANC','CITY':'anchorage','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"anchorage"}]]></tag></item>
+   <item weight='0.024558'> l_g_b  <tag><![CDATA[X={'AIRPORT':'LGB','CITY':'long beach','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"long beach"}]]></tag></item>
+   <item weight='0.028816'> g_i_g  <tag><![CDATA[X={'AIRPORT':'GIG','CITY':'rio de janeiro','COUNTRY':'BR','AIRPORT_NAME':"rio de janeiro"}]]></tag></item>
+   <item weight='0.012378'> r_u_h  <tag><![CDATA[X={'AIRPORT':'RUH','CITY':'riyadh','COUNTRY':'SA','AIRPORT_NAME':"king khalid"}]]></tag></item>
+   <item weight='0.005100'> r d m  <tag><![CDATA[X={'AIRPORT':'RDM','CITY':'redmond','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"roberts"}]]></tag></item>
+   <item weight='0.009308'> y_e_v  <tag><![CDATA[X={'AIRPORT':'YEV','CITY':'inuvik','STATE':'NT','COUNTRY':'CA','AIRPORT_NAME':"inuvik"}]]></tag></item>
+   <item weight='0.032579'> g s p  <tag><![CDATA[X={'AIRPORT':'GSP','CITY':'greenville','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"greenville"}]]></tag></item>
+   <item weight='0.011685'> a v l  <tag><![CDATA[X={'AIRPORT':'AVL','CITY':'fletcher','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"asheville"}]]></tag></item>
+   <item weight='0.004506'> c_h_o  <tag><![CDATA[X={'AIRPORT':'CHO','CITY':'charlottesville','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"albemarle"}]]></tag></item>
+   <item weight='0.021290'> i c t  <tag><![CDATA[X={'AIRPORT':'ICT','CITY':'wichita','STATE':'KS','COUNTRY':'US','AIRPORT_NAME':"mid-continent"}]]></tag></item>
+   <item weight='0.006041'> y q u  <tag><![CDATA[X={'AIRPORT':'YQU','CITY':'grande prairie','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"grande prairie"}]]></tag></item>
+   <item weight='0.004753'> t a o  <tag><![CDATA[X={'AIRPORT':'TAO','CITY':'qingdao','COUNTRY':'CN','AIRPORT_NAME':"liuting"}]]></tag></item>
+   <item weight='0.009011'> l_b_b  <tag><![CDATA[X={'AIRPORT':'LBB','CITY':'lubbock','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"preston smith"}]]></tag></item>
+   <item weight='0.003466'> a s e  <tag><![CDATA[X={'AIRPORT':'ASE','CITY':'aspen','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"aspen"}]]></tag></item>
+   <item weight='0.001980'> r_a_i  <tag><![CDATA[X={'AIRPORT':'RAI','CITY':'praia','COUNTRY':'CV','AIRPORT_NAME':"francisco mendes"}]]></tag></item>
+   <item weight='0.042779'> r n o  <tag><![CDATA[X={'AIRPORT':'RNO','CITY':'reno','STATE':'NV','COUNTRY':'US','AIRPORT_NAME':"tahoe"}]]></tag></item>
+   <item weight='0.199138'> c u n  <tag><![CDATA[X={'AIRPORT':'CUN','CITY':'cancun','COUNTRY':'MX','AIRPORT_NAME':"cancun"}]]></tag></item>
+   <item weight='0.058524'> o_k_c  <tag><![CDATA[X={'AIRPORT':'OKC','CITY':'oklahoma city','STATE':'OK','COUNTRY':'US','AIRPORT_NAME':"will rogers world"}]]></tag></item>
+   <item weight='0.055553'> y o w  <tag><![CDATA[X={'AIRPORT':'YOW','CITY':'ottawa','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"macdonald-cartier"}]]></tag></item>
+   <item weight='0.055602'> t u l  <tag><![CDATA[X={'AIRPORT':'TUL','CITY':'tulsa','STATE':'OK','COUNTRY':'US','AIRPORT_NAME':"tulsa"}]]></tag></item>
+   <item weight='0.048720'> o_r_f  <tag><![CDATA[X={'AIRPORT':'ORF','CITY':'norfolk','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"norfolk"}]]></tag></item>
+   <item weight='0.002971'> c_f_g  <tag><![CDATA[X={'AIRPORT':'CFG','CITY':'cienfuegos','COUNTRY':'CU','AIRPORT_NAME':"cienfuegos"}]]></tag></item>
+   <item weight='0.010101'> o p o  <tag><![CDATA[X={'AIRPORT':'OPO','CITY':'porto','COUNTRY':'PT','AIRPORT_NAME':"francisco sa carneiro"}]]></tag></item>
+   <item weight='0.009704'> m t j  <tag><![CDATA[X={'AIRPORT':'MTJ','CITY':'montrose','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"montrose"}]]></tag></item>
+   <item weight='0.210873'> d c a  <tag><![CDATA[X={'AIRPORT':'DCA','CITY':'washington','STATE':'DC','COUNTRY':'US','AIRPORT_NAME':"Washington Ronald Reagan National"}]]></tag></item>
+   <item weight='0.024756'> b n e  <tag><![CDATA[X={'AIRPORT':'BNE','CITY':'brisbane','STATE':'QLD','COUNTRY':'AU','AIRPORT_NAME':"brisbane"}]]></tag></item>
+   <item weight='0.022182'> c_a_k  <tag><![CDATA[X={'AIRPORT':'CAK','CITY':'akron','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"akron"}]]></tag></item>
+   <item weight='0.036837'> a u a  <tag><![CDATA[X={'AIRPORT':'AUA','CITY':'aruba','COUNTRY':'AW','AIRPORT_NAME':"queen beatrix"}]]></tag></item>
+   <item weight='0.007427'> l_o_s  <tag><![CDATA[X={'AIRPORT':'LOS','CITY':'lagos','COUNTRY':'NG','AIRPORT_NAME':"murtala mohammed"}]]></tag></item>
+   <item weight='0.055949'> b_r_u  <tag><![CDATA[X={'AIRPORT':'BRU','CITY':'brussels','COUNTRY':'BE','AIRPORT_NAME':"zaventem"}]]></tag></item>
+   <item weight='0.013566'> h p n  <tag><![CDATA[X={'AIRPORT':'HPN','CITY':'westchester county','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"westchester"}]]></tag></item>
+   <item weight='0.111848'> o_a_k  <tag><![CDATA[X={'AIRPORT':'OAK','CITY':'oakland','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"oakland"}]]></tag></item>
+   <item weight='0.157449'> a u s  <tag><![CDATA[X={'AIRPORT':'AUS','CITY':'austin','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"bergstrom"}]]></tag></item>
+   <item weight='0.079467'> a_b_q  <tag><![CDATA[X={'AIRPORT':'ABQ','CITY':'albuquerque','STATE':'NM','COUNTRY':'US','AIRPORT_NAME':"albuquerque"}]]></tag></item>
+   <item weight='0.003466'> m l m  <tag><![CDATA[X={'AIRPORT':'MLM','CITY':'morelia','COUNTRY':'MX','AIRPORT_NAME':"general francisco j mujica"}]]></tag></item>
+   <item weight='0.003664'> s m x  <tag><![CDATA[X={'AIRPORT':'SMX','CITY':'santa maria','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"santa maria"}]]></tag></item>
+   <item weight='0.007427'> b_g_r  <tag><![CDATA[X={'AIRPORT':'BGR','CITY':'bangor','STATE':'ME','COUNTRY':'US','AIRPORT_NAME':"bangor"}]]></tag></item>
+   <item weight='0.014408'> m a f  <tag><![CDATA[X={'AIRPORT':'MAF','CITY':'odessa','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"midland"}]]></tag></item>
+   <item weight='0.002872'> s h e  <tag><![CDATA[X={'AIRPORT':'SHE','CITY':'shenyang','COUNTRY':'CN','AIRPORT_NAME':"taoxian"}]]></tag></item>
+   <item weight='0.038719'> r i c  <tag><![CDATA[X={'AIRPORT':'RIC','CITY':'richmond','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"richard e byrd"}]]></tag></item>
+   <item weight='0.328762'> n r t  <tag><![CDATA[X={'AIRPORT':'NRT','CITY':'tokyo','COUNTRY':'JP','AIRPORT_NAME':"Narita International"}]]></tag></item>
+   <item weight='0.018617'> p_l_s  <tag><![CDATA[X={'AIRPORT':'PLS','CITY':'providenciales','COUNTRY':'TC','AIRPORT_NAME':"providenciales"}]]></tag></item>
+   <item weight='0.005397'> y c b  <tag><![CDATA[X={'AIRPORT':'YCB','CITY':'cambridge bay','COUNTRY':'CA','AIRPORT_NAME':"cambridge bay"}]]></tag></item>
+   <item weight='0.011289'> g_y_e  <tag><![CDATA[X={'AIRPORT':'GYE','CITY':'guayaquil','COUNTRY':'EC','AIRPORT_NAME':"simon bolivar"}]]></tag></item>
+   <item weight='0.047928'> a_z_a  <tag><![CDATA[X={'AIRPORT':'AZA','CITY':'phoenix','STATE':'AZ','COUNTRY':'US','AIRPORT_NAME':"phoenix"}]]></tag></item>
+   <item weight='0.024558'> s_d_q  <tag><![CDATA[X={'AIRPORT':'SDQ','CITY':'santo domingo','COUNTRY':'DO','AIRPORT_NAME':"las americas"}]]></tag></item>
+   <item weight='0.013022'> m_f_r  <tag><![CDATA[X={'AIRPORT':'MFR','CITY':'medford','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"jackson"}]]></tag></item>
+   <item weight='0.307372'> i_a_d  <tag><![CDATA[X={'AIRPORT':'IAD','CITY':'washington','STATE':'DC','COUNTRY':'US','AIRPORT_NAME':"Washington Dulles International"}]]></tag></item>
+   <item weight='0.325939'> e w r  <tag><![CDATA[X={'AIRPORT':'EWR','CITY':'newark','STATE':'NJ','COUNTRY':'US','AIRPORT_NAME':"Newark Liberty International"}]]></tag></item>
+   <item weight='0.031787'> a l b  <tag><![CDATA[X={'AIRPORT':'ALB','CITY':'albany','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"albany"}]]></tag></item>
+   <item weight='0.003466'> g_u_m  <tag><![CDATA[X={'AIRPORT':'GUM','CITY':'hagatna','COUNTRY':'GU','AIRPORT_NAME':"agana"}]]></tag></item>
+   <item weight='0.005644'> y_z_v  <tag><![CDATA[X={'AIRPORT':'YZV','CITY':'sept-iles','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"sept-iles"}]]></tag></item>
+   <item weight='0.293608'> f l l  <tag><![CDATA[X={'AIRPORT':'FLL','CITY':'fort lauderdale','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"Fort Lauderdale Hollywood International"}]]></tag></item>
+   <item weight='0.008417'> u_v_f  <tag><![CDATA[X={'AIRPORT':'UVF','CITY':'saintlucia-vieuxfort','COUNTRY':'LC','AIRPORT_NAME':"hewanorra"}]]></tag></item>
+   <item weight='0.126900'> p i t  <tag><![CDATA[X={'AIRPORT':'PIT','CITY':'pittsburgh','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"pittsburgh"}]]></tag></item>
+   <item weight='0.004951'> c_r_w  <tag><![CDATA[X={'AIRPORT':'CRW','CITY':'charleston','STATE':'WV','COUNTRY':'US','AIRPORT_NAME':"yeager"}]]></tag></item>
+   <item weight='0.001980'> l_p_b  <tag><![CDATA[X={'AIRPORT':'LPB','CITY':'lapaz','COUNTRY':'BO','AIRPORT_NAME':"el alto"}]]></tag></item>
+   <item weight='0.042779'> r_n_o  <tag><![CDATA[X={'AIRPORT':'RNO','CITY':'reno','STATE':'NV','COUNTRY':'US','AIRPORT_NAME':"tahoe"}]]></tag></item>
+   <item weight='0.012378'> r u h  <tag><![CDATA[X={'AIRPORT':'RUH','CITY':'riyadh','COUNTRY':'SA','AIRPORT_NAME':"king khalid"}]]></tag></item>
+   <item weight='0.014309'> c a e  <tag><![CDATA[X={'AIRPORT':'CAE','CITY':'columbia','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"columbia"}]]></tag></item>
+   <item weight='0.021785'> v_i_e  <tag><![CDATA[X={'AIRPORT':'VIE','CITY':'vienna','COUNTRY':'AT','AIRPORT_NAME':"vienna"}]]></tag></item>
+   <item weight='0.009011'> m o t  <tag><![CDATA[X={'AIRPORT':'MOT','CITY':'minot','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"minot"}]]></tag></item>
+   <item weight='0.002476'> h_a_v  <tag><![CDATA[X={'AIRPORT':'HAV','CITY':'havana','COUNTRY':'CU','AIRPORT_NAME':"jose marti"}]]></tag></item>
+   <item weight='0.005545'> f a y  <tag><![CDATA[X={'AIRPORT':'FAY','CITY':'fayetteville','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"fayetteville"}]]></tag></item>
+   <item weight='0.009902'> k_e_f  <tag><![CDATA[X={'AIRPORT':'KEF','CITY':'reykjavik','COUNTRY':'IS','AIRPORT_NAME':"keflavik"}]]></tag></item>
+   <item weight='0.005941'> o r y  <tag><![CDATA[X={'AIRPORT':'ORY','CITY':'paris','COUNTRY':'FR','AIRPORT_NAME':"orly"}]]></tag></item>
+   <item weight='1.000000'> d_e_n  <tag><![CDATA[X={'AIRPORT':'DEN','CITY':'denver','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"Denver International"}]]></tag></item>
+   <item weight='0.005347'> m_o_b  <tag><![CDATA[X={'AIRPORT':'MOB','CITY':'mobile','STATE':'AL','COUNTRY':'US','AIRPORT_NAME':"mobile"}]]></tag></item>
+   <item weight='0.012378'> j_n_b  <tag><![CDATA[X={'AIRPORT':'JNB','CITY':'johannesburg','COUNTRY':'ZA','AIRPORT_NAME':"o r tambo"}]]></tag></item>
+   <item weight='0.009902'> s_t_r  <tag><![CDATA[X={'AIRPORT':'STR','CITY':'stuttgart','COUNTRY':'DE','AIRPORT_NAME':"echterdingen"}]]></tag></item>
+   <item weight='0.005298'> b_t_r  <tag><![CDATA[X={'AIRPORT':'BTR','CITY':'baton rouge','STATE':'LA','COUNTRY':'US','AIRPORT_NAME':"ryan"}]]></tag></item>
+   <item weight='0.463633'> p h x  <tag><![CDATA[X={'AIRPORT':'PHX','CITY':'phoenix','STATE':'AZ','COUNTRY':'US','AIRPORT_NAME':"Phoenix Sky Harbor International"}]]></tag></item>
+   <item weight='0.009902'> p s c  <tag><![CDATA[X={'AIRPORT':'PSC','CITY':'pasco','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"tri-cities"}]]></tag></item>
+   <item weight='0.005941'> c_n_f  <tag><![CDATA[X={'AIRPORT':'CNF','CITY':'belohorizonte','COUNTRY':'BR','AIRPORT_NAME':"confins"}]]></tag></item>
+   <item weight='0.020003'> p_a_p  <tag><![CDATA[X={'AIRPORT':'PAP','CITY':'port au prince','COUNTRY':'HT','AIRPORT_NAME':"mais gate"}]]></tag></item>
+   <item weight='1.000000'> d e n  <tag><![CDATA[X={'AIRPORT':'DEN','CITY':'denver','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"Denver International"}]]></tag></item>
+   <item weight='0.036837'> a_u_a  <tag><![CDATA[X={'AIRPORT':'AUA','CITY':'aruba','COUNTRY':'AW','AIRPORT_NAME':"queen beatrix"}]]></tag></item>
+   <item weight='0.003961'> e_d_i  <tag><![CDATA[X={'AIRPORT':'EDI','CITY':'edinburgh','COUNTRY':'UK','AIRPORT_NAME':"turnhouse"}]]></tag></item>
+   <item weight='0.157449'> a_u_s  <tag><![CDATA[X={'AIRPORT':'AUS','CITY':'austin','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"bergstrom"}]]></tag></item>
+   <item weight='0.011190'> b z e  <tag><![CDATA[X={'AIRPORT':'BZE','CITY':'belize city','COUNTRY':'BZ','AIRPORT_NAME':"belize"}]]></tag></item>
+   <item weight='0.028618'> l_i_s  <tag><![CDATA[X={'AIRPORT':'LIS','CITY':'lisbon','COUNTRY':'PT','AIRPORT_NAME':"lisboa"}]]></tag></item>
+   <item weight='0.022182'> c a k  <tag><![CDATA[X={'AIRPORT':'CAK','CITY':'akron','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"akron"}]]></tag></item>
+   <item weight='0.038768'> n a s  <tag><![CDATA[X={'AIRPORT':'NAS','CITY':'nassau','COUNTRY':'BS','AIRPORT_NAME':"nassau"}]]></tag></item>
+   <item weight='0.136555'> m s y  <tag><![CDATA[X={'AIRPORT':'MSY','CITY':'new orleans','STATE':'LA','COUNTRY':'US','AIRPORT_NAME':"messy"}]]></tag></item>
+   <item weight='0.014458'> a n u  <tag><![CDATA[X={'AIRPORT':'ANU','CITY':'antigua','COUNTRY':'AG','AIRPORT_NAME':"v c bird"}]]></tag></item>
+   <item weight='0.015448'> t_x_l  <tag><![CDATA[X={'AIRPORT':'TXL','CITY':'berlin','COUNTRY':'DE','AIRPORT_NAME':"berlin"}]]></tag></item>
+   <item weight='0.024558'> l g b  <tag><![CDATA[X={'AIRPORT':'LGB','CITY':'long beach','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"long beach"}]]></tag></item>
+   <item weight='0.005050'> s c c  <tag><![CDATA[X={'AIRPORT':'SCC','CITY':'prudhoe bay deadhorse','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"prudhoe bay deadhorse"}]]></tag></item>
+   <item weight='0.071298'> t_p_e  <tag><![CDATA[X={'AIRPORT':'TPE','CITY':'taipei','COUNTRY':'TW','AIRPORT_NAME':"taoyuan"}]]></tag></item>
+   <item weight='0.042878'> h n d  <tag><![CDATA[X={'AIRPORT':'HND','CITY':'tokyo','COUNTRY':'JP','AIRPORT_NAME':"haneda"}]]></tag></item>
+   <item weight='0.028618'> l i s  <tag><![CDATA[X={'AIRPORT':'LIS','CITY':'lisbon','COUNTRY':'PT','AIRPORT_NAME':"lisboa"}]]></tag></item>
+   <item weight='0.007922'> d_k_r  <tag><![CDATA[X={'AIRPORT':'DKR','CITY':'dakar','COUNTRY':'SN','AIRPORT_NAME':"yoff"}]]></tag></item>
+   <item weight='0.034857'> d s m  <tag><![CDATA[X={'AIRPORT':'DSM','CITY':'des moines','STATE':'IA','COUNTRY':'US','AIRPORT_NAME':"des moines"}]]></tag></item>
+   <item weight='0.011091'> p g d  <tag><![CDATA[X={'AIRPORT':'PGD','CITY':'punta gorda','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"charlotte county"}]]></tag></item>
+   <item weight='0.116255'> s j c  <tag><![CDATA[X={'AIRPORT':'SJC','CITY':'san jose','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"norman y mineta"}]]></tag></item>
+   <item weight='0.420359'> m_c_o  <tag><![CDATA[X={'AIRPORT':'MCO','CITY':'orlando','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"Orlando International"}]]></tag></item>
+   <item weight='0.055850'> g_d_l  <tag><![CDATA[X={'AIRPORT':'GDL','CITY':'guadalajara','COUNTRY':'MX','AIRPORT_NAME':"don miguel hidalgo"}]]></tag></item>
+   <item weight='0.050404'> l_i_m  <tag><![CDATA[X={'AIRPORT':'LIM','CITY':'lima','COUNTRY':'PE','AIRPORT_NAME':"jorge chavez"}]]></tag></item>
+   <item weight='0.041590'> c_h_s  <tag><![CDATA[X={'AIRPORT':'CHS','CITY':'charleston','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"charlie south"}]]></tag></item>
+   <item weight='0.006288'> f_c_a  <tag><![CDATA[X={'AIRPORT':'FCA','CITY':'kalispell','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"glacier park"}]]></tag></item>
+   <item weight='0.003268'> c_d_v  <tag><![CDATA[X={'AIRPORT':'CDV','CITY':'cordova','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"mudhole smith"}]]></tag></item>
+   <item weight='0.011388'> p_o_p  <tag><![CDATA[X={'AIRPORT':'POP','CITY':'puerto plata','COUNTRY':'DO','AIRPORT_NAME':"la union"}]]></tag></item>
+   <item weight='0.028816'> g i g  <tag><![CDATA[X={'AIRPORT':'GIG','CITY':'rio de janeiro','COUNTRY':'BR','AIRPORT_NAME':"rio de janeiro"}]]></tag></item>
+   <item weight='0.105956'> i_n_d  <tag><![CDATA[X={'AIRPORT':'IND','CITY':'indianapolis','STATE':'IN','COUNTRY':'US','AIRPORT_NAME':"indianapolis"}]]></tag></item>
+   <item weight='0.003614'> y_w_k  <tag><![CDATA[X={'AIRPORT':'YWK','CITY':'wabush','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"wabush"}]]></tag></item>
+   <item weight='0.503986'> l_a_s  <tag><![CDATA[X={'AIRPORT':'LAS','CITY':'las vegas','STATE':'NV','COUNTRY':'US','AIRPORT_NAME':"Las Vegas McCarran International"}]]></tag></item>
+   <item weight='0.001980'> a g u  <tag><![CDATA[X={'AIRPORT':'AGU','CITY':'aguascalientes','COUNTRY':'MX','AIRPORT_NAME':"jesus teran peredo"}]]></tag></item>
+   <item weight='0.031787'> a_l_b  <tag><![CDATA[X={'AIRPORT':'ALB','CITY':'albany','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"albany"}]]></tag></item>
+   <item weight='0.423528'> d_f_w  <tag><![CDATA[X={'AIRPORT':'DFW','CITY':'dallas','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"Dallas Fort Worth International"}]]></tag></item>
+   <item weight='0.003961'> b_h_x  <tag><![CDATA[X={'AIRPORT':'BHX','CITY':'birmingham','COUNTRY':'UK','AIRPORT_NAME':"birmingham"}]]></tag></item>
+   <item weight='0.007922'> b s b  <tag><![CDATA[X={'AIRPORT':'BSB','CITY':'brasilia','COUNTRY':'BR','AIRPORT_NAME':"kubitschek"}]]></tag></item>
+   <item weight='0.002525'> g_g_t  <tag><![CDATA[X={'AIRPORT':'GGT','CITY':'georgetown','COUNTRY':'BS','AIRPORT_NAME':"exuma"}]]></tag></item>
+   <item weight='0.003268'> y_y_g  <tag><![CDATA[X={'AIRPORT':'YYG','CITY':'charlottetown','STATE':'PE','COUNTRY':'CA','AIRPORT_NAME':"charlottetown"}]]></tag></item>
+   <item weight='0.013863'> w_a_w  <tag><![CDATA[X={'AIRPORT':'WAW','CITY':'warsaw','COUNTRY':'PL','AIRPORT_NAME':"okecie"}]]></tag></item>
+   <item weight='0.149824'> m c i  <tag><![CDATA[X={'AIRPORT':'MCI','CITY':'kansas city','STATE':'MO','COUNTRY':'US','AIRPORT_NAME':"kansas city"}]]></tag></item>
+   <item weight='0.017478'> b l i  <tag><![CDATA[X={'AIRPORT':'BLI','CITY':'bellingham','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"bellingham"}]]></tag></item>
+   <item weight='0.141655'> b_n_a  <tag><![CDATA[X={'AIRPORT':'BNA','CITY':'nashville','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"nashville"}]]></tag></item>
+   <item weight='0.005842'> o a j  <tag><![CDATA[X={'AIRPORT':'OAJ','CITY':'jacksonville','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"albert j ellis"}]]></tag></item>
+   <item weight='0.007971'> f n t  <tag><![CDATA[X={'AIRPORT':'FNT','CITY':'flint','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"bishop"}]]></tag></item>
+   <item weight='0.025350'> m_x_p  <tag><![CDATA[X={'AIRPORT':'MXP','CITY':'milan','COUNTRY':'IT','AIRPORT_NAME':"malpensa"}]]></tag></item>
+   <item weight='0.005991'> p b g  <tag><![CDATA[X={'AIRPORT':'PBG','CITY':'plattsburgh','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"plattsburgh"}]]></tag></item>
+   <item weight='0.032579'> g_s_p  <tag><![CDATA[X={'AIRPORT':'GSP','CITY':'greenville','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"greenville"}]]></tag></item>
+   <item weight='0.171164'> h_n_l  <tag><![CDATA[X={'AIRPORT':'HNL','CITY':'honolulu','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"honolulu"}]]></tag></item>
+   <item weight='0.033173'> r o c  <tag><![CDATA[X={'AIRPORT':'ROC','CITY':'rochester','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"monroe"}]]></tag></item>
+   <item weight='0.246868'> s_a_n  <tag><![CDATA[X={'AIRPORT':'SAN','CITY':'san diego','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"San Diego International"}]]></tag></item>
+   <item weight='0.084765'> s n a  <tag><![CDATA[X={'AIRPORT':'SNA','CITY':'santa ana','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"sssnah"}]]></tag></item>
+   <item weight='0.019013'> e u g  <tag><![CDATA[X={'AIRPORT':'EUG','CITY':'eugene','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"mahlon sweet"}]]></tag></item>
+   <item weight='0.019854'> j a n  <tag><![CDATA[X={'AIRPORT':'JAN','CITY':'jackson','STATE':'MS','COUNTRY':'US','AIRPORT_NAME':"allen c thompson"}]]></tag></item>
+   <item weight='0.015844'> s i n  <tag><![CDATA[X={'AIRPORT':'SIN','CITY':'singapore','COUNTRY':'SG','AIRPORT_NAME':"changi"}]]></tag></item>
+   <item weight='0.022281'> s_v_o  <tag><![CDATA[X={'AIRPORT':'SVO','CITY':'moscow','COUNTRY':'RU','AIRPORT_NAME':"sheremetyevo"}]]></tag></item>
+   <item weight='0.005941'> z_i_h  <tag><![CDATA[X={'AIRPORT':'ZIH','CITY':'ixtapa','COUNTRY':'MX','AIRPORT_NAME':"zihuatanejo"}]]></tag></item>
+   <item weight='0.191613'> m_i_a  <tag><![CDATA[X={'AIRPORT':'MIA','CITY':'miami','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"miami"}]]></tag></item>
+   <item weight='0.258405'> p d x  <tag><![CDATA[X={'AIRPORT':'PDX','CITY':'portland','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"Portland International"}]]></tag></item>
+   <item weight='0.254048'> t p a  <tag><![CDATA[X={'AIRPORT':'TPA','CITY':'tampa','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"Tampa International"}]]></tag></item>
+   <item weight='0.006635'> r_t_b  <tag><![CDATA[X={'AIRPORT':'RTB','CITY':'roatan','COUNTRY':'HN','AIRPORT_NAME':"juan manuel galvez"}]]></tag></item>
+   <item weight='0.001980'> a_g_u  <tag><![CDATA[X={'AIRPORT':'AGU','CITY':'aguascalientes','COUNTRY':'MX','AIRPORT_NAME':"jesus teran peredo"}]]></tag></item>
+   <item weight='0.062237'> p u j  <tag><![CDATA[X={'AIRPORT':'PUJ','CITY':'puntacana','COUNTRY':'DO','AIRPORT_NAME':"punta cana"}]]></tag></item>
+   <item weight='0.140763'> y u l  <tag><![CDATA[X={'AIRPORT':'YUL','CITY':'montreal','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"dorval"}]]></tag></item>
+   <item weight='0.021587'> g v a  <tag><![CDATA[X={'AIRPORT':'GVA','CITY':'geneva','COUNTRY':'CH','AIRPORT_NAME':"cointrin"}]]></tag></item>
+   <item weight='0.006536'> h d n  <tag><![CDATA[X={'AIRPORT':'HDN','CITY':'steamboat springs','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"yampa valley"}]]></tag></item>
+   <item weight='0.018617'> l_i_r  <tag><![CDATA[X={'AIRPORT':'LIR','CITY':'liberia','COUNTRY':'CR','AIRPORT_NAME':"quiros"}]]></tag></item>
+   <item weight='0.076992'> s_j_d  <tag><![CDATA[X={'AIRPORT':'SJD','CITY':'san jose del cabo','COUNTRY':'MX','AIRPORT_NAME':"los cabos"}]]></tag></item>
+   <item weight='0.009605'> c_a_i  <tag><![CDATA[X={'AIRPORT':'CAI','CITY':'cairo','COUNTRY':'EG','AIRPORT_NAME':"cairo"}]]></tag></item>
+   <item weight='0.010497'> p_i_a  <tag><![CDATA[X={'AIRPORT':'PIA','CITY':'peoria','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"peoria"}]]></tag></item>
+   <item weight='0.004555'> y x s  <tag><![CDATA[X={'AIRPORT':'YXS','CITY':'prince george','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"prince george"}]]></tag></item>
+   <item weight='0.097638'> m_k_e  <tag><![CDATA[X={'AIRPORT':'MKE','CITY':'milwaukee','STATE':'WI','COUNTRY':'US','AIRPORT_NAME':"general mitchell"}]]></tag></item>
+   <item weight='0.717631'> a_t_l  <tag><![CDATA[X={'AIRPORT':'ATL','CITY':'atlanta','STATE':'GA','COUNTRY':'US','AIRPORT_NAME':"Atlanta Hartsfield Jackson International"}]]></tag></item>
+   <item weight='0.004902'> d_r_o  <tag><![CDATA[X={'AIRPORT':'DRO','CITY':'durango','STATE':'CO','COUNTRY':'US','AIRPORT_NAME':"la plata"}]]></tag></item>
+   <item weight='0.013566'> h_p_n  <tag><![CDATA[X={'AIRPORT':'HPN','CITY':'westchester county','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"westchester"}]]></tag></item>
+   <item weight='0.284745'> l g a  <tag><![CDATA[X={'AIRPORT':'LGA','CITY':'new york','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"New York La Guardia"}]]></tag></item>
+   <item weight='0.003961'> b f s  <tag><![CDATA[X={'AIRPORT':'BFS','CITY':'belfast','COUNTRY':'UK','AIRPORT_NAME':"belfast"}]]></tag></item>
+   <item weight='0.020201'> y x e  <tag><![CDATA[X={'AIRPORT':'YXE','CITY':'saskatoon','STATE':'SK','COUNTRY':'CA','AIRPORT_NAME':"diefenbaker"}]]></tag></item>
+   <item weight='0.006833'> g_p_t  <tag><![CDATA[X={'AIRPORT':'GPT','CITY':'gulfport','STATE':'MS','COUNTRY':'US','AIRPORT_NAME':"gulfport"}]]></tag></item>
+   <item weight='0.291826'> i_c_n  <tag><![CDATA[X={'AIRPORT':'ICN','CITY':'seoul','COUNTRY':'KR','AIRPORT_NAME':"Seoul Incheon International"}]]></tag></item>
+   <item weight='0.012477'> u i o  <tag><![CDATA[X={'AIRPORT':'UIO','CITY':'quito','COUNTRY':'EC','AIRPORT_NAME':"mariscal sucre"}]]></tag></item>
+   <item weight='0.018617'> l i r  <tag><![CDATA[X={'AIRPORT':'LIR','CITY':'liberia','COUNTRY':'CR','AIRPORT_NAME':"quiros"}]]></tag></item>
+   <item weight='0.024855'> f_s_d  <tag><![CDATA[X={'AIRPORT':'FSD','CITY':'sioux falls','STATE':'SD','COUNTRY':'US','AIRPORT_NAME':"joe foss"}]]></tag></item>
+   <item weight='0.041095'> p s p  <tag><![CDATA[X={'AIRPORT':'PSP','CITY':'palm springs','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"palm springs"}]]></tag></item>
+   <item weight='0.003961'> e d i  <tag><![CDATA[X={'AIRPORT':'EDI','CITY':'edinburgh','COUNTRY':'UK','AIRPORT_NAME':"turnhouse"}]]></tag></item>
+   <item weight='0.002872'> s_h_e  <tag><![CDATA[X={'AIRPORT':'SHE','CITY':'shenyang','COUNTRY':'CN','AIRPORT_NAME':"taoxian"}]]></tag></item>
+   <item weight='0.020201'> s_r_q  <tag><![CDATA[X={'AIRPORT':'SRQ','CITY':'sarasota-bradenton','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"sarasota bradenton"}]]></tag></item>
+   <item weight='0.005001'> b_r_w  <tag><![CDATA[X={'AIRPORT':'BRW','CITY':'barrow','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"w rogers m"}]]></tag></item>
+   <item weight='0.012626'> y_t_z  <tag><![CDATA[X={'AIRPORT':'YTZ','CITY':'toronto','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"toronto"}]]></tag></item>
+   <item weight='0.007724'> o_s_l  <tag><![CDATA[X={'AIRPORT':'OSL','CITY':'oslo','COUNTRY':'NO','AIRPORT_NAME':"gardermoen"}]]></tag></item>
+   <item weight='0.011784'> i_l_m  <tag><![CDATA[X={'AIRPORT':'ILM','CITY':'wilmington','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"new hanover"}]]></tag></item>
+   <item weight='0.003466'> i_s_b  <tag><![CDATA[X={'AIRPORT':'ISB','CITY':'islamabad','COUNTRY':'PK','AIRPORT_NAME':"benazir bhutto"}]]></tag></item>
+   <item weight='0.001980'> a c c  <tag><![CDATA[X={'AIRPORT':'ACC','CITY':'accra','COUNTRY':'GH','AIRPORT_NAME':"kotoka"}]]></tag></item>
+   <item weight='0.002080'> m i d  <tag><![CDATA[X={'AIRPORT':'MID','CITY':'merida','COUNTRY':'MX','AIRPORT_NAME':"m c rejon"}]]></tag></item>
+   <item weight='0.066148'> l_g_w  <tag><![CDATA[X={'AIRPORT':'LGW','CITY':'london','COUNTRY':'UK','AIRPORT_NAME':"gatwick"}]]></tag></item>
+   <item weight='0.055503'> m b j  <tag><![CDATA[X={'AIRPORT':'MBJ','CITY':'montegobay','COUNTRY':'JM','AIRPORT_NAME':"sangster"}]]></tag></item>
+   <item weight='0.005298'> b t r  <tag><![CDATA[X={'AIRPORT':'BTR','CITY':'baton rouge','STATE':'LA','COUNTRY':'US','AIRPORT_NAME':"ryan"}]]></tag></item>
+   <item weight='0.086548'> p_v_r  <tag><![CDATA[X={'AIRPORT':'PVR','CITY':'puerto vallarta','COUNTRY':'MX','AIRPORT_NAME':"ordaz"}]]></tag></item>
+   <item weight='0.001980'> z c l  <tag><![CDATA[X={'AIRPORT':'ZCL','CITY':'zacatecas','COUNTRY':'MX','AIRPORT_NAME':"zacatecas"}]]></tag></item>
+   <item weight='0.022281'> c_c_s  <tag><![CDATA[X={'AIRPORT':'CCS','CITY':'caracas','COUNTRY':'VE','AIRPORT_NAME':"simon bolivar"}]]></tag></item>
+   <item weight='0.012081'> h r l  <tag><![CDATA[X={'AIRPORT':'HRL','CITY':'harlingen','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"valley"}]]></tag></item>
+   <item weight='0.121998'> s m f  <tag><![CDATA[X={'AIRPORT':'SMF','CITY':'sacramento','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"sacramento"}]]></tag></item>
+   <item weight='0.001980'> m v d  <tag><![CDATA[X={'AIRPORT':'MVD','CITY':'montevideo','COUNTRY':'UY','AIRPORT_NAME':"carrasco"}]]></tag></item>
+   <item weight='0.005001'> b r w  <tag><![CDATA[X={'AIRPORT':'BRW','CITY':'barrow','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"w rogers m"}]]></tag></item>
+   <item weight='0.025350'> m x p  <tag><![CDATA[X={'AIRPORT':'MXP','CITY':'milan','COUNTRY':'IT','AIRPORT_NAME':"malpensa"}]]></tag></item>
+   <item weight='0.001980'> m a r  <tag><![CDATA[X={'AIRPORT':'MAR','CITY':'maracaibo','COUNTRY':'VE','AIRPORT_NAME':"la chinita"}]]></tag></item>
+   <item weight='0.033767'> m h t  <tag><![CDATA[X={'AIRPORT':'MHT','CITY':'manchester','STATE':'NH','COUNTRY':'US','AIRPORT_NAME':"manchester"}]]></tag></item>
+   <item weight='0.014260'> m y r  <tag><![CDATA[X={'AIRPORT':'MYR','CITY':'myrtle beach','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"myrtle beach"}]]></tag></item>
+   <item weight='0.111848'> o a k  <tag><![CDATA[X={'AIRPORT':'OAK','CITY':'oakland','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"oakland"}]]></tag></item>
+   <item weight='0.024657'> p o s  <tag><![CDATA[X={'AIRPORT':'POS','CITY':'port of spain','COUNTRY':'TT','AIRPORT_NAME':"piarco"}]]></tag></item>
+   <item weight='0.006932'> l_h_e  <tag><![CDATA[X={'AIRPORT':'LHE','CITY':'lahore','COUNTRY':'PK','AIRPORT_NAME':"allama iqbal"}]]></tag></item>
+   <item weight='0.013170'> p n s  <tag><![CDATA[X={'AIRPORT':'PNS','CITY':'pensacola','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"pensacola"}]]></tag></item>
+   <item weight='0.006288'> f c a  <tag><![CDATA[X={'AIRPORT':'FCA','CITY':'kalispell','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"glacier park"}]]></tag></item>
+   <item weight='0.323216'> y_y_z  <tag><![CDATA[X={'AIRPORT':'YYZ','CITY':'toronto','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"Toronto Pearson International"}]]></tag></item>
+   <item weight='0.005545'> p h f  <tag><![CDATA[X={'AIRPORT':'PHF','CITY':'newport news','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"williamsburg"}]]></tag></item>
+   <item weight='0.026588'> s_y_r  <tag><![CDATA[X={'AIRPORT':'SYR','CITY':'syracuse','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"clarence e hancock"}]]></tag></item>
+   <item weight='0.003515'> b_e_t  <tag><![CDATA[X={'AIRPORT':'BET','CITY':'bethel','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"bethel"}]]></tag></item>
+   <item weight='0.008813'> l_a_n  <tag><![CDATA[X={'AIRPORT':'LAN','CITY':'lansing','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"capital city"}]]></tag></item>
+   <item weight='0.021587'> g_v_a  <tag><![CDATA[X={'AIRPORT':'GVA','CITY':'geneva','COUNTRY':'CH','AIRPORT_NAME':"cointrin"}]]></tag></item>
+   <item weight='0.004951'> t_l_c  <tag><![CDATA[X={'AIRPORT':'TLC','CITY':'toluca','COUNTRY':'MX','AIRPORT_NAME':"adolfo lopez mateos"}]]></tag></item>
+   <item weight='0.003416'> y_h_k  <tag><![CDATA[X={'AIRPORT':'YHK','CITY':'gjoahaven','COUNTRY':'CA','AIRPORT_NAME':"gjoa haven"}]]></tag></item>
+   <item weight='0.001980'> r_e_c  <tag><![CDATA[X={'AIRPORT':'REC','CITY':'recife','COUNTRY':'BR','AIRPORT_NAME':"guararapes"}]]></tag></item>
+   <item weight='0.046542'> a_k_l  <tag><![CDATA[X={'AIRPORT':'AKL','CITY':'auckland','COUNTRY':'NZ','AIRPORT_NAME':"auckland"}]]></tag></item>
+   <item weight='0.011190'> r_o_a  <tag><![CDATA[X={'AIRPORT':'ROA','CITY':'roanoke','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"woodrum"}]]></tag></item>
+   <item weight='0.050998'> s d f  <tag><![CDATA[X={'AIRPORT':'SDF','CITY':'louisville','STATE':'KY','COUNTRY':'US','AIRPORT_NAME':"standiford"}]]></tag></item>
+   <item weight='0.108382'> c m h  <tag><![CDATA[X={'AIRPORT':'CMH','CITY':'columbus','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"columbus"}]]></tag></item>
+   <item weight='0.001980'> h m o  <tag><![CDATA[X={'AIRPORT':'HMO','CITY':'hermosillo','COUNTRY':'MX','AIRPORT_NAME':"pesqueira garcia"}]]></tag></item>
+   <item weight='0.089766'> o_g_g  <tag><![CDATA[X={'AIRPORT':'OGG','CITY':'maui','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"kahului"}]]></tag></item>
+   <item weight='0.003961'> y_m_n  <tag><![CDATA[X={'AIRPORT':'YMN','CITY':'makkovik','COUNTRY':'CA','AIRPORT_NAME':"makkovik"}]]></tag></item>
+   <item weight='0.005694'> m r y  <tag><![CDATA[X={'AIRPORT':'MRY','CITY':'monterey','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"monterey"}]]></tag></item>
+   <item weight='0.109571'> s_j_u  <tag><![CDATA[X={'AIRPORT':'SJU','CITY':'san juan','COUNTRY':'PR','AIRPORT_NAME':"luis munoz marin"}]]></tag></item>
+   <item weight='0.008318'> t_r_i  <tag><![CDATA[X={'AIRPORT':'TRI','CITY':'tri-cities','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"tri city"}]]></tag></item>
+   <item weight='0.717631'> a t l  <tag><![CDATA[X={'AIRPORT':'ATL','CITY':'atlanta','STATE':'GA','COUNTRY':'US','AIRPORT_NAME':"Atlanta Hartsfield Jackson International"}]]></tag></item>
+   <item weight='0.505719'> i_a_h  <tag><![CDATA[X={'AIRPORT':'IAH','CITY':'houston','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"Houston Bush Intercontinental"}]]></tag></item>
+   <item weight='0.022281'> d o h  <tag><![CDATA[X={'AIRPORT':'DOH','CITY':'doha','COUNTRY':'QA','AIRPORT_NAME':"doha"}]]></tag></item>
+   <item weight='0.017131'> c_i_d  <tag><![CDATA[X={'AIRPORT':'CID','CITY':'cedar rapids','STATE':'IA','COUNTRY':'US','AIRPORT_NAME':"?the eastern iowa"}]]></tag></item>
+   <item weight='0.541417'> s_f_o  <tag><![CDATA[X={'AIRPORT':'SFO','CITY':'san francisco','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"San Francisco International"}]]></tag></item>
+   <item weight='0.007922'> i_t_o  <tag><![CDATA[X={'AIRPORT':'ITO','CITY':'hilo','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"hilo"}]]></tag></item>
+   <item weight='0.004852'> o m e  <tag><![CDATA[X={'AIRPORT':'OME','CITY':'nome','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"nome"}]]></tag></item>
+   <item weight='0.003020'> y t s  <tag><![CDATA[X={'AIRPORT':'YTS','CITY':'timmins','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"timmins"}]]></tag></item>
+   <item weight='0.023865'> y y t  <tag><![CDATA[X={'AIRPORT':'YYT','CITY':'saint johns','STATE':'NL','COUNTRY':'CA','AIRPORT_NAME':"saint johns"}]]></tag></item>
+   <item weight='0.017329'> c_a_n  <tag><![CDATA[X={'AIRPORT':'CAN','CITY':'guangzhou','COUNTRY':'CN','AIRPORT_NAME':"baiyun"}]]></tag></item>
+   <item weight='0.009605'> c a i  <tag><![CDATA[X={'AIRPORT':'CAI','CITY':'cairo','COUNTRY':'EG','AIRPORT_NAME':"cairo"}]]></tag></item>
+   <item weight='0.049908'> b h m  <tag><![CDATA[X={'AIRPORT':'BHM','CITY':'birmingham','STATE':'AL','COUNTRY':'US','AIRPORT_NAME':"shuttlesworth"}]]></tag></item>
+   <item weight='0.018320'> j e d  <tag><![CDATA[X={'AIRPORT':'JED','CITY':'jeddah','COUNTRY':'SA','AIRPORT_NAME':"king abdulaziz"}]]></tag></item>
+   <item weight='0.019013'> e_u_g  <tag><![CDATA[X={'AIRPORT':'EUG','CITY':'eugene','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"mahlon sweet"}]]></tag></item>
+   <item weight='0.013170'> k_i_n  <tag><![CDATA[X={'AIRPORT':'KIN','CITY':'kingston','COUNTRY':'JM','AIRPORT_NAME':"norman manley"}]]></tag></item>
+   <item weight='0.003763'> g_n_v  <tag><![CDATA[X={'AIRPORT':'GNV','CITY':'gainesville','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"j r alison"}]]></tag></item>
+   <item weight='0.050800'> m_a_n  <tag><![CDATA[X={'AIRPORT':'MAN','CITY':'manchester','COUNTRY':'UK','AIRPORT_NAME':"manchester"}]]></tag></item>
+   <item weight='0.008417'> u v f  <tag><![CDATA[X={'AIRPORT':'UVF','CITY':'saintlucia-vieuxfort','COUNTRY':'LC','AIRPORT_NAME':"hewanorra"}]]></tag></item>
+   <item weight='0.039511'> t_u_s  <tag><![CDATA[X={'AIRPORT':'TUS','CITY':'tucson','STATE':'AZ','COUNTRY':'US','AIRPORT_NAME':"tucson"}]]></tag></item>
+   <item weight='0.011091'> p_g_d  <tag><![CDATA[X={'AIRPORT':'PGD','CITY':'punta gorda','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"charlotte county"}]]></tag></item>
+   <item weight='0.005149'> a g s  <tag><![CDATA[X={'AIRPORT':'AGS','CITY':'augusta','STATE':'MT','COUNTRY':'US','AIRPORT_NAME':"bush"}]]></tag></item>
+   <item weight='0.005347'> s b a  <tag><![CDATA[X={'AIRPORT':'SBA','CITY':'santa barbara','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"santa barbara"}]]></tag></item>
+   <item weight='0.003268'> s w f  <tag><![CDATA[X={'AIRPORT':'SWF','CITY':'newburgh','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"stewart"}]]></tag></item>
+   <item weight='0.006140'> y_q_m  <tag><![CDATA[X={'AIRPORT':'YQM','CITY':'moncton','STATE':'NB','COUNTRY':'CA','AIRPORT_NAME':"moncton"}]]></tag></item>
+   <item weight='0.003961'> v_c_e  <tag><![CDATA[X={'AIRPORT':'VCE','CITY':'venice','COUNTRY':'IT','AIRPORT_NAME':"marco polo"}]]></tag></item>
+   <item weight='0.025845'> g s o  <tag><![CDATA[X={'AIRPORT':'GSO','CITY':'greensboro','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"piedmont triad"}]]></tag></item>
+   <item weight='0.011388'> k w i  <tag><![CDATA[X={'AIRPORT':'KWI','CITY':'kuwait city','COUNTRY':'KW','AIRPORT_NAME':"kuwait"}]]></tag></item>
+   <item weight='0.020201'> s r q  <tag><![CDATA[X={'AIRPORT':'SRQ','CITY':'sarasota-bradenton','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"sarasota bradenton"}]]></tag></item>
+   <item weight='0.003961'> r_a_r  <tag><![CDATA[X={'AIRPORT':'RAR','CITY':'rarotonga','COUNTRY':'CK','AIRPORT_NAME':"nikao"}]]></tag></item>
+   <item weight='0.003961'> c_m_n  <tag><![CDATA[X={'AIRPORT':'CMN','CITY':'casablanca','COUNTRY':'MA','AIRPORT_NAME':"mohammed v"}]]></tag></item>
+   <item weight='0.246868'> s a n  <tag><![CDATA[X={'AIRPORT':'SAN','CITY':'san diego','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"San Diego International"}]]></tag></item>
+   <item weight='0.005644'> i_a_g  <tag><![CDATA[X={'AIRPORT':'IAG','CITY':'niagara falls','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"niagara falls"}]]></tag></item>
+   <item weight='0.007328'> b_m_i  <tag><![CDATA[X={'AIRPORT':'BMI','CITY':'bloomington','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"bloomington"}]]></tag></item>
+   <item weight='0.007922'> b_s_b  <tag><![CDATA[X={'AIRPORT':'BSB','CITY':'brasilia','COUNTRY':'BR','AIRPORT_NAME':"kubitschek"}]]></tag></item>
+   <item weight='0.007130'> v_p_s  <tag><![CDATA[X={'AIRPORT':'VPS','CITY':'fort walton beach','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"ft walton beach"}]]></tag></item>
+   <item weight='0.013467'> a r n  <tag><![CDATA[X={'AIRPORT':'ARN','CITY':'stockholm','COUNTRY':'SE','AIRPORT_NAME':"arlanda"}]]></tag></item>
+   <item weight='0.021785'> b c n  <tag><![CDATA[X={'AIRPORT':'BCN','CITY':'barcelona','COUNTRY':'ES','AIRPORT_NAME':"barcelona"}]]></tag></item>
+   <item weight='0.007229'> g e o  <tag><![CDATA[X={'AIRPORT':'GEO','CITY':'georgetown','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"brown county"}]]></tag></item>
+   <item weight='0.030599'> t_l_v  <tag><![CDATA[X={'AIRPORT':'TLV','CITY':'tel aviv','COUNTRY':'IL','AIRPORT_NAME':"ben gurion"}]]></tag></item>
+   <item weight='0.076001'> s_a_l  <tag><![CDATA[X={'AIRPORT':'SAL','CITY':'san salvador','COUNTRY':'SV','AIRPORT_NAME':"ilopango"}]]></tag></item>
+   <item weight='0.003961'> n c e  <tag><![CDATA[X={'AIRPORT':'NCE','CITY':'nice','COUNTRY':'FR','AIRPORT_NAME':"cote d'azur"}]]></tag></item>
+   <item weight='0.001980'> m_a_r  <tag><![CDATA[X={'AIRPORT':'MAR','CITY':'maracaibo','COUNTRY':'VE','AIRPORT_NAME':"la chinita"}]]></tag></item>
+   <item weight='0.003961'> h_y_l  <tag><![CDATA[X={'AIRPORT':'HYL','CITY':'hollis','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"sea plane base"}]]></tag></item>
+   <item weight='0.013170'> s b n  <tag><![CDATA[X={'AIRPORT':'SBN','CITY':'south bend','STATE':'IN','COUNTRY':'US','AIRPORT_NAME':"saint joseph"}]]></tag></item>
+   <item weight='0.003961'> r a r  <tag><![CDATA[X={'AIRPORT':'RAR','CITY':'rarotonga','COUNTRY':'CK','AIRPORT_NAME':"nikao"}]]></tag></item>
+   <item weight='0.007427'> l o s  <tag><![CDATA[X={'AIRPORT':'LOS','CITY':'lagos','COUNTRY':'NG','AIRPORT_NAME':"murtala mohammed"}]]></tag></item>
+   <item weight='0.002971'> c f g  <tag><![CDATA[X={'AIRPORT':'CFG','CITY':'cienfuegos','COUNTRY':'CU','AIRPORT_NAME':"cienfuegos"}]]></tag></item>
+   <item weight='0.006932'> l h e  <tag><![CDATA[X={'AIRPORT':'LHE','CITY':'lahore','COUNTRY':'PK','AIRPORT_NAME':"allama iqbal"}]]></tag></item>
+   <item weight='0.023865'> v_r_a  <tag><![CDATA[X={'AIRPORT':'VRA','CITY':'varadero','COUNTRY':'CU','AIRPORT_NAME':"juan gualberto gomez"}]]></tag></item>
+   <item weight='0.051988'> d_x_b  <tag><![CDATA[X={'AIRPORT':'DXB','CITY':'dubai','COUNTRY':'AE','AIRPORT_NAME':"dubai"}]]></tag></item>
+   <item weight='0.049908'> g_r_r  <tag><![CDATA[X={'AIRPORT':'GRR','CITY':'grand rapids','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"kent"}]]></tag></item>
+   <item weight='0.210873'> d_c_a  <tag><![CDATA[X={'AIRPORT':'DCA','CITY':'washington','STATE':'DC','COUNTRY':'US','AIRPORT_NAME':"Washington Ronald Reagan National"}]]></tag></item>
+   <item weight='0.019211'> t_y_s  <tag><![CDATA[X={'AIRPORT':'TYS','CITY':'knoxville','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"mc ghee tyson"}]]></tag></item>
+   <item weight='0.055949'> b r u  <tag><![CDATA[X={'AIRPORT':'BRU','CITY':'brussels','COUNTRY':'BE','AIRPORT_NAME':"zaventem"}]]></tag></item>
+   <item weight='0.041095'> p_s_p  <tag><![CDATA[X={'AIRPORT':'PSP','CITY':'palm springs','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"palm springs"}]]></tag></item>
+   <item weight='0.004753'> h o g  <tag><![CDATA[X={'AIRPORT':'HOG','CITY':'holguin','COUNTRY':'CU','AIRPORT_NAME':"frank pais"}]]></tag></item>
+   <item weight='0.013715'> a_m_a  <tag><![CDATA[X={'AIRPORT':'AMA','CITY':'amarillo','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"amarillo"}]]></tag></item>
+   <item weight='0.138783'> y y c  <tag><![CDATA[X={'AIRPORT':'YYC','CITY':'calgary','STATE':'AB','COUNTRY':'CA','AIRPORT_NAME':"calgary"}]]></tag></item>
+   <item weight='0.024756'> s_a_p  <tag><![CDATA[X={'AIRPORT':'SAP','CITY':'san pedro sula','COUNTRY':'HN','AIRPORT_NAME':"la mesa"}]]></tag></item>
+   <item weight='0.171907'> a_m_s  <tag><![CDATA[X={'AIRPORT':'AMS','CITY':'amsterdam','COUNTRY':'NL','AIRPORT_NAME':"schiphol"}]]></tag></item>
+   <item weight='0.001980'> s s a  <tag><![CDATA[X={'AIRPORT':'SSA','CITY':'salvador','COUNTRY':'BR','AIRPORT_NAME':"dois de julho"}]]></tag></item>
+   <item weight='0.038768'> n_a_s  <tag><![CDATA[X={'AIRPORT':'NAS','CITY':'nassau','COUNTRY':'BS','AIRPORT_NAME':"nassau"}]]></tag></item>
+   <item weight='0.049908'> g r r  <tag><![CDATA[X={'AIRPORT':'GRR','CITY':'grand rapids','STATE':'MI','COUNTRY':'US','AIRPORT_NAME':"kent"}]]></tag></item>
+   <item weight='0.017329'> c a n  <tag><![CDATA[X={'AIRPORT':'CAN','CITY':'guangzhou','COUNTRY':'CN','AIRPORT_NAME':"baiyun"}]]></tag></item>
+   <item weight='0.026588'> s y r  <tag><![CDATA[X={'AIRPORT':'SYR','CITY':'syracuse','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"clarence e hancock"}]]></tag></item>
+   <item weight='0.139130'> h o u  <tag><![CDATA[X={'AIRPORT':'HOU','CITY':'houston','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"william p hobby"}]]></tag></item>
+   <item weight='0.005001'> y x u  <tag><![CDATA[X={'AIRPORT':'YXU','CITY':'london','STATE':'ON','COUNTRY':'CA','AIRPORT_NAME':"london"}]]></tag></item>
+   <item weight='0.009803'> c_h_a  <tag><![CDATA[X={'AIRPORT':'CHA','CITY':'chattanooga','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"lovell"}]]></tag></item>
+   <item weight='0.076992'> s j d  <tag><![CDATA[X={'AIRPORT':'SJD','CITY':'san jose del cabo','COUNTRY':'MX','AIRPORT_NAME':"los cabos"}]]></tag></item>
+   <item weight='0.079467'> a b q  <tag><![CDATA[X={'AIRPORT':'ABQ','CITY':'albuquerque','STATE':'NM','COUNTRY':'US','AIRPORT_NAME':"albuquerque"}]]></tag></item>
+   <item weight='0.005941'> z i h  <tag><![CDATA[X={'AIRPORT':'ZIH','CITY':'ixtapa','COUNTRY':'MX','AIRPORT_NAME':"zihuatanejo"}]]></tag></item>
+   <item weight='0.005100'> j a c  <tag><![CDATA[X={'AIRPORT':'JAC','CITY':'jackson hole','STATE':'WY','COUNTRY':'US','AIRPORT_NAME':"jackson hole"}]]></tag></item>
+   <item weight='0.005644'> m_a_o  <tag><![CDATA[X={'AIRPORT':'MAO','CITY':'manaus','COUNTRY':'BR','AIRPORT_NAME':"eduardo gomes"}]]></tag></item>
+   <item weight='0.014458'> a_n_u  <tag><![CDATA[X={'AIRPORT':'ANU','CITY':'antigua','COUNTRY':'AG','AIRPORT_NAME':"v c bird"}]]></tag></item>
+   <item weight='0.004555'> y_x_s  <tag><![CDATA[X={'AIRPORT':'YXS','CITY':'prince george','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"prince george"}]]></tag></item>
+   <item weight='0.190721'> y_v_r  <tag><![CDATA[X={'AIRPORT':'YVR','CITY':'vancouver','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"vancouver"}]]></tag></item>
+   <item weight='0.029311'> c_p_h  <tag><![CDATA[X={'AIRPORT':'CPH','CITY':'copenhagen','COUNTRY':'DK','AIRPORT_NAME':"kastrup"}]]></tag></item>
+   <item weight='0.026737'> d_m_e  <tag><![CDATA[X={'AIRPORT':'DME','CITY':'moscow','COUNTRY':'RU','AIRPORT_NAME':"domodedovo"}]]></tag></item>
+   <item weight='0.004753'> t_a_o  <tag><![CDATA[X={'AIRPORT':'TAO','CITY':'qingdao','COUNTRY':'CN','AIRPORT_NAME':"liuting"}]]></tag></item>
+   <item weight='0.141655'> b n a  <tag><![CDATA[X={'AIRPORT':'BNA','CITY':'nashville','STATE':'TN','COUNTRY':'US','AIRPORT_NAME':"nashville"}]]></tag></item>
+   <item weight='0.129178'> r_d_u  <tag><![CDATA[X={'AIRPORT':'RDU','CITY':'durham raleigh','STATE':'NC','COUNTRY':'US','AIRPORT_NAME':"raleigh-durham"}]]></tag></item>
+   <item weight='0.027529'> m_e_l  <tag><![CDATA[X={'AIRPORT':'MEL','CITY':'melbourne','STATE':'VIC','COUNTRY':'AU','AIRPORT_NAME':"tullamarine"}]]></tag></item>
+   <item weight='0.018468'> m_d_t  <tag><![CDATA[X={'AIRPORT':'MDT','CITY':'harrisburg','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"olmsted"}]]></tag></item>
+   <item weight='0.001980'> l p b  <tag><![CDATA[X={'AIRPORT':'LPB','CITY':'lapaz','COUNTRY':'BO','AIRPORT_NAME':"el alto"}]]></tag></item>
+   <item weight='0.014210'> x_n_a  <tag><![CDATA[X={'AIRPORT':'XNA','CITY':'fayetteville','STATE':'AR','COUNTRY':'US','AIRPORT_NAME':"northwest arkansas"}]]></tag></item>
+   <item weight='0.003763'> y_g_l  <tag><![CDATA[X={'AIRPORT':'YGL','CITY':'lagrande','STATE':'QC','COUNTRY':'CA','AIRPORT_NAME':"la grande"}]]></tag></item>
+   <item weight='0.049710'> k_o_a  <tag><![CDATA[X={'AIRPORT':'KOA','CITY':'kona','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"keahole"}]]></tag></item>
+   <item weight='0.016785'> y_y_j  <tag><![CDATA[X={'AIRPORT':'YYJ','CITY':'victoria','STATE':'BC','COUNTRY':'CA','AIRPORT_NAME':"victoria"}]]></tag></item>
+   <item weight='0.035451'> l i h  <tag><![CDATA[X={'AIRPORT':'LIH','CITY':'kauai island','STATE':'HI','COUNTRY':'US','AIRPORT_NAME':"lihue"}]]></tag></item>
+   <item weight='0.006536'> t g u  <tag><![CDATA[X={'AIRPORT':'TGU','CITY':'tegucigalpa','COUNTRY':'HN','AIRPORT_NAME':"toncontin"}]]></tag></item>
+   <item weight='0.038719'> r_i_c  <tag><![CDATA[X={'AIRPORT':'RIC','CITY':'richmond','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"richard e byrd"}]]></tag></item>
+   <item weight='0.014260'> m_y_r  <tag><![CDATA[X={'AIRPORT':'MYR','CITY':'myrtle beach','STATE':'SC','COUNTRY':'US','AIRPORT_NAME':"myrtle beach"}]]></tag></item>
+   <item weight='0.021686'> k t n  <tag><![CDATA[X={'AIRPORT':'KTN','CITY':'ketchikan','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"ketchikan"}]]></tag></item>
+   <item weight='0.009704'> g_l_a  <tag><![CDATA[X={'AIRPORT':'GLA','CITY':'glasgow','COUNTRY':'UK','AIRPORT_NAME':"glasgow"}]]></tag></item>
+   <item weight='0.004753'> a z s  <tag><![CDATA[X={'AIRPORT':'AZS','CITY':'samana','COUNTRY':'DO','AIRPORT_NAME':"samana"}]]></tag></item>
+   <item weight='0.031985'> g_u_a  <tag><![CDATA[X={'AIRPORT':'GUA','CITY':'guatemala city','COUNTRY':'GT','AIRPORT_NAME':"la aurora"}]]></tag></item>
+   <item weight='0.011289'> g y e  <tag><![CDATA[X={'AIRPORT':'GYE','CITY':'guayaquil','COUNTRY':'EC','AIRPORT_NAME':"simon bolivar"}]]></tag></item>
+   <item weight='0.003961'> l_k_e  <tag><![CDATA[X={'AIRPORT':'LKE','CITY':'seattle','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"kenmore air harbor seaplane base"}]]></tag></item>
+   <item weight='0.084765'> s_n_a  <tag><![CDATA[X={'AIRPORT':'SNA','CITY':'santa ana','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"sssnah"}]]></tag></item>
+   <item weight='0.003961'> l k e  <tag><![CDATA[X={'AIRPORT':'LKE','CITY':'seattle','STATE':'WA','COUNTRY':'US','AIRPORT_NAME':"kenmore air harbor seaplane base"}]]></tag></item>
+   <item weight='0.005941'> h t s  <tag><![CDATA[X={'AIRPORT':'HTS','CITY':'huntington','STATE':'WV','COUNTRY':'US','AIRPORT_NAME':"milton"}]]></tag></item>
+   <item weight='0.028123'> b_u_r  <tag><![CDATA[X={'AIRPORT':'BUR','CITY':'burbank','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"bob hope"}]]></tag></item>
+   <item weight='0.033173'> r_o_c  <tag><![CDATA[X={'AIRPORT':'ROC','CITY':'rochester','STATE':'NY','COUNTRY':'US','AIRPORT_NAME':"monroe"}]]></tag></item>
+   <item weight='0.003466'> k_h_i  <tag><![CDATA[X={'AIRPORT':'KHI','CITY':'karachi','COUNTRY':'PK','AIRPORT_NAME':"jinnah"}]]></tag></item>
+   <item weight='0.017478'> j n u  <tag><![CDATA[X={'AIRPORT':'JNU','CITY':'juneau','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"juneau"}]]></tag></item>
+   <item weight='0.013269'> m_n_l  <tag><![CDATA[X={'AIRPORT':'MNL','CITY':'manila','COUNTRY':'PH','AIRPORT_NAME':"ninoy aquino"}]]></tag></item>
+   <item weight='0.003961'> n_c_e  <tag><![CDATA[X={'AIRPORT':'NCE','CITY':'nice','COUNTRY':'FR','AIRPORT_NAME':"cote d'azur"}]]></tag></item>
+   <item weight='0.004010'> y e k  <tag><![CDATA[X={'AIRPORT':'YEK','CITY':'arviat','STATE':'NU','COUNTRY':'CA','AIRPORT_NAME':"arviat"}]]></tag></item>
+   <item weight='0.047928'> a z a  <tag><![CDATA[X={'AIRPORT':'AZA','CITY':'phoenix','STATE':'AZ','COUNTRY':'US','AIRPORT_NAME':"phoenix"}]]></tag></item>
+   <item weight='0.005644'> b q n  <tag><![CDATA[X={'AIRPORT':'BQN','CITY':'aguadilla','COUNTRY':'PR','AIRPORT_NAME':"borinquen"}]]></tag></item>
+   <item weight='0.013764'> b_d_a  <tag><![CDATA[X={'AIRPORT':'BDA','CITY':'bermuda','COUNTRY':'BM','AIRPORT_NAME':"l f wade"}]]></tag></item>
+   <item weight='0.023568'> s x m  <tag><![CDATA[X={'AIRPORT':'SXM','CITY':'saint maarten','COUNTRY':'AN','AIRPORT_NAME':"princess juliana"}]]></tag></item>
+   <item weight='0.080309'> g_r_u  <tag><![CDATA[X={'AIRPORT':'GRU','CITY':'sao paulo','COUNTRY':'BR','AIRPORT_NAME':"cumbica"}]]></tag></item>
+   <item weight='0.284399'> s_l_c  <tag><![CDATA[X={'AIRPORT':'SLC','CITY':'salt lake city','STATE':'UT','COUNTRY':'US','AIRPORT_NAME':"Salt Lake City International"}]]></tag></item>
+   <item weight='0.005149'> g_f_k  <tag><![CDATA[X={'AIRPORT':'GFK','CITY':'grand forks','STATE':'ND','COUNTRY':'US','AIRPORT_NAME':"grand forks"}]]></tag></item>
+   <item weight='0.004456'> a_d_d  <tag><![CDATA[X={'AIRPORT':'ADD','CITY':'addis ababa','COUNTRY':'ET','AIRPORT_NAME':"bole"}]]></tag></item>
+   <item weight='0.073625'> a n c  <tag><![CDATA[X={'AIRPORT':'ANC','CITY':'anchorage','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"anchorage"}]]></tag></item>
+   <item weight='0.187404'> s t l  <tag><![CDATA[X={'AIRPORT':'STL','CITY':'saint louis','STATE':'MO','COUNTRY':'US','AIRPORT_NAME':"lambert"}]]></tag></item>
+   <item weight='0.121008'> r s w  <tag><![CDATA[X={'AIRPORT':'RSW','CITY':'fort myers','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"southwest florida"}]]></tag></item>
+   <item weight='0.014210'> x n a  <tag><![CDATA[X={'AIRPORT':'XNA','CITY':'fayetteville','STATE':'AR','COUNTRY':'US','AIRPORT_NAME':"northwest arkansas"}]]></tag></item>
+   <item weight='0.003862'> m l b  <tag><![CDATA[X={'AIRPORT':'MLB','CITY':'melbourne','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"cape kennedy"}]]></tag></item>
+   <item weight='0.187404'> s_t_l  <tag><![CDATA[X={'AIRPORT':'STL','CITY':'saint louis','STATE':'MO','COUNTRY':'US','AIRPORT_NAME':"lambert"}]]></tag></item>
+   <item weight='0.109571'> s j u  <tag><![CDATA[X={'AIRPORT':'SJU','CITY':'san juan','COUNTRY':'PR','AIRPORT_NAME':"luis munoz marin"}]]></tag></item>
+   <item weight='0.055503'> m_b_j  <tag><![CDATA[X={'AIRPORT':'MBJ','CITY':'montegobay','COUNTRY':'JM','AIRPORT_NAME':"sangster"}]]></tag></item>
+   <item weight='0.126900'> p_i_t  <tag><![CDATA[X={'AIRPORT':'PIT','CITY':'pittsburgh','STATE':'PA','COUNTRY':'US','AIRPORT_NAME':"pittsburgh"}]]></tag></item>
+   <item weight='0.015448'> t x l  <tag><![CDATA[X={'AIRPORT':'TXL','CITY':'berlin','COUNTRY':'DE','AIRPORT_NAME':"berlin"}]]></tag></item>
+   <item weight='0.029311'> c p h  <tag><![CDATA[X={'AIRPORT':'CPH','CITY':'copenhagen','COUNTRY':'DK','AIRPORT_NAME':"kastrup"}]]></tag></item>
+   <item weight='0.254048'> t_p_a  <tag><![CDATA[X={'AIRPORT':'TPA','CITY':'tampa','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"Tampa International"}]]></tag></item>
+   <item weight='0.005545'> p_h_f  <tag><![CDATA[X={'AIRPORT':'PHF','CITY':'newport news','STATE':'VA','COUNTRY':'US','AIRPORT_NAME':"williamsburg"}]]></tag></item>
+   <item weight='0.006536'> r f d  <tag><![CDATA[X={'AIRPORT':'RFD','CITY':'rockford','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"rockford"}]]></tag></item>
+   <item weight='0.328762'> n_r_t  <tag><![CDATA[X={'AIRPORT':'NRT','CITY':'tokyo','COUNTRY':'JP','AIRPORT_NAME':"Narita International"}]]></tag></item>
+   <item weight='0.003961'> f_u_k  <tag><![CDATA[X={'AIRPORT':'FUK','CITY':'fukuoka','COUNTRY':'JP','AIRPORT_NAME':"fukuoka"}]]></tag></item>
+   <item weight='0.003961'> b_f_s  <tag><![CDATA[X={'AIRPORT':'BFS','CITY':'belfast','COUNTRY':'UK','AIRPORT_NAME':"belfast"}]]></tag></item>
+   <item weight='0.042779'> d_u_b  <tag><![CDATA[X={'AIRPORT':'DUB','CITY':'dublin','COUNTRY':'IE','AIRPORT_NAME':"dublin"}]]></tag></item>
+   <item weight='0.001980'> l_c_y  <tag><![CDATA[X={'AIRPORT':'LCY','CITY':'london','COUNTRY':'UK','AIRPORT_NAME':"london"}]]></tag></item>
+   <item weight='0.005347'> s_b_a  <tag><![CDATA[X={'AIRPORT':'SBA','CITY':'santa barbara','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"santa barbara"}]]></tag></item>
+   <item weight='0.058524'> o k c  <tag><![CDATA[X={'AIRPORT':'OKC','CITY':'oklahoma city','STATE':'OK','COUNTRY':'US','AIRPORT_NAME':"will rogers world"}]]></tag></item>
+   <item weight='0.009110'> e y w  <tag><![CDATA[X={'AIRPORT':'EYW','CITY':'key west','STATE':'FL','COUNTRY':'US','AIRPORT_NAME':"key west"}]]></tag></item>
+   <item weight='0.010497'> y_v_q  <tag><![CDATA[X={'AIRPORT':'YVQ','CITY':'norman wells','COUNTRY':'CA','AIRPORT_NAME':"norman wells"}]]></tag></item>
+   <item weight='0.001980'> k_b_p  <tag><![CDATA[X={'AIRPORT':'KBP','CITY':'kiev','COUNTRY':'UA','AIRPORT_NAME':"borispol"}]]></tag></item>
+   <item weight='0.258405'> p_d_x  <tag><![CDATA[X={'AIRPORT':'PDX','CITY':'portland','STATE':'OR','COUNTRY':'US','AIRPORT_NAME':"Portland International"}]]></tag></item>
+   <item weight='0.003763'> b f l  <tag><![CDATA[X={'AIRPORT':'BFL','CITY':'bakersfield','STATE':'CA','COUNTRY':'US','AIRPORT_NAME':"meadows"}]]></tag></item>
+   <item weight='0.007229'> g_e_o  <tag><![CDATA[X={'AIRPORT':'GEO','CITY':'georgetown','STATE':'OH','COUNTRY':'US','AIRPORT_NAME':"brown county"}]]></tag></item>
+   <item weight='0.007130'> m_d_e  <tag><![CDATA[X={'AIRPORT':'MDE','CITY':'medellin','COUNTRY':'CO','AIRPORT_NAME':"medellin"}]]></tag></item>
+   <item weight='0.071199'> d_a_l  <tag><![CDATA[X={'AIRPORT':'DAL','CITY':'dallas','STATE':'TX','COUNTRY':'US','AIRPORT_NAME':"love"}]]></tag></item>
+   <item weight='0.463633'> p_h_x  <tag><![CDATA[X={'AIRPORT':'PHX','CITY':'phoenix','STATE':'AZ','COUNTRY':'US','AIRPORT_NAME':"Phoenix Sky Harbor International"}]]></tag></item>
+   <item weight='0.031589'> n_a_n  <tag><![CDATA[X={'AIRPORT':'NAN','CITY':'nadi','COUNTRY':'FJ','AIRPORT_NAME':"nadi"}]]></tag></item>
+   <item weight='0.195425'> m_d_w  <tag><![CDATA[X={'AIRPORT':'MDW','CITY':'chicago','STATE':'IL','COUNTRY':'US','AIRPORT_NAME':"midway"}]]></tag></item>
+   <item weight='0.035649'> a u h  <tag><![CDATA[X={'AIRPORT':'AUH','CITY':'abu dhabi','COUNTRY':'AE','AIRPORT_NAME':"abu dhabi"}]]></tag></item>
+   <item weight='0.005050'> s_c_c  <tag><![CDATA[X={'AIRPORT':'SCC','CITY':'prudhoe bay deadhorse','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"prudhoe bay deadhorse"}]]></tag></item>
+   <item weight='0.002872'> a l g  <tag><![CDATA[X={'AIRPORT':'ALG','CITY':'algiers','COUNTRY':'DZ','AIRPORT_NAME':"houari boumediene"}]]></tag></item>
+   <item weight='0.095361'> p_v_g  <tag><![CDATA[X={'AIRPORT':'PVG','CITY':'shanghai','COUNTRY':'CN','AIRPORT_NAME':"pudong"}]]></tag></item>
+   <item weight='0.005446'> c t g  <tag><![CDATA[X={'AIRPORT':'CTG','CITY':'cartagena','COUNTRY':'CO','AIRPORT_NAME':"rafael nunez"}]]></tag></item>
+   <item weight='0.008764'> r_a_p  <tag><![CDATA[X={'AIRPORT':'RAP','CITY':'rapid city','STATE':'SD','COUNTRY':'US','AIRPORT_NAME':"rapid city"}]]></tag></item>
+   <item weight='0.109422'> c v g  <tag><![CDATA[X={'AIRPORT':'CVG','CITY':'covington','STATE':'KY','COUNTRY':'US','AIRPORT_NAME':"cincy"}]]></tag></item>
+   <item weight='0.024756'> b_n_e  <tag><![CDATA[X={'AIRPORT':'BNE','CITY':'brisbane','STATE':'QLD','COUNTRY':'AU','AIRPORT_NAME':"brisbane"}]]></tag></item>
+   <item weight='0.011487'> f_a_i  <tag><![CDATA[X={'AIRPORT':'FAI','CITY':'fairbanks','STATE':'AK','COUNTRY':'US','AIRPORT_NAME':"fairbanks"}]]></tag></item>
+   <item weight='0.041590'> b_o_g  <tag><![CDATA[X={'AIRPORT':'BOG','CITY':'bogota','COUNTRY':'CO','AIRPORT_NAME':"el dorado"}]]></tag></item>
+   <item weight='0.004852'> z_l_o  <tag><![CDATA[X={'AIRPORT':'ZLO','CITY':'manzanillo','COUNTRY':'MX','AIRPORT_NAME':"playa de oro"}]]></tag></item>
+   <item weight='0.010101'> o_p_o  <tag><![CDATA[X={'AIRPORT':'OPO','CITY':'porto','COUNTRY':'PT','AIRPORT_NAME':"francisco sa carneiro"}]]></tag></item>
+ </one-of>
+</rule>
+</grammar>

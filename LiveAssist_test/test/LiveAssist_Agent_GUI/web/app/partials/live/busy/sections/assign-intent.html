@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{prompt}}</div>
+    <div class="panel-body">
+        <div class="col-md-4 list-group">
+            <a id="{{intent.id}}" ng-repeat="intent in intents" ng-click="selectIntent(intent, 0)" class="list-group-item btn-sm" ng-class="{active: intent.selected}">
+                {{(selectedIntents.length == 0)? ($index + 1) + '. ': ""}}{{intent.name}}
+                <span class="badge">{{intent.members.length}}</span>
+            </a>
+        </div>
+        <div class="col-md-4 list-group">
+            <a id="{{intent.id}}" ng-repeat="intent in selectedIntents[0].members" ng-click="selectIntent(intent, 1)" class="list-group-item btn-sm" ng-class="{active: intent.selected}">
+                {{(selectedIntents.length == 1)? ($index + 1) + '. ': ""}}{{intent.name}}
+                <span class="badge">{{intent.members.length}}</span>
+            </a>
+        </div>
+        <div class="col-md-4 list-group">
+            <a id="{{intent.id}}" ng-repeat="intent in selectedIntents[1].members" ng-click="selectIntent(intent, 2)" class="list-group-item btn-sm" ng-class="{active: intent.selected}">
+                {{(selectedIntents.length == 2)? ($index + 1) + '. ': ""}}{{intent.name}}
+                <span class="badge">{{intent.members.length}}</span>
+            </a>
+        </div>
+    </div>
+</div>

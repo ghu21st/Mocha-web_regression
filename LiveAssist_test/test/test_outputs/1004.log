@@ -1,0 +1,16 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1004.log
+info: 
+Test passed! Output string:
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+
+Debug: send get session request on /sessions done
+
+
+Response: [object Object]
+Body: []

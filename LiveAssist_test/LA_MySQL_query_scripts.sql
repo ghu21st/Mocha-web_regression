@@ -1,0 +1,15 @@
+use liveassist;
+show tables;
+select * from dnis;
+select * from application;
+select * from applicationConfiguration;
+select * from applicationContext;
+select * from applicationContextParams;
+select * from assistGrammar;
+select * from commandGrammar;
+select * from skills;
+select * from agentSkills;
+select * from trainingRuns;
+select * from testsetUtts;
+select * from testsetConfigurations;
+select * from testsetUttsCompleted;

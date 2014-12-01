@@ -1,0 +1,167 @@
+Basic QA Mocha test infrastructure/test driver/Nodejs modules for Live Assist Mocha test automation
+
+1) Nodejs modules needed for QA automation test:
+
+	'Mocha'
+	'Chai'
+	'expect'
+	'should'
+	'async'
+	'request'
+	'supertest'
+	'express'
+	'ejs'
+	'nock'
+	'node-rtp'
+	'winston'
+	'sinon'
+	'sinon-chai'
+	'xunit-file'
+	'webdriverjs'
+	'phantomjs' 
+
+	Note:
+	a) All above modules need to be installed by 'npm install xxxx' on QA test servers. 
+	b) Non-global modules installed on QA test server (MTL lab, Windows 2003) under base Live Assist QA test folder (/LiveAssist_test), command: 'npm -install <module_name>'
+	c) Gobal modules includes: Mocha, chai, xunit-file, webdriverjs, phantomjs, etc. Installation command: 'npm install -g <module_name>', such as: 'npm -g install mocha'.
+		
+
+2) For QA app test driver setup:
+	- HTTP server for testing:
+		a) 'express', for http server setup for QA testing/faking, https://github.com/visionmedia/express
+		b) 'ejs': https://github.com/visionmedia/ejs
+		c) 'nock', for HTTP server/backend database mocking/stubing, and http test details tracing, https://github.com/flatiron/nock 
+
+	- HTTP client for testing:
+		a) 'supertest': REST API test client, https://github.com/visionmedia/supertest
+		b) 'request': Powerful simplified http test client, https://github.com/mikeal/request
+
+	- Logging: 
+		a) 'winston: Async logging nodejs module, https://github.com/flatiron/winston
+
+	- monitoring:
+		a) 'sinon'
+		b) 'sinon-chai' 
+
+	- Assertion library:
+		a) 'chai'
+		b) 'expect'
+		c) 'should'
+
+	- Flow/process control:
+		a) 'async'
+
+	- Audio via RTP:
+		a) 'node-rtp': 
+
+3) For QA web test driver setup:
+		
+	- Selenium:
+		a) For web page testing by selenium, user need to start selenium server first before run any tests (IP: 127.0.0.0, port: 4444): 
+			java -jar c:\LiveAssist_test\test\QA_TEST\selenium-server-standalone-2.35.0.jar
+		b) Copy the selenium JAR to \LiveAssist_test\test folder
+
+	- WebdriverJs (Selenium javascript bindings for nodejs):
+		a) instally by npm globally: "npm install -g webdriverjs"
+		
+	- PhantomJs: 
+		a) Install by npm globally: "npm install -g phantomjs"
+		b) path specific setup: After NPM install, add gobal path for phantomjs.ext such as: "C:\Documents and Settings\root\Application Data\npm\node_modules\phantomjs\lib\phantom"
+
+	- chrome dirver:
+		a) install chromedriver.exe at: \LiveAssist_test\test\QA_TEST
+		b) using with selenium + webdriverJs + chrome driver (note: compatible with phantomjs) by create new batch file 'run:
+			start "Selenium + ChromeDriver" /min cmd /k java -jar c:\LiveAssist_test\test\QA_TEST\selenium-server-standalone-2.35.0.jar -Dwebdriver.chrome.driver=c:\LiveAssist_test\test\QA_TEST\chromedriver.exe
+
+	- Firefox driver:
+		It included in the Selenium by default, so no need special installation or setup
+
+
+	Regular expression special charaters: "+?.*^$()[{|\"
+
+4) Setup package.json for dependency and npm test runner:
+ 
+{
+    "name": "LiveAssist_MochaTest",
+    "version": "0.0.1",
+    "private": true,
+
+    "dependencies": {
+        "mocha": "*",
+        "chai": "*",
+        "xunit-file": "*",
+        "express": "*",
+        "sinon": "*",
+        "sinon-chai": "*",
+        "should": "*",
+        "async": "*",
+        "request": "*",
+        "winston": "*",
+        "ejs": "*",
+        "expect": "*",
+        "nock" : "*",
+        "supertest" : "*",
+        "node-rtp" : "*",
+        "webdriverjs": "*",
+	"protractor": "*",
+        "phantomjs": "*"
+
+    },
+
+    "scripts": {
+        "start": "supervisor app",
+        "test": "mocha --reporter list --ui bdd QA_TEST/ --timeout 3600s --slow 30000",
+        "xunit": "mocha -R xunit-file --ui bdd QA_TEST/ --timeout 3600s --slow 60000"
+    }
+}
+
+5) create run test batch file (run_test.bat):
+	mocha --reporter spec --ui bdd QA_TEST/ --timeout 3600s --slow 60000
+
+6) create default options for Mocha test (mocha.opts):
+	--require expect
+	--require chai
+	--reporter spec
+	--ui bdd
+	--recursive
+	--timeout 9000s
+	--slow 200000
+
+7) setup basic Mocha test infrastructure/directory tree/folders/files, copy and refer from: \\mt-nasrops01\qa\LiveAssist\Test_Set\Iteration3.3\Mocha
+
+Test folder/directory:
+	\liveassist_test\test			---- Main test folder(all QA test infrastructure/driver/build)
+	\liveassist_test\test\test_output	---- test logs (diagnostic log from each QA test case)
+	\liveassist_test\test\reports		---- test result/report (for Anthill Pro and Rally updates)
+	\liveassist_test\test\QA_TEST		---- Mocha test set
+	run_test.bat				---- batch to run Mocha regression test 
+	mocha.opts				---- default Mocha test run options setup 
+	Package.json 				---- Test modules dependency and Mocha test and report XML result setup, it also setup run test with npm command
+	start_selenium.bat			---- start selenium server for QA web test driver (include firefox driver and phantomjs support)
+	start_selenium_chrom.bat		---- start selenium server and chrome driver for QA web test driver (include firefox driver and phantomjs support)
+
+8) The basic Mocha test steps for API test driver/test cases:
+1)	Load modules for testing, including chai (assertion lib), async, Winston, request, etc.
+2)	Setup spy or sandbox (optional, if necessary)
+3)	Define variables for QA test needs 
+4)	Hijack the process.stdout.write function and stderr.write (optional)
+5)	QA test server or mocking setup (Selenium server for web test driver or QA express or nock setup - depending on test set)
+6)	HTTP request test client setup
+7)	Before hooks/handler for setup ‘before’ case run
+8)	After hooks/handler for cleanup ‘after’ case run
+9)	Test case main body:
+	a.	Trigger the HTTP request
+	b.	Collect responses
+	c.	assertion check
+	d.	Logging
+	e.	Exit with case defined message (pass or QA customized error)
+
+
+9) Basic Mocha test for API/functionalities automation testing
+	- Test cases prefix: TCxxxx (xxxx is 4 digits case number)
+	- Mocha test series: 1000 series, such as 1000, 1001, 1002…. 1999
+	- Test set range (considered two QAs):
+		QA1: TC1000 – TC1499 (max 500 cases)
+		QA2: TC1500 – TC1999 (max 500 cases)
+
+	

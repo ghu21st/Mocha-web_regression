@@ -1,0 +1,21 @@
+<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <ul class="nav navbar-nav">
+                <li><img src="images/white_nina_50x50.png"></li>
+                <li><a class="navbar-brand">Live Assist</a></li>
+            </ul>
+        </div>
+
+        <nav ui-view="nav" class="collapse navbar-collapse bs-navbar-collapse" role="navigation"></nav>
+    </div>
+</header>
+
+<div ui-view="detail" class="container" role="main"></div>

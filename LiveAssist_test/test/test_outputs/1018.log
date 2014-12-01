@@ -1,0 +1,44 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1018.log
+info: 
+Test passed! Output string:
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"Test2","ani":"sip:4641@QA_test_server","dnis":"sip:8665551234@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"]}
+Response: [object Object]
+Body: [object Object]
+interactionID from /startRecognition  is: session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a","varName":"Nuance-Test2","varVersion":"1.0","ani":"4641","dnis":"8665551234","aai":null,"externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioRelayServerUrl":"http://10.3.41.56:8081","applicationConfiguration":{"id":"2","name":"Nuance-Test2","organizationIDApplicationIDList":[{"organizationID":"Nuance","applicationID":"Test2"}],"dnisList":["8665551234"],"contextList":[{"id":"1","name":"mainmenu","assistGrammarList":["mainmenu"],"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","commandGrammarList":["operator"],"parameterList":[{"name":"agent_pending_completion_cause","value":"SUCCESS"},{"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"name":"high_confidence_percentage","value":"0"},{"name":"immediate_percentage","value":"100"},{"name":"low_confidence_percentage","value":"0"},{"name":"maximum_confidence_threshold","value":"1.0"},{"name":"middle_confidence_percentage","value":"100"},{"name":"minimum_confidence_threshold","value":"0"},{"name":"no_input_percentage","value":"0"}],"skillList":[]}]},"recognitionContext":{"grammars":{"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000":{"id":"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000","ref":"http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"}},"activeGrammar":{"id":"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000","ref":"http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"},"applicationContextConfiguration":{"id":"1","name":"mainmenu","assistGrammarList":["mainmenu"],"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","commandGrammarList":["operator"],"parameterList":[{"name":"agent_pending_completion_cause","value":"SUCCESS"},{"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"name":"high_confidence_percentage","value":"0"},{"name":"immediate_percentage","value":"100"},{"name":"low_confidence_percentage","value":"0"},{"name":"maximum_confidence_threshold","value":"1.0"},{"name":"middle_confidence_percentage","value":"100"},{"name":"minimum_confidence_threshold","value":"0"},{"name":"no_input_percentage","value":"0"}],"skillList":[]},"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","name":"mainmenu"},"canStreamAudio":true,"currentInteractionId":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a-0","interactions":[{"sessionId":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a","id":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a-0","skillList":[],"playAudioStream":true,"utteranceUrl":null,"recognitionResultProvided":false,"completionCause":null,"agentUsername":null,"outcome":null,"timeout":3,"timedOut":false,"topInterpretation":null}],"escalationDecision":null,"escalated":true,"sessionStats":{"stepTimes":{"CREATE":{"date":1417389974436},"START_SESSION":{"date":1417389974436},"START_INTERACTION":{"date":1417389975447},"ESCALATE":{"date":1417389975447}}},"viewName":null,"variableNames":null,"shouldEscalateNow":false,"currentInteraction":{"sessionId":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a","id":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a-0","skillList":[],"playAudioStream":true,"utteranceUrl":null,"recognitionResultProvided":false,"completionCause":null,"agentUsername":null,"outcome":null,"timeout":3,"timedOut":false,"topInterpretation":null},"outcome":null,"shouldEscalate":false}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-Test2:39f041e4-6a92-4d73-81af-15186017d87a
+

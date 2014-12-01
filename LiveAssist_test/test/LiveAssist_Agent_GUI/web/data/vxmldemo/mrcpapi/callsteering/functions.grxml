@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<grammar xml:lang="en-us" version="1.0" xmlns="http://www.w3.org/2001/06/grammar" mode="voice" root="functions">
+
+
+<!--
+     ********************************************************
+     * Define functions for re-use and succinctness of code *
+     ********************************************************
+
+     Trying alternate way to avoid object prototyping: set functions as
+     properties of this (applies to this rule, so other functions defined in
+     this rule can use them directly by name (e.g. twodigstr(5)).  From the
+     tag of another rule, as long as that rule has 
+     <ruleref uri="#functions"/>, you can use them as
+     functions.bubbleUp(this, abc);
+
+     For example:
+
+    <rule id="ROOT" scope="public">
+        <item>
+          <ruleref uri="functions.grxml"/>
+          <ruleref uri="#inner" />
+          <tag>
+          <![CDATA[
+              functions.bubbleUp(this, inner);
+              SWI_RP_literal = inner.SWI_RP_literal;
+              SWI_literal = inner.SWI_spoken;
+          ]]>
+          </tag>
+        </item>
+    </rule>
+
+
+    In general, everything should go inside the "functions" rule, but if you're
+    adding 'specialized' functions that are used only in certain specific places
+    it is probably better to create another rule (with a good name) and put your
+    functions in there.  This will avoid having to parse/compile too many functions
+    that will not be used.
+
+-->
+
+<rule id="functions" scope="public">
+<!--
+ The functions documentation will be inside XML comments instead of inside
+ ECMA-Script comments block (/* ... */) to remove some burden on the internal
+ parser.  The doc will be a little away from the code, but that should be too
+ much of a trouble.  We can still put a one-liner explanation on top of each
+ function
+ -->
+
+
+
+ 
+<tag>
+
+
+<!-- function bubbleUp(dest, obj, debug) 
+     This function will propagate all non-SWI keys into the
+     given 'dest' object.  The general use-case is to pass 'this'
+     as the 'dest' object and the referenced rule name as the 'obj':
+     thanks to javascript, the "debug" argument is completely optional
+
+     For example:
+      <item>
+        <ruleref uri="functions.grxml"/>
+        <ruleref uri="#inner" />
+        <tag> 
+            functions.bubbleUp(this, inner);
+            SWI_RP_literal = inner.SWI_RP_literal;
+        </tag>
+      </item>
+-->
+<![CDATA[
+this.bubbleUpPrefix = 
+function(dest, prefix, obj, debug){
+    for(i in obj){
+        var is = "" + i;
+        var target_is = "" + prefix + i;
+        if(is.indexOf("SWI_") != 0){
+            if(debug) {
+                //SWIjsPrint("bubbleUpPrefix: " + i);
+                //SWIjsPrint("  target key name = " + target_is);
+            }
+            if(typeof(dest[target_is]) == "undefined"){
+                dest[target_is] = obj[i];
+            } else {
+                dest[target_is] += "||" +  obj[i];
+            }
+        }
+    }
+};
+
+this.bubbleUp2 = 
+function(dest, obj, debug){
+	for(i in obj){
+		var is = "" + i;
+		if(is.indexOf("SWI_") != 0){
+			if(debug) { SWIjsPrint("bubbleUp: " + i); }
+			if(typeof(dest[i]) == "undefined"){
+				dest[i] = obj[i];
+			} else {
+				dest[i] += "||" +  obj[i];
+			}
+		} else if(is == "SWI_RP_literal"){
+			if(typeof(dest[i]) !== "undefined"){
+				dest[i] = dest[i] +" " + obj[i];
+			} else {
+				dest[i] = obj[i];
+			}
+		}
+	}
+};
+
+this.bubbleUp = 
+function(dest, obj, debug){
+    for(i in obj){
+        var is = "" + i;
+        if(is.indexOf("SWI_") != 0){
+            if(debug) {
+                SWIjsPrint("bubbleUp: " + i);
+            }
+            if(typeof(dest[i]) == "undefined"){
+                dest[i] = obj[i];
+            } else {
+                dest[i] += "||" +  obj[i];
+            }
+        }
+    }
+};
+
+this.getLastObj = 
+function(obj){
+    var last;
+    var postSWI_vars = 0;
+    for(i in obj){
+        //SWIjsPrint(" i = " + i);
+        if(i != "SWI_vars"){
+            last = i;
+        }
+    }
+
+    eval("last = obj." + last +";");
+    return last;
+};
+
+this.js2json = 
+function(obj) {
+    var stack = new Array();
+    js2jsonDeep(obj, stack,false);
+   // SWIjsPrint("===----==" + stack);
+    var x = stack.join("");
+    x = x.substring(0, x.length-1);
+    return x;
+};
+
+this.countWords = function(s){
+	s = s.replace(/(^\s*)|(\s*$)/gi,"");
+	s = s.replace(/[ ]{2,}/gi," ");
+	s = s.replace(/\n /,"\n");
+	return s.split(' ').length;
+}
+this.coverage = function (s){
+    var top = countWords(s);
+    var cov = s.replace(/\*/g,"");
+    cov = cov.replace(/^  */g,"");
+    cov = cov.replace(/  *$/g,"");
+    var covered = countWords(cov)
+    if (cov == "") return 0;
+    return covered/top;
+}
+
+this.js2jsonObj = 
+function(obj) {
+    var stack = new Array();
+    js2jsonDeep(obj, stack,false);
+    return obj;
+};
+
+this.js2jsonDeep =
+function (obj, stack,last) {
+   // SWIjsPrint(last);
+    //SWIjsPrint(obj);
+    //SWIjsPrint("typeof(obj) = " + typeof(obj));
+    //SWIjsPrint( "prototype = " +    Object.prototype.toString.apply(obj));
+    
+    var num_additions = 0;
+
+    if(obj instanceof Array){
+        //SWIjsPrint("A -> instanceof == Array");
+        stack.push("[");
+        var i = 1;
+        for(var x in obj){
+            //SWIjsPrint("typeof(obj[x]j) = " + typeof(obj[x]));
+            var la= false;
+            if (i == obj.length)la = true;
+            num_additions = num_additions +  js2jsonDeep(obj[x], stack,la);
+            i++;
+        }
+        if(num_additions == 0){
+            stack.pop();
+        } else {
+            
+            if (last)
+                stack.push("]");
+            else
+                stack.push("],");
+        }
+    }
+    else if(obj instanceof String || typeof(obj) === "string"){
+        //SWIjsPrint("B -> instanceof == String");
+        //SWIjsPrint("=========="+obj);
+        if (last)
+            stack.push("\"" + obj + "\"");
+        else
+            stack.push("\"" + obj + "\",");
+        num_additions = num_additions + 1;
+    }
+    else if(obj instanceof Number || typeof(obj) === "number"){
+        //SWIjsPrint("B -> instanceof == String");
+        if (last)
+        stack.push("" + obj + "");
+        else
+        stack.push("" + obj + ",");
+        num_additions = num_additions + 1;
+    }
+    else if(obj instanceof Boolean || typeof(obj) === "boolean"){
+        //SWIjsPrint("B -> instanceof == String");
+        stack.push("" + obj + ",");
+        num_additions = num_additions + 1;
+    }
+    else if(typeof(obj) == "function"){
+        // do nothing
+    }
+    else if(typeof(obj) == "object"){
+        //SWIjsPrint("C -> typeof(obj) == 'object'");
+        stack.push("{");
+       // SWIjsPrint(        stack);
+        var i = 1;
+        var size = 0;
+        for (var o in obj) {
+                size++;
+            }
+        for(var x in obj){
+            //SWIjsPrint("  typeof   (obj[x]) = " + typeof(obj[x]));
+            //SWIjsPrint("  prototype(obj[x]) = " +    Object.prototype.toString.apply(obj[x]));
+         
+            var la = false;
+            if (size == i) la = true;
+           
+            if(typeof(obj[x]) != "function" && x.indexOf("_") != 0){
+                stack.push("\"" + x +"\":");
+                                //SWIjsPrint(        stack);
+                num_additions++;
+                var a1 = js2jsonDeep(obj[x], stack,la);
+                if(a1 == 0){
+                    stack.push("null,");
+                    a1 = 1;
+                }
+                num_additions = num_additions + a1;
+            }
+            i++;
+        }
+        if(num_additions == 0){
+            stack.pop();
+        } else {
+            if (last)
+                stack.push("}");
+            else
+                stack.push("},");
+        }
+    } else if(typeof(obj) === "undefined") {
+        //SWIjsPrint("object is undefined...");
+        stack.push('"-undef-"');
+        num_additions++;
+    } else {
+        //SWIjsPrint("what's this? : " + typeof(obj) + " // " + Object.prototype.toString.apply(obj) + " // " + obj);
+        stack.push(obj + ",");
+        num_additions++;
+    }
+    
+    return num_additions;
+};
+
+
+function Base64() {
+
+    // private property
+    this._keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+          // public method for encoding
+          Base64.prototype.encode = function (input) {
+              var output = "";
+              var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+              var i = 0;
+
+              input = this._utf8_encode(input);
+
+              while (i < input.length) {
+
+                  chr1 = input.charCodeAt(i++);
+                  chr2 = input.charCodeAt(i++);
+                  chr3 = input.charCodeAt(i++);
+
+                  enc1 = chr1 >> 2;
+                  enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                  enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                  enc4 = chr3 & 63;
+
+                  if (isNaN(chr2)) {
+                      enc3 = enc4 = 64;
+                  } else if (isNaN(chr3)) {
+                      enc4 = 64;
+                  }
+
+                  output = output +
+                      this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+                      this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+              }
+
+              return output;
+          },
+
+          // public method for decoding
+          Base64.prototype.decode = function (input) {
+             var output = "";
+             var chr1, chr2, chr3;
+             var enc1, enc2, enc3, enc4;
+             var i = 0;
+
+             input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+             while (i < input.length) {
+
+                 enc1 = this._keyStr.indexOf(input.charAt(i++));
+                 enc2 = this._keyStr.indexOf(input.charAt(i++));
+                 enc3 = this._keyStr.indexOf(input.charAt(i++));
+                 enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+                 chr1 = (enc1 << 2) | (enc2 >> 4);
+                 chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                 chr3 = ((enc3 & 3) << 6) | enc4;
+
+                 output = output + String.fromCharCode(chr1);
+
+                 if (enc3 != 64) {
+                     output = output + String.fromCharCode(chr2);
+                 }
+                 if (enc4 != 64) {
+                     output = output + String.fromCharCode(chr3);
+                 }
+
+             }
+
+             output = this._utf8_decode(output);
+
+             return output;
+
+         },
+
+         // private method for UTF-8 encoding
+          Base64.prototype._utf8_encode = function (string) {
+                   string = string.replace(/\r\n/g,"\n");
+                   var utftext = "";
+
+                   for (var n = 0; n < string.length; n++) {
+
+                       var c = string.charCodeAt(n);
+
+                       if (c < 128) {
+                           utftext += String.fromCharCode(c);
+                       }
+                       else if((c > 127) && (c < 2048)) {
+                           utftext += String.fromCharCode((c >> 6) | 192);
+                           utftext += String.fromCharCode((c & 63) | 128);
+                       }
+                       else {
+                           utftext += String.fromCharCode((c >> 12) | 224);
+                           utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                           utftext += String.fromCharCode((c & 63) | 128);
+                       }
+
+                   }
+
+                   return utftext;
+               },
+
+               // private method for UTF-8 decoding
+          Base64.prototype._utf8_decode = function (utftext) {
+                   var string = "";
+                   var i = 0;
+                   var c = c1 = c2 = 0;
+
+                   while ( i < utftext.length ) {
+
+                       c = utftext.charCodeAt(i);
+
+                       if (c < 128) {
+                           string += String.fromCharCode(c);
+                           i++;
+                       }
+                       else if((c > 191) && (c < 224)) {
+                           c2 = utftext.charCodeAt(i+1);
+                           string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                           i += 2;
+                       }
+                       else {
+                           c2 = utftext.charCodeAt(i+1);
+                           c3 = utftext.charCodeAt(i+2);
+                           string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                           i += 3;
+                       }
+
+                   }
+
+                   return string;
+               }
+
+}
+
+
+
+ ]]>
+<!-- function abc(a,b) -->
+<![CDATA[
+]]>
+ 
+ 
+ </tag>
+</rule>
+
+</grammar>

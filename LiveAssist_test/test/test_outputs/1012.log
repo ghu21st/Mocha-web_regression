@@ -1,0 +1,32 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1012.log
+info: 
+Test passed! Output string:
+
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"MrcpApiCallSteering","ani":"sip:4641@QA_test_server","dnis":"4628","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-MrcpApiCallSteering:84f961e5-45f4-4ffa-a8fb-fc883a9c0f32
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:84f961e5-45f4-4ffa-a8fb-fc883a9c0f32","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"]}
+Response: [object Object]
+Body: [object Object]
+interactionID from /startRecognition  is: session:Nuance-MrcpApiCallSteering:84f961e5-45f4-4ffa-a8fb-fc883a9c0f32-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:84f961e5-45f4-4ffa-a8fb-fc883a9c0f32"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-MrcpApiCallSteering:84f961e5-45f4-4ffa-a8fb-fc883a9c0f32
+

@@ -1,0 +1,1 @@
+mocha -R xunit-file --ui bdd QA_TEST --timeout 3600s --slow 250000

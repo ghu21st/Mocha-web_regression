@@ -1,0 +1,477 @@
+'use strict';
+
+angular.module('controllers').controller('TrainingController', ['$scope', '$modal', '$timeout', 'TrainingService', '$interval', '$log',
+    function($scope, $modal, $timeout, db, $interval, $log) {
+
+        //angular.forEach($log, function(value, key) {
+            // console.log("$log." + key + " = " + value);
+        //});
+        $log.log("hello console"); // no output..??? :(
+
+        // TODO replace with a general-purpose service
+        var reportRestError = function (response) {
+            var msg = 'The Live Assist server failed to perform the request';
+            if (response !== undefined) {
+                msg += ' (' + response.status + ').';
+            } else {
+                msg += '.';
+            }
+            alert(msg);
+        };
+
+        $scope.testset = {
+            selected: null,
+            trainingRun: null,
+            canEdit: function () { return $scope.testset.selected && !$scope.testset.trainingRun && !isRunning($scope.testset.selected)},
+            canDelete: function () { return $scope.testset.selected && !$scope.testset.trainingRun && !isRunning($scope.testset.selected)},
+            canRun: function () { return $scope.testset.selected && $scope.testset.selected.numUtts && $scope.active.length === 0
+                                         && (!$scope.testset.trainingRun || !$scope.testset.trainingRun.active); },
+            canStop: function () { return $scope.testset.selected && $scope.testset.trainingRun && $scope.testset.trainingRun.active; }
+        };
+
+        var isRunning = function (testset) {
+            for (var i=0; i < $scope.runs.length; i++) {
+                if ($scope.runs[i].testsetId === testset.id && $scope.runs[i].active) {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        $scope.testsets = db.testsets.query(function () {
+            if ($scope.testsets.length) {
+                updateTestsetsDisplayOrder();
+                $scope.testset.selected = $scope.testsets[0];
+            }
+        });
+
+        var updateTestsetsDisplayOrder = function () {
+            $scope.testsets.sort(function (l,r) {
+                naturalSort.insensitive = true;
+                return naturalSort(l.name, r.name);
+            });
+        }
+
+        $scope.selectTestset = function () {
+            var modalSelect = $modal.open({
+                templateUrl: 'partials/admin/training/selectTestset.html',
+                controller: 'SelectTestsetController',
+                resolve: {
+                    testsets: function() { return $scope.testsets; },
+                    testset: function() { return $scope.testset; }
+                }
+            });
+            modalSelect.result.then(function () {
+                $timeout(function () { $scope.historyGrid.selectAll(false); }, 0);
+            });
+        };
+
+        $scope.newTestset = function () { edit(true); };
+        $scope.editTestset = function () { if ($scope.testset.selected) { edit(false); } };
+
+        var edit = function(editNew) {
+
+            var modalEdit = $modal.open({
+                templateUrl: 'partials/admin/training/editTestset.html',
+                controller: 'EditTestsetController',
+                resolve: {
+                    testset: function() {
+                        if (editNew) {
+                            return {name:"", nvpUrlFormat:true, organizationId:"", applicationId:"", context:"", numUtts:0};
+                        } else {
+                            return angular.copy($scope.testset.selected);
+                        }
+                    },
+                    isUniqueName: function () {
+                        return function (name) {
+                            if (!editNew && name === $scope.testset.selected.name) {
+                                return true;
+                            }
+                            var unique = true;
+                            angular.forEach($scope.testsets, function (value) {
+                                if (value.name === name) {
+                                    unique = false;
+                                }
+                            });
+                            return unique;
+                        };
+                    }
+                }
+            });
+
+            modalEdit.result.then(function (result) {
+                if (editNew) {
+                    var saved = db.testsets.save({}, result.testset, function (data, headers) {
+                        result.testset.id = saved.id;
+                        $scope.testsets.push(result.testset);
+                        $scope.testset.selected = $scope.testsets[$scope.testsets.length-1];
+                        updateTestsetsDisplayOrder();
+                        if (result.utterancesFile) {
+                            $timeout(upload(result.testset.id, result.utterancesFile), 0);
+                        }
+                    }, reportRestError); // test by setting null in second save param
+                } else {
+                    db.testsets.update(result.testset, function() {
+                        var idx = $scope.testsets.indexOf($scope.testset.selected);
+                        $scope.testsets.splice(idx, 1, result.testset);
+                        $scope.testset.selected = $scope.testsets[idx];
+                        updateTestsetsDisplayOrder();
+                        $scope.loadHistory(); // to reflect name change
+                        if (result.utterancesFile) {
+                            $timeout(upload(result.testset.id, result.utterancesFile), 0);
+                        }
+                    }, reportRestError);
+                }
+            });
+        };
+
+        var upload = function (id, file) {
+            var modalUpload = $modal.open({
+                templateUrl: 'partials/admin/training/uploadProgress.html',
+                controller: 'UploadUtteranceFileController',
+                resolve: {
+                    id: function() { return id; },
+                    file: function() { return file; }
+                }
+            });
+            modalUpload.result.then(function () {
+                // update selected testset to reflect new utterance count/orgId/appId
+                // and refresh history to account for any deleted training runs
+                var updatedTestset = db.testsets.get({id:$scope.testset.selected.id}, function () {
+                    $scope.testset.selected.numUtts = updatedTestset.numUtts;
+                    $scope.testset.selected.organizationId = updatedTestset.organizationId;
+                    $scope.testset.selected.applicationId = updatedTestset.applicationId;
+                    $scope.loadHistory();
+                }, reportRestError );
+            });
+        };
+
+        $scope.deleteTestset = function () {
+            if ($scope.testset.selected) {
+                var modal = $modal.open({
+                    templateUrl: 'partials/admin/training/confirmDeleteTestset.html',
+                    controller: 'ConfirmDeleteTestsetController',
+                    size: 'sm', // requires bootstrap 3.1.0+
+                    resolve: {
+                        name: function() {
+                            return $scope.testset.selected.name;
+                        }
+                    }
+                });
+                modal.result.then(function () {
+                    db.testsets.remove({id:$scope.testset.selected.id}, function () {
+                        var idx = $scope.testsets.indexOf($scope.testset.selected);
+                        $scope.testsets.splice(idx, 1);
+                        if (idx < $scope.testsets.length) {
+                            $scope.testset.selected = $scope.testsets[idx];
+                        } else if ($scope.testsets.length > 0) {
+                            $scope.testset.selected = $scope.testsets[$scope.testsets.length - 1];
+                        } else {
+                            $scope.testset.selected = null;
+                        }
+                        $scope.loadHistory();
+                    }, reportRestError);
+                });
+            }
+        };
+
+        $scope.run = function () {
+            if ($scope.testset.trainingRun && !$scope.testset.trainingRun['final']) {
+                db.restart($scope.testset.trainingRun.id).success(function (data, status, headers, config) {
+                    updateActive();
+                });
+            } else {
+                var modalStart = $modal.open({
+                    templateUrl: 'partials/admin/training/startTrainingRun.html',
+                    controller: 'StartTrainingRunController',
+                    resolve: {
+                        testset: function() {
+                            return angular.copy($scope.testset.selected);
+                        }
+                    }
+                });
+
+                modalStart.result.then(function (newTrainingRun) {
+                    db.runs.save({}, newTrainingRun, function (result) {
+                        $scope.loadHistory(result.id);
+                    }, reportRestError);
+                });
+            }
+        };
+
+        $scope.stop = function () {
+            if ($scope.testset.trainingRun && $scope.testset.trainingRun.active) {
+                // console.log("stop");
+                db.stop($scope.testset.trainingRun.id);
+            }
+        };
+
+        $scope.runs = [];
+        $scope.loadHistory = function (newRunId) {
+            // when possible, update runs[] elements in-place without reassigning runs itself, to avoid UI flicker
+            var updatedRuns = db.runs.query(function () {
+                        console.log("updated runs loaded");
+                if (updatedRuns.length === $scope.runs.length) {
+                    //TODO retarget current selection appropriately, if any
+                    for (var i=0; i<$scope.runs.length; i++) {
+                        angular.forEach($scope.runs[i], function (value, key) {
+                            // preserves existing active property in runs[i]
+                            angular.forEach(updatedRuns[i], function (value, key) {
+                                $scope.runs[i][key] = value;
+                            });
+                        });
+                    }
+                } else {
+                    $scope.runs = updatedRuns;
+                }
+                
+                // if a newRunId is given, force it active so that it gets properly updated
+                // even if it completes "instantly" and is never returned from /runs/active
+                if (newRunId) {
+                    for (var i=0; i<$scope.runs.length; i++) {
+                        if ($scope.runs[i].id == newRunId) {
+                            $scope.runs[i].active = true;
+                            break;
+                        }
+                    }
+                }
+                
+                if ($scope.active.length === 0) {
+                    updateActive(); // start periodic updates as necessary
+                } else {
+                    updateActiveRuns(); // update now
+                }
+            });
+        };
+
+        $scope.active = [];
+        var activeMonitor = undefined;
+        var updateActive = function () {
+            var activeArray = db.active.query(function () {
+                $scope.active.length = 0;
+                if (activeArray.length) {
+                    // convert to map<id,run> in active
+                    angular.forEach(activeArray, function (activeRun) {
+                        $scope.active[activeRun.id] = activeRun;
+                    });
+                    updateActiveRuns();
+                    // set an $interval to continue updating until no runs active or we get $destroyed
+                    if (!angular.isDefined(activeMonitor)) {
+                        activeMonitor = $interval(function () { updateActive(); }, 5000);
+                    }
+                } else {
+                    cancelMonitor(); // no active runs, stop monitoring
+                    angular.forEach($scope.runs, function (run) {
+                        if (run.active) {
+                            run.active = false;
+                            var last = db.runs.get({id:run.id}, function () {
+                                run.updated = last.updated;
+                                run.numUttsRemaining = last.numUttsRemaining;
+                                run['final'] = last['final'];
+                            });
+                        }
+                    });
+                    
+                }
+            });
+        };
+
+        var updateActiveRuns = function () {
+            angular.forEach($scope.runs, function (run) {
+                run.active = run.id in $scope.active;
+                if (run.active) {
+                    run.updated = $scope.active[run.id].updated;
+                    run.numUttsRemaining = $scope.active[run.id].numUttsRemaining;
+                }
+            });
+        };
+
+        var cancelMonitor = function () {
+            if (angular.isDefined(activeMonitor)) {
+                $interval.cancel(activeMonitor);
+                activeMonitor = undefined;
+            }
+        };
+
+        $scope.$on('$destroy', function () { cancelMonitor(); });
+
+        var shuffleHeaderCellTmpl = '<div style="text-align:center;padding-top:5px"><span class="glyphicon glyphicon-random" style="font-size:10px;"></span></div>';
+        var shuffleCellTmpl = '<div style="text-align:center;" class="ngCellText" ng-class="col.colIndex()"><span ng-cell-text ng-show="COL_FIELD">&#8226;</span></div>';
+        //var testsetCellTmpl = '<div class="ngCellText clearfix" ng-class="col.colIndex()">'
+        //                    + '<span ng-show="row.entity.numUttsRemaining > 0" class="badge pull-right" ng-class="row.entity.active &amp;&amp; \'btn-info disabled\'">{{row.entity.numUttsRemaining}}</span>'
+        //                    + '<span ng-show="row.entity.numUttsRemaining == 0" class="glyphicon glyphicon-ok-sign pull-right" style="margin-top:2px;"></span>'
+        //                    + '<span ng-cell-text>{{COL_FIELD}}</span>'
+        //                    + '</div>';
+        var uttsRemainingCellTmpl = '<div class="ngCellText clearfix" ng-class="col.colIndex()">'
+                                  + '<span ng-show="row.entity.numUttsRemaining > 0" class="badge pull-right" ng-class="row.entity.active &amp;&amp; \'btn-info disabled\'">{{row.entity.numUttsRemaining}}</span>'
+                                  + '<span ng-show="row.entity.numUttsRemaining == 0" class="glyphicon glyphicon-ok-sign pull-right" style="margin-top:2px;"></span>'
+                                  + '</div>';
+        //var commentCellEditTmpl = '<textarea style="width:100%" rows="5" cols="50" ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD"/>';
+
+        $scope.historyGrid = {
+            data: 'runs',
+            columnDefs: [ { field: 'start', cellFilter: 'date:"yyyy/MM/dd HH:mm:ss"', displayName: 'Started', width:160 },
+                          { field: 'updated', cellFilter: 'date:"yyyy/MM/dd HH:mm:ss"', displayName: 'Updated', width:160 },
+                          { field: 'shuffle', headerCellTemplate: shuffleHeaderCellTmpl, cellTemplate: shuffleCellTmpl, width:25 },
+                          { field: 'testsetName', displayName: 'Testset', width:225 },
+                          { field: 'uttsRemaining', displayName: '', cellTemplate: uttsRemainingCellTmpl, width:60 },
+                          { field: 'comment', displayName: 'Notes' }
+                        ],
+
+            // custom templates to remove divider bewteen testset name, utterance odometer so they appear to occupy same cell
+            rowTemplate:
+              '<div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell {{col.cellClass}}">'
+            + '<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last &amp;&amp; $index != 3 }">&nbsp;</div><div ng-cell></div></div>',
+
+            headerRowTemplate:
+              '<div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell">'
+            + '<div class="ngVerticalBar" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last &amp;&amp; $index != 3 }">&nbsp;</div>'
+            + '<div ng-header-cell></div></div>',
+
+            multiSelect: false,
+            keepLastSelected: false,
+            afterSelectionChange: function (rowItem, event) {
+                if (rowItem.selected) {
+                    // find the associated testset
+                    for (var i=0; i<$scope.testsets.length; i++) {
+                        if ($scope.testsets[i].id === rowItem.entity.testsetId) {
+                            $scope.testset.selected = $scope.testsets[i];
+                            $scope.testset.trainingRun = rowItem.entity;
+                            break;
+                        }
+                    }
+                } else {
+                    $scope.testset.trainingRun = null;
+                }
+            }
+        };
+
+        $scope.deleteSelectedRun = function () {
+            db.runs.remove({id:$scope.testset.trainingRun.id}, function () {
+                var idx = $scope.runs.indexOf($scope.testset.trainingRun);
+                $scope.runs.splice(idx, 1);
+                $scope.testset.trainingRun = null;
+                $timeout(function () {
+                    $scope.historyGrid.selectAll(false);
+                    if (idx < $scope.runs.length) {
+                        $timeout(function () { $scope.historyGrid.selectRow(idx, true); }, 0);
+                    } else if ($scope.runs.length > 0) {
+                        $timeout(function () { $scope.historyGrid.selectRow($scope.runs.length-1, true); }, 0);
+                    }
+                }, 0);
+            });
+        };
+
+        $scope.loadHistory();
+    }
+]);
+
+angular.module('controllers').controller('SelectTestsetController', ['$scope', '$modalInstance', 'testsets', 'testset',
+    function ($scope, $modalInstance, testsets, testset) {
+        $scope.testsets = testsets;
+        $scope.testset = { selected: testset.selected };
+
+        $scope.ok = function () {
+            testset.selected = $scope.testset.selected;
+            $modalInstance.close();
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss();
+        };
+    }
+]);
+
+angular.module('controllers').controller('EditTestsetController', ['$scope', '$modalInstance', 'testset', 'isUniqueName',
+    function ($scope, $modalInstance, testset, isUniqueName) {
+        $scope.testset = testset;
+        $scope.utterancesFile = null;
+
+        $scope.checkUniqueTestsetName = function () {
+            return isUniqueName($scope.testset.name);
+        };
+
+        $scope.setUtterancesFile = function (file) {
+            $scope.utterancesFile = file;
+        }
+
+        $scope.ok = function () {
+            $modalInstance.close({ testset: $scope.testset, utterancesFile: $scope.utterancesFile });
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss();
+        };
+    }
+]);
+
+angular.module('controllers').controller('ConfirmDeleteTestsetController', ['$scope', '$modalInstance', 'name',
+    function ($scope, $modalInstance, name) {
+        $scope.name = name;
+
+        $scope.ok = function () {
+            $modalInstance.close();
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss();
+        };
+    }
+]);
+
+angular.module('controllers').controller('UploadUtteranceFileController', ['$scope', '$modalInstance', '$timeout', '$upload', 'TrainingService', 'id', 'file',
+    function ($scope, $modalInstance, $timeout, $upload, db, id, file) {
+        $scope.filename = file.name;
+        $scope.error = false;
+        $scope.errorMessage = null;
+        $scope.percent = 0;
+
+        var fileReader = new FileReader();
+        fileReader.readAsArrayBuffer(file);
+        fileReader.onload = function (e) {
+            $upload.http({
+                url: db.uploadPath(id),
+                method: 'POST',
+                headers: { 'Content-type': 'text/plain; charset=utf-8' },
+                data: e.target.result
+            }).progress(function (evt) {
+                // console.log("upload controller progress");
+                $scope.percent = parseInt(100.0 * evt.loaded / evt.total);
+            }).success(function () {
+                // console.log("upload controller complete");
+                $scope.percent = 100;
+                $timeout(function () { $modalInstance.close(); }, 1100);
+            }).error(function (data, status, headers, config) {
+                $scope.error = true;
+                $scope.errorMessage = "upload failed, " + status;
+            });
+        };
+
+        $scope.dismiss = function () {
+            $modalInstance.dismiss();
+        };
+    }
+]);
+
+angular.module('controllers').controller('StartTrainingRunController', ['$scope', '$modalInstance', 'testset',
+    function ($scope, $modalInstance, testset) {
+        $scope.testset = testset;
+        $scope.trainingRun = {testsetId:testset.id, shuffle:true, comment:""};
+
+        $scope.ok = function () {
+            // console.log("start ok");
+            $modalInstance.close($scope.trainingRun);
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss();
+        };
+    }
+]);
+
+”SÈá              :W§T+V—   Q:https://10.3.41.56:8443/liveassist/app/js/controllers/admin/training/training.js security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojKOpF0qJaNXyu+n+CAAQAAgAAAAAAAAAAAAAAACw4N6+LhUposNgK7YiYWzI/H82DxalM0aJQdnbKfH40ZgoyJpFcT/u7IImFpjLfBYkdIAm5ukoNvr5rOjDjMZEAAAACAAADlTCCA5EwggJ5oAMCAQICBEOoiQYwDQYJKoZIhvcNAQELBQAweTELMAkGA1UEBhMCQ0ExDzANBgNVBAgTBlF1ZWJlYzERMA8GA1UEBxMITW9udHJlYWwxDzANBgNVBAoTBk51YW5jZTETMBEGA1UECxMKRW50ZXJwcmlzZTEgMB4GA1UEAxMXbXRsLWRhNTUtdm02Lm51YW5jZS5jb20wHhcNMTQwNTA1MTc0MDI2WhcNMTQwODAzMTc0MDI2WjB5MQswCQYDVQQGEwJDQTEPMA0GA1UECBMGUXVlYmVjMREwDwYDVQQHEwhNb250cmVhbDEPMA0GA1UEChMGTnVhbmNlMRMwEQYDVQQLEwpFbnRlcnByaXNlMSAwHgYDVQQDExdtdGwtZGE1NS12bTYubnVhbmNlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKU28grNBeGqm5O8TLxtJ9hC0KxW353sgtEfpgtHfwLmQfHivL03532iGtLyBpxXn0RYeffnqcDuIDbmmDL2hNxHyuXU3atC227RV65T4UPsw12sEYlGagoITnEJp1lLDfsb4Wzk6AC3r+gcti7wVadTJc37L2VQXIoKnmyV9f1j9dQRBbLi24054DucIVqCsaNJyHJSoVN6zIV6VDZSo8gE0SGoWfX6XJ49B32/bxcIVcY9kXPdvOjs2srcs2MP0uNIvGFMk8ViMNxpjExZ6CN5ClAeBTn3QJayqbzzSlhI1gt+6i3/Z+yM+9qTO/2C4zWuXcBGjji5ewQ9K3U2jpMCAwEAAaMhMB8wHQYDVR0OBBYEFPwPrJmDLh5GVy8uqXQFVrsg6eZKMA0GCSqGSIb3DQEBCwUAA4IBAQCXQWmjA1De8WQ3mds4C9gqx2ZejCY9B+zulyG0TtcwR2WvY87SGtzw5xMMVAni8KIGzjwTwp4NXUUWPtXXCGljBZbWEsfV64bxx1kT9i6ufo7mUMLzjmYS9OxElZDXpFCGBBRyym7PDlQSPsChjaQvSz3ww1ZdrCNb2LmcH9X9uR9XA5IkOsCQ8xwtsRpSnCqrIeBSSH19XBwcALXI3nzQdZRXQGxSQKgThpt07W7klQSyvUbowL1kwLnXUdCpgLl/ydXQfLbWwik09NBAZLdPeDtAsMzZRaq6tFjwcn101v+/ZfS84UB+4dcBxv2hL1x40kSiBon+Ey2NqBSdosqqAAAAgAAAAIAAAAAgVExTX0RIRV9SU0FfV0lUSF9BRVNfMTI4X0NCQ19TSEEBAQEBAQ== request-method GET response-head HTTP/1.1 200 OK
+Content-Type: application/javascript
+Last-Modified: Tue, 30 Sep 2014 10:07:05 GMT
+Accept-Ranges: bytes
+Content-Length: 21576
+ uncompressed-len 0   TH

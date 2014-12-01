@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<grammar xml:lang="en-US" xmlns="http://www.w3.org/2001/06/grammar" root="Root" version="1.0" mode="voice">
+    <rule id="Root" scope="public">
+        <one-of>
+            <item>
+        		<one-of>
+                    <item> i would like to book a flight </item>
+                    <item> please book a flight </item>
+                    <item> book a flight </item>
+                    <item> book </item>
+                </one-of>
+                <tag>intent="book-flight"</tag>
+            </item>
+            <item>
+        		<one-of>
+                    <item> i would like to know the status of a flight </item>
+                    <item> please tell me the status of my flight </item>
+                    <item> flight status </item>
+                    <item> status </item>
+            	</one-of>
+                <tag>intent="getstatus-flight"</tag>
+            </item>
+        </one-of> 
+    </rule> 
+</grammar>
+

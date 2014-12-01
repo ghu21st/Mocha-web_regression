@@ -1,0 +1,73 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1197.log
+info: 
+Current intent selection: Waive fee
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"MrcpApiCallSteering","ani":"sip:4641@QA_test_server","dnis":"sip:4628@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"]}
+Response: [object Object]
+Body: [object Object]interactionID from /startRecognition  is: session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send post request '/sendRecognitionResult  ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7","completionCause":"success","utterance":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","resultMediaType":"application/x-vnd.speechworks.emma+xml","recognitionResult":"PD94bWwgdmVyc2lvbj0nMS4wJz8+PHJlc3VsdD48aW50ZXJwcmV0YXRpb24gZ3JhbW1hcj0ic2Vzc2lvbjoweDAwMDAwMDAxIiBjb25maWRlbmNlPSIwLjQiPjxpbnB1dCBtb2RlPSJzcGVlY2giPndhdmUgZmVlPC9pbnB1dD48aW5zdGFuY2U+PElOVEVOVCBjb25maWRlbmNlPSIwLjg5Ij5XQUlWRV9GRUVfUkVRVUVTVDwvSU5URU5UPjxTV0lfbGl0ZXJhbD53YXZlIGZlZTwvU1dJX2xpdGVyYWw+PFNXSV9ncmFtbWFyTmFtZT5zZXNzaW9uOjB4MDAwMDAwMDE8L1NXSV9ncmFtbWFyTmFtZT48U1dJX21lYW5pbmc+e0lOVEVOVDpXQUlWRV9GRUVfUkVRVUVTVH08L1NXSV9tZWFuaW5nPjwvaW5zdGFuY2U+PC9pbnRlcnByZXRhdGlvbj48L3Jlc3VsdD4NCg=="}
+Response: [object Object]
+Body: [object Object]
+completionCause return from /sendRecognitionResult   is: success
+state return from /sendRecognitionResult  is: useLiveAssistResult
+
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Current intent selection: Waive fee
+Tested button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Tested button clicked
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7","varName":"Nuance-MrcpApiCallSteering","varVersion":"1.0","ani":"4641","dnis":"4628","aai":null,"externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioRelayServerUrl":"http://10.3.41.56:8081","applicationConfiguration":{"id":"3","name":"Nuance-MrcpApiCallSteering","organizationIDApplicationIDList":[{"organizationID":"Nuance","applicationID":"MrcpApiCallSteering"}],"dnisList":["4628"],"contextList":[{"id":"2","name":"mainmenu","assistGrammarList":["mainmenu.grxml"],"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","commandGrammarList":["operator.grxml"],"parameterList":[{"name":"agent_pending_completion_cause","value":"SUCCESS"},{"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"name":"high_confidence_percentage","value":"0"},{"name":"immediate_percentage","value":"0"},{"name":"low_confidence_percentage","value":"0"},{"name":"maximum_confidence_threshold","value":"1.0"},{"name":"middle_confidence_percentage","value":"100"},{"name":"minimum_confidence_threshold","value":"0"},{"name":"no_input_percentage","value":"0"}],"skillList":[]}]},"recognitionContext":{"grammars":{"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000":{"id":"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000","ref":"http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"}},"activeGrammar":{"id":"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000","ref":"http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"},"applicationContextConfiguration":{"id":"2","name":"mainmenu","assistGrammarList":["mainmenu.grxml"],"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","commandGrammarList":["operator.grxml"],"parameterList":[{"name":"agent_pending_completion_cause","value":"SUCCESS"},{"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"name":"high_confidence_percentage","value":"0"},{"name":"immediate_percentage","value":"0"},{"name":"low_confidence_percentage","value":"0"},{"name":"maximum_confidence_threshold","value":"1.0"},{"name":"middle_confidence_percentage","value":"100"},{"name":"minimum_confidence_threshold","value":"0"},{"name":"no_input_percentage","value":"0"}],"skillList":[]},"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","name":"mainmenu"},"canStreamAudio":true,"currentInteractionId":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7-0","interactions":[{"sessionId":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7","id":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7-0","skillList":[],"playAudioStream":false,"utteranceUrl":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResultProvided":true,"completionCause":"success","agentUsername":"TA0001","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"timeout":3,"timedOut":false,"topInterpretation":{"confidence":"0.4","grammarRef":"session:0x00000001","tokens":null,"intent":null,"speechDuration":null,"endOfSpeech":null}}],"escalationDecision":null,"escalated":false,"sessionStats":{"stepTimes":{"CREATE":{"date":1417386769349},"START_SESSION":{"date":1417386769349},"START_INTERACTION":{"date":1417386769841},"SEND_INTERACTION_RESULT":{"date":1417386770357},"ESCALATE":{"date":1417386770359},"SESSION_SET_OUTCOME":{"date":1417386772392}}},"viewName":null,"variableNames":null,"shouldEscalateNow":false,"currentInteraction":{"sessionId":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7","id":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7-0","skillList":[],"playAudioStream":false,"utteranceUrl":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResultProvided":true,"completionCause":"success","agentUsername":"TA0001","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"timeout":3,"timedOut":false,"topInterpretation":{"confidence":"0.4","grammarRef":"session:0x00000001","tokens":null,"intent":null,"speechDuration":null,"endOfSpeech":null}},"outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"shouldEscalate":false}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-MrcpApiCallSteering:c17aa0c1-6e46-47a9-938c-70cf88f681e7
+

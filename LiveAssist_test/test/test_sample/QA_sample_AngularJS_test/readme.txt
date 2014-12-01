@@ -1,0 +1,1 @@
+Sample test cases for angularjs phonecat example (note: need to start the phonecat server before the mocha test cases executed)

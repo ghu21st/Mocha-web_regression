@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h4 class="modal-title">Upload file problem</h4>
+</div>
+
+<div class="modal-body" ng-hide="data.length">
+  <p>No URLs found in {{filename}}. Add content or select a different file and try again.</p>
+</div>
+
+<div class="modal-body" ng-show="data.length">
+  There were {{data.length}} invalid URLs found in {{filename}}.
+  Correct or delete the invalid lines and try again.
+  <pre style="max-height:400px;"><span ng-repeat="item in data"><tt>line {{item.lnum}}: {{item.line}}</tt><br></span></pre>
+</div>
+
+<div class="modal-footer">
+    <button id="showTestsetUploadErrors_dismiss" class="btn btn-primary" ng-click="dismiss()">Dismiss</button>
+</div>

@@ -1,0 +1,81 @@
+//Global Live Assist QA Mocha test parameters/variables settings
+exports.options = {
+  server            : "10.3.41.54",                     //mt-ray-vm01
+//  server          : "10.3.41.56",                     //AHP: mt-ray-vm03
+//  server            : "10.3.41.59",                     //mt-ray-vm06
+// server            : "10.3.41.60",                     //mt-ray-vm07
+//  server          : "10.3.41.61",                     //mt-ray-vm08, regression - QA2
+
+  port              : 8083,                             //default Live Assist server port
+  test_location     : "c:\\LiveAssist_test\\test",      //test base folder
+
+  test_Url          : "https://10.3.41.54:8446/liveassist/app", //for Live Assist AngularJS GUI test
+//  test_Url          : "https://10.3.41.56:8446/liveassist/app", //for Live Assist AngularJS GUI test
+//  test_Url          : "https://10.3.41.59:8446/liveassist/app", //for Live Assist AngularJS GUI test
+//  test_Url          : "https://10.3.41.60:8446/liveassist/app", //for Live Assist AngularJS GUI test
+
+  selenium_server   : "http://localhost:4444/wd/hub",    //selenium server URL
+//  browser_driver    : "firefox",            //config browser driver to "firefox". NOTE: need to start selenium standalone server + Firefox driver first (or batch file)
+  browser_driver    : "chrome",            //config browser driver to "chrome". NOTE: need to start selenium standalone server + Chrome driver first (or batch file)
+
+  // For load test setup -------------------------------
+  selenium_user_port : 
+	{
+	  "TA0001"	: 4441,
+	  "TA0002"	: 4442,
+	  "TA0003"	: 4443,
+	  "TA0004"	: 4444,
+	  "TA0005"	: 4445,
+	  "TA0006"	: 4446,
+	  "TA0007"	: 4447,
+	  "TA0008"	: 4448,
+	  "TA0009"	: 4449
+	},
+
+  user_profile_location :   //Note: if GUI load test with Chrome browser, the following config need to be applied:
+	{
+		"TA0001"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 1",
+		"TA0002"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 2",
+		"TA0003"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 3",
+		"TA0004"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 1",
+		"TA0005"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 2",
+		"TA0006"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 3",
+		"TA0007"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 1",
+		"TA0008"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 2",
+		"TA0009"	: "C:\\Documents and Settings\\root\\Local Settings\\Application Data\\Google\\Chrome\\User Data\\Profile 3"
+	},
+	
+  first_selenium_host : "10.3.41.107",	 		//mtl-bl1-12-vm04, for Live Assist api + gui load test with 2 machines setup (each 4 selenium standalone server)
+  second_selenium_host : "10.3.41.111",			//mtl-bl1-12-vm08, for Live Assist api + gui load test with 2 machines setup (each 4 selenium standalone server)
+  third_selenium_host : "10.3.41.75",			//mtl-bl1-12-vm12, for Live Assist api + gui load test with 3 machines setup (each 3 selenium standalone server)
+
+  ptor_timeout_load :   35000,                     // protractor driver & script time out
+  ptor_timeout_load2 :  300000,						//ivr api - for each iteration, good one: 100000 or above like 140000, 150000, 220000, 230000, 240000
+  api_call_wait_iter :  280,							//ivr api - 100 x 1 sec or above, like 120, 125, 130, 150, 160, 170
+
+//MySQL
+  //LA_mysql_host       : "10.3.41.56",             //in most cases, the mysql host is the same as Live Assist server, if not, need to configure different mysql db host here
+  LA_mysql_port         : 3306,
+  LA_mysql_user         : "liveassist",
+  LA_mysql_password     : "liveassist",
+  LA_mysql_database     : "liveassist",
+
+//  LA_mysql_user         : "liveassist",
+//  LA_mysql_password     : "liveassist",
+//  LA_mysql_database     : "liveassist_bak",
+
+//GUI
+  ptor_timeout_regression : 60000,                     // protractor driver & script time out
+  ptor_timeout_load :   45000,                     // protractor driver & script time out
+//  ptor_timeout_load2 :  65000,					//for iteration >=10
+//  ptor_timeout_load2 :  150000,						//for iteration >=50
+  ptor_timeout_load2 :  150000,						//for each iteration, good one: 100000 or above like 140000, 150000
+  api_call_wait_iter: 130,							//100 x 1 sec or above, like 120, 125, 130
+
+  api_call_number	 : 2,				   		//assign api call load test iteration # 
+  gui_run_number    : 2						//assign agent gui load test iteration # 
+
+//  api_call_number	 : 130,				   		//for api 1000 calls (note: if > 50, assign api call load test iteration # = expected api call run number + 5, to make sure all the api test iteration can be completed)
+//  gui_run_number    :  140                      //for gui response 1000 calls (note: if > 50, assign agent gui load test iteration # = expected gui run # + 10, to make sure all the GUI test iteration can be completed)
+};
+

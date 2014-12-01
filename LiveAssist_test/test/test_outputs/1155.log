@@ -1,0 +1,106 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1155.log
+info: 
+wait 1 second for server
+
+info: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+info: 
+Test web page title: Nuance Live Assist
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Set user login name variable
+info: 
+Set password variable
+info: 
+Sign in button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Tested button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Tested button clicked
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11
+
+info: 
+wait 1 second for server
+
+info: for testing
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+wait 1 second for server
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Selected variable id: NEW_ADDRESS
+Selected variable name: New Address
+Selected variable id: NEW_PHONE_NUMBER
+Selected variable name: New Phone Number
+Selected variable id: NEW_EMAIL
+Selected variable name: New E-mail
+Tested button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Tested button clicked
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11"}
+Response: [object Object]
+Body: {"sessionID":"session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11","completionCause":"success","outcome":{"intent":{"id":"INTENT","value":"UPDATE_CONTACT_INFORMATION"},"variables":[{"id":"NEW_ADDRESS","value":"QA_addr"},{"id":"NEW_PHONE_NUMBER","value":"5147703199"},{"id":"NEW_EMAIL","value":"QA@nuance.com"}],"globals":[]},"state":"useLiveAssistResult"}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:9ba8dadf-4c8b-4faa-901d-c036aff27c11
+

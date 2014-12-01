@@ -1,0 +1,23 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'uninstall',
+1 verbose cli   '-g',
+1 verbose cli   'protractor' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose node_modules\protractor unbuild
+6 error Error: EBUSY, unlink 'C:\Documents and Settings\root\Application Data\npm\node_modules\protractor\selenium\selenium-server-standalone-2.43.1.jar'
+7 error If you need help, you may report this *entire* log,
+7 error including the npm and node versions, at:
+7 error     <http://github.com/npm/npm/issues>
+8 error System Windows_NT 5.2.3790
+9 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "uninstall" "-g" "protractor"
+10 error cwd C:\LiveAssist_test
+11 error node -v v0.10.32
+12 error npm -v 1.4.28
+13 error path C:\Documents and Settings\root\Application Data\npm\node_modules\protractor\selenium\selenium-server-standalone-2.43.1.jar
+14 error code EBUSY
+15 error errno 10
+16 verbose exit [ 10, true ]

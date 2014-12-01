@@ -1,0 +1,84 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1170.log
+info: for testing
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+
+Debug: send delete session request done
+
+
+Response: [object Object]
+Body: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"MrcpApiCallSteering","ani":"sip:4641@QA_test_server","dnis":"sip:4628@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000"]}
+Response: [object Object]
+Body: [object Object]interactionID from /startRecognition  is: session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send post request '/sendRecognitionResult  ' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca","completionCause":"success","utterance":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResult":"PD94bWwgdmVyc2lvbj0nMS4wJz8+IDxlbW1hOmVtbWEgdmVyc2lvbj0iMS4wIiB4bWxuczplbW1hPSJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDA3L0NSLWVtbWEtMjAwNzEyMTEiIHhtbG5zOm51YW5jZT0iaHR0cDovL25yMTAubnVhbmNlLmNvbS9lbW1hIj4gPGVtbWE6Z3JhbW1hciBpZD0iZ3JhbW1hcl8xIiByZWY9InNlc3Npb246aHR0cDovL210bC1kYTU1LXZtNjo4MDgwL2xpdmVhc3Npc3QvZGF0YS92eG1sZGVtby90cmF2ZWwvbWFpbm1lbnUuZ3J4bWwgLTEgLTEgMTAwMDAiLz4gPGVtbWE6aW50ZXJwcmV0YXRpb24gaWQ9ImludGVycF8xIiBlbW1hOmNvbmZpZGVuY2U9IjAuNzgiIGVtbWE6Z3JhbW1hci1yZWY9ImdyYW1tYXJfMSIgZW1tYTp0b2tlbnM9Imkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0IiBlbW1hOmR1cmF0aW9uPSIzMjQwIiBlbW1hOm1vZGU9InZvaWNlIiBudWFuY2U6ZW9zLXNpbGVuY2U9Ijg1MCI+IDxpbnRlbnQgY29uZj0iMC43OCI+Ym9vay1mbGlnaHQ8L2ludGVudD4gPFNXSV9saXRlcmFsPmkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0PC9TV0lfbGl0ZXJhbD4gPFNXSV9tZWFuaW5nPntpbnRlbnQ6Ym9vay1mbGlnaHR9PC9TV0lfbWVhbmluZz4gPC9lbW1hOmludGVycHJldGF0aW9uPiA8L2VtbWE6ZW1tYT4="}
+Response: [object Object]
+Body: [object Object]
+completionCause return from /sendRecognitionResult   is: success
+state return from /sendRecognitionResult  is: useLiveAssistResult
+
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Found binding interaction.text:
+from: 4641
+to: 4628
+Nuance-MrcpApiCallSteering
+mainmenu
+
+Current intent selection: Waive fee
+Tested button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Tested button clicked
+
+Debug: send get session request on /session done
+
+
+Response: [object Object]
+Body: {"id":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca","varName":"Nuance-MrcpApiCallSteering","varVersion":"1.0","ani":"4641","dnis":"4628","aai":null,"externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioRelayServerUrl":"http://10.3.41.56:8081","applicationConfiguration":{"id":"3","name":"Nuance-MrcpApiCallSteering","organizationIDApplicationIDList":[{"organizationID":"Nuance","applicationID":"MrcpApiCallSteering"}],"dnisList":["4628"],"contextList":[{"id":"2","name":"mainmenu","assistGrammarList":["mainmenu.grxml"],"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","commandGrammarList":["operator.grxml"],"parameterList":[{"name":"agent_pending_completion_cause","value":"SUCCESS"},{"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"name":"high_confidence_percentage","value":"0"},{"name":"immediate_percentage","value":"0"},{"name":"low_confidence_percentage","value":"0"},{"name":"maximum_confidence_threshold","value":"1.0"},{"name":"middle_confidence_percentage","value":"100"},{"name":"minimum_confidence_threshold","value":"0"},{"name":"no_input_percentage","value":"0"}],"skillList":[]}]},"recognitionContext":{"grammars":{"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000":{"id":"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000","ref":"http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"}},"activeGrammar":{"id":"session:http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml -1 -1 10000","ref":"http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"},"applicationContextConfiguration":{"id":"2","name":"mainmenu","assistGrammarList":["mainmenu.grxml"],"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","commandGrammarList":["operator.grxml"],"parameterList":[{"name":"agent_pending_completion_cause","value":"SUCCESS"},{"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"name":"high_confidence_percentage","value":"0"},{"name":"immediate_percentage","value":"0"},{"name":"low_confidence_percentage","value":"0"},{"name":"maximum_confidence_threshold","value":"1.0"},{"name":"middle_confidence_percentage","value":"100"},{"name":"minimum_confidence_threshold","value":"0"},{"name":"no_input_percentage","value":"0"}],"skillList":[]},"escalationClassifierId":"DynamicEscalationClassifier","pickListId":"nuance/mrcpapicallsteering/intents.json","name":"mainmenu"},"canStreamAudio":true,"currentInteractionId":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca-0","interactions":[{"sessionId":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca","id":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca-0","skillList":[],"playAudioStream":false,"utteranceUrl":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResultProvided":true,"completionCause":"success","agentUsername":"TA0001","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"timeout":3,"timedOut":false,"topInterpretation":{"confidence":"0.78","grammarRef":"session:http://mtl-da55-vm6:8080/liveassist/data/vxmldemo/travel/mainmenu.grxml -1 -1 10000","tokens":"i would like to book a flight","intent":null,"speechDuration":"3240","endOfSpeech":"850"}}],"escalationDecision":null,"escalated":false,"sessionStats":{"stepTimes":{"CREATE":{"date":1417386340559},"START_SESSION":{"date":1417386340559},"START_INTERACTION":{"date":1417386341053},"SEND_INTERACTION_RESULT":{"date":1417386341569},"ESCALATE":{"date":1417386341571},"SESSION_SET_OUTCOME":{"date":1417386344277}}},"viewName":null,"variableNames":null,"shouldEscalateNow":false,"currentInteraction":{"sessionId":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca","id":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca-0","skillList":[],"playAudioStream":false,"utteranceUrl":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResultProvided":true,"completionCause":"success","agentUsername":"TA0001","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"timeout":3,"timedOut":false,"topInterpretation":{"confidence":"0.78","grammarRef":"session:http://mtl-da55-vm6:8080/liveassist/data/vxmldemo/travel/mainmenu.grxml -1 -1 10000","tokens":"i would like to book a flight","intent":null,"speechDuration":"3240","endOfSpeech":"850"}},"outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"shouldEscalate":false}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-MrcpApiCallSteering:2ce88dd9-4c5e-4ca7-8eb5-751a8fdd27ca
+
+info: 
+Make sure agent logout before exit!
+https://10.3.41.56:8446/liveassist/app/logout
+
+

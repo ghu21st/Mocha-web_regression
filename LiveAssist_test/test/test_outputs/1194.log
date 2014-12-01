@@ -1,0 +1,158 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1194.log
+info: 
+wait 1 second for server
+
+info: 
+Current URL: https://10.3.41.56:8446/liveassist/app
+info: 
+Test web page title: Nuance Live Assist
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Set user login name variable
+info: 
+Set password variable
+info: 
+Sign in button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Current intent selection: Waive fee
+info: 
+Tested button clicked
+info: 
+wait 1 second for server
+
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Selected intents by CTRL+num
+
+info: 
+Tested button clicked
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Tested button clicked
+info: 
+wait 1 second for server
+
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962
+
+info: 
+wait 1 second for server
+
+info: for testing
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+wait 1 second for server
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"1234","configurationName":"mainmenu","userInputText":"Test interaction 1"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Found binding interaction.text:
+Test interaction 1
+
+Current intent selection: Waive fee
+Tested button clicked
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962"}
+Response: [object Object]
+Body: {"sessionID":"session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962","completionCause":"success","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"state":"useLiveAssistResult"}
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"configurationName":"mainmenu","sessionID":"session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962","userInputText":"Test interaction 2"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Found binding interaction.text:
+Test interaction 2
+
+Selected intents by CTRL+num
+
+Tested button clicked
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Tested button clicked
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962"}
+Response: [object Object]
+Body: {"sessionID":"session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962","completionCause":"success","outcome":{"intent":{"id":"INTENT","value":"EXPLAIN_FEE_REQUEST"},"variables":null,"globals":[]},"state":"useLiveAssistResult"}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:8fed817c-8a46-42c2-baa7-76dbb1330962
+
+info: 
+Make sure agent logout before exit!
+https://10.3.41.56:8446/liveassist/app/logout
+
+

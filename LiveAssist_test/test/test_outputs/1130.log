@@ -1,0 +1,10 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1130.log
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+wait 1 second for server
+

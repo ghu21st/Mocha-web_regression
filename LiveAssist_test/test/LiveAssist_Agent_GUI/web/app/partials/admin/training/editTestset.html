@@ -1,0 +1,79 @@
+<form name="editForm" class="form-horizontal " novalidate>
+  <div class="modal-header"><h3 class="modal-title">{{testset.id ? 'Edit' : 'New'}} testset</h3></div>
+
+  <div class="modal-body">
+    <fieldset>
+
+      <div class="form-group" show-errors>
+        <label class="col-md-3 control-label" for="testsetName">Testset name</label>  
+        <div class="col-md-6">
+          <input id="editTestset_testsetName" name="testsetName" class="form-control input-md" required type="text" ng-model="testset.name" ng-maxlength="50"
+                 ng-change="editForm.testsetName.$setValidity('unique', true);"
+                 ng-blur="editForm.testsetName.$setValidity('unique', checkUniqueTestsetName());"
+                 placeholder="Enter a unique name">
+          <span class="help-block" ng-show="editForm.testsetName.$dirty &amp;&amp; editForm.testsetName.$error.required">Name required.</span>
+          <span class="help-block" ng-show="editForm.testsetName.$dirty &amp;&amp; editForm.testsetName.$error.unique">Name exists - please choose a different name.</span>
+          <span class="help-block" ng-show="editForm.testsetName.$dirty &amp;&amp; editForm.testsetName.$error.maxlength">50 character limit exceeded</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">URL format</label>
+        <div class="col-md-6">
+          <label id="editTestset_nvpUrlFormatLabel" class="checkbox-inline" for="nvpUrlFormat" ng-click="testset.nvpUrlFormat = !testset.nvpUrlFormat">
+            <input id="editTestset_nvpUrlFormat" name="nvpUrlFormat" ng-checked="testset.nvpUrlFormat" type="checkbox">
+            NVP call log
+          </label>
+        </div>
+      </div>
+
+      <div ng-hide="testset.nvpUrlFormat" class="form-group" show-errors>
+        <label class="col-md-3 control-label" for="orgId">Organization ID</label>  
+        <div class="col-md-6">
+          <input id="editTestset_orgId" name="orgId" class="form-control input-md" type="text" ng-model="testset.organizationId" ng-required="!testset.nvpUrlFormat" ng-maxlength="60">
+          <span class="help-block" ng-show="editForm.orgId.$dirty &amp;&amp; editForm.orgId.$error.required">Value required.</span>
+          <span class="help-block" ng-show="editForm.orgId.$dirty &amp;&amp; editForm.orgId.$error.maxlength">60 character limit exceeded</span>
+        </div>
+      </div>
+
+      <div ng-hide="testset.nvpUrlFormat" class="form-group" show-errors>
+        <label class="col-md-3 control-label" for="appId">Application ID</label>  
+        <div class="col-md-6">
+          <input id="editTestset_appId" name="appId" class="form-control input-md" type="text" ng-model="testset.applicationId" ng-required="!testset.nvpUrlFormat" ng-maxlength="60">
+          <span class="help-block" ng-show="editForm.appId.$dirty &amp;&amp; editForm.appId.$error.required">Value required.</span>
+          <span class="help-block" ng-show="editForm.appId.$dirty &amp;&amp; editForm.appId.$error.maxlength">60 character limit exceeded</span>
+        </div>
+      </div>
+
+      <div class="form-group" show-errors>
+        <label class="col-md-3 control-label" for="context">Context</label>  
+        <div class="col-md-6">
+          <input id="editTestset_context" name="context" class="form-control input-md" type="text" ng-model="testset.context" ng-required="true" ng-maxlength="60">
+          <span class="help-block" ng-show="editForm.appId.$dirty &amp;&amp; editForm.appId.$error.required">Value required.</span>
+          <span class="help-block" ng-show="editForm.appId.$dirty &amp;&amp; editForm.appId.$error.maxlength">60 character limit exceeded</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label" for="editFormUtts">Utterances</label>
+        <div class="col-md-6">
+          <div class="input-group">
+            <input id="editTestset_uttsFile" name="editFormUtts" type="text" class="form-control" readonly ng-value="utterancesFile &amp;&amp; utterancesFile.name">
+            <span class="input-group-btn">
+              <!--
+              <button class="btn btn-default" ng-show="utterancesFile" ng-click="setUtterancesFile(null)"><span class="glyphicon glyphicon-ban-circle"></span></button>
+              -->
+              <!-- this has to be a div for ng-file-select to work -->
+              <div id="editTestset_openUttsFile" ng-file-select="setUtterancesFile($files[0])" onclick="this.value = null" class="btn btn-default" ><span class="glyphicon glyphicon-folder-open"></span></div>
+            </span>
+          </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+  <div class="modal-footer">
+    <button id="editTestset_ok" class="btn btn-primary" ng-click="ok()" ng-disabled="editForm.$invalid">OK</button>
+    <button id="editTestset_cancel" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+</form>

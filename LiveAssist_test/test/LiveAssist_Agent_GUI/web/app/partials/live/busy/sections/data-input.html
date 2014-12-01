@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Data Input</div>
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li ng-repeat="selectedIntent in selectedIntents">{{selectedIntent.name}}</li>
+        </ol>
+        <ul class="list-group">
+            <li ng-repeat="variable in selectedIntents[selectedIntents.length - 1].variables" class="list-group-item">
+                <la-concept-input concept="variable" concept-index="$index" />
+            </li>
+        </ul>
+    </div>
+</div>

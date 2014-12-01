@@ -1,0 +1,222 @@
+<testsuite name="QA Mocha Tests" tests="69" failures="5" errors="5" skipped="0" time="1153.164">
+<testcase classname="TC1130: Verify that Live Assist agent GUI welcome page with basic url - title - message check" name="TC1130: Verify that Live Assist agent GUI welcome page with basic url - title - message check" time="8.625"/>
+<testcase classname="TC1131: Verify that Live Assist agent GUI welcome page -&gt; sign in page" name="TC1131: Verify that Live Assist agent GUI welcome page -&gt; sign in page" time="7.163"/>
+<testcase classname="TC1132: Verify that Live Assist agent GUI sign in as Live agent with valid user name and password" name="TC1132: Verify that Live Assist agent GUI sign in as Live agent with valid user name and password" time="8.117"/>
+<testcase classname="TC1133: Verify that Live Assist agent GUI sign out right after sign in" name="TC1133: Verify that Live Assist agent GUI sign out right after sign in" time="8.117"/>
+<testcase classname="TC1134: Verify that Live Assist agent GUI with valid agent user name and password but can not sign in as Adminstrator" name="TC1134: Verify that Live Assist agent GUI with valid agent user name and password but can not sign in as Adminstrator" time="8.071"/>
+<testcase classname="TC1136: Verify that Live Assist agent GUI with invalid user name sign in" name="TC1136: Verify that Live Assist agent GUI with invalid user name sign in" time="7.814"/>
+<testcase classname="TC1137: Verify that Live Assist agent GUI with valid user name but invalid password sign in" name="TC1137: Verify that Live Assist agent GUI with valid user name but invalid password sign in" time="11.59"/>
+<testcase classname="TC1138: Verify that Live Assist simple IVR API method /inputInteractionStep -&gt; agent intent selection -&gt; check session return with /inputInteractionStep" name="TC1138: Verify that Live Assist simple IVR API method /inputInteractionStep -&gt; agent intent selection -&gt; done -&gt; check session return with /inputInteractionStep" time="12.927"/>
+<testcase classname="TC1139: Verify that Live Assist simple IVR API method /inputInteractionStep -&gt; agent outcome selection -&gt; agent GUI response &amp; selection summary" name="TC1139: Verify that Live Assist simple IVR API method /inputInteractionStep -&gt; agent outcome selection -&gt; agent GUI response &amp; selection summary" time="13.834"/>
+<testcase classname="TC1140: Verify that Live Assist simple web API method /inputInteractionStep -&gt; agent intent selection -&gt; check session return with /inputInteractionStep" name="TC1140: Verify that Live Assist simple web API method /inputInteractionStep -&gt; agent intent selection -&gt; done -&gt; check session return with /inputInteractionStep" time="14.057"/>
+<testcase classname="TC1141: Verify that Live Assist simple web API method /inputInteractionStep -&gt; agent outcome selection -&gt; agent GUI response &amp; selection summary" name="TC1141: Verify that Live Assist simple web API method /inputInteractionStep -&gt; agent outcome selection -&gt; agent GUI response &amp; selection summary" time="14.306"/>
+<testcase classname="TC1142: Verify that Live Assist call triggered from MRCP API -&gt; agent intent selection -&gt; check session return" name="TC1142: Verify that Live Assist call triggered from MRCP API -&gt; agent intent selection -&gt; check session return" time="14.208"/>
+<testcase classname="TC1143: Verify that Live Assist call triggered from MRCP API -&gt; agent outcome selection -&gt; agent GUI response &amp; selection summary" name="TC1143: Verify that Live Assist call triggered from MRCP API -&gt; agent outcome selection -&gt; agent GUI response &amp; selection summary" time="14.716"/>
+<testcase classname="TC1144: Verify that Live Assist sample app agent gui with billing intent outcome: (Billing) -&gt; (Balance) -&gt; (Check balance) " name="TC1144: Verify that Live Assist sample app agent gui with billing intent outcome: (Billing) -&gt; (Balance) -&gt; (Check balance) " time="12.788"/>
+<testcase classname="TC1145: Verify that Live Assist sample app agent gui with custom outcome selection (Billing) -&gt; (Balance) -&gt; (Explain balance) " name="TC1145: Verify that Live Assist sample app agent gui with custom outcome selection (Billing) -&gt; (Balance) -&gt; (Explain balance) " time="12.751"/>
+<testcase classname="TC1146: Verify that Live Assist sample app agent gui with billing intent outcome: (Billing) -&gt; (Late fee) -&gt; (explain fee) " name="TC1146: Verify that Live Assist sample app agent gui with billing intent outcome: (Billing) -&gt; (Late fee) -&gt; (explain fee) " time="12.545"/>
+<testcase classname="TC1147: Verify that Live Assist sample app agent gui with flight intent outcome selected only: (Flight) -&gt; (Booking)" name="TC1147: Verify that Live Assist sample app agent gui with flight intent outcome selected only: (Flight) -&gt; (Booking)" time="12.575"/>
+<testcase classname="TC1148: Verify that Live Assist sample app agent select flight intent with default city outcome value selection from the list: (Flight) -&gt; (Booking) -&gt; (Boston) -&gt; (Austin)" name="TC1148: Verify that Live Assist sample app agent select flight intent with default city outcome value selection from the list: (Flight) -&gt; (Booking) -&gt; (Boston) -&gt; (Austin)" time="13.508"/>
+<testcase classname="TC1149: Verify that Live Assist sample app agent gui with operator intent outcome" name="TC1149: Verify that Live Assist sample app agent gui with operator intent outcome" time="12.661"/>
+<testcase classname="TC1150: Verify that Live Assist sample app agent select flight intent with customized city outcome value selection not from the default list: (Flight) -&gt; (Booking) -&gt; (QA_departure_city) -&gt; (New York)" name="TC1150: Verify that Live Assist sample app agent select flight intent with customized city outcome value selection not from the default list: (Flight) -&gt; (Booking) -&gt; (QA_departure_city) -&gt; (New York)" time="14.056"/>
+<testcase classname="TC1151: Verify that Live Assist sample app agent select flight intent with customized date and time outcome value: (Flight) -&gt; (Booking) -&gt; (QA_TEST1) -&gt; (Seattle) -&gt; (2014-12-21) -&gt; (10:30)" name="TC1151: Verify that Live Assist sample app agent select flight intent with customized date and time outcome value: (Flight) -&gt; (Booking) -&gt; (QA_TEST1) -&gt; (Seattle) -&gt; (2014-12-21) -&gt; (10:30)" time="16.44"/>
+<testcase classname="TC1152: Verify that Live Assist sample app agent select waive fee intent with customized billing date outcome value: (Billing) -&gt; (Late fee) -&gt; (waive fee) -&gt; (2014-12-21)" name="TC1152: Verify that Live Assist sample app agent select waive fee intent with customized billing date outcome value: (Billing) -&gt; (Late fee) -&gt; (waive fee) -&gt; (2014-12-21)" time="13.939"/>
+<testcase classname="TC1153: Verify that Live Assist sample app agent select waive fee intent with customized late fee payment reason outcome value: (Billing) -&gt; (Late fee) -&gt; (waive fee) -&gt; (2014-12-21) -&gt; (QA_Customized_Reason)" name="TC1153: Verify that Live Assist sample app agent select waive fee intent with customized late fee payment reason outcome value: (Billing) -&gt; (Late fee) -&gt; (waive fee) -&gt; (2014-12-21) -&gt; (QA_Customized_Reason)" time="14.499"/>
+<testcase classname="TC1154: Verify that Live Assist sample app agent with update contact info intent and custom values: (account) -&gt; (update contact info) -&gt; (first_name = QA_test1) -&gt; (last_name = QA_test2)" name="TC1154: Verify that Live Assist sample app agent with update contact info intent and custom values: (account) -&gt; (update contact info) -&gt; (first_name = QA_test1) -&gt; (last_name = QA_test2)" time="14.172"/>
+<testcase classname="TC1155: Verify that Live Assist sample app agent with update contact info intent and custom values: (account) -&gt; (update contact info) -&gt; (new_address = QA_addr) -&gt; (new_phone = 5147703199) -&gt; (new email = QA@nuance.com)" name="TC1155: Verify that Live Assist sample app agent with update contact info intent and custom values: (account) -&gt; (update contact info) -&gt; (new_address = QA_addr) -&gt; (new_phone = 5147703199) -&gt; (new email = QA@nuance.com)" time="15.234"/>
+<testcase classname="TC1156: Verify that Live Assist global contextual variables from agent GUI selection added to IVR api call response (outcome return)" name="TC1156: Verify that Live Assist global contextual variables from agent GUI selection added to IVR api call response (outcome return)" time="11.958"/>
+<testcase classname="TC1157: Verify that Live Assist global contextual variables from agent GUI selection added to web api call response (outcome return)" name="TC1157: Verify that Live Assist global contextual variables from agent GUI selection added to web api call response (outcome return)" time="13.058"/>
+<testcase classname="TC1158: Verify that Live Assist agent keyboard input select global contextual variables as agent outcome via SPACE key and ENTER key for done button" name="TC1158: Verify that Live Assist agent keyboard input select global contextual variables as agent outcome via SPACE key and ENTER key for done button" time="13.417"/>
+<testcase classname="TC1159: Verify that Live Assist agent keyboard input select global contextual variables as agent outcome via ALT+num (select - cancel - re-select) and CTRL+ENTER (same as clicking Done)" name="TC1159: Verify that Live Assist agent keyboard input select global contextual variables as agent outcome via ALT+num (select - cancel - re-select) and CTRL+ENTER (same as clicking Done)" time="13.652"/>
+<testcase classname="TC1160: Verify that Live Assist GUI keyboard input CTRL+num and CTRL+Enter on billing intent with default variables as agent outcome selected" name="TC1160: Verify that Live Assist GUI keyboard input CTRL+num and CTRL+Enter on billing intent with default variables as agent outcome selected" time="11.352"/>
+<testcase classname="TC1161: Verify that Live Assist billing intent with custom variable values as agent outcome selected from GUI by keyboard input" name="TC1161: Verify that Live Assist billing intent with custom variable values as agent outcome selected from GUI by keyboard input" time="12.856"/>
+<testcase classname="TC1162: Verify that Live Assist agent GUI keyboard input CTRL+END to sign out from idle state" name="TC1162: Verify that Live Assist agent GUI keyboard input CTRL+END to sign out from idle state" time="7.872"/>
+<testcase classname="TC1163: Verify that Live Assist agent GUI keyboard input CTRL+END to sign out from busy state after completing the request" name="TC1163: Verify that Live Assist agent GUI keyboard input CTRL+END to sign out from busy state after completing the request" time="14.345"/>
+<testcase classname="TC1166: Verify that Live Assist GUI popup alert with message and dismiss button on busy state when maximum time elapse from agent " name="TC1166: Verify that Live Assist GUI popup alert with message and dismiss button on busy state when maximum time elapse from agent" time="43.814"/>
+<testcase classname="TC1167: Verify that Live Assist GUI go back to idle state and ready for next call after alert popup and dismiss button confirmed when maximum time elapse from agent" name="TC1167: Verify that Live Assist GUI go back to idle state and ready for next call after alert popup and dismiss button confirmed when maximum time elapse from agent" time="47.154"/>
+<testcase classname="TC1168: Verify that Live Assist MRCP api call with agent global contextual variables selected as agent outcome" name="TC1168: Verify that Live Assist MRCP api call with agent global contextual variables selected as agent outcome" time="14.583"/>
+<testcase classname="TC1169: Verify that user sign in as administrator role with valid username and password to admin gui" name="TC1169: Verify that user sign in as administrator role with valid username and password to admin gui" time="8.381"/>
+<testcase classname="TC1170: Verify that Live Assist with default settings show session details on agent screen via MRCP api call escalated" name="TC1170: Verify that Live Assist with default settings show session details on agent screen via MRCP api call escalated" time="15.087"/>
+<testcase classname="TC1171: Verify that Live Assist with default settings show session details on agent screen via IVR api call escalated" name="TC1171: Verify that Live Assist with default settings show session details on agent screen via IVR api call escalated" time="12.931"/>
+<testcase classname="TC1172: Verify that Live Assist simple IVR API call should not be escalated using Nuance-IvrApiCallSteering app and configName=othermenu with ConfidenceBasedEscalationClassifier and set confidence=0.9 &gt; default 0.5" name="TC1172: Verify that Live Assist simple IVR API call should not be escalated using Nuance-IvrApiCallSteering app and configName=othermenu with ConfidenceBasedEscalationClassifier and set confidence=0.9 &gt; default 0.5" time="9.989"/>
+<testcase classname="TC1173: Verify that Live Assist simple IVR API call should be escalated using Nuance-IvrApiCallSteering app and configName=othermenu with ConfidenceBasedEscalationClassifier and set confidence=0.3 &lt; default 0.5" name="TC1173: Verify that Live Assist simple IVR API call should be escalated using Nuance-IvrApiCallSteering app and configName=othermenu with ConfidenceBasedEscalationClassifier and set confidence=0.3 &lt; default 0.5" time="11.526"/>
+<testcase classname="TC1174: Verify that Live Assist agent data input section with custom outcome selection (Billing) -&gt; (Balance) -&gt; (Explain balance)" name="TC1174: Verify that Live Assist agent data input section with custom outcome selection (Billing) -&gt; (Balance) -&gt; (Explain balance)" time="13.263"/>
+<testcase classname="TC1175: Verify that Live Assist escalation threshold and percentage context parameter changes in the database for dynamic escalation classifier" name="TC1175: Verify that Live Assist escalation threshold and percentage context parameter changes in the database for dynamic escalation classifier" time="4.86"/>
+<testcase classname="TC1176: Verify that customize Live Assist DB configuration to use Dynamic escalation classifier with customized parameters for IVR call steering app" name="TC1176: Verify that customize Live Assist DB configuration to use Dynamic escalation classifier with customized parameters for IVR call steering app" time="4.828"/>
+<testcase classname="TC1177: Verify that Live Assist dynamic escalation classifier customized as Always escalation engine via IVR api call with agent outcome response" name="TC1177: Verify that Live Assist dynamic escalation classifier customized as Always escalation engine via IVR api call with agent outcome response" time="14.18"/>
+<testcase classname="TC1178: Verify that Live Assist dynamic escalation classifier customized as Never escalation engine via IVR api call with agent outcome response" name="TC1178: Verify that Live Assist dynamic escalation classifier customized as Never escalation engine via IVR api call with agent outcome response" time="20.461"/>
+<testcase classname="TC1179: Verify that Live Assist dynamic escalation classifier with confidence input &lt; minimum_confidence_threshold and middle_confidence_percentage=100" name="TC1179: Verify that Live Assist dynamic escalation classifier with confidence input &lt; minimum_confidence_threshold and middle_confidence_percentage=100" time="14.881"/>
+<testcase classname="TC1180: Verify that Live Assist dynamic escalation classifier with minimum_confidence_threshold &lt; confidence input &lt; maximum_confidence_threshold and middle_confidence_percentage=100" name="TC1180: Verify that Live Assist dynamic escalation classifier with minimum_confidence_threshold &lt; confidence input &lt; maximum_confidence_threshold and middle_confidence_percentage=100" time="0" message="Wait timed out after 12156ms"><failure classname="TC1180: Verify that Live Assist dynamic escalation classifier with minimum_confidence_threshold &lt; confidence input &lt; maximum_confidence_threshold and middle_confidence_percentage=100" name="TC1180: Verify that Live Assist dynamic escalation classifier with minimum_confidence_threshold &lt; confidence input &lt; maximum_confidence_threshold and middle_confidence_percentage=100" time="0" message="Wait timed out after 12156ms"><![CDATA[Error: Wait timed out after 12156ms
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1412:29
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at then (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:497:7)
+    at Object.webdriver.promise.asap (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:749:11)
+    at newFrame.then.e (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1656:25)
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at notifyAll (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:422:7)
+    at resolve (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:400:7)
+    at fulfill (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:512:5)
+    at webdriver.promise.ControlFlow.resolveFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1561:9)
+    at webdriver.promise.ControlFlow.getNextTask_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1530:12)
+    at webdriver.promise.ControlFlow.runEventLoop_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1488:59)
+    at wrapper [as _onTimeout] (timers.js:261:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)
+==== async task ====
+    at webdriver.promise.ControlFlow.wait (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1397:15)
+    at webdriver.WebDriver.wait (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\webdriver.js:589:21)
+    at C:\LIVEAS~1\test\QA_TEST2\TC1180.js:765:33
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:610:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:249:17
+    at iterate (C:\LIVEAS~1\test\node_modules\async\lib\async.js:149:13)
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:160:25
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:251:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:615:34
+    at C:\LIVEAS~1\test\QA_TEST2\TC1180.js:758:25
+    at Request._callback (C:\LIVEAS~1\test\QA_TEST2\TC1180.js:94:25)
+    at Request.self.callback (C:\LIVEAS~1\test\node_modules\request\request.js:237:22)
+    at Request.emit (events.js:98:17)
+    at Request.&lt;anonymous&gt; (C:\LIVEAS~1\test\node_modules\request\request.js:1146:14)
+    at Request.emit (events.js:117:20)
+    at IncomingMessage.&lt;anonymous&gt; (C:\LIVEAS~1\test\node_modules\request\request.js:1097:12)
+    at IncomingMessage.emit (events.js:117:20)
+    at _stream_readable.js:943:16
+    at process._tickCallback (node.js:419:13)]]></failure></testcase>
+<testcase classname="TC1181: Verify that Live Assist dynamic escalation classifier with confidence input &gt; maximum_confidence_threshold and high_confidence_percentage=100" name="TC1181: Verify that Live Assist dynamic escalation classifier with confidence input &gt; maximum_confidence_threshold and high_confidence_percentage=100" time="15.777"/>
+<testcase classname="TC1182: Verify that Live Assist dynamic escalation classifier with confidence input &lt; minimum_confidence_threshold and low_confidence_percentage=100" name="TC1182: Verify that Live Assist dynamic escalation classifier with confidence input &lt; minimum_confidence_threshold and low_confidence_percentage=100" time="0" message="Wait timed out after 12141ms"><failure classname="TC1182: Verify that Live Assist dynamic escalation classifier with confidence input &lt; minimum_confidence_threshold and low_confidence_percentage=100" name="TC1182: Verify that Live Assist dynamic escalation classifier with confidence input &lt; minimum_confidence_threshold and low_confidence_percentage=100" time="0" message="Wait timed out after 12141ms"><![CDATA[Error: Wait timed out after 12141ms
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1412:29
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at then (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:497:7)
+    at Object.webdriver.promise.asap (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:749:11)
+    at newFrame.then.e (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1656:25)
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at notifyAll (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:422:7)
+    at resolve (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:400:7)
+    at fulfill (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:512:5)
+    at webdriver.promise.ControlFlow.resolveFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1561:9)
+    at webdriver.promise.ControlFlow.getNextTask_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1530:12)
+    at webdriver.promise.ControlFlow.runEventLoop_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1488:59)
+    at wrapper [as _onTimeout] (timers.js:261:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)
+==== async task ====
+    at webdriver.promise.ControlFlow.wait (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1397:15)
+    at webdriver.WebDriver.wait (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\webdriver.js:589:21)
+    at C:\LIVEAS~1\test\QA_TEST2\TC1182.js:777:33
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:610:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:249:17
+    at iterate (C:\LIVEAS~1\test\node_modules\async\lib\async.js:149:13)
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:160:25
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:251:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:615:34
+    at C:\LIVEAS~1\test\QA_TEST2\TC1182.js:770:25
+    at Request._callback (C:\LIVEAS~1\test\QA_TEST2\TC1182.js:94:25)
+    at Request.self.callback (C:\LIVEAS~1\test\node_modules\request\request.js:237:22)
+    at Request.emit (events.js:98:17)
+    at Request.&lt;anonymous&gt; (C:\LIVEAS~1\test\node_modules\request\request.js:1146:14)
+    at Request.emit (events.js:117:20)
+    at IncomingMessage.&lt;anonymous&gt; (C:\LIVEAS~1\test\node_modules\request\request.js:1097:12)
+    at IncomingMessage.emit (events.js:117:20)
+    at _stream_readable.js:943:16
+    at process._tickCallback (node.js:419:13)]]></failure></testcase>
+<testcase classname="TC1183: Verify that Live Assist customize major parameters from applicationContextParams table in the DB via IVR api call test and agent outcome response" name="TC1183: Verify that Live Assist customize all major parameters from applicationContextParams table in the DB and returned properly via IVR api call test and agent outcome response" time="0" message="Wait timed out after 12314ms"><failure classname="TC1183: Verify that Live Assist customize major parameters from applicationContextParams table in the DB via IVR api call test and agent outcome response" name="TC1183: Verify that Live Assist customize all major parameters from applicationContextParams table in the DB and returned properly via IVR api call test and agent outcome response" time="0" message="Wait timed out after 12314ms"><![CDATA[Error: Wait timed out after 12314ms
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1412:29
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at then (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:497:7)
+    at Object.webdriver.promise.asap (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:749:11)
+    at newFrame.then.e (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1656:25)
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at notifyAll (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:422:7)
+    at resolve (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:400:7)
+    at fulfill (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:512:5)
+    at webdriver.promise.ControlFlow.resolveFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1561:9)
+    at webdriver.promise.ControlFlow.getNextTask_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1530:12)
+    at webdriver.promise.ControlFlow.runEventLoop_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1488:59)
+    at wrapper [as _onTimeout] (timers.js:261:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)
+==== async task ====
+    at webdriver.promise.ControlFlow.wait (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1397:15)
+    at webdriver.WebDriver.wait (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\webdriver.js:589:21)
+    at C:\LIVEAS~1\test\QA_TEST2\TC1183.js:814:29
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:610:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:249:17
+    at iterate (C:\LIVEAS~1\test\node_modules\async\lib\async.js:149:13)
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:160:25
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:251:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:615:34
+    at C:\LIVEAS~1\test\QA_TEST2\TC1183.js:808:21
+    at Request._callback (C:\LIVEAS~1\test\QA_TEST2\TC1183.js:94:25)
+    at Request.self.callback (C:\LIVEAS~1\test\node_modules\request\request.js:237:22)
+    at Request.emit (events.js:98:17)
+    at Request.&lt;anonymous&gt; (C:\LIVEAS~1\test\node_modules\request\request.js:1146:14)
+    at Request.emit (events.js:117:20)
+    at IncomingMessage.&lt;anonymous&gt; (C:\LIVEAS~1\test\node_modules\request\request.js:1097:12)
+    at IncomingMessage.emit (events.js:117:20)
+    at _stream_readable.js:943:16
+    at process._tickCallback (node.js:419:13)]]></failure></testcase>
+<testcase classname="TC1185: Verify that Live Assist popup calendar when agent selecting default date via waive fee intent (yyyy-mm) with keyboard action" name="TC1185: Verify that Live Assist popup calendar when agent selecting default date via waive fee intent (yyyy-mm) with keyboard action" time="16.838"/>
+<testcase classname="TC1187: Verify that Live Assist popup calendar when agent select a date then ESC close with keyboard action" name="TC1187: Verify that Live Assist popup calendar when triggered by Enter then ESC to close with keyboard action" time="0" message="Cannot call method 'evaluate' of undefined"><failure classname="TC1187: Verify that Live Assist popup calendar when agent select a date then ESC close with keyboard action" name="TC1187: Verify that Live Assist popup calendar when triggered by Enter then ESC to close with keyboard action" time="0" message="Cannot call method 'evaluate' of undefined"><![CDATA[TypeError: Cannot call method 'evaluate' of undefined
+    at C:\LIVEAS~1\test\QA_TEST2\TC1187.js:534:32
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at notifyAll (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:422:7)
+    at resolve (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:400:7)
+    at fulfill (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:512:5)
+    at Object.webdriver.promise.asap (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:758:5)
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1651:25)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at notifyAll (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:422:7)
+    at resolve (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:400:7)
+    at fulfill (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:512:5)
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at then (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:497:7)
+    at Object.webdriver.promise.asap (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:749:11)
+    at newFrame.then.e (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1656:25)
+    at C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\goog\base.js:1582:15
+    at webdriver.promise.ControlFlow.runInNewFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1640:20)
+    at notify (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:444:12)
+    at notifyAll (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:422:7)
+    at resolve (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:400:7)
+    at fulfill (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:512:5)
+    at webdriver.promise.ControlFlow.resolveFrame_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1561:9)
+    at webdriver.promise.ControlFlow.getNextTask_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1530:12)
+    at webdriver.promise.ControlFlow.runEventLoop_ (C:\LIVEAS~1\test\node_modules\selenium-webdriver\lib\webdriver\promise.js:1488:59)
+    at wrapper (timers.js:261:14)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)]]></failure></testcase>
+<testcase classname="TC1188: Verify that Live Assist popup calendar when agent selecting date via waive fee intent with basic Arrow - Enter keyboard controls" name="TC1188: Verify that Live Assist popup calendar when agent selecting date via waive fee intent (yyyy-mm) with basic keyboard controls" time="22.028" message="Test case 1188 failed! Please check case log for details"><failure classname="TC1188: Verify that Live Assist popup calendar when agent selecting date via waive fee intent with basic Arrow - Enter keyboard controls" name="TC1188: Verify that Live Assist popup calendar when agent selecting date via waive fee intent (yyyy-mm) with basic keyboard controls" time="22.028" message="Test case 1188 failed! Please check case log for details"><![CDATA[ReferenceError: Test case 1188 failed! Please check case log for details
+    at C:\LIVEAS~1\test\QA_TEST2\TC1188.js:784:35
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:254:17
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:157:25
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:251:21
+    at C:\LIVEAS~1\test\node_modules\async\lib\async.js:615:34
+    at null._onTimeout (C:\LIVEAS~1\test\QA_TEST2\TC1188.js:725:25)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)]]></failure></testcase>
+<testcase classname="TC1189: Verify that Live Assist popup calendar when agent selecting date with basic keyboard control Home - Page Up - Page Down" name="TC1189: Verify that Live Assist popup calendar when agent selecting date with basic keyboard control Home - Page Up - Page Down" time="20.772"/>
+<testcase classname="TC1190: Verify that Live Assist popup calendar when agent selecting date with basic keyboard control End - Page Up - Page Down" name="TC1190: Verify that Live Assist popup calendar when agent selecting date with basic keyboard control End - Page Up - Page Down" time="20.793"/>
+<testcase classname="TC1191: Verify that Live Assist popup calendar when agent selecting date via book flight intent daily view with basic Home-Arrow(key)-Enter keyboard controls" name="TC1191: Verify that Live Assist popup calendar when agent selecting date via book flight intent daily view with basic Home-Arrow(key)-Enter keyboard controls" time="20.401"/>
+<testcase classname="TC1192: Verify that Live Assist popup calendar when agent selecting date via book flight intent daily view with basic End-PageUp-PageDown keyboard controls" name="TC1192: Verify that Live Assist popup calendar when agent selecting date via book flight intent daily view with basic End-PageUp-PageDown keyboard controls" time="21.42"/>
+<testcase classname="TC1194: Verify that Live Assist simple API multiple interactions can re-enter the same context and escalate call to agent GUI properly" name="TC1194: Verify that Live Assist simple API multiple interactions can re-enter the same context and escalate call to agent GUI properly" time="17.368"/>
+<testcase classname="TC1195: Verify that Live Assist MRCP API with resultMediaType for EMMA -&gt; agent intent selection -&gt; check session return" name="TC1195: Verify that Live Assist MRCP API with resultMediaType for EMMA -&gt; agent intent selection -&gt; check session return" time="13.855"/>
+<testcase classname="TC1196: Verify that Live Assist MRCP API with resultMediaType for EMMA-&gt; agent outcome selection -&gt; agent GUI response &amp; summary" name="TC1196: Verify that Live Assist MRCP API with resultMediaType for EMMA-&gt; agent outcome selection -&gt; agent GUI response &amp; summary" time="14.131"/>
+<testcase classname="TC1197: Verify that Live Assist MRCP API with resultMediaType for NLSML -&gt; agent intent selection -&gt; check session return" name="TC1197: Verify that Live Assist MRCP API with resultMediaType for NLSML -&gt; agent intent selection -&gt; check session return" time="14.252"/>
+<testcase classname="TC1198: Verify that Live Assist MRCP API with resultMediaType for NLSML-&gt; agent outcome selection -&gt; agent GUI response &amp; summary" name="TC1198: Verify that Live Assist MRCP API with resultMediaType for NLSML -&gt; agent outcome selection -&gt; agent GUI response &amp; summary" time="14.231"/>
+<testcase classname="TC1199: Verify that Live Assist MRCP API with resultMediaType set to NLSML type but recognitionResult using EMMA format input - call should not escalated to agent" name="TC1199: Verify that Live Assist MRCP API with resultMediaType set to NLSML type but recognitionResult using EMMA format input - call should not escalated to agent" time="11.385"/>
+<testcase classname="TC1200: Verify that Live Assist MRCP API with resultMediaType set to EMMA type but recognitionResult using NLSML format input - call should not be escalated to agent" name="TC1200: Verify that Live Assist MRCP API with resultMediaType set to EMMA type but recognitionResult using NLSML format input - call should not be escalated to agent" time="11.501"/>
+<testcase classname="TC1201: Verify that Live Assist MRCP API with NLSML format input -&gt; agent intent selection with global and variables -&gt; generate agent outcome response via debug api check" name="TC1201: Verify that Live Assist MRCP API with NLSML format input -&gt; agent intent selection with global and variables -&gt; generate agent outcome response via debug api check" time="14.833"/>
+<testcase classname="TC1202: Verify that Live Assist MRCP API with NLSML format settings get command grammar to return useASRResult and no escalation" name="TC1202: Verify that Live Assist MRCP API with NLSML format settings get command grammar to return useASRResult and no escalation" time="11.93"/>
+<testcase classname="TC1203: Verify that Live Assist no agent timeout via MRCP API and return useASRResult after default timeout" name="TC1203: Verify that Live Assist no agent timeout via MRCP API and return useASRResult after default timeout" time="11.19"/>
+<testcase classname="TC1204: Verify that Live Assist no agent timeout via simple IVR API method /inputInteractionStep and return useASRResult after timeout" name="TC1204: Verify that Live Assist no agent timeout via simple IVR API method /inputInteractionStep and return useASRResult after timeout" time="13.295"/>
+</testsuite>

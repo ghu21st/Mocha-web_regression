@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading user-input-header">
+    	<ul class="breadcrumb">
+	    	<li class="conversationContextSpeaker">USER</li>
+            <li ng-show="intents.showSessionContext.showFrom">from: {{interaction.from}}</li>
+            <li ng-show="intents.showSessionContext.showTo">to: {{interaction.to}}</li>
+            <li ng-show="intents.showSessionContext.showAai">aai: {{interaction.aai}}</li>
+            <li ng-show="intents.showSessionContext.showApplicationName">{{interaction.applicationName}}</li>
+            <li ng-show="intents.showSessionContext.showApplicationContextName">{{interaction.applicationContextName}}</li>
+            <li ng-show="intents.showSessionContext.showExternalSessionId">{{interaction.externalSessionId}}</li>
+            <li ng-show="intents.showSessionContext.showInteractionId">{{interaction.interactionId}}</li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div class="well well-sm" ng-show="interaction.text"><q>{{interaction.text}}</q></div>
+        
+		<div class="row" ng-if="interaction.audio">
+	        <div class="col-md-6">
+	            <!-- <audio id="audioPlayer" controls streaming src="{{interaction.audio}}"/> -->
+	            <audio id="audioPlayer" controls streaming/>
+	        </div>
+	
+	        <div class="col-md-2"></div>
+	
+	        <div class="col-md-4">
+	            <label for="playbackRate">Playback speed: {{agentParams.playbackRate}}</label>
+	            <input id="playbackRate" type="range" min='0.5' max='2.5' ng-model="agentParams.playbackRate" step='.1' />
+	        </div>
+        </div>
+    </div>
+</div>

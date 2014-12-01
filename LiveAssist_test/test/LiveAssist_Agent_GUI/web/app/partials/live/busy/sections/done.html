@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button id="doneButton" type="button" class="btn btn-primary btn-lg btn-block"
+                nina-shortcut-key="Control+Enter" tooltip="Control+Enter" ng-click="sendResponse()"
+                ng-disabled="!response.intent">
+            DONE
+        </button>
+        <br />
+		<progressbar max="maxLatencyInSeconds" value="latencyInSeconds"
+			ng-attr-type="{{latencyInSeconds < (maxLatencyInSeconds / 3) ? 'success' : latencyInSeconds < (2 * maxLatencyInSeconds / 3) ? 'warning' : 'danger'}}">
+		    {{latencyInSeconds > 0 ? latencyInSeconds + '' : ''}}
+		</progressbar>
+	</div>
+</div>

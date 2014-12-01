@@ -1,0 +1,94 @@
+info: Test started and logging at: c:\LiveAssist_test\test\test_outputs\1175.log
+info: 
+wait 1 second for server
+
+info: MySQL test driver check ok: SELECT 1
+Return: 
+[{"1":1}]
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value=0.99 WHERE applicationContextId=1 AND name='minimum_confidence_threshold'
+     Changed: 1 rows
+
+info: MySQL test driver SELECT query ok: SELECT * FROM applicationContextParams
+Return: 
+[{"applicationContextId":1,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":1,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"immediate_percentage","value":"100"},{"applicationContextId":1,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":1,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1,"name":"minimum_confidence_threshold","value":"0.99"},{"applicationContextId":1,"name":"no_input_percentage","value":"0"},{"applicationContextId":2,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":2,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":2,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"immediate_percentage","value":"0"},{"applicationContextId":2,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":2,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":2,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":2,"name":"no_input_percentage","value":"0"},{"applicationContextId":3,"name":"agent_pending_completion_cause","value":"no-match"},{"applicationContextId":3,"name":"agent_pending_recognition_result","value":"QA_AGENT_PENDING"},{"applicationContextId":3,"name":"high_confidence_percentage","value":"99"},{"applicationContextId":3,"name":"immediate_percentage","value":"100"},{"applicationContextId":3,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":3,"name":"maximum_confidence_threshold","value":"0.95"},{"applicationContextId":3,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":3,"name":"minimum_confidence_threshold","value":"0.15"},{"applicationContextId":3,"name":"no_input_percentage","value":"0"},{"applicationContextId":1010,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1010,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1010,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"immediate_percentage","value":"100"},{"applicationContextId":1010,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1010,"name":"middle_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1010,"name":"no_input_percentage","value":"0"},{"applicationContextId":1020,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1020,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1020,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1020,"name":"immediate_percentage","value":"0"},{"applicationContextId":1020,"name":"low_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1020,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1020,"name":"no_input_percentage","value":"100"}]
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value=0 WHERE applicationContextId=1 AND name='minimum_confidence_threshold'
+     Changed: 1 rows
+
+info: MySQL test driver SELECT query ok: SELECT * FROM applicationContextParams
+Return: 
+[{"applicationContextId":1,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":1,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"immediate_percentage","value":"100"},{"applicationContextId":1,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":1,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":1,"name":"no_input_percentage","value":"0"},{"applicationContextId":2,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":2,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":2,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"immediate_percentage","value":"0"},{"applicationContextId":2,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":2,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":2,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":2,"name":"no_input_percentage","value":"0"},{"applicationContextId":3,"name":"agent_pending_completion_cause","value":"no-match"},{"applicationContextId":3,"name":"agent_pending_recognition_result","value":"QA_AGENT_PENDING"},{"applicationContextId":3,"name":"high_confidence_percentage","value":"99"},{"applicationContextId":3,"name":"immediate_percentage","value":"100"},{"applicationContextId":3,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":3,"name":"maximum_confidence_threshold","value":"0.95"},{"applicationContextId":3,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":3,"name":"minimum_confidence_threshold","value":"0.15"},{"applicationContextId":3,"name":"no_input_percentage","value":"0"},{"applicationContextId":1010,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1010,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1010,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"immediate_percentage","value":"100"},{"applicationContextId":1010,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1010,"name":"middle_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1010,"name":"no_input_percentage","value":"0"},{"applicationContextId":1020,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1020,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1020,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1020,"name":"immediate_percentage","value":"0"},{"applicationContextId":1020,"name":"low_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1020,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1020,"name":"no_input_percentage","value":"100"}]
+
+info: MySQL test driver INSERT query ok: INSERT INTO applicationContextParams SET `applicationContextId` = 99, `name` = 'QA_TEST1', `value` = '99'
+     Changed: 0 rows
+
+info: MySQL test driver SELECT query ok: SELECT * FROM applicationContextParams
+Return: 
+[{"applicationContextId":1,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":1,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"immediate_percentage","value":"100"},{"applicationContextId":1,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":1,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":1,"name":"no_input_percentage","value":"0"},{"applicationContextId":2,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":2,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":2,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"immediate_percentage","value":"0"},{"applicationContextId":2,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":2,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":2,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":2,"name":"no_input_percentage","value":"0"},{"applicationContextId":3,"name":"agent_pending_completion_cause","value":"no-match"},{"applicationContextId":3,"name":"agent_pending_recognition_result","value":"QA_AGENT_PENDING"},{"applicationContextId":3,"name":"high_confidence_percentage","value":"99"},{"applicationContextId":3,"name":"immediate_percentage","value":"100"},{"applicationContextId":3,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":3,"name":"maximum_confidence_threshold","value":"0.95"},{"applicationContextId":3,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":3,"name":"minimum_confidence_threshold","value":"0.15"},{"applicationContextId":3,"name":"no_input_percentage","value":"0"},{"applicationContextId":99,"name":"QA_TEST1","value":"99"},{"applicationContextId":1010,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1010,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1010,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"immediate_percentage","value":"100"},{"applicationContextId":1010,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1010,"name":"middle_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1010,"name":"no_input_percentage","value":"0"},{"applicationContextId":1020,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1020,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1020,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1020,"name":"immediate_percentage","value":"0"},{"applicationContextId":1020,"name":"low_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1020,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1020,"name":"no_input_percentage","value":"100"}]
+
+info: MySQL test driver DELETE query ok: DELETE FROM applicationContextParams WHERE applicationContextId=99
+ Affected: 1 rows
+
+info: MySQL test driver SELECT query ok: SELECT * FROM applicationContextParams
+Return: 
+[{"applicationContextId":1,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":1,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"immediate_percentage","value":"100"},{"applicationContextId":1,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":1,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":1,"name":"no_input_percentage","value":"0"},{"applicationContextId":2,"name":"agent_pending_completion_cause","value":"SUCCESS"},{"applicationContextId":2,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":2,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"immediate_percentage","value":"0"},{"applicationContextId":2,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":2,"name":"maximum_confidence_threshold","value":"1.0"},{"applicationContextId":2,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":2,"name":"minimum_confidence_threshold","value":"0"},{"applicationContextId":2,"name":"no_input_percentage","value":"0"},{"applicationContextId":3,"name":"agent_pending_completion_cause","value":"no-match"},{"applicationContextId":3,"name":"agent_pending_recognition_result","value":"QA_AGENT_PENDING"},{"applicationContextId":3,"name":"high_confidence_percentage","value":"99"},{"applicationContextId":3,"name":"immediate_percentage","value":"100"},{"applicationContextId":3,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":3,"name":"maximum_confidence_threshold","value":"0.95"},{"applicationContextId":3,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":3,"name":"minimum_confidence_threshold","value":"0.15"},{"applicationContextId":3,"name":"no_input_percentage","value":"0"},{"applicationContextId":1010,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1010,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1010,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"immediate_percentage","value":"100"},{"applicationContextId":1010,"name":"low_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1010,"name":"middle_confidence_percentage","value":"0"},{"applicationContextId":1010,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1010,"name":"no_input_percentage","value":"0"},{"applicationContextId":1020,"name":"agent_pending_completion_cause","value":"success"},{"applicationContextId":1020,"name":"agent_pending_recognition_result","value":"AGENT_PENDING"},{"applicationContextId":1020,"name":"high_confidence_percentage","value":"0"},{"applicationContextId":1020,"name":"immediate_percentage","value":"0"},{"applicationContextId":1020,"name":"low_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"maximum_confidence_threshold","value":"0.6"},{"applicationContextId":1020,"name":"middle_confidence_percentage","value":"100"},{"applicationContextId":1020,"name":"minimum_confidence_threshold","value":"0.3"},{"applicationContextId":1020,"name":"no_input_percentage","value":"100"}]
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 0; 1; minimum_confidence_threshold
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='0' WHERE applicationContextId=1 AND name='minimum_confidence_threshold'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 1.0; 1; maximum_confidence_threshold
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='1.0' WHERE applicationContextId=1 AND name='maximum_confidence_threshold'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 100; 1; immediate_percentage
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='100' WHERE applicationContextId=1 AND name='immediate_percentage'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 0; 1; no_input_percentage
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='0' WHERE applicationContextId=1 AND name='no_input_percentage'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 0; 1; low_confidence_percentage
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='0' WHERE applicationContextId=1 AND name='low_confidence_percentage'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 100; 1; middle_confidence_percentage
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='100' WHERE applicationContextId=1 AND name='middle_confidence_percentage'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; 0; 1; high_confidence_percentage
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='0' WHERE applicationContextId=1 AND name='high_confidence_percentage'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; SUCCESS; 1; agent_pending_completion_cause
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='SUCCESS' WHERE applicationContextId=1 AND name='agent_pending_completion_cause'
+     Changed: 0 rows
+
+info: 
+For debug: UPDATE applicationContextParams SET value=? WHERE applicationContextId=? AND name=?; AGENT_PENDING; 1; agent_pending_recognition_result
+
+info: MySQL test driver UPDATE query ok: UPDATE applicationContextParams SET value='AGENT_PENDING' WHERE applicationContextId=1 AND name='agent_pending_recognition_result'
+     Changed: 0 rows
+
+info: MySQL test driver UPDATE commit ok. 
+
+info: 
+Test passed! 

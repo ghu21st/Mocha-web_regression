@@ -1,0 +1,19 @@
+<div class="panel panel-default adminPanel">
+    <div class="panel-heading">
+        <h3 class="panel-title">Application Contexts for {{applicationConfigurationName}}</h3>
+    </div>
+    <div class="gridStyle" ng-grid="applicationContextsGridOptions"></div>
+    <div class="panel-footer clearfix">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <button id="addAppContextButton" type="button" class="btn btn-primary btn-block btn-sm" ng-click="addApplicationContext()">Add</button>
+            </div>
+            <div class="col-md-4">
+                <button id="editAppContextButton" type="button" class="btn btn-primary btn-block btn-sm" ng-click="editApplicationContext()">Edit</button>
+            </div>
+            <div class="col-md-4">
+                <button id="deleteAppContextButton" type="button" class="btn btn-primary btn-block btn-sm" ng-click="deleteApplicationContext()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

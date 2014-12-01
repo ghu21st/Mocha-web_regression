@@ -1,0 +1,79 @@
+info: Test started and logging at c:\LiveAssist_test\test\test_outputs\1163.log
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31
+State: agentPending
+completionCause: null
+info: 
+Found the new agent web page with specific className
+info: 
+Current location url: https://10.3.41.56:8446/liveassist/app/
+info: 
+Selected intents by CTRL+num
+
+info: 
+wait 1 second for server
+
+info: 
+wait 1 second for server
+
+info: 
+CTRL + ENTER input
+info: 
+wait 1 second for server
+
+info: 
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31
+
+info: 
+Test passed! Output string:
+
+wait 1 second for server
+
+Current URL: https://10.3.41.56:8446/liveassist/app
+Test web page title: Nuance Live Assist
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Set user login name variable
+Set password variable
+Sign in by ENTER key on +Sign in as Live Agent+ button
+wait 1 second for server
+
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"varName":"Nuance-WebApiCallSteering","externalSessionID":"0a0325e7_000011c2_5307b580_00d4_0001","configurationName":"mainmenu","completionCause":"no-match","userInputText":"I want to take a plane to go see my grandmother in New York on the 25th around 4"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /inputInteractionStep is: session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31
+State: agentPending
+completionCause: null
+Found the new agent web page with specific className
+Current location url: https://10.3.41.56:8446/liveassist/app/
+Selected intents by CTRL+num
+
+Sign out by CTRL + END
+CTRL + ENTER input
+
+Debug: send post request '/inputInteractionStep' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31"}
+Response: [object Object]
+Body: {"sessionID":"session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31","completionCause":"success","outcome":{"intent":{"id":"INTENT","value":"WAIVE_FEE_REQUEST"},"variables":[{"id":"BILLING_MONTH","value":"2014-01"}],"globals":[]},"state":"useLiveAssistResult"}
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-WebApiCallSteering:df1d2e80-07e9-4168-8e96-e74923086f31
+
+Found the new agent web page with specific className
+Agent sign in page and button found. Current location url: https://10.3.41.56:8446/liveassist/app/
+wait 1 second for server
+

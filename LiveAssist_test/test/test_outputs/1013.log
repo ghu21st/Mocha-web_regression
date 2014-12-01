@@ -1,0 +1,44 @@
+info: Test started and logging atc:\LiveAssist_test\test\test_outputs\1013.log
+info: 
+Test passed! Output string:
+
+
+Debug: send post request '/startSession' done
+
+
+post test body param: {"organizationID":"Nuance","applicationID":"Test2","ani":"sip:4641@QA_test_server","dnis":"sip:8665551234@127.0.0.1:5066","externalSessionID":"0a0325e7_000047e1_52e050ba_00b1_0001","audioServerAddress":"10.3.41.56:8081"}
+Response: [object Object]
+Body: [object Object]
+SessionID from /startSession is: session:Nuance-Test2:ca4bdc0e-9e63-4b80-a1f7-ee5011d24e36
+
+
+Debug: send post request '/startRecognition ' done
+
+
+post test body param: {"sessionID":"session:Nuance-Test2:ca4bdc0e-9e63-4b80-a1f7-ee5011d24e36","configurationName":"mainmenu","grammars":["http://10.3.41.56:8083/liveassist/data/vxmldemo/mrcpapi/callsteering/mainmenu.grxml"],"grammarIds":["session:0x00000001"]}
+Response: [object Object]
+Body: [object Object]
+interactionID from /startRecognition  is: session:Nuance-Test2:ca4bdc0e-9e63-4b80-a1f7-ee5011d24e36-0
+sendAudio from /startRecognition is: true
+
+
+Debug: send post request '/sendRecognitionResult  ' done
+
+
+post test body param: {"sessionID":"session:Nuance-Test2:ca4bdc0e-9e63-4b80-a1f7-ee5011d24e36","completionCause":"success","utterance":"http://mtl-da53:90/Nuance/callLogs/Test2/2013/11November/21/00/NUAN-21-01-mtl-da53-0a0325e7_00004175_528d983c_0055_0001-SAVEWAVEFORM.wav","recognitionResult":"PD94bWwgdmVyc2lvbj0nMS4wJz8+IDxlbW1hOmVtbWEgdmVyc2lvbj0iMS4wIiB4bWxuczplbW1hPSJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDA3L0NSLWVtbWEtMjAwNzEyMTEiIHhtbG5zOm51YW5jZT0iaHR0cDovL25yMTAubnVhbmNlLmNvbS9lbW1hIj4gPGVtbWE6Z3JhbW1hciBpZD0iZ3JhbW1hcl8xIiByZWY9InNlc3Npb246aHR0cDovL210bC1kYTU1LXZtNjo4MDgwL2xpdmVhc3Npc3QvZGF0YS92eG1sZGVtby90cmF2ZWwvbWFpbm1lbnUuZ3J4bWwgLTEgLTEgMTAwMDAiLz4gPGVtbWE6aW50ZXJwcmV0YXRpb24gaWQ9ImludGVycF8xIiBlbW1hOmNvbmZpZGVuY2U9IjAuNzgiIGVtbWE6Z3JhbW1hci1yZWY9ImdyYW1tYXJfMSIgZW1tYTp0b2tlbnM9Imkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0IiBlbW1hOmR1cmF0aW9uPSIzMjQwIiBlbW1hOm1vZGU9InZvaWNlIiBudWFuY2U6ZW9zLXNpbGVuY2U9Ijg1MCI+IDxpbnRlbnQgY29uZj0iMC43OCI+Ym9vay1mbGlnaHQ8L2ludGVudD4gPFNXSV9saXRlcmFsPmkgd291bGQgbGlrZSB0byBib29rIGEgZmxpZ2h0PC9TV0lfbGl0ZXJhbD4gPFNXSV9tZWFuaW5nPntpbnRlbnQ6Ym9vay1mbGlnaHR9PC9TV0lfbWVhbmluZz4gPC9lbW1hOmludGVycHJldGF0aW9uPiA8L2VtbWE6ZW1tYT4="}
+Response: [object Object]
+Body: [object Object]
+state return from /sendRecognitionResult  is: useLiveAssistResult
+
+completionCause return from /sendRecognitionResult   is: success
+recognitionResult return from /sendRecognitionResult  is: PD94bWwgdmVyc2lvbj0nMS4wJz8+PGVtbWE6ZW1tYSB2ZXJzaW9uPSIxLjAiIHhtbG5zOmVtbWE9Imh0dHA6Ly93d3cudzMub3JnL1RSLzIwMDcvQ1ItZW1tYS0yMDA3MTIxMSIgeG1sbnM6bnVhbmNlPSJodHRwOi8vbnIxMC5udWFuY2UuY29tL2VtbWEiPjxlbW1hOmdyYW1tYXIgaWQ9ImdyYW1tYXJfMSIgcmVmPSJzZXNzaW9uOjB4MDAwMDAwMDEiLz48ZW1tYTppbnRlcnByZXRhdGlvbiBpZD0iaW50ZXJwXzEiIGVtbWE6Y29uZmlkZW5jZT0iMSIgZW1tYTpncmFtbWFyLXJlZj0iZ3JhbW1hcl8xIiBlbW1hOnRva2Vucz0iIiBlbW1hOm1vZGU9InZvaWNlIj48QUdFTlRfUEVORElORyBjb25mPSIxIj50cnVlPC9BR0VOVF9QRU5ESU5HPjxTV0lfbGl0ZXJhbD48L1NXSV9saXRlcmFsPjxTV0lfbWVhbmluZz57IEFHRU5UX1BFTkRJTkc6dHJ1ZX08L1NXSV9tZWFuaW5nPjxzc21fc2NvcmUgY29uZj0iMSI+MTAwPC9zc21fc2NvcmU+PC9lbW1hOmludGVycHJldGF0aW9uPjwvZW1tYTplbW1hPg==
+
+
+Debug: send post request '/endSession' done
+
+
+post test body param: {"sessionID":"session:Nuance-Test2:ca4bdc0e-9e63-4b80-a1f7-ee5011d24e36"}
+Response status: 200
+Body: [object Object]
+SessionID from /endSession is: session:Nuance-Test2:ca4bdc0e-9e63-4b80-a1f7-ee5011d24e36
+
